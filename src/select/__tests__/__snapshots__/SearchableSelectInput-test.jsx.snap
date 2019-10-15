@@ -1,0 +1,404 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchableSelectInput matches snapshot 1`] = `
+<SearchableSelectInput
+  onChange={[Function]}
+  options={
+    Array [
+      Object {
+        "label": "a",
+        "value": 1,
+      },
+      Object {
+        "label": "b",
+        "value": 2,
+      },
+      Object {
+        "label": "c",
+        "value": 3,
+      },
+    ]
+  }
+  value={1}
+>
+  <Manager>
+    <div
+      className="container_e296pg-o_O-darkPlaceholderText_hirc9h"
+    >
+      <DeprecatedPopperTarget>
+        <Reference>
+          <InnerReference
+            setReferenceNode={[Function]}
+          >
+            <div>
+              <div
+                className="inputWrapper_4qqzg7"
+              >
+                <TextInput
+                  disabled={false}
+                  isInvalid={false}
+                  isPrefilled={false}
+                  maxLength={255}
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseDown={[Function]}
+                  placeholder="a"
+                  readOnly={false}
+                  size="m"
+                  suffix={
+                    Object {
+                      "iconName": "cancel",
+                      "onClick": [Function],
+                      "onFocus": [Function],
+                      "size": "m",
+                    }
+                  }
+                  textAlign="left"
+                  textOverflow="ellipsis"
+                  type="text"
+                  value=""
+                >
+                  <div
+                    className="wrapper_oxngbz"
+                  >
+                    <input
+                      className="baseNoPadding_xj5s6-o_O-applyEllipsis_lspcml"
+                      disabled={false}
+                      maxLength={255}
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onMouseDown={[Function]}
+                      placeholder="a"
+                      readOnly={false}
+                      style={
+                        Object {
+                          "paddingLeft": 10,
+                          "paddingRight": 32,
+                          "textAlign": "left",
+                        }
+                      }
+                      type="text"
+                      value=""
+                    />
+                    <Sigil
+                      disabled={false}
+                      paddingDefaultTextInput={10}
+                      side="right"
+                      sigil={
+                        Object {
+                          "iconName": "cancel",
+                          "onClick": [Function],
+                          "onFocus": [Function],
+                          "size": "m",
+                        }
+                      }
+                      size="m"
+                    >
+                      <span
+                        className="sigil_1ogu4v7"
+                        style={
+                          Object {
+                            "right": "10px",
+                          }
+                        }
+                      >
+                        <IconButton
+                          disabled={false}
+                          height={
+                            Object {
+                              "type": "fixed",
+                            }
+                          }
+                          iconAlignment="left"
+                          iconName="cancel"
+                          intent="none"
+                          isLoading={false}
+                          kind="blank"
+                          onClick={[Function]}
+                          onFocus={[Function]}
+                          size="m"
+                          type="button"
+                          width="responsive"
+                        >
+                          <button
+                            className="base_i7qsly-o_O-m_12juzcr-o_O-blank_z2ox4-o_O-responsive_zk4wup-o_O-none_ifax78"
+                            disabled={false}
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            style={
+                              Object {
+                                "height": undefined,
+                              }
+                            }
+                            type="button"
+                          >
+                            <Icon
+                              alignment="center"
+                              deprecatedAllowColorInheritance={true}
+                              iconName="cancel"
+                              isARIAAccessible={false}
+                              size="xs"
+                            >
+                              <span
+                                className="wrapper_17y0hv9 svgIcon"
+                                style={
+                                  Object {
+                                    "fill": "unset",
+                                    "height": 12,
+                                    "width": 12,
+                                  }
+                                }
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  aria-labelledby="title desc"
+                                  className="svgCenter_1r81nla"
+                                  color="unset"
+                                  height={12}
+                                  role="img"
+                                  style={
+                                    Object {
+                                      "height": "unset",
+                                      "width": "unset",
+                                    }
+                                  }
+                                  viewBox="0 0 64 64"
+                                  width={12}
+                                >
+                                  <title
+                                    id="title"
+                                  />
+                                  <desc
+                                    id="desc"
+                                  >
+                                    X
+                                  </desc>
+                                  <g
+                                    fillRule="nonzero"
+                                  >
+                                    <path
+                                      d="M53.213 46.142L39.071 32l14.142-14.142a1 1 0 0 0 0-1.414l-5.657-5.657a1 1 0 0 0-1.414 0L32 24.929 17.858 10.787a1 1 0 0 0-1.414 0l-5.657 5.657a1 1 0 0 0 0 1.414L24.929 32 10.787 46.142a1 1 0 0 0 0 1.414l5.657 5.657a1 1 0 0 0 1.414 0L32 39.071l14.142 14.142a1 1 0 0 0 1.414 0l5.657-5.657a1 1 0 0 0 0-1.414z"
+                                      fillRule="evenodd"
+                                      key="0"
+                                      role="presentation"
+                                    />
+                                  </g>
+                                </svg>
+                              </span>
+                            </Icon>
+                          </button>
+                        </IconButton>
+                      </span>
+                    </Sigil>
+                  </div>
+                </TextInput>
+              </div>
+            </div>
+          </InnerReference>
+        </Reference>
+      </DeprecatedPopperTarget>
+      <DeprecatedPopper
+        className=""
+      >
+        <Popper>
+          <InnerPopper
+            eventsEnabled={true}
+            placement="bottom"
+            positionFixed={false}
+            referenceElement={
+              <div>
+                <div
+                  class="inputWrapper_4qqzg7"
+                >
+                  <div
+                    class="wrapper_oxngbz"
+                  >
+                    <input
+                      class="baseNoPadding_xj5s6-o_O-applyEllipsis_lspcml"
+                      maxlength="255"
+                      placeholder="a"
+                      style="text-align: left; padding-left: 10px; padding-right: 32px;"
+                      type="text"
+                      value=""
+                    />
+                    <span
+                      class="sigil_1ogu4v7"
+                      style="right: 10px;"
+                    >
+                      <button
+                        class="base_i7qsly-o_O-m_12juzcr-o_O-blank_z2ox4-o_O-responsive_zk4wup-o_O-none_ifax78"
+                        type="button"
+                      >
+                        <span
+                          class="wrapper_17y0hv9 svgIcon"
+                          style="width: 12px; height: 12px; fill: unset;"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            aria-labelledby="title desc"
+                            class="svgCenter_1r81nla"
+                            color="unset"
+                            height="12"
+                            role="img"
+                            viewBox="0 0 64 64"
+                            width="12"
+                          >
+                            <title
+                              id="title"
+                            />
+                            <desc
+                              id="desc"
+                            >
+                              X
+                            </desc>
+                            <g
+                              fill-rule="nonzero"
+                            >
+                              <path
+                                d="M53.213 46.142L39.071 32l14.142-14.142a1 1 0 0 0 0-1.414l-5.657-5.657a1 1 0 0 0-1.414 0L32 24.929 17.858 10.787a1 1 0 0 0-1.414 0l-5.657 5.657a1 1 0 0 0 0 1.414L24.929 32 10.787 46.142a1 1 0 0 0 0 1.414l5.657 5.657a1 1 0 0 0 1.414 0L32 39.071l14.142 14.142a1 1 0 0 0 1.414 0l5.657-5.657a1 1 0 0 0 0-1.414z"
+                                fill-rule="evenodd"
+                                role="presentation"
+                              />
+                            </g>
+                          </svg>
+                        </span>
+                      </button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            }
+          >
+            <PopperContent
+              className=""
+              popperProps={
+                Object {
+                  "ref": [Function],
+                  "style": Object {
+                    "left": 0,
+                    "opacity": 0,
+                    "pointerEvents": "none",
+                    "position": "absolute",
+                    "top": 0,
+                  },
+                }
+              }
+              scheduleUpdate={[Function]}
+            >
+              <div
+                className=""
+                style={
+                  Object {
+                    "left": 0,
+                    "opacity": 0,
+                    "pointerEvents": "none",
+                    "position": "absolute",
+                    "top": 0,
+                  }
+                }
+              >
+                <DropdownList
+                  highlightedOption={null}
+                  isOpen={false}
+                  onClick={[Function]}
+                  options={
+                    Array [
+                      Object {
+                        "label": "a",
+                      },
+                      Object {
+                        "label": "b",
+                      },
+                      Object {
+                        "label": "c",
+                      },
+                    ]
+                  }
+                >
+                  <div
+                    className="dropdown_7in7v0-o_O-hidden_1u9fru1"
+                  >
+                    <div
+                      style={
+                        Object {
+                          "maxHeight": "400px",
+                          "overflowY": "auto",
+                        }
+                      }
+                    >
+                      <ul
+                        className="list_1qm1tjd"
+                        role="listbox"
+                      >
+                        <DropdownOption
+                          isHighlighted={false}
+                          key="a"
+                          label="a"
+                          onClick={[Function]}
+                        >
+                          <li
+                            className="dropdownItem_daehjz"
+                            key="a"
+                            onMouseDown={[Function]}
+                          >
+                            <div
+                              className="dropdownItemText_1gqhljw"
+                            >
+                              a
+                            </div>
+                          </li>
+                        </DropdownOption>
+                        <DropdownOption
+                          isHighlighted={false}
+                          key="b"
+                          label="b"
+                          onClick={[Function]}
+                        >
+                          <li
+                            className="dropdownItem_daehjz"
+                            key="b"
+                            onMouseDown={[Function]}
+                          >
+                            <div
+                              className="dropdownItemText_1gqhljw"
+                            >
+                              b
+                            </div>
+                          </li>
+                        </DropdownOption>
+                        <DropdownOption
+                          isHighlighted={false}
+                          key="c"
+                          label="c"
+                          onClick={[Function]}
+                        >
+                          <li
+                            className="dropdownItem_daehjz"
+                            key="c"
+                            onMouseDown={[Function]}
+                          >
+                            <div
+                              className="dropdownItemText_1gqhljw"
+                            >
+                              c
+                            </div>
+                          </li>
+                        </DropdownOption>
+                      </ul>
+                    </div>
+                  </div>
+                </DropdownList>
+              </div>
+            </PopperContent>
+          </InnerPopper>
+        </Popper>
+      </DeprecatedPopper>
+    </div>
+  </Manager>
+</SearchableSelectInput>
+`;

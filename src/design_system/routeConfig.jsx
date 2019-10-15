@@ -1,0 +1,118 @@
+/**
+ * TEAM: frontend_infra
+ * @flow
+ */
+
+import React from "react";
+
+import Home from "design_system/interfaces/Home";
+import DesignAppInterface from "design_system/interfaces/wrapper/DesignAppInterface";
+import Guidelines from "design_system/interfaces/guidelines/Guidelines";
+import Styles from "design_system/interfaces/styles/Styles";
+import componentsList from "design_system/constants/componentsList.json";
+import guidelinesManifest from "design_system/interfaces/guidelines/guidelinesManifest";
+import stylesManifest from "design_system/interfaces/styles/stylesManifest";
+
+import {Route, makeRouteConfig, hotRouteConfig, HttpError} from "found";
+
+const Components = () =>
+  import(/* webpackChunkName: "design_system_interfaces_components_Components" */ "design_system/interfaces/components/Components")
+    .then(module => module.default)
+    .catch(() => "An error occurred while loading the component");
+
+const getGettingStarted = () =>
+  import(/* webpackChunkName: "design_system_interfaces_GettingStarted" */ "design_system/interfaces/GettingStarted")
+    .then(module => module.default)
+    .catch(() => "An error occurred while loading the component");
+
+const getContributing = () =>
+  import(/* webpackChunkName: "design_system_interfaces_Contributing" */ "design_system/interfaces/Contributing")
+    .then(module => module.default)
+    .catch(() => "An error occurred while loading the component");
+
+const getResources = () =>
+  import(/* webpackChunkName: "design_system_interfaces_Resources" */ "design_system/interfaces/Resources")
+    .then(module => module.default)
+    .catch(() => "An error occurred while loading the component");
+
+const getPlayground = () =>
+  import(/* webpackChunkName: "design_system_interfaces_Playground" */ "design_system/interfaces/Playground")
+    .then(module => module.default)
+    .catch(() => "An error occurred while loading the component");
+
+const getComponentsData = ({params}) => {
+  const {componentName} = params;
+  if (!componentsList.includes(componentName)) {
+    throw new HttpError(404);
+  }
+};
+
+const getGuidelinesData = ({params}) => {
+  const {guidelineName} = params;
+
+  if (!Object.hasOwnProperty.call(guidelinesManifest, guidelineName)) {
+    throw new HttpError(404);
+  }
+
+  const {content, type} = guidelinesManifest[guidelineName];
+
+  return {
+    content,
+    type,
+  };
+};
+
+const getStylesData = ({params}) => {
+  const {styleName} = params;
+
+  if (!Object.hasOwnProperty.call(stylesManifest, styleName)) {
+    throw new HttpError(404);
+  }
+
+  const {content, type} = stylesManifest[styleName];
+
+  return {
+    content,
+    type,
+  };
+};
+
+export default hotRouteConfig(
+  makeRouteConfig(
+    <Route path="design">
+      <Route Component={Home} />
+      <Route path="components/getting-started" Component={DesignAppInterface}>
+        <Route getComponent={getGettingStarted} />
+      </Route>
+      <Route path="components/contributing" Component={DesignAppInterface}>
+        <Route getComponent={getContributing} />
+      </Route>
+      <Route path="components" Component={DesignAppInterface}>
+        <Route getComponent={Components} />
+        <Route
+          path=":componentName"
+          getComponent={Components}
+          getData={getComponentsData}
+        />
+      </Route>
+      <Route path="guidelines" Component={DesignAppInterface}>
+        <Route Component={Guidelines} />
+        <Route
+          path=":guidelineName"
+          Component={Guidelines}
+          getData={getGuidelinesData}
+        />
+      </Route>
+      <Route path="resources" Component={DesignAppInterface}>
+        <Route getComponent={getResources} />
+      </Route>
+      <Route path="styles" Component={DesignAppInterface}>
+        <Route Component={Styles} />
+        <Route path=":styleName" Component={Styles} getData={getStylesData} />
+      </Route>
+      <Route path="playground" Component={DesignAppInterface}>
+        <Route getComponent={getPlayground} />
+      </Route>
+    </Route>
+  )
+);

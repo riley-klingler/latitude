@@ -1,0 +1,152 @@
+/**
+ * TEAM: frontend_infra
+ * 
+ * DesignSystemApp global styles
+ *
+ * Additions to this file shoild be avoided in favor of using
+ * Aphrodite StyleSheets alongside components. Only add necessary
+ * global styles below.
+ *
+ *
+ */ 
+
+
+ /* prop table formatting */
+.hljs {
+  font-size: 13px;
+  line-height: 15px;
+  font-family: monospace;
+}
+
+td pre,
+td div {
+  display: inline;
+}
+
+/**
+ * Algolia DocSearch styles
+ *
+ * The following styles override the default stylesheet that Algolia
+ * provides with its docsearch npm package, which is loaded in
+ * design_system.html.slim from a cdn.
+ *
+ * more info: https://community.algolia.com/docsearch/styling.html
+ */
+
+/* search input */
+span.algolia-autocomplete {
+  width: 100%;
+}
+
+/* main search dropdown */
+.algolia-autocomplete .ds-dropdown-menu {
+  border-radius: 3px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+.algolia-autocomplete .ds-dropdown-menu [class^=ds-dataset-] {
+  padding: 0;
+  border: 1px solid #CED7DE; /* colors.grey30 */
+}
+
+.algolia-autocomplete .ds-dropdown-menu .ds-suggestions {
+  margin: 8px 0;
+}
+
+/* remove tooltip at top */
+.algolia-autocomplete .ds-dropdown-menu:before {
+  display: none;
+}
+
+/* search result category */
+.algolia-autocomplete .algolia-docsearch-suggestion--category-header {
+  padding: 8px 16px 4px 16px;
+  margin: 0;
+  line-height: 28px;
+  text-transform: uppercase;
+  font-weight: 650;
+  font-size: 12px;
+  color: #6E7881; /* colors.grey50 */
+  border-top: 1px solid #CED7DE; /* colors.grey30 */
+  border-bottom: none;
+}
+.algolia-autocomplete .ds-suggestion:first-child .algolia-docsearch-suggestion--category-header {
+  border-top: none;
+}
+
+/* search result */
+.algolia-autocomplete .algolia-docsearch-suggestion {
+  padding: 0;
+}
+.algolia-autocomplete .algolia-docsearch-suggestion .algolia-docsearch-suggestion--wrapper {
+  padding: 8px 16px;
+}
+.algolia-autocomplete .algolia-docsearch-suggestion .algolia-docsearch-suggestion--subcategory-column {
+  width: 100%;
+  float: none;
+  padding: 0;
+  margin-bottom: 4px;
+  text-align: left;
+  color: #18191A; /* colors.grey60 */
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: bold;
+  opacity: 1;
+}
+.algolia-autocomplete .algolia-docsearch-suggestion .algolia-docsearch-suggestion--content {
+  width: 100%;
+  float: none;
+  padding: 0;
+}
+.algolia-autocomplete .algolia-docsearch-suggestion .algolia-docsearch-suggestion--title,
+.algolia-autocomplete .algolia-docsearch-suggestion .algolia-docsearch-suggestion--text {
+  color: #6E7881; /* colors.grey50 */
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+}
+.algolia-autocomplete .algolia-docsearch-suggestion--highlight {
+  color: #0E2259; /* colors.blue60 */
+  background: #E7F1FF; /* colors.blue10 */
+}
+
+/* remove vertical line */
+.algolia-autocomplete .algolia-docsearch-suggestion--subcategory-column:before,
+.algolia-autocomplete .algolia-docsearch-suggestion--content:before,
+.algolia-autocomplete .algolia-docsearch-suggestion--subcategory-column:after {
+  display: none;
+}
+
+/* remove Algolia logo */
+.algolia-autocomplete .algolia-docsearch-footer {
+  display: none;
+}
+
+/* selected search result */
+.algolia-autocomplete .ds-dropdown-menu .ds-suggestion.ds-cursor .algolia-docsearch-suggestion.suggestion-layout-simple, 
+.algolia-autocomplete .ds-dropdown-menu .ds-suggestion.ds-cursor .algolia-docsearch-suggestion:not(.suggestion-layout-simple) .algolia-docsearch-suggestion--content {
+  background: none;
+}
+.algolia-autocomplete .ds-dropdown-menu .ds-suggestion.ds-cursor .algolia-docsearch-suggestion--wrapper {
+  background: #F7FAFC; /* colors.grey10 */
+}
+
+/* no search results */
+.algolia-autocomplete .algolia-docsearch-suggestion--no-results .algolia-docsearch-suggestion--title {
+  margin: 8px 0;
+}
+.algolia-autocomplete .algolia-docsearch-suggestion--no-results .algolia-docsearch-suggestion--text {
+  font-size: 14px;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .algolia-autocomplete .ds-dropdown-menu {
+    width: 100%;
+    min-width: auto;
+  }
+  .algolia-autocomplete .algolia-docsearch-suggestion--no-results.algolia-docsearch-suggestion--content {
+    text-align: center;
+  }
+}

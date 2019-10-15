@@ -1,0 +1,89 @@
+/**
+ * TEAM: frontend_infra
+ *
+ * @flow
+ */
+import * as React from "react";
+import AppDispatcher from "dispatcher/AppDispatcher";
+import EventEmitter from "events";
+import update from "immutability-helper";
+import Toast from "toast/Toast";
+import {ActionTypes, EventTypes} from "constants/ToastConstants";
+import PayloadSources from "constants/PayloadSources";
+import ToastActions from "./ToastActions";
+
+type ToastProps = React.ElementConfig<typeof Toast>;
+
+type ToastArg = ToastProps & {
+  removeAfter?: ?number,
+};
+
+export type ToastRecord = ToastArg & {
+  id: number,
+};
+
+type Action = {
+  actionType: string,
+  toast: ToastRecord,
+  removeAfter?: ?number,
+};
+
+type Payload = {
+  source: string,
+  action: Action,
+};
+
+export class ToastStore extends EventEmitter {
+  _Actions = ToastActions;
+
+  _records: Array<ToastRecord>;
+  _counter: number;
+
+  constructor() {
+    super();
+    this._counter = 0;
+    this._records = [];
+
+    AppDispatcher.register(
+      (payload: Payload): boolean => {
+        const {action, source} = payload;
+
+        if (source !== PayloadSources.TOAST) {
+          return false;
+        }
+
+        // eslint-disable-next-line default-case
+        switch (action.actionType) {
+          case ActionTypes.SHOW:
+            this._show(action.toast, action.removeAfter);
+            return true;
+          case ActionTypes.REMOVE:
+            this._remove(action.toast);
+            return true;
+        }
+        return false;
+      }
+    );
+  }
+
+  _show = (toast: ToastArg, removeAfter: ?number) => {
+    // eslint-disable-next-line no-plusplus
+    const record = {...toast, id: this._counter++};
+    this._records = update(this._records, {$unshift: [record]});
+    if (removeAfter && removeAfter > 0) {
+      window.setTimeout(() => {
+        ToastActions.remove(record);
+      }, removeAfter);
+    }
+    this.emit(EventTypes.CHANGED);
+  };
+
+  _remove = (toast: ToastRecord) => {
+    this._records = this._records.filter(r => r.id !== toast.id);
+    this.emit(EventTypes.CHANGED);
+  };
+
+  getAll = () => this._records;
+}
+
+export default new ToastStore();
