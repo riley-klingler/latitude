@@ -133,3 +133,4 @@ workflows:
       - flow
       - percy
       - webpack
+      - eslint
