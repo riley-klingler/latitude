@@ -3,6 +3,10 @@
  * @flow
  */
 
+import * as React from "react";
+import { css } from "aphrodite";
+import TimeInput, {getTimeIntervals} from "../TimeInput";
+import {type WallTime, ZERO_OCLOCK, EOD_OCLOCK} from "../wallTime";
 import {
   type DemoFile,
   bool,
@@ -12,10 +16,6 @@ import {
   isInvalidKnob,
   textInputSizeKnob,
 } from "../../design_system/types/demoTypes";
-import * as React from "react";
-import TimeInput, {getTimeIntervals} from "../TimeInput";
-import {type WallTime, ZERO_OCLOCK, EOD_OCLOCK} from "../wallTime";
-import {css} from "aphrodite";
 
 const demos: DemoFile = {
   demos: [

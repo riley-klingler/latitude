@@ -4,8 +4,8 @@
  */
 
 import * as React from "react";
-import Highlight from "react-highlight/lib/optimized";
 import {StyleSheet, css} from "aphrodite";
+import Highlight from "react-highlight/lib/optimized";
 
 type Props = {|
   +children: string,

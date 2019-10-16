@@ -4,11 +4,11 @@
  */
 
 import * as React from "react";
+import {StyleSheet, css} from "aphrodite";
 import type {Option as CheckboxListOption} from "../CheckboxList";
 import popupWithClickAway from "../tools/popupWithClickAway";
 import type {PopupWithClickAwayProps} from "../tools/popupWithClickAway";
 import Icon, {type IconNames} from "../Icon";
-import {StyleSheet, css} from "aphrodite";
 import generateOverviewText from "./generateOverviewText";
 import {focusedStyle, inputStyles} from "../styles/input";
 import Text from "../Text";

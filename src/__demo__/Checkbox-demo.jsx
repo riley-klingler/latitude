@@ -3,8 +3,8 @@
  * @flow
  */
 
-import type {DemoFile} from "../design_system/types/demoTypes";
 import * as React from "react";
+import type {DemoFile} from "../design_system/types/demoTypes";
 import Checkbox from "../Checkbox";
 
 const demos: DemoFile = {

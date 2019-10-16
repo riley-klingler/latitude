@@ -4,9 +4,9 @@
  */
 
 import React, {useState, type Node} from "react";
-import IconButton from "../../../../../button/IconButton";
+import { StyleSheet, css } from "aphrodite";
 import Link from "../../../../../Link";
-import {StyleSheet, css} from "aphrodite";
+import IconButton from "../../../../../button/IconButton";
 import copyToClipboard from "../../../../../tools/CopyToClipboard";
 
 type Props = {|

@@ -10,10 +10,10 @@
 import * as React from "react";
 
 // $FlowFixMe(ethan): this file is untyped
-import placeArrow from "./tools/placeArrow";
+import RcTooltip from "rc-tooltip";
 
 // $FlowFixMe(ethan): this file is untyped
-import RcTooltip from "rc-tooltip";
+import placeArrow from "./tools/placeArrow";
 import "./vendor_stylesheets/rc-tooltip.css";
 
 type Props = {

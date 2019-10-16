@@ -4,6 +4,7 @@
  * @flow
  */
 
+import * as React from "react";
 import {
   type DemoFile,
   text,
@@ -16,7 +17,6 @@ import {
   buttonWidthKnob,
   type DemoProps,
 } from "../../design_system/types/demoTypes";
-import * as React from "react";
 import IconButton from "../IconButton";
 import DeprecatedHorizontalGroup from "../../DeprecatedHorizontalGroup";
 import invariant from "../../tools/invariant";

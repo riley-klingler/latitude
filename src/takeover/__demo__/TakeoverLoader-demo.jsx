@@ -3,10 +3,10 @@
  * @flow
  */
 
-import {type DemoFile, demoCommonStyles} from "../../design_system/types/demoTypes";
 import * as React from "react";
-import Button from "../../button/Button";
 import {css} from "aphrodite";
+import {type DemoFile, demoCommonStyles} from "../../design_system/types/demoTypes";
+import Button from "../../button/Button";
 import Takeover from "../Takeover";
 import TakeoverLoader from "../TakeoverLoader";
 

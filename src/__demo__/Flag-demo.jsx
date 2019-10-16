@@ -4,8 +4,8 @@
  * @flow
  */
 
-import type {DemoFile} from "../design_system/types/demoTypes";
 import * as React from "react";
+import type {DemoFile} from "../design_system/types/demoTypes";
 import Flag from "../Flag";
 import Text from "../Text";
 import DeprecatedVerticalGroup from "../DeprecatedVerticalGroup";

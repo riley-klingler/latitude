@@ -5,13 +5,9 @@
  */
 
 import * as React from "react";
-import {_test} from "../CalendarDateInput";
-import {
-  ARROW_DOWN_KEY,
-  ARROW_UP_KEY,
-  ESCAPE_KEY,
-} from "../inputUtils";
 import {mount} from "enzyme";
+import moment from "moment-timezone";
+import {_test} from "../CalendarDateInput";
 import {
   type CalendarDate,
   parseStringToCalendarDate,
@@ -25,7 +21,7 @@ jest.unmock("moment");
 jest.unmock("moment-timezone");
 
 // eslint-disable-next-line import/first
-import moment from "moment-timezone";
+import { ARROW_DOWN_KEY, ARROW_UP_KEY, ESCAPE_KEY } from "../inputUtils";
 
 const {CalendarDateInputClass} = _test;
 

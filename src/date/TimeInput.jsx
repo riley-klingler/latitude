@@ -6,8 +6,8 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import {type Size} from "../sizes";
-import TextInput from "../TextInput";
+import {Manager} from "react-popper";
+import { StyleSheet, css } from "aphrodite";
 import invariant from "../tools/invariant";
 import {today} from "./CalendarDateType";
 import {
@@ -21,7 +21,7 @@ import {
 import popupWithClickAway, {
   type PopupWithClickAwayProps,
 } from "../tools/popupWithClickAway";
-import {Manager} from "react-popper";
+import {type Size} from "../sizes";
 import Portal from "../Portal";
 import {
   ARROW_DOWN_KEY,
@@ -31,7 +31,7 @@ import {
 } from "./inputUtils";
 import DeprecatedPopperTarget from "../popup/DeprecatedPopperTarget";
 import DeprecatedPopper from "../popup/DeprecatedPopper";
-import {StyleSheet, css} from "aphrodite";
+import TextInput from "../TextInput";
 import {zIndices} from "../tools/zIndices";
 import {border, include, margin, padding} from "../styles";
 import colors from "../styles/colors";

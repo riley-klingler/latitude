@@ -4,9 +4,9 @@
  * @flow
  */
 
+import {isEqual} from "lodash";
 import {_test} from "../BaseReactMultiselect";
 import invariant from "../../tools/invariant";
-import {isEqual} from "lodash";
 
 function deprecatedChangeFn<T>(
   keyName: string,

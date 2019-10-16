@@ -3,8 +3,8 @@
  * @flow
  */
 
-import {demoCommonStyles, type DemoFile} from "../../design_system/types/demoTypes";
 import * as React from "react";
+import {demoCommonStyles, type DemoFile} from "../../design_system/types/demoTypes";
 import SelectInput from "../SelectInput";
 import {css} from "../../styles/aphrodite";
 import {characters} from "../../tools/demo";

@@ -5,11 +5,8 @@
  */
 
 import * as React from "react";
-import CalendarDateRange, {
-  convertDateRangeToUtcBounds,
-  _test,
-} from "../CalendarDateRange";
-import {mount} from "enzyme";
+import { mount } from "enzyme";
+import CalendarDateRange, { convertDateRangeToUtcBounds, _test } from "../CalendarDateRange";
 import {
   parseStringToCalendarDate,
   addDaysFromCalendarDate,

@@ -90,8 +90,8 @@ to the popup() function.
 */
 
 import * as React from "react";
-import Portal from "../Portal";
 import {Manager, Popper, Reference} from "react-popper";
+import Portal from "../Portal";
 import onClickOutside from "../tools/onClickOutside";
 import {ESC} from "../constants/interactions/KeyCodes";
 

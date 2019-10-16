@@ -4,8 +4,8 @@
  */
 
 import * as React from "react";
-import {Manager} from "react-popper";
 import {StyleSheet, css} from "aphrodite";
+import {Manager} from "react-popper";
 import TextInput from "./TextInput";
 import DropdownList from "./select/DropdownList";
 import DeprecatedPopperTarget from "./popup/DeprecatedPopperTarget";

@@ -4,9 +4,9 @@
  */
 
 import * as React from "react";
+import {css, StyleSheet} from "aphrodite";
 import typeof Button from "../button/Button";
 import Group from "../Group";
-import {css, StyleSheet} from "aphrodite";
 import colors from "../styles/colors";
 
 export type ModalProps = {|

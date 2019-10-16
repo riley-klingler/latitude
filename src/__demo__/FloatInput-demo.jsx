@@ -4,6 +4,8 @@
  * @flow
  */
 
+import * as React from "react";
+import {css} from "aphrodite";
 import {
   type DemoFile,
   text,
@@ -12,9 +14,7 @@ import {
   demoCommonStyles,
   textInputSizeKnob,
 } from "../design_system/types/demoTypes";
-import * as React from "react";
 import FloatInput from "../FloatInput";
-import {css} from "aphrodite";
 
 const demos: DemoFile = {
   demos: [

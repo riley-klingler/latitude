@@ -3,8 +3,8 @@
  * @flow
  */
 
-import {type DemoFile, list} from "../../design_system/types/demoTypes";
-import React, {useState, type Node} from "react";
+import React, { useState, type Node } from "react";
+import { type DemoFile, list } from "../../design_system/types/demoTypes";
 import DocumentUploader, {
   type ServerState,
 } from "../DocumentUploader";

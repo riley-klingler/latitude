@@ -4,9 +4,9 @@
  */
 
 import React, {useState, useEffect, useRef} from "react";
-import {css, StyleSheet, margin, padding, deprecatedPaddingSizeConstants} from "../styles";
-import colors from "../styles/colors";
 import Dropzone from "react-dropzone";
+import { CSSTransition } from "react-transition-group";
+import { css, StyleSheet, margin, padding, deprecatedPaddingSizeConstants } from "../styles";
 import Button from "../button/Button";
 import GraphicIcon from "../GraphicIcon";
 import Icon from "../Icon";
@@ -16,7 +16,7 @@ import DeprecatedVerticalGroup from "../DeprecatedVerticalGroup";
 import PdfViewer from "./PdfViewer";
 import Portal from "../Portal";
 import Toast from "../toast/Toast";
-import {CSSTransition} from "react-transition-group";
+import colors from "../styles/colors";
 
 export type ServerState = "waiting" | "uploading" | "deleting" | "error";
 

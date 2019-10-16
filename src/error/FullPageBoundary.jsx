@@ -5,8 +5,8 @@
  */
 /* eslint-disable react/prefer-stateless-function */
 import * as React from "react";
-import Text from "../Text";
 import {css, StyleSheet} from "aphrodite";
+import Text from "../Text";
 import {coreT as t} from "../config/I18n";
 import Breakpoints from "../constants/Breakpoints";
 import {margin, whitespaceSizeConstants} from "../styles/whitespace";

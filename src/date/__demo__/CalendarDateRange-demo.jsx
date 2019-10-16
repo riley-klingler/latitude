@@ -3,6 +3,10 @@
  * @flow
  */
 
+import * as React from "react";
+import { css } from "aphrodite";
+import moment from "moment-timezone";
+import {today, addDaysFromCalendarDate} from "../CalendarDateType";
 import {
   type DemoFile,
   demoCommonStyles,
@@ -11,13 +15,7 @@ import {
   textInputSizeKnob,
   bool,
 } from "../../design_system/types/demoTypes";
-import * as React from "react";
-import CalendarDateRange, {
-  type CalendarDateRangeValue,
-} from "../CalendarDateRange";
-import {today, addDaysFromCalendarDate} from "../CalendarDateType";
-import {css} from "aphrodite";
-import moment from "moment-timezone";
+import CalendarDateRange, { type CalendarDateRangeValue } from "../CalendarDateRange";
 
 const demos: DemoFile = {
   demos: [

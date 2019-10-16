@@ -4,14 +4,14 @@
  * @flow
  */
 
-import type {DemoFile} from "../design_system/types/demoTypes";
 import * as React from "react";
-import Group from "../Group";
+import reflectiveBind from "reflective-bind";
+import { Form } from "formula-one";
 import Pill from "../Pill";
 import Label from "../Label";
 
-import reflectiveBind from "reflective-bind";
-import {Form} from "formula-one";
+import { type DemoFile } from "../design_system/types/demoTypes";
+import Group from "../Group";
 import F1TextInput from "../base_candidate/formula_one/F1TextInput";
 import Button from "../button/Button";
 import Text from "../Text";

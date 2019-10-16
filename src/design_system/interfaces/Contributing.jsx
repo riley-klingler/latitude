@@ -5,10 +5,10 @@
 
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
-import Text from "../../Text";
+import Highlight from "react-highlight/lib/optimized";
 import LinkableHeader from "../../base_candidate/LinkableHeader";
 import TextLink from "../../TextLink";
-import Highlight from "react-highlight/lib/optimized";
+import Text from "../../Text";
 
 const commentBlockExample = `/**
  * short: Buttons represent actions that trigger states, launch new UI,

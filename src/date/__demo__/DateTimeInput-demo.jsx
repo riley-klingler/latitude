@@ -3,6 +3,9 @@
  * @flow
  */
 
+import * as React from "react";
+import { css } from "aphrodite";
+import DateTimeInput, {type DateTimeValue} from "../DateTimeInput";
 import {
   type DemoFile,
   textInputSizeKnob,
@@ -12,9 +15,6 @@ import {
   calendarDate,
   text,
 } from "../../design_system/types/demoTypes";
-import * as React from "react";
-import DateTimeInput, {type DateTimeValue} from "../DateTimeInput";
-import {css} from "aphrodite";
 
 const demos: DemoFile = {
   demos: [

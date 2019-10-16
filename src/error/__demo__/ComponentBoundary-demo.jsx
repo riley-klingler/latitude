@@ -3,8 +3,8 @@
  * @flow
  */
 
-import {type DemoFile, bool} from "../../design_system/types/demoTypes";
 import * as React from "react";
+import {type DemoFile, bool} from "../../design_system/types/demoTypes";
 import ComponentBoundary from "../ComponentBoundary";
 import {StyleSheet, css} from "../../styles/aphrodite";
 

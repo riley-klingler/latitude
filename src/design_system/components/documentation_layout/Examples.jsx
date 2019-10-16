@@ -5,9 +5,9 @@
  * @flow
  */
 import * as React from "react";
+import {StyleSheet, css} from "aphrodite";
 import Section from "./Section";
 import DeprecatedHorizontalGroup from "../../../DeprecatedHorizontalGroup";
-import {StyleSheet, css} from "aphrodite";
 
 type Props = {
   +children?: React.Node,

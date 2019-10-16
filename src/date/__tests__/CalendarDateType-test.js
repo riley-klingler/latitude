@@ -4,6 +4,7 @@
  * @flow
  */
 
+import moment from "moment-timezone";
 import {
   momentToCalendarDate,
   parseStringToCalendarDate,
@@ -19,7 +20,6 @@ import {
   shouldBeCalendarDate,
   utcStringToCalendarDate,
 } from "../CalendarDateType";
-import moment from "moment-timezone";
 import {calendarDateToMidnightInTzIso} from "../CalendarDateTypeTools";
 import invariant from "../../tools/invariant";
 

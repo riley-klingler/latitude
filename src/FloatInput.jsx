@@ -5,10 +5,10 @@
  */
 
 import * as React from "react";
-import {type Size} from "./sizes";
-import TextInput, {type InputPrefixSuffix} from "./TextInput";
 import parseDecimalNumber from "parse-decimal-number";
 import {round} from "lodash";
+import {type Size} from "./sizes";
+import TextInput, {type InputPrefixSuffix} from "./TextInput";
 
 export type FloatInputProps = {|
   +value: ?number,

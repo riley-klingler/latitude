@@ -5,14 +5,14 @@
  */
 import * as React from "react";
 
-import Text from "../../../../Text";
+import Highlight from "react-highlight/lib/optimized";
 import TextLink from "../../../../TextLink";
 import Group from "../../../../Group";
 
 import {css, StyleSheet} from "../../../../styles/aphrodite";
 import colors from "../../../../styles/colors";
 import {deprecatedPaddingSizeConstants} from "../../../../styles/whitespace";
-import Highlight from "react-highlight/lib/optimized";
+import Text from "../../../../Text";
 import Markdown from "../../../components/markdown/Markdown";
 import Demo from "../../../components/documentation_layout/Demo";
 import HorizontalGroupDemo from "../../../../__demo__/HorizontalGroup-demo";

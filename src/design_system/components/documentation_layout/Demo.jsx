@@ -6,8 +6,8 @@
  */
 
 import * as React from "react";
-import jsxToString from "../../../tools/jsxToString";
 import Highlight from "react-highlight/lib/optimized";
+import jsxToString from "../../../tools/jsxToString";
 
 import {
   type Knob,

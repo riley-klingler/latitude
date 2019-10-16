@@ -3,12 +3,12 @@
  * @flow
  */
 
-import {type DemoFile, demoCommonStyles} from "../../design_system/types/demoTypes";
 import * as React from "react";
+import {css} from "aphrodite";
+import {type DemoFile, demoCommonStyles} from "../../design_system/types/demoTypes";
 import Button from "../../button/Button";
 import ConnectedToaster from "../../toast/ConnectedToaster";
 import GeneralModalLoader from "../GeneralModalLoader";
-import {css} from "aphrodite";
 
 import typeof SampleModalType from "./GeneralModalLoaderSampleComponent-demo";
 

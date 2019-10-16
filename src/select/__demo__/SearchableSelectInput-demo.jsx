@@ -3,6 +3,7 @@
  * @flow
  */
 
+import * as React from "react";
 import {
   type DemoFile,
   bool,
@@ -11,7 +12,6 @@ import {
   disabledKnob,
   textInputSizeKnob,
 } from "../../design_system/types/demoTypes";
-import * as React from "react";
 import SearchableSelectInput from "../SearchableSelectInput";
 import Text from "../../Text";
 import {css} from "../../styles/aphrodite";

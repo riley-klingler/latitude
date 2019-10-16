@@ -3,17 +3,17 @@
  * @flow
  */
 
+import * as React from "react";
+import {css, StyleSheet} from "aphrodite";
 import {
   type DemoFile,
   demoCommonStyles,
   bool,
 } from "../../design_system/types/demoTypes";
-import * as React from "react";
 import Button from "../../button/Button";
 import TextInput from "../../TextInput";
 import Label from "../../Label";
 import CustomModal, {defaultModalStyles} from "../CustomModal";
-import {css, StyleSheet} from "aphrodite";
 import {include, padding} from "../../styles";
 import colors from "../../styles/colors";
 

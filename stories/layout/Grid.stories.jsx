@@ -3,13 +3,13 @@
  * @flow
  */
 import * as React from "react";
+import {StyleSheet, css} from "aphrodite";
 import {storiesOf} from "@storybook/react";
 import sections from "sections";
 import Grid from "grid/Grid";
 import Row from "grid/Row";
 import Cell from "grid/Cell";
 import Text from "Text";
-import {StyleSheet, css} from "aphrodite";
 import latitudeColors from "colors";
 
 const stories = storiesOf(`${sections.layout}/Grid`, module);

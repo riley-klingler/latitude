@@ -5,7 +5,7 @@
 
 import * as React from "react";
 import momentT from "moment";
-import DatePicker from "./DatePicker";
+import moment from "moment-timezone";
 import PopupWithClickAway from "../popup/PopupWithClickAway";
 import {
   ARROW_DOWN_KEY,
@@ -27,7 +27,7 @@ import TextInput from "../TextInput";
 import {type Size} from "../sizes";
 import invariant from "../tools/invariant";
 import {zIndices} from "../tools/zIndices";
-import moment from "moment-timezone";
+import DatePicker from "./DatePicker";
 
 export type CalendarDateInputProps = {
   +disabled: boolean,

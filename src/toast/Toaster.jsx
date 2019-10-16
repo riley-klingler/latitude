@@ -5,13 +5,13 @@
  */
 /* eslint-disable react/prefer-stateless-function */
 import * as React from "react";
+import {TransitionGroup, CSSTransition} from "react-transition-group";
 
 import type {ToastRecord} from "./ToastStore";
 
 import {css, StyleSheet} from "../styles/aphrodite";
 import {zIndices} from "../tools/zIndices";
 import {padding} from "../styles/whitespace";
-import {TransitionGroup, CSSTransition} from "react-transition-group";
 
 import Toast from "./Toast";
 

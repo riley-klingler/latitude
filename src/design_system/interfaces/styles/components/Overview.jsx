@@ -5,14 +5,14 @@
  */
 import * as React from "react";
 
-import Text from "../../../../Text";
+import Highlight from "react-highlight/lib/optimized";
 import Link from "../../../../Link";
 import Group from "../../../../Group";
 
 import {css, StyleSheet} from "../../../../styles/aphrodite";
 import {deprecatedPaddingSizeConstants} from "../../../../styles";
 import colors from "../../../../styles/colors";
-import Highlight from "react-highlight/lib/optimized";
+import Text from "../../../../Text";
 
 export default function Styles() {
   return (

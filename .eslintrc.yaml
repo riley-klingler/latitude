@@ -220,7 +220,6 @@ rules:
   import/no-self-import: error
   import/extensions: [error, ignorePackages, {"js": "never", "jsx": "never"}]
   import/no-extraneous-dependencies: error
-  import/first: warn
 
   # LODASH PLUGIN RULES
   #####################

@@ -4,6 +4,7 @@
  */
 
 import * as React from "react";
+import {StyleSheet, css} from "aphrodite";
 import Text from "../../../../../../Text";
 import Label from "../../../../../../Label";
 import TextInput from "../../../../../../TextInput";
@@ -12,7 +13,6 @@ import colors from "../../../../../../styles/colors";
 import Collection from "../../components/Collection";
 import Item from "../../components/Item";
 import Half from "../../components/Half";
-import {StyleSheet, css} from "aphrodite";
 
 const MarginDecorator = ({children}: {|+children: React.Node|}) => {
   const wrappedChildren = React.Children.map(children, node => (

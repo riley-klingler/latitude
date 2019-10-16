@@ -6,13 +6,13 @@
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
 
-import colors from "./styles/colors";
+import { CSSTransition } from "react-transition-group";
 import IconButton from "./button/IconButton";
 import Text from "./Text";
 import Group from "./Group";
 import Portal from "./Portal";
 import {zIndices} from "./tools/zIndices";
-import {CSSTransition} from "react-transition-group";
+import colors from "./styles/colors";
 
 const DRAWER_WIDTH = 400;
 const TRANSITION_DELAY = 320;

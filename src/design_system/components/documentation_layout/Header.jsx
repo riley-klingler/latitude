@@ -6,8 +6,8 @@
  */
 /* eslint-disable react/forbid-elements */
 import * as React from "react";
-import Group from "../../../Group";
 import {StyleSheet, css} from "aphrodite";
+import Group from "../../../Group";
 import Text from "../../../Text";
 
 type Props = {

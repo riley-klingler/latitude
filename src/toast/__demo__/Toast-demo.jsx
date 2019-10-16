@@ -3,6 +3,9 @@
  * @flow
  */
 
+import * as React from "react";
+import {css} from "aphrodite";
+
 import {
   type DemoFile,
   text,
@@ -13,15 +16,12 @@ import {
   type ListKnob,
 } from "../../design_system/types/demoTypes";
 
-import * as React from "react";
-
 import DeprecatedVerticalGroup from "../../DeprecatedVerticalGroup";
 import Button from "../../button/Button";
 
 import Toast from "../Toast";
 import ToastActions from "../ToastActions";
 
-import {css} from "aphrodite";
 
 export function getToastIntentKnob(): ListKnob<"none" | "success" | "danger"> {
   const toastIntents = ["none", "success", "danger"];

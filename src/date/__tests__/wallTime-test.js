@@ -4,6 +4,8 @@
  * @flow
  */
 
+import moment from "moment-timezone";
+import { isEqual } from "lodash";
 import {
   _test,
   displayTime,
@@ -15,8 +17,6 @@ import {
   compareWallTime,
   parseInputText,
 } from "../wallTime";
-import moment from "moment-timezone";
-import {isEqual} from "lodash";
 
 // none of our tests depend on a specific time zone or time
 // unmock moment, since we will just be parsing one date

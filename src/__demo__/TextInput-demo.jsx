@@ -4,6 +4,10 @@
  * @flow
  */
 
+import * as React from "react";
+import { css } from "aphrodite";
+import TextInput, {type TextInputType} from "../TextInput";
+import Group from "../Group";
 import {
   type DemoFile,
   text,
@@ -14,10 +18,6 @@ import {
   list,
   type Option,
 } from "../design_system/types/demoTypes";
-import * as React from "react";
-import TextInput, {type TextInputType} from "../TextInput";
-import Group from "../Group";
-import {css} from "aphrodite";
 
 const textInputTypes: $ReadOnlyArray<Option<TextInputType>> = [
   "text",

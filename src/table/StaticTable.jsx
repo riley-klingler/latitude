@@ -6,8 +6,8 @@
  */
 
 import * as React from "react";
-import invariant from "../tools/invariant";
 import {css, StyleSheet} from "aphrodite";
+import invariant from "../tools/invariant";
 
 import Loader from "../Loader";
 

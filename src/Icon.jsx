@@ -6,6 +6,7 @@
 /* eslint-disable react/prefer-stateless-function */
 
 import * as React from "react";
+import {css, StyleSheet} from "aphrodite";
 import classnames from "classnames";
 import invariant from "./tools/invariant";
 import {type IconNames, iconData} from "./tools/icons";
@@ -16,7 +17,6 @@ import deprecatedColors, {
 } from "./styles/deprecatedColorConstants";
 import transmissionDeprecatedColors from "./dispatch/styles/colors";
 import {sizes} from "./tools/ui/sizes";
-import {css, StyleSheet} from "aphrodite";
 import ThemeNameContext, {
   type Theme,
   TRANSMISSION,

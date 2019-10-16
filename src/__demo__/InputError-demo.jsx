@@ -4,16 +4,11 @@
  * @flow
  */
 
-import {
-  type DemoFile,
-  text,
-  bool,
-  demoCommonStyles,
-} from "../design_system/types/demoTypes";
 import * as React from "react";
+import { css } from "aphrodite";
 import TextInput from "../TextInput";
 import InputError from "../InputError";
-import {css} from "aphrodite";
+import { type DemoFile, text, bool, demoCommonStyles } from "../design_system/types/demoTypes";
 
 const demos: DemoFile = {
   demos: [

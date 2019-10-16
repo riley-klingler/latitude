@@ -4,9 +4,9 @@
  */
 
 import * as React from "react";
+import {uniqueId} from "lodash";
 import {css, StyleSheet} from "aphrodite";
 import connectToStores from "../connectors/connectToStores";
-import {uniqueId} from "lodash";
 import {isTestEnvironment} from "../tools/test";
 import StaticModalLegacyContext, {
   type StaticModalLegacyContextType,

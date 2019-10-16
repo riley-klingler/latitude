@@ -4,13 +4,13 @@
  * @flow
  */
 
+import * as React from "react";
 import {
   type DemoFile,
   getGraphicIconKnob,
   number,
   type DemoProps,
 } from "../design_system/types/demoTypes";
-import * as React from "react";
 
 import GraphicIcon from "../GraphicIcon";
 

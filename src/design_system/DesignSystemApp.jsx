@@ -3,7 +3,7 @@
  * @flow
  */
 
+import { hot } from "react-hot-loader";
 import DesignSystemRouter from "./DesignSystemRouter";
-import {hot} from "react-hot-loader";
 
 export default hot(module)(DesignSystemRouter);

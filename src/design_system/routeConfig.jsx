@@ -5,7 +5,7 @@
 
 import React from "react";
 
-import Home from "./interfaces/Home";
+import { Route, makeRouteConfig, hotRouteConfig, HttpError } from "found";
 import DesignAppInterface from "./interfaces/wrapper/DesignAppInterface";
 import Guidelines from "./interfaces/guidelines/Guidelines";
 import Styles from "./interfaces/styles/Styles";
@@ -13,7 +13,7 @@ import componentsList from "./constants/componentsList.json";
 import guidelinesManifest from "./interfaces/guidelines/guidelinesManifest";
 import stylesManifest from "./interfaces/styles/stylesManifest";
 
-import {Route, makeRouteConfig, hotRouteConfig, HttpError} from "found";
+import Home from "./interfaces/Home";
 
 const Components = () =>
   import(/* webpackChunkName: "design_system_interfaces_components_Components" */ "design_system/interfaces/components/Components")

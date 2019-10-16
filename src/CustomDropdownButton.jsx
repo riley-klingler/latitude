@@ -4,16 +4,14 @@
  */
 
 import * as React from "react";
-import popupWithClickAway, {
-  type PopupWithClickAwayProps,
-} from "./tools/popupWithClickAway";
+import {StyleSheet, css} from "aphrodite";
+import { Manager } from "react-popper";
 import typeof Button from "./button/Button";
 import typeof IconButton from "./button/IconButton";
 import typeof ToggleButton from "./base_candidate/button/ToggleButton";
-import {Manager} from "react-popper";
+import popupWithClickAway, { type PopupWithClickAwayProps } from "./tools/popupWithClickAway";
 import DeprecatedPopperTarget from "./popup/DeprecatedPopperTarget";
 import DeprecatedPopper from "./popup/DeprecatedPopper";
-import {StyleSheet, css} from "aphrodite";
 import colors from "./styles/colors";
 import {border, include, margin} from "./styles/index";
 import {zIndices} from "./tools/zIndices";

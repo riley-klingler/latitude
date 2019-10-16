@@ -5,6 +5,7 @@
  */
 
 import * as React from "react";
+import {css, StyleSheet} from "aphrodite";
 import {storiesOf} from "@storybook/react";
 import {withKnobs, boolean, number, text} from "@storybook/addon-knobs";
 
@@ -12,7 +13,6 @@ import sections from "sections";
 
 import ProgressTracker from "progress/ProgressTracker";
 
-import {css, StyleSheet} from "aphrodite";
 
 const stories = storiesOf(sections.dataDisplay, module);
 stories.addDecorator(withKnobs);

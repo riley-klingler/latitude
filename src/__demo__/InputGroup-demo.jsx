@@ -4,10 +4,10 @@
  * @flow
  */
 
-import {type DemoFile, demoCommonStyles} from "../design_system/types/demoTypes";
 import * as React from "react";
-import TextInput from "../TextInput";
 import {css} from "aphrodite";
+import {type DemoFile, demoCommonStyles} from "../design_system/types/demoTypes";
+import TextInput from "../TextInput";
 import InputGroup from "../InputGroup";
 import SelectInput from "../select/SelectInput";
 

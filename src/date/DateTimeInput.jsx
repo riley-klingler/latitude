@@ -5,11 +5,8 @@
  */
 
 import * as React from "react";
-import {
-  type CalendarDate,
-  momentToCalendarDate,
-} from "./CalendarDateType";
-import {type Size} from "../sizes";
+import moment from "moment-timezone";
+import momentT from "moment";
 import {
   momentToWallTime,
   type WallTime,
@@ -18,8 +15,8 @@ import {
 } from "./wallTime";
 import CalendarDateInput from "./CalendarDateInput";
 import TimeInput, {getTimeIntervals} from "./TimeInput";
-import moment from "moment-timezone";
-import momentT from "moment";
+import { type CalendarDate, momentToCalendarDate } from "./CalendarDateType";
+import { type Size } from "../sizes";
 import SelectInput from "../select/SelectInput";
 import InputGroup from "../InputGroup";
 

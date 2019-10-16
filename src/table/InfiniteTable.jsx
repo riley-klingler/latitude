@@ -6,9 +6,9 @@
  */
 
 import * as React from "react";
+import {css, StyleSheet} from "aphrodite";
 import Infinite from "react-infinite";
 import invariant from "../tools/invariant";
-import {css, StyleSheet} from "aphrodite";
 
 import Loader from "../Loader";
 

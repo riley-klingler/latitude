@@ -5,9 +5,9 @@
  */
 /* eslint-disable react/prefer-stateless-function */
 import * as React from "react";
-import Button from "../button/Button";
-import Text from "../Text";
 import {css, StyleSheet} from "aphrodite";
+import classnames from "classnames";
+import Text from "../Text";
 import {coreT as t} from "../config/I18n";
 import {include, margin, border, padding} from "../styles/index";
 import errorBoundary, {
@@ -15,7 +15,7 @@ import errorBoundary, {
   ERROR_BOUNDARY_BUTTON_CLASSNAME,
   ERROR_BOUNDARY_CONTAINER_CLASSNAME,
 } from "./errorBoundary";
-import classnames from "classnames";
+import Button from "../button/Button";
 
 type WrappedErrorBoundaryProps = {
   // If the error boundary is rendered, there is an error that caused it. This is that error.

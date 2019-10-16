@@ -4,6 +4,7 @@
  */
 
 import * as React from "react";
+import {StyleSheet, css} from "aphrodite";
 import IndexedPage from "../components/IndexedPage";
 import MainHeader from "../components/MainHeader";
 import Words from "../components/Words";
@@ -16,7 +17,6 @@ import DoItem from "../components/DoItem";
 import DontItem from "../components/DontItem";
 import List from "../components/List";
 import TextLink from "../../../../../TextLink";
-import {StyleSheet, css} from "aphrodite";
 
 function TypographyPage(): React.Node {
   return (

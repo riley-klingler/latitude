@@ -4,12 +4,12 @@
  * @flow
  */
 import * as React from "react";
+import {StyleSheet, css} from "aphrodite";
 
 import {storiesOf} from "@storybook/react";
 import sections from "sections";
 import {number, boolean, select, withKnobs} from "@storybook/addon-knobs";
 
-import {StyleSheet, css} from "aphrodite";
 import colors from "styles/colors";
 import flexboxStyles from "styles/flexboxStyles";
 

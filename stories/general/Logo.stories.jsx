@@ -3,10 +3,10 @@
  * @flow
  */
 import * as React from "react";
+import {StyleSheet, css} from "aphrodite";
 import {storiesOf} from "@storybook/react";
 import sections from "sections";
 
-import {StyleSheet, css} from "aphrodite";
 
 import Logo from "Logo";
 import Text from "Text";

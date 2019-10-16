@@ -8,9 +8,9 @@
 
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
+import {entries} from "lodash";
 
 import DropdownOption from "./DropdownOption";
-import {entries} from "lodash";
 import latitudeColors from "../latitudeColors";
 import invariant from "../tools/invariant";
 

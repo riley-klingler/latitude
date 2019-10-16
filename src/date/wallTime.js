@@ -4,14 +4,11 @@
  * @flow strict
  */
 
-import {
-  type CalendarDate,
-  calendarDateToMoment,
-} from "./CalendarDateType";
-import type momentT from "moment";
+import momentT from "moment";
+import moment from "moment-timezone";
 import stringOrFalse from "../tools/stringOrFalse";
 import invariant from "../tools/invariant";
-import moment from "moment-timezone";
+import { type CalendarDate, calendarDateToMoment } from "./CalendarDateType";
 
 /**
  * A WallTime is a military time encoded time, to the millisecond.

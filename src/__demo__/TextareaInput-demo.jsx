@@ -4,6 +4,9 @@
  * @flow
  */
 
+import * as React from "react";
+import { css } from "aphrodite";
+import TextareaInput from "../TextareaInput";
 import {
   type DemoFile,
   text,
@@ -14,9 +17,6 @@ import {
   type DemoProps,
   number,
 } from "../design_system/types/demoTypes";
-import * as React from "react";
-import TextareaInput from "../TextareaInput";
-import {css} from "aphrodite";
 
 const knobs = {
   disabled: bool(false),

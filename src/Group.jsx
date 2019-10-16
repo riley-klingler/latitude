@@ -4,8 +4,8 @@
  * @flow strict
  */
 import * as React from "react";
-import invariant from "./tools/invariant";
 import {StyleSheet, css} from "aphrodite";
+import invariant from "./tools/invariant";
 
 import flexboxStyles from "./styles/flexboxStyles";
 

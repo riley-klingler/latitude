@@ -7,7 +7,7 @@
 
 import * as React from "react";
 
-import Text from "../../../Text";
+import key from "keymaster";
 import TextInput from "../../../TextInput";
 import Icon from "../../../Icon";
 import Label from "../../../Label";
@@ -16,7 +16,7 @@ import SelectInput from "../../../select/SelectInput";
 import Group from "../../../Group";
 import componentsMetaList from "../../constants/componentsMetaList.json";
 
-import key from "keymaster";
+import Text from "../../../Text";
 import colors from "../../../styles/colors";
 import betterGroupBy from "../../../tools/betterGroupBy";
 import {css, StyleSheet} from "../../../styles/aphrodite";

@@ -5,9 +5,9 @@
 
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
+import {uniqueId} from "lodash";
 import Radio from "./Radio";
 import {type Size} from "../sizes";
-import {uniqueId} from "lodash";
 import {LabelContext} from "../Label";
 
 export type OptionObject<+T> = {|

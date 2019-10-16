@@ -6,8 +6,8 @@
 /* eslint-disable react/prefer-stateless-function,flexport/no-unused-aphrodite-styles */
 
 import * as React from "react";
-
 import {css, StyleSheet} from "aphrodite";
+
 import {typeScale} from "../styles/typography";
 import TextLinkAction from "../TextLinkAction";
 import latitudeColors from "../latitudeColors";
