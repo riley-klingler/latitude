@@ -1,5 +1,7 @@
 # IF MODIFYING THIS, BE SURE TO ALSO MODIFY .dockerignore
 
+/storybook-static
+
 .static_data_cache.json
 
 # Ignore bundler config
