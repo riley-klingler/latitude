@@ -2,137 +2,41 @@
 
 /storybook-static
 
-.static_data_cache.json
+.cache
 
-# Ignore bundler config
-/.bundle
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
 
-# Ignore local env variables
-/.env.local
-/.env.devbox
-/.env.test.local
-/sandbox/dashboard/sandbox_dashboard_env
-/sandbox/dashboard/sandbox_ssh_key
-/sandbox/dashboard/app/engineers.rb
-/sandbox/dashboard/app/dashboard.log
-/usainbot/lib/engineers.rb
-/.make_pr.yaml
-
-
-# Ignore the default SQLite database.
-/db/*.sqlite3
-db/schema.rb
-db/seeds.rb
-
-# Ignore all logfiles and tempfiles.
-/log/*.log
-/tmp
-.DS_Store
-.idea/
-.sass-cache/*
-dump.rdb
-coverage/*
-/shared/*
-*.swp
-*.swx
-npm-debug.log
-codestats-debug.log
-tmp_sessions.copy
-mkmf.log
-# Running setup_pipeline_spec.rb generates this file, but it is supposed to be
-# dynamically generated during buildkite builds.
-/composite_pipeline.yml
-/dispatch_pipeline.yml
-
-# RVM RC
-/.rvmrc
-.rvmrc
-.ruby-gemset
-
-# RSpec local config. This is highest priority and specifically for letting
-# devs config locally
-.rspec-local
-
-# UPLOADS
-/public/system/*
-/public/pdfs/*
-/public/sitemap*
-/uploads/*
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
 # ctags
 .tags
-.gemtags
 .tags_sorted_by_file
+
+.vscode
+
+# Node modules
+node_modules/
 
 # precompiled assets
 /public/assets/*
 /public/packs/*.js
 /public/packs/manifest.json
 /private/build/source_maps/*.map
-spec/files/all_graphql_queries.json
 
 # sitemaps (which are automatically generated on the servers)
 /public/sitemap.xml.gz
 /public/sitemap1.xml.gz
 
-# All the secrets
-config/secrets
-certs/
-
-# Node modules
-/**/node_modules
-
-# Test coverage
-coverage
-
-.env.local
-.byebug_history
-
-.cache
-
-.vscode
 # VS Code js config
 jsconfig.json
-
-/public/sitemap.xml.gz
-/public/sitemap1.xml.gz
-
-# Temporary folder for build scripts.
-# Used by script/build_stats/buildkite_pr.sh
-script/__preserved_build_stats
-
-# temporary files for inttra validator
-C\:\\edi_tool\\*
-
-# generated when running `bundle exec spring binstub --all`
-bin/rspec
-bin/spring
-
-component_usage.json
 
 # Allow .tmp and .temp extensions for ignored files everywhere
 *.tmp
 *.temp
-
-# Scratch files. These will be synced to devbox, but not committed
-/scratch/*
-!/scratch/README.txt
-
-# Ignore Excel tmp files
-~$*.xlsx
-
-# Ignore ERD config
-.erdconfig
-
-# Ignore error logs
-yarn-error.log
-
-# Ignore sorbet error log
-sorbet/rbi/hidden-definitions/errors.txt
-
-# Makefile is created during some Sorbet operations
-Makefile
-
-# Local terraform state
-terraform.tfstate
-terraform.tfstate.backup
