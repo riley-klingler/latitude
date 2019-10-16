@@ -11,7 +11,10 @@
 
 import * as React from "react";
 import invariant from "./tools/invariant";
-import {makeCancelable, type CancelablePromise} from "./tools/cancelablePromise";
+import {
+  makeCancelable,
+  type CancelablePromise,
+} from "./tools/cancelablePromise";
 
 type Props = {
   +children: React.Node,
@@ -55,7 +58,7 @@ export function insideTestResetModuleState() {
 function beginLoadingRcTooltip() {
   // disabling dynamic-import-webchunknamme here to bundle both assets together
   /* eslint-disable flexport/dynamic-import-webchunkname */
-  const rcPromise = import(/* webpackChunkName: "rc-tooltip" */ "BetterRcTooltip");
+  const rcPromise = import(/* webpackChunkName: "rc-tooltip" */ "./BetterRcTooltip");
   // $FlowFixMe(uforic): Stylesheets don't have types
   const styleSheetPromise = import(/* webpackChunkName: "rc-tooltip" */ "vendor_stylesheets/rc-tooltip.css");
   return Promise.all([rcPromise, styleSheetPromise]).then(
