@@ -18,3 +18,5 @@ config.devserver.hot.js
 config.devserver.js
 config.unused.js
 entryPoints.js
+
+/storybook-static
