@@ -3,7 +3,7 @@
  *
  * @flow strict-local
  */
-import type {AttachmentType} from "types/AttachmentTypes";
+import type {AttachmentType} from "document/AttachmentTypes";
 import ImageScaler from "tools/ImageScaler";
 import FileFormat from "constants/FileFormatConstants";
 

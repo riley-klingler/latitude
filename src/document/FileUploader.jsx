@@ -18,7 +18,7 @@ import Loader from "Loader";
 import Button from "button/Button";
 import Text from "Text";
 import AttachmentList from "document/AttachmentList";
-import type {AttachmentType} from "types/AttachmentTypes";
+import type {AttachmentType} from "document/AttachmentTypes";
 
 import createAttachmentsFromFiles from "tools/documents/createAttachmentsFromFiles";
 import getScaledImageForAttachment from "tools/documents/getScaledImageForAttachment";

@@ -3,7 +3,7 @@
  *
  * @flow strict-local
  */
-import type {AttachmentType} from "types/AttachmentTypes";
+import type {AttachmentType} from "document/AttachmentTypes";
 import {MAX_FILE_SIZE} from "constants/DocumentConstants";
 import {documentsT as t} from "config/I18n";
 

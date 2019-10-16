@@ -27,7 +27,7 @@ import InputError from "InputError";
 import HelpTooltip from "HelpTooltip";
 import SearchableSelectInput from "select/SearchableSelectInput";
 import FileFormat from "constants/FileFormatConstants";
-import type {AttachmentType} from "types/AttachmentTypes";
+import type {AttachmentType} from "document/AttachmentTypes";
 
 type Props = {|
   +attachments: $ReadOnlyArray<AttachmentType>,

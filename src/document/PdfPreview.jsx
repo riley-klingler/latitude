@@ -11,7 +11,7 @@ import {StyleSheet, css} from "aphrodite";
 import {Document, Page, pdfjs} from "react-pdf";
 import latitudeColors from "latitudeColors";
 import {deprecatedPaddingSizeConstants} from "styles/whitespace";
-import type {AttachmentType} from "types/AttachmentTypes";
+import type {AttachmentType} from "document/AttachmentTypes";
 import {
   documentPreviewWidth,
   previewContainerWidth,

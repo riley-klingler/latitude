@@ -4,7 +4,7 @@
  * @flow strict_local
  */
 
-import type {AttachmentType} from "types/AttachmentTypes";
+import type {AttachmentType} from "document/AttachmentTypes";
 import getFileFormat from "tools/getFileFormat";
 import {uniqueId} from "lodash";
 

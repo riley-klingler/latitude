@@ -3,7 +3,7 @@
  *
  * @flow strict
  */
-import type {AttachmentType} from "types/AttachmentTypes";
+import type {AttachmentType} from "document/AttachmentTypes";
 
 export default function removeAttachmentsWithError(
   attachments: $ReadOnlyArray<AttachmentType>
