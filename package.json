@@ -1,6 +1,7 @@
 {
-  "name": "Latitude",
-  "description": "Flexport design system",
+  "name": "latitude",
+  "version": "0.0.0-versionless",
+  "description": "Flexport's design system",
   "private": false,
   "engines": {
     "node": "8.11.1"
