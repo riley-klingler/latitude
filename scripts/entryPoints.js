@@ -85,7 +85,7 @@ module.exports = {
   DateRangeFilter: "filter/DateRangeFilter.jsx",
   Grid: "grid/Grid.jsx",
   DocumentTabs: "document/DocumentTabs/DocumentTabs.jsx",
-  F1InputError: "components/base_candidate/formula_one/F1InputError.jsx",
+  F1InputError: "base_candidate/formula_one/F1InputError.jsx",
 
   // Secret menu! These modules don't seem to be documented but looked important
   // enough not to delete.
