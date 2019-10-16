@@ -12,10 +12,7 @@ import sections from "sections";
 import Multiselect from "select/MultiselectInput";
 import Label from "Label";
 
-const stories = storiesOf(
-  `${sections.dataEntry}/MultiSelect Input`,
-  module
-);
+const stories = storiesOf(`${sections.dataEntry}/MultiSelect Input`, module);
 stories.addDecorator(withKnobs);
 stories.add("Multiselect", () => (
   <MultiselectHoist {...getMultiselectKnobs()} />
@@ -53,8 +50,7 @@ const options = [
     iconName: "rail",
   },
 ];
-
-export class MultiselectHoist extends React.Component<
+class MultiselectHoist extends React.Component<
   *,
   {
     values: $ReadOnlyArray<{not_key: string}>,
@@ -88,7 +84,7 @@ export class MultiselectHoist extends React.Component<
       <div style={{width: 200}}>
         <Label value="Record multiselect">
           <Multiselect
-            values={this.state.values}
+            value={this.state.values}
             options={options}
             onChange={this.handleRecordChange}
             toKeyFn={option => option.not_key}

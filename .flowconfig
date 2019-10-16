@@ -12,6 +12,8 @@ include_warnings=false
 esproposal.export_star_as=enable
 esproposal.optional_chaining=enable
 sharedmemory.hash_table_pow=21
+module.system.node.resolve_dirname=node_modules
+module.system.node.resolve_dirname=stories
 
 [lints]
 all=off
@@ -19,7 +21,6 @@ unnecessary-invariant=error
 untyped-type-import=error
 
 [libs]
-./stories
 ./flow-typed-overrides
 .*/node_modules/graphql/*
 

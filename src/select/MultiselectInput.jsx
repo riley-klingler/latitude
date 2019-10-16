@@ -236,6 +236,7 @@ export const _test = {
   MultiselectInputClass,
 };
 
+// TODO(zgotsch): Prop types are broken here because popupWithClickAway doesn't have working flow types
 const Multiselect = popupWithClickAway(MultiselectInputClass);
 
 export default Multiselect;
