@@ -11,9 +11,9 @@ import {
   disabledKnob,
   calendarDate,
   text,
-} from "design_system/types/demoTypes";
+} from "../../design_system/types/demoTypes";
 import * as React from "react";
-import DateTimeInput, {type DateTimeValue} from "date/DateTimeInput";
+import DateTimeInput, {type DateTimeValue} from "../DateTimeInput";
 import {css} from "aphrodite";
 
 const demos: DemoFile = {

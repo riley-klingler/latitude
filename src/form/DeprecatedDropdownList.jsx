@@ -6,10 +6,10 @@
 
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
-import {include, border, margin, padding} from "styles";
-import colors from "styles/colors";
+import {include, border, margin, padding} from "../styles";
+import colors from "../styles/colors";
 
-import Icon, {type IconNames} from "Icon";
+import Icon, {type IconNames} from "../Icon";
 
 export type DropdownOption = {|
   label: string,

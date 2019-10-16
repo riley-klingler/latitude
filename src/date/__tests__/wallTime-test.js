@@ -14,7 +14,7 @@ import {
   ZERO_OCLOCK,
   compareWallTime,
   parseInputText,
-} from "date/wallTime";
+} from "../wallTime";
 import moment from "moment-timezone";
 import {isEqual} from "lodash";
 

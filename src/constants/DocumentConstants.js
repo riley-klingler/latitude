@@ -5,10 +5,10 @@
  * @flow
  */
 import keyMirror from "keymirror";
-import * as CRUDConstants from "constants/_CRUDConstants";
-import * as MutationConstants from "constants/_MutationConstants";
-import {SHIPMENT_DOCUMENT_TYPES} from "constants/DocumentTypeConstants.generated";
-import {bookingT as t} from "config/I18n";
+import * as CRUDConstants from "./_CRUDConstants";
+import * as MutationConstants from "./_MutationConstants";
+import {SHIPMENT_DOCUMENT_TYPES} from "./DocumentTypeConstants.generated";
+import {bookingT as t} from "../config/I18n";
 
 export const POD_CANDIDATE_TYPE = "proof_of_delivery_pod";
 export const POD_TYPE_ID = 41;

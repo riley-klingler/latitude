@@ -4,9 +4,9 @@
  */
 
 import React from "react";
-import PopupWithClickAway from "popup/PopupWithClickAway";
-import GeneralPopover from "popover/GeneralPopover";
-import IconButton from "button/IconButton";
+import PopupWithClickAway from "../../../popup/PopupWithClickAway";
+import GeneralPopover from "../../../popover/GeneralPopover";
+import IconButton from "../../../button/IconButton";
 
 type Props = {|
   +scope: {[key: string]: any},

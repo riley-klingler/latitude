@@ -9,12 +9,12 @@
 
 import * as React from "react";
 import {css} from "aphrodite";
-import {getButtonStyle, sharedStyles} from "button/styles";
-import ThemeNameContext, {type Theme} from "context/ThemeNameContext";
-import Loader from "Loader";
-import Icon from "Icon";
-import invariant from "tools/invariant";
-import stringOrFalse from "tools/stringOrFalse";
+import {getButtonStyle, sharedStyles} from "../button/styles";
+import ThemeNameContext, {type Theme} from "../context/ThemeNameContext";
+import Loader from "../Loader";
+import Icon from "../Icon";
+import invariant from "../tools/invariant";
+import stringOrFalse from "../tools/stringOrFalse";
 
 export type ButtonIntent = "basic" | "danger" | "none";
 export type ButtonKind = "solid" | "hollow" | "bare" | "blank";

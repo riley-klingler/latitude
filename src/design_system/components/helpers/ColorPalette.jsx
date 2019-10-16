@@ -5,16 +5,16 @@
  */
 import * as React from "react";
 
-import {css, StyleSheet} from "styles/aphrodite";
-import colors, {type Color} from "styles/colors";
+import {css, StyleSheet} from "../../../styles/aphrodite";
+import colors, {type Color} from "../../../styles/colors";
 import {
   colorFamilies,
   colorMeta,
-} from "design_system/components/helpers/colorMeta";
-import Text from "Text";
-import Group from "Group";
+} from "./colorMeta";
+import Text from "../../../Text";
+import Group from "../../../Group";
 
-import {deprecatedPaddingSizeConstants} from "styles/whitespace";
+import {deprecatedPaddingSizeConstants} from "../../../styles/whitespace";
 
 const classificationMap = {
   brand: "◉",

@@ -5,7 +5,7 @@
  */
 import generateOverviewText, {
   _test,
-} from "select/generateOverviewText";
+} from "../generateOverviewText";
 
 function convertStringsToOptions(strs: Array<string>) {
   // $FlowUpgradeFixMe(0.69.0 -> 0.70.0)

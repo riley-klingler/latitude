@@ -13,14 +13,14 @@
 
 import * as React from "react";
 import {css, StyleSheet} from "aphrodite";
-import invariant from "tools/invariant";
-import {border, include, typeScale, fontWeights} from "styles/index";
+import invariant from "../tools/invariant";
+import {border, include, typeScale, fontWeights} from "../styles/index";
 
-import typeof Button from "button/Button";
-import typeof IconButton from "button/IconButton";
-import typeof AnchorButton from "button/AnchorButton";
-import latitudeColors from "latitudeColors";
-import {margin, padding} from "styles/whitespace";
+import typeof Button from "../button/Button";
+import typeof IconButton from "../button/IconButton";
+import typeof AnchorButton from "../button/AnchorButton";
+import latitudeColors from "../latitudeColors";
+import {margin, padding} from "../styles/whitespace";
 
 type Tab = {|
   +name: string,

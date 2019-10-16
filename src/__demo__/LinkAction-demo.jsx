@@ -3,11 +3,11 @@
  * @flow
  */
 
-import type {DemoFile} from "design_system/types/demoTypes";
+import type {DemoFile} from "../design_system/types/demoTypes";
 import * as React from "react";
 
-import TextLinkAction from "TextLinkAction";
-import Text from "Text";
+import TextLinkAction from "../TextLinkAction";
+import Text from "../Text";
 
 const demos: DemoFile = {
   demos: [

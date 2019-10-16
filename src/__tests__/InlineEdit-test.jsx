@@ -6,8 +6,8 @@
 import * as React from "react";
 import {mount} from "enzyme";
 import {act} from "react-dom/test-utils";
-import InlineEdit from "InlineEdit";
-import TextInput from "TextInput";
+import InlineEdit from "../InlineEdit";
+import TextInput from "../TextInput";
 
 jest.useFakeTimers();
 

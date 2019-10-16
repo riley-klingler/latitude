@@ -5,8 +5,8 @@
  * @flow
  */
 
-import ToastActions from "toast/ToastActions";
-import invariant from "tools/invariant";
+import ToastActions from "../toast/ToastActions";
+import invariant from "./invariant";
 
 export default function copyToClipboard(copyText: string, toastText: string) {
   // A hidden element is created and then deleted as we can only copy from

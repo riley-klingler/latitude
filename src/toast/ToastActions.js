@@ -3,11 +3,11 @@
  *
  * @flow
  */
-import PayloadSources from "constants/PayloadSources";
-import {ActionTypes} from "constants/ToastConstants";
-import type {ToastRecord} from "toast/ToastStore";
-import Toast from "toast/Toast";
-import AppDispatcher from "dispatcher/AppDispatcher";
+import PayloadSources from "../constants/PayloadSources";
+import {ActionTypes} from "../constants/ToastConstants";
+import type {ToastRecord} from "./ToastStore";
+import Toast from "./Toast";
+import AppDispatcher from "../dispatcher/AppDispatcher";
 
 const ToastActions = {
   ActionTypes,

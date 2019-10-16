@@ -5,14 +5,14 @@
  */
 /* eslint-disable react/prefer-stateless-function */
 import * as React from "react";
-import Text from "Text";
+import Text from "../Text";
 import {css, StyleSheet} from "aphrodite";
-import {coreT as t} from "config/I18n";
-import Breakpoints from "constants/Breakpoints";
-import {margin, whitespaceSizeConstants} from "styles/whitespace";
-import Button from "button/Button";
-import Icon from "Icon";
-import errorBoundary, {type BoundaryError} from "error/errorBoundary";
+import {coreT as t} from "../config/I18n";
+import Breakpoints from "../constants/Breakpoints";
+import {margin, whitespaceSizeConstants} from "../styles/whitespace";
+import Button from "../button/Button";
+import Icon from "../Icon";
+import errorBoundary, {type BoundaryError} from "./errorBoundary";
 
 type WrappedErrorBoundaryProps = {|
   /** If the error boundary is rendered, there is an error that caused it. This is that error. */

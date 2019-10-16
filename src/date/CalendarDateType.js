@@ -5,8 +5,8 @@
  */
 import moment from "moment-timezone";
 import type momentT from "moment";
-import invariant from "tools/invariant";
-import stringOrFalse from "tools/stringOrFalse";
+import invariant from "../tools/invariant";
+import stringOrFalse from "../tools/stringOrFalse";
 /**
  * CalendarDate is a UTC time at 00:00:00, or 12:00:00AM on a given date.
  * The time field on it is insignificant, since it just represents

@@ -18,10 +18,10 @@ import {
   calendarDateMax,
   shouldBeCalendarDate,
   utcStringToCalendarDate,
-} from "date/CalendarDateType";
+} from "../CalendarDateType";
 import moment from "moment-timezone";
-import {calendarDateToMidnightInTzIso} from "date/CalendarDateTypeTools";
-import invariant from "tools/invariant";
+import {calendarDateToMidnightInTzIso} from "../CalendarDateTypeTools";
+import invariant from "../../tools/invariant";
 
 // none of our tests depend on a specific time zone or time
 // unmock moment, since we will just be parsing one date

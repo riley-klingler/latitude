@@ -4,11 +4,11 @@
  * @flow
  */
 
-import type {DemoFile} from "design_system/types/demoTypes";
+import type {DemoFile} from "../design_system/types/demoTypes";
 import * as React from "react";
-import Flag from "Flag";
-import Text from "Text";
-import DeprecatedVerticalGroup from "DeprecatedVerticalGroup";
+import Flag from "../Flag";
+import Text from "../Text";
+import DeprecatedVerticalGroup from "../DeprecatedVerticalGroup";
 
 const demos: DemoFile = {
   demos: [

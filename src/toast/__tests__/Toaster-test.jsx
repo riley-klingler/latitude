@@ -4,7 +4,7 @@
  */
 import * as React from "react";
 import {shallow} from "enzyme";
-import Toaster from "toast/Toaster";
+import Toaster from "../Toaster";
 
 describe("Toaster", () => {
   it("renders when empty", () => {

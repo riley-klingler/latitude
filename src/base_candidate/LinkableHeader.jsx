@@ -5,9 +5,9 @@
 
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
-import Link from "Link";
-import IconButton from "button/IconButton";
-import copyToClipboard from "tools/CopyToClipboard";
+import Link from "../Link";
+import IconButton from "../button/IconButton";
+import copyToClipboard from "../tools/CopyToClipboard";
 
 type Props = {|
   // a unique identifier for the given section

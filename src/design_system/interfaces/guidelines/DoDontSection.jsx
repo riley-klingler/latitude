@@ -4,10 +4,10 @@
  */
 
 import * as React from "react";
-import formGuidelineStyles from "design_system/interfaces/guidelines/styles";
 import {StyleSheet, css} from "aphrodite";
-import Text from "Text";
-import colors from "styles/colors";
+import formGuidelineStyles from "../guidelines/styles";
+import Text from "../../../Text";
+import colors from "../../../styles/colors";
 
 type Props = {|
   +doContent: React.ChildrenArray<any>,

@@ -14,7 +14,7 @@
  *
  * */
 
-import colors from "styles/colors";
+import colors from "./colors";
 
 export type DeprecatedColorScheme = {|
   +primary: string, // primary action color

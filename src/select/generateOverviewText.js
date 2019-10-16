@@ -3,7 +3,7 @@
  * WATCHERS: uforic
  * @flow
  */
-import type {Option, MultiselectKey} from "select/MultiselectInput";
+import type {Option, MultiselectKey} from "./MultiselectInput";
 
 type SelectorTextGeneratorOptions = {|
   +allSelectedText?: string,

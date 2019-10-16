@@ -4,8 +4,8 @@
  */
 
 import React, {useState, type Node} from "react";
-import {type DemoFile, bool} from "design_system/types/demoTypes";
-import FileUploader from "document/FileUploader";
+import {type DemoFile, bool} from "../../design_system/types/demoTypes";
+import FileUploader from "../FileUploader";
 
 const demos: DemoFile = {
   demos: [

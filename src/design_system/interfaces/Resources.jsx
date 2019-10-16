@@ -6,12 +6,12 @@
 
 import * as React from "react";
 
-import {css, StyleSheet} from "styles/aphrodite";
-import Text from "Text";
-import Group from "Group";
-import AnchorButton from "button/AnchorButton";
+import {css, StyleSheet} from "../../styles/aphrodite";
+import Text from "../../Text";
+import Group from "../../Group";
+import AnchorButton from "../../button/AnchorButton";
 
-import componentsStatList from "design_system/constants/componentsStatList.json";
+import componentsStatList from "../constants/componentsStatList.json";
 
 const buildStats = () => {
   const stats = Object.keys(componentsStatList).reduce(

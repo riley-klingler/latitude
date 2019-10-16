@@ -4,9 +4,9 @@
  * @flow
  */
 import * as React from "react";
-import Markdown from "design_system/components/markdown/Markdown";
+import Markdown from "../components/markdown/Markdown";
 // $FlowFixMe(uforic) the club can't handle me right now
-import gettingStartedMarkdown from "design_system/interfaces/GettingStarted.txt";
+import gettingStartedMarkdown from "./GettingStarted.txt";
 
 const GettingStarted = () => <Markdown text={gettingStartedMarkdown} />;
 

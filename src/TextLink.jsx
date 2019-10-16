@@ -8,14 +8,14 @@
 import * as React from "react";
 import {css, StyleSheet} from "aphrodite";
 
-import {typeScale, fontWeights} from "styles";
-import linkStyles, {type LinkStyle} from "styles/linkStyles";
-import colors from "styles/colors";
+import {typeScale, fontWeights} from "./styles";
+import linkStyles, {type LinkStyle} from "./styles/linkStyles";
+import colors from "./styles/colors";
 
-import ThemeNameContext, {type Theme} from "context/ThemeNameContext";
-import TextLinkContext from "TextLinkContext";
-import RouterContext from "context/RouterContext";
-import Link from "Link";
+import ThemeNameContext, {type Theme} from "./context/ThemeNameContext";
+import TextLinkContext from "./TextLinkContext";
+import RouterContext from "./context/RouterContext";
+import Link from "./Link";
 
 /* eslint-disable react/prefer-stateless-function */
 

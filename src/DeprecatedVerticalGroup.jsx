@@ -9,7 +9,7 @@ import * as React from "react";
 import classnames from "classnames";
 import {compact, flatten} from "lodash";
 
-import {SPACING_SIZES} from "constants/styles";
+import {SPACING_SIZES} from "./constants/styles";
 
 const CROSS_ALIGN_CLASS_MAP = {
   baseline: "flexBaseline",

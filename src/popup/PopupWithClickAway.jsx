@@ -90,10 +90,10 @@ to the popup() function.
 */
 
 import * as React from "react";
-import Portal from "Portal";
+import Portal from "../Portal";
 import {Manager, Popper, Reference} from "react-popper";
-import onClickOutside from "tools/onClickOutside";
-import {ESC} from "constants/interactions/KeyCodes";
+import onClickOutside from "../tools/onClickOutside";
+import {ESC} from "../constants/interactions/KeyCodes";
 
 const OnClickOutside = onClickOutside(
   class OnClickOutside extends React.Component<{

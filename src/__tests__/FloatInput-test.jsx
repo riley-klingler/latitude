@@ -6,7 +6,7 @@
 
 import * as React from "react";
 import {mount} from "enzyme";
-import FloatInput from "FloatInput";
+import FloatInput from "../FloatInput";
 
 function mountFloatInput(propOverrides: {} = {}) {
   const defaultProps = {

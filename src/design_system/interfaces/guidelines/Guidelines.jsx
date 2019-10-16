@@ -5,8 +5,8 @@
  * @flow
  */
 import * as React from "react";
-import Markdown from "design_system/components/markdown/Markdown";
-import guidelinesManifest from "design_system/interfaces/guidelines/guidelinesManifest";
+import Markdown from "../../components/markdown/Markdown";
+import guidelinesManifest from "./guidelinesManifest";
 
 const DEFAULT_GUIDELINE = "overview";
 

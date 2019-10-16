@@ -5,7 +5,7 @@
  */
 import React from "react";
 import {shallow} from "enzyme";
-import PdfViewer from "document/PdfViewer";
+import PdfViewer from "../PdfViewer";
 
 describe("DocumentUploader", () => {
   it("renders", () => {

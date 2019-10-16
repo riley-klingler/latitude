@@ -3,10 +3,10 @@
  * @flow
  */
 
-import {type DemoFile, bool} from "design_system/types/demoTypes";
+import {type DemoFile, bool} from "../../design_system/types/demoTypes";
 import * as React from "react";
-import RadioGroup from "radio/RadioGroup";
-import {characters} from "tools/demo";
+import RadioGroup from "../RadioGroup";
+import {characters} from "../../tools/demo";
 
 const demos: DemoFile = {
   demos: [

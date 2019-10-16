@@ -4,11 +4,11 @@
  * @flow
  */
 
-import type {DemoFile} from "design_system/types/demoTypes";
+import type {DemoFile} from "../design_system/types/demoTypes";
 import * as React from "react";
-import DeprecatedHorizontalGroup from "DeprecatedHorizontalGroup";
-import Text from "Text";
-import HelpTooltip from "HelpTooltip";
+import DeprecatedHorizontalGroup from "../DeprecatedHorizontalGroup";
+import Text from "../Text";
+import HelpTooltip from "../HelpTooltip";
 
 const demos: DemoFile = {
   demos: [

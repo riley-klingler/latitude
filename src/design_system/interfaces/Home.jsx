@@ -5,18 +5,18 @@
  * @flow
  */
 import * as React from "react";
-import {StyleSheet, css} from "styles/aphrodite";
-import colors from "styles/colors";
+import {StyleSheet, css} from "../../styles/aphrodite";
+import colors from "../../styles/colors";
 
-import Text from "Text";
-import DesignSystemLink from "design_system/components/DesignSystemLink";
+import Text from "../../Text";
+import DesignSystemLink from "../components/DesignSystemLink";
 import {
   playground,
   guidelines,
   styles as stylesUrl,
   resources,
   components as componentsUrl,
-} from "design_system/DesignSystemRoutes";
+} from "../DesignSystemRoutes";
 
 export default function Home() {
   return (

@@ -12,10 +12,10 @@ import {
   list,
   type ListKnob,
   type DemoProps,
-} from "design_system/types/demoTypes";
+} from "../design_system/types/demoTypes";
 import * as React from "react";
-import TextInput from "TextInput";
-import Label from "Label";
+import TextInput from "../TextInput";
+import Label from "../Label";
 import {css} from "aphrodite";
 
 export const labelWeightKnob: ListKnob<"bold" | "regular"> = list(

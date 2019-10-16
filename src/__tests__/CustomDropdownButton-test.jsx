@@ -4,8 +4,8 @@
  */
 import {mount} from "enzyme";
 import * as React from "react";
-import {_test} from "CustomDropdownButton";
-import Button from "button/Button";
+import {_test} from "../CustomDropdownButton";
+import Button from "../button/Button";
 
 const {CustomDropdownButtonClass} = _test;
 

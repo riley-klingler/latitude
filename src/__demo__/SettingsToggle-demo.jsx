@@ -3,12 +3,12 @@
  * @flow
  */
 
-import type {DemoFile} from "design_system/types/demoTypes";
+import type {DemoFile} from "../design_system/types/demoTypes";
 import * as React from "react";
-import {StyleSheet, css} from "styles/aphrodite";
-import SettingsToggle from "SettingsToggle";
-import Table from "table/Table";
-import StaticCell from "table/StaticCell";
+import {StyleSheet, css} from "../styles/aphrodite";
+import SettingsToggle from "../SettingsToggle";
+import Table from "../table/Table";
+import StaticCell from "../table/StaticCell";
 
 const demos: DemoFile = {
   demos: [

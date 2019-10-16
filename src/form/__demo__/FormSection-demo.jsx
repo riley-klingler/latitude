@@ -4,13 +4,13 @@
  * @flow
  */
 
-import type {DemoFile} from "design_system/types/demoTypes";
+import type {DemoFile} from "../../design_system/types/demoTypes";
 import * as React from "react";
-import FormSection from "form/FormSection";
-import FormRow from "form/FormRow";
+import FormSection from "../FormSection";
+import FormRow from "../FormRow";
 
-import Label from "Label";
-import TextInput from "TextInput";
+import Label from "../../Label";
+import TextInput from "../../TextInput";
 
 const demos: DemoFile = {
   demos: [

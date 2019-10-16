@@ -3,8 +3,8 @@
  *
  * @flow strict
  */
-import getFileExtension from "tools/documents/getFileExtension";
-import getFileNameWithoutExtension from "tools/documents/getFileNameWithoutExtension";
+import getFileExtension from "./getFileExtension";
+import getFileNameWithoutExtension from "./getFileNameWithoutExtension";
 
 /** If fileName inputted by User contains the same file extension as the
  * originalFileName, consolidate the repeated file extension.

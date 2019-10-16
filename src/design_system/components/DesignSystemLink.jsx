@@ -10,13 +10,13 @@
 import * as React from "react";
 import {StyleSheet} from "aphrodite";
 
-import {typeScale, fontWeights} from "styles";
-import linkStyles, {type LinkStyle} from "styles/linkStyles";
-import {BASE} from "context/ThemeNameContext";
-import typeof Text from "Text";
+import {typeScale, fontWeights} from "../../styles";
+import linkStyles, {type LinkStyle} from "../../styles/linkStyles";
+import {BASE} from "../../context/ThemeNameContext";
+import typeof Text from "../../Text";
 
-import Link from "Link";
-import RouterContext from "context/RouterContext";
+import Link from "../../Link";
+import RouterContext from "../../context/RouterContext";
 
 type Props = {|
   // Link tags can only wrap strings. If you find this restrictive, contact @theseus. The thought is we want to avoid the temptation for folks to wrap entire apps or components in Link tags, since that usually means a different component should be built.

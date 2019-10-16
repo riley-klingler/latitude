@@ -3,9 +3,9 @@
  *
  * @flow strict-local
  */
-import type {AttachmentType} from "document/AttachmentTypes";
-import ImageScaler from "tools/ImageScaler";
-import FileFormat from "constants/FileFormatConstants";
+import type {AttachmentType} from "../../document/AttachmentTypes";
+import ImageScaler from "../ImageScaler";
+import FileFormat from "../../constants/FileFormatConstants";
 
 // Scales down the localFile that are of Image format in Attachment
 export default function getScaledImageForAttachment(

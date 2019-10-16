@@ -3,9 +3,9 @@
  * @flow
  */
 
-import {type DemoFile, demoCommonStyles} from "design_system/types/demoTypes";
+import {type DemoFile, demoCommonStyles} from "../../design_system/types/demoTypes";
 import * as React from "react";
-import Button from "button/Button";
+import Button from "../../button/Button";
 import {css} from "aphrodite";
 import Takeover from "../Takeover";
 import TakeoverLoader from "../TakeoverLoader";

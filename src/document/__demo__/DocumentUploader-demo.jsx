@@ -3,11 +3,11 @@
  * @flow
  */
 
-import {type DemoFile, list} from "design_system/types/demoTypes";
+import {type DemoFile, list} from "../../design_system/types/demoTypes";
 import React, {useState, type Node} from "react";
 import DocumentUploader, {
   type ServerState,
-} from "document/DocumentUploader";
+} from "../DocumentUploader";
 
 const demos: DemoFile = {
   demos: [

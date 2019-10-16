@@ -5,9 +5,9 @@
  * @flow
  */
 import * as React from "react";
-import "design_system/components/markdown/styles/main.css";
+import "./styles/main.css";
 
-import LatitudeMarkdown from "Markdown";
+import LatitudeMarkdown from "../../../Markdown";
 
 type MarkdownProps = {
   +text?: string,

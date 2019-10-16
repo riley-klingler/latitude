@@ -7,13 +7,13 @@
 
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
-import Pill from "Pill";
-import IconButton from "button/IconButton";
-import {inputStyles} from "styles/input";
-import {LabelContext} from "Label";
-import {type Size} from "sizes";
+import Pill from "./Pill";
+import IconButton from "./button/IconButton";
+import {inputStyles} from "./styles/input";
+import {LabelContext} from "./Label";
+import {type Size} from "./sizes";
 
-import {BACKSPACE, ENTER, COMMA} from "constants/interactions/KeyCodes";
+import {BACKSPACE, ENTER, COMMA} from "./constants/interactions/KeyCodes";
 
 const clearButtonWidth = "28px";
 const inputMinSize = "20px";

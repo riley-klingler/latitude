@@ -10,8 +10,8 @@
  */
 
 import * as React from "react";
-import invariant from "tools/invariant";
-import {makeCancelable, type CancelablePromise} from "tools/cancelablePromise";
+import invariant from "./tools/invariant";
+import {makeCancelable, type CancelablePromise} from "./tools/cancelablePromise";
 
 type Props = {
   +children: React.Node,

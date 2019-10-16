@@ -6,12 +6,12 @@
 import * as React from "react";
 import classnames from "classnames";
 import {css, StyleSheet} from "aphrodite";
-import Button from "button/Button";
-import DeprecatedHorizontalGroup from "DeprecatedHorizontalGroup";
 import {CSSTransition} from "react-transition-group";
-import {whitespaceSizeConstants} from "styles/whitespace";
-import latitudeColors from "latitudeColors";
-import Text from "Text";
+import Button from "../button/Button";
+import DeprecatedHorizontalGroup from "../DeprecatedHorizontalGroup";
+import {whitespaceSizeConstants} from "../styles/whitespace";
+import latitudeColors from "../latitudeColors";
+import Text from "../Text";
 
 type TakeoverProps = {
   +visible: boolean,

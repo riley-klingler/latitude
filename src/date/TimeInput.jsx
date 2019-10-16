@@ -6,10 +6,10 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import {type Size} from "sizes";
-import TextInput from "TextInput";
-import invariant from "tools/invariant";
-import {today} from "date/CalendarDateType";
+import {type Size} from "../sizes";
+import TextInput from "../TextInput";
+import invariant from "../tools/invariant";
+import {today} from "./CalendarDateType";
 import {
   type WallTime,
   isWallTime,
@@ -17,24 +17,24 @@ import {
   momentFromCalDateWallTime,
   momentToWallTime,
   parseInputText,
-} from "date/wallTime";
+} from "./wallTime";
 import popupWithClickAway, {
   type PopupWithClickAwayProps,
-} from "tools/popupWithClickAway";
+} from "../tools/popupWithClickAway";
 import {Manager} from "react-popper";
-import Portal from "Portal";
+import Portal from "../Portal";
 import {
   ARROW_DOWN_KEY,
   ARROW_UP_KEY,
   ENTER_KEY,
   isKeyCodeCauseBlur,
-} from "date/inputUtils";
-import DeprecatedPopperTarget from "popup/DeprecatedPopperTarget";
-import DeprecatedPopper from "popup/DeprecatedPopper";
+} from "./inputUtils";
+import DeprecatedPopperTarget from "../popup/DeprecatedPopperTarget";
+import DeprecatedPopper from "../popup/DeprecatedPopper";
 import {StyleSheet, css} from "aphrodite";
-import {zIndices} from "tools/zIndices";
-import {border, include, margin, padding} from "styles";
-import colors from "styles/colors";
+import {zIndices} from "../tools/zIndices";
+import {border, include, margin, padding} from "../styles";
+import colors from "../styles/colors";
 
 const VALID_KEY_CODES = [ARROW_DOWN_KEY, ARROW_UP_KEY];
 

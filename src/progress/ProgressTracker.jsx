@@ -6,10 +6,10 @@
 import * as React from "react";
 import {css, StyleSheet} from "aphrodite";
 
-import {v3ColorMap as colors} from "latitudeColors";
-import Group from "Group";
-import Icon, {type IconNames} from "Icon";
-import Text from "Text";
+import {v3ColorMap as colors} from "../latitudeColors";
+import Group from "../Group";
+import Icon, {type IconNames} from "../Icon";
+import Text from "../Text";
 
 const statusColorMap = {
   active: "cyan40",

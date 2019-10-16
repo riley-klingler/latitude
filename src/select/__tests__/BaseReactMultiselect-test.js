@@ -4,8 +4,8 @@
  * @flow
  */
 
-import {_test} from "select/BaseReactMultiselect";
-import invariant from "tools/invariant";
+import {_test} from "../BaseReactMultiselect";
+import invariant from "../../tools/invariant";
 import {isEqual} from "lodash";
 
 function deprecatedChangeFn<T>(

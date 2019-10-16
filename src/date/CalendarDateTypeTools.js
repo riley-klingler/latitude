@@ -5,7 +5,7 @@
 import {
   calendarDateToMoment,
   type CalendarDate,
-} from "date/CalendarDateType";
+} from "./CalendarDateType";
 
 /**
  * This prints an ISO formatted string in a certain time zone given the calendar date.

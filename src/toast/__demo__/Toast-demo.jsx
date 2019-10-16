@@ -11,15 +11,15 @@ import {
   type DemoProps,
   list,
   type ListKnob,
-} from "design_system/types/demoTypes";
+} from "../../design_system/types/demoTypes";
 
 import * as React from "react";
 
-import DeprecatedVerticalGroup from "DeprecatedVerticalGroup";
-import Button from "button/Button";
+import DeprecatedVerticalGroup from "../../DeprecatedVerticalGroup";
+import Button from "../../button/Button";
 
-import Toast from "toast/Toast";
-import ToastActions from "toast/ToastActions";
+import Toast from "../Toast";
+import ToastActions from "../ToastActions";
 
 import {css} from "aphrodite";
 

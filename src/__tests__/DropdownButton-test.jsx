@@ -5,10 +5,10 @@
  */
 import {mount} from "enzyme";
 import * as React from "react";
-import {_test} from "DropdownButton";
-import {styles} from "form/DeprecatedDropdownList";
-import Button from "button/Button";
-import {getNameFromStyle} from "tools/test";
+import {_test} from "../DropdownButton";
+import {styles} from "../form/DeprecatedDropdownList";
+import Button from "../button/Button";
+import {getNameFromStyle} from "../tools/test";
 
 const {DropdownButtonClass} = _test;
 

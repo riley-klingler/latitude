@@ -6,10 +6,10 @@
 import {mount, shallow} from "enzyme";
 import * as React from "react";
 
-import {getNameFromStyle} from "tools/test";
-import {_test, styles} from "Icon";
-import latitudeColors from "latitudeColors";
-import {BASE} from "context/ThemeNameContext";
+import {getNameFromStyle} from "../tools/test";
+import {_test, styles} from "../Icon";
+import latitudeColors from "../latitudeColors";
+import {BASE} from "../context/ThemeNameContext";
 
 function shallowIcon(propOverrides: {} = {}) {
   const defaultProps = {

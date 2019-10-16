@@ -5,7 +5,7 @@
 
 import * as React from "react";
 import {mount} from "enzyme";
-import Banner from "Banner";
+import Banner from "../Banner";
 
 describe("Banner", () => {
   it("matches snapshot", () => {

@@ -4,14 +4,14 @@
  * @flow strict
  */
 
-import colors from "styles/colors";
-import getThemeColors from "styles/getThemeColors";
+import {memoize} from "lodash";
+import colors from "../styles/colors";
+import getThemeColors from "../styles/getThemeColors";
 import graphicIconsConstants, {
   graphicIconNames,
   type GraphicIcons as GIcons,
-} from "tools/graphicIconsConstants";
-import {TRANSMISSION, type Theme} from "context/ThemeNameContext";
-import {memoize} from "lodash";
+} from "./graphicIconsConstants";
+import {TRANSMISSION, type Theme} from "../context/ThemeNameContext";
 
 // TO-DO(notandrewkaye): We need to figure out what to do about this use-case
 const getBrighterPrimary = (theme: Theme) =>

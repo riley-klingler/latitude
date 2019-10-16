@@ -20,8 +20,8 @@
  *      to bootstrap the app.
  */
 
-import invariant from "tools/invariant";
-import {type MaybeBootstrapData} from "tools/bootstrap/bootstrapDataTypes";
+import invariant from "../invariant";
+import {type MaybeBootstrapData} from "./bootstrapDataTypes";
 
 function getNodeFromPage(document: Document): HTMLElement {
   const node = document.querySelector("[data-react-props]");

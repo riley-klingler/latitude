@@ -5,7 +5,7 @@
  * @flow strict
  */
 
-import {StyleSheet} from "styles/aphrodite";
+import {StyleSheet} from "../../../styles/aphrodite";
 
 const formGuidelineStyles = StyleSheet.create({
   wrapper: {

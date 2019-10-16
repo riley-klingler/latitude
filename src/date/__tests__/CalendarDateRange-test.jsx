@@ -8,14 +8,14 @@ import * as React from "react";
 import CalendarDateRange, {
   convertDateRangeToUtcBounds,
   _test,
-} from "date/CalendarDateRange";
+} from "../CalendarDateRange";
 import {mount} from "enzyme";
 import {
   parseStringToCalendarDate,
   addDaysFromCalendarDate,
-} from "date/CalendarDateType";
-import invariant from "tools/invariant";
-import {getNameFromStyle} from "tools/test";
+} from "../CalendarDateType";
+import invariant from "../../tools/invariant";
+import {getNameFromStyle} from "../../tools/test";
 
 // none of our tests depend on a specific time zone or time
 // unmock moment, since we will just be parsing one date

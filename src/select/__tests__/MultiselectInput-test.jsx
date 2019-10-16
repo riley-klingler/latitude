@@ -5,12 +5,12 @@
  */
 import * as React from "react";
 import {mount} from "enzyme";
-import {_test} from "select/MultiselectInput";
-import MultiselectOptions from "select/MultiselectOptions";
+import {_test} from "../MultiselectInput";
+import MultiselectOptions from "../MultiselectOptions";
 
-import {options} from "select/__tests__/generateOverviewText-test";
-import {inputStyles} from "styles/input";
-import {styleToClassname} from "styles/index";
+import {options} from "./generateOverviewText-test";
+import {inputStyles} from "../../styles/input";
+import {styleToClassname} from "../../styles/index";
 import {isEqual} from "lodash";
 
 const {MultiselectInputClass} = _test;

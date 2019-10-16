@@ -5,7 +5,7 @@
 
 import * as React from "react";
 import {mount, shallow} from "enzyme";
-import Loader from "Loader";
+import Loader from "../Loader";
 
 function shallowLoader(propOverrides: {} = {}) {
   const defaultProps = {loaded: false};

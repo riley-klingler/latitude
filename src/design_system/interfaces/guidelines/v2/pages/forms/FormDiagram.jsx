@@ -4,14 +4,14 @@
  */
 
 import * as React from "react";
-import Text from "Text";
-import Label from "Label";
-import TextInput from "TextInput";
-import Button from "button/Button";
-import colors from "styles/colors";
-import Collection from "design_system/interfaces/guidelines/v2/components/Collection";
-import Item from "design_system/interfaces/guidelines/v2/components/Item";
-import Half from "design_system/interfaces/guidelines/v2/components/Half";
+import Text from "../../../../../../Text";
+import Label from "../../../../../../Label";
+import TextInput from "../../../../../../TextInput";
+import Button from "../../../../../../button/Button";
+import colors from "../../../../../../styles/colors";
+import Collection from "../../components/Collection";
+import Item from "../../components/Item";
+import Half from "../../components/Half";
 import {StyleSheet, css} from "aphrodite";
 
 const MarginDecorator = ({children}: {|+children: React.Node|}) => {

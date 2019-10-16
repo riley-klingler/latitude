@@ -5,9 +5,9 @@
  */
 
 import * as React from "react";
-import {css, StyleSheet} from "styles/aphrodite";
+import {css, StyleSheet} from "./styles/aphrodite";
 
-import typeof {countries as countriesType} from "constants/AddressOptionConstants.generated";
+import typeof {countries as countriesType} from "./constants/AddressOptionConstants.generated";
 
 type Country = $Keys<countriesType>;
 const PATH = "https://assets.flexport.com/flags/svg/1/";

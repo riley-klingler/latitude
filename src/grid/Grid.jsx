@@ -4,8 +4,8 @@
  */
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
-import typeof Row from "grid/Row";
-import {rowStyles} from "grid/gridTools";
+import typeof Row from "./Row";
+import {rowStyles} from "./gridTools";
 
 // These union types extracted manually from gridTools.js
 type Gutter = 0 | 4 | 12 | 20 | 32;

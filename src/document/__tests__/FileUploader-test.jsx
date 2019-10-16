@@ -5,7 +5,7 @@
  */
 import React from "react";
 import {shallow} from "enzyme";
-import FileUploader from "document/FileUploader";
+import FileUploader from "../FileUploader";
 
 const documentTypeList = [
   {name: "Document Type A", value: "document_type_a"},

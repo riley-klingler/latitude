@@ -3,7 +3,7 @@
  *
  * @flow
  */
-import betterGroupBy from "tools/betterGroupBy";
+import betterGroupBy from "../betterGroupBy";
 
 describe("betterGroupBy", () => {
   type BasicElem = {

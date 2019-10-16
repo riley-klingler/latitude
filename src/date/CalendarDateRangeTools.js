@@ -8,7 +8,7 @@ import {
   calendarDateCompare,
   calendarDateToMoment,
   shouldBeCalendarDate,
-} from "date/CalendarDateType";
+} from "./CalendarDateType";
 
 export type CalendarDateRange = {
   startDate: CalendarDate,

@@ -4,7 +4,7 @@
  */
 import {mount, shallow} from "enzyme";
 import * as React from "react";
-import Button from "button/Button";
+import Button from "../../button/Button";
 
 import TabHeader, {_test} from "../TabHeader";
 

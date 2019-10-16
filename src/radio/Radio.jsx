@@ -9,9 +9,9 @@
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
 import {uniqueId} from "lodash";
-import colors from "styles/colors";
-import {type Size} from "sizes";
-import latitudeColors from "latitudeColors";
+import colors from "../styles/colors";
+import {type Size} from "../sizes";
+import latitudeColors from "../latitudeColors";
 
 type Props<T> = {|
   /** whether the radio button is currently checked */

@@ -8,10 +8,10 @@
 import * as React from "react";
 
 import {css, StyleSheet} from "aphrodite";
-import {typeScale} from "styles/typography";
-import TextLinkAction from "TextLinkAction";
-import latitudeColors from "latitudeColors";
-import {whitespaceSizeConstants} from "styles/whitespace";
+import {typeScale} from "../styles/typography";
+import TextLinkAction from "../TextLinkAction";
+import latitudeColors from "../latitudeColors";
+import {whitespaceSizeConstants} from "../styles/whitespace";
 
 export type ToastIntent = "none" | "success" | "danger";
 

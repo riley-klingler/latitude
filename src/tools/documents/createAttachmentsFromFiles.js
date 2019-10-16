@@ -4,9 +4,9 @@
  * @flow strict_local
  */
 
-import type {AttachmentType} from "document/AttachmentTypes";
-import getFileFormat from "tools/getFileFormat";
 import {uniqueId} from "lodash";
+import type {AttachmentType} from "../../document/AttachmentTypes";
+import getFileFormat from "../getFileFormat";
 
 export default function createAttachmentsFromFiles(
   files: $ReadOnlyArray<File>,

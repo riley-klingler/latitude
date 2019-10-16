@@ -9,10 +9,10 @@ import {
   text,
   bool,
   demoCommonStyles,
-} from "design_system/types/demoTypes";
+} from "../design_system/types/demoTypes";
 import * as React from "react";
-import TextInput from "TextInput";
-import InputError from "InputError";
+import TextInput from "../TextInput";
+import InputError from "../InputError";
 import {css} from "aphrodite";
 
 const demos: DemoFile = {

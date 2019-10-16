@@ -4,7 +4,7 @@
  * @flow
  */
 
-import connectToStores from "connectors/connectToStores";
+import connectToStores from "../connectors/connectToStores";
 import Toaster, {
   type ToasterPropsFromParent,
   type ToasterProps,

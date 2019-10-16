@@ -13,10 +13,10 @@ import {
   textInputSizeKnob,
   list,
   type Option,
-} from "design_system/types/demoTypes";
+} from "../design_system/types/demoTypes";
 import * as React from "react";
-import TextInput, {type TextInputType} from "TextInput";
-import Group from "Group";
+import TextInput, {type TextInputType} from "../TextInput";
+import Group from "../Group";
 import {css} from "aphrodite";
 
 const textInputTypes: $ReadOnlyArray<Option<TextInputType>> = [

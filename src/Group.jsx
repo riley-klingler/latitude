@@ -4,10 +4,10 @@
  * @flow strict
  */
 import * as React from "react";
-import invariant from "tools/invariant";
+import invariant from "./tools/invariant";
 import {StyleSheet, css} from "aphrodite";
 
-import flexboxStyles from "styles/flexboxStyles";
+import flexboxStyles from "./styles/flexboxStyles";
 
 type Props = {|
   /** Children can be any React.Node and will be distributed based on the other props */

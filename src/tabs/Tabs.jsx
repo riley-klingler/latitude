@@ -5,10 +5,10 @@
 
 import * as React from "react";
 import {css, StyleSheet} from "aphrodite";
-import invariant from "tools/invariant";
-import Loader from "Loader";
+import invariant from "../tools/invariant";
+import Loader from "../Loader";
 
-import TabHeader, {type AllowedButton} from "tabs/TabHeader";
+import TabHeader, {type AllowedButton} from "./TabHeader";
 
 const styles = StyleSheet.create({
   container: {

@@ -5,18 +5,18 @@
 
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
-import invariant from "tools/invariant";
-import {ENTER} from "constants/interactions/KeyCodes";
+import invariant from "./tools/invariant";
+import {ENTER} from "./constants/interactions/KeyCodes";
 import {
   HORIZONTAL_INPUT_PADDING_SMALL_PX,
   HORIZONTAL_INPUT_PADDING_BASE_PX,
   HORIZONTAL_INPUT_PADDING_LARGE_PX,
-} from "styles/input";
-import IconButton from "button/IconButton";
-import Button from "button/Button";
-import Text from "Text";
-import useSetTimeout from "hooks/useSetTimeout";
-import {commonT as t} from "config/I18n";
+} from "./styles/input";
+import IconButton from "./button/IconButton";
+import Button from "./button/Button";
+import Text from "./Text";
+import useSetTimeout from "./hooks/useSetTimeout";
+import {commonT as t} from "./config/I18n";
 
 export type RenderProp<T> = (props: {
   +value: T,

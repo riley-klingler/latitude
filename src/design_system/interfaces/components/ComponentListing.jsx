@@ -6,13 +6,13 @@
 import React from "react";
 import {Link} from "found";
 import {StyleSheet, css} from "aphrodite";
-import {border} from "styles/index";
-import colors from "styles/colors";
-import Text from "Text";
-import Group from "Group";
-import {components as componentsUrl} from "design_system/DesignSystemRoutes";
-import betterGroupBy from "tools/betterGroupBy";
-import componentsMetaList from "design_system/constants/componentsMetaList.json";
+import {border} from "../../../styles/index";
+import colors from "../../../styles/colors";
+import Text from "../../../Text";
+import Group from "../../../Group";
+import {components as componentsUrl} from "../../DesignSystemRoutes";
+import betterGroupBy from "../../../tools/betterGroupBy";
+import componentsMetaList from "../../constants/componentsMetaList.json";
 
 function ComponentListing() {
   const componentsByCategory = betterGroupBy(

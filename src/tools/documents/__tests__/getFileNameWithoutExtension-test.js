@@ -3,7 +3,7 @@
  *
  * @flow strict
  */
-import getFileNameWithoutExtension from "tools/documents/getFileNameWithoutExtension";
+import getFileNameWithoutExtension from "../getFileNameWithoutExtension";
 
 describe("getFileNameWithoutExtension", () => {
   const fileName1 = "file_name.pdf";

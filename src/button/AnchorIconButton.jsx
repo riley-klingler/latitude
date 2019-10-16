@@ -8,14 +8,14 @@
 /* eslint-disable flexport/no-disabled-anchors */
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
-import colors from "styles/colors";
-import Icon from "Icon";
-import type {IconNames} from "tools/icons";
-import invariant from "tools/invariant";
-import stringOrFalse from "tools/stringOrFalse";
-import {sharedStyles, getButtonStyle} from "button/styles";
-import ThemeNameContext, {type Theme} from "context/ThemeNameContext";
-import Link from "Link";
+import colors from "../styles/colors";
+import Icon from "../Icon";
+import type {IconNames} from "../tools/icons";
+import invariant from "../tools/invariant";
+import stringOrFalse from "../tools/stringOrFalse";
+import {sharedStyles, getButtonStyle} from "../button/styles";
+import ThemeNameContext, {type Theme} from "../context/ThemeNameContext";
+import Link from "../Link";
 
 export type AnchorIconButtonKind = "solid" | "bare" | "hollow" | "blank";
 export type AnchorIconButtonIntent = "basic" | "none" | "danger";

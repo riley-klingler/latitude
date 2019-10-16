@@ -10,12 +10,12 @@ import {
   calendarDate,
   textInputSizeKnob,
   bool,
-} from "design_system/types/demoTypes";
+} from "../../design_system/types/demoTypes";
 import * as React from "react";
 import CalendarDateRange, {
   type CalendarDateRangeValue,
-} from "date/CalendarDateRange";
-import {today, addDaysFromCalendarDate} from "date/CalendarDateType";
+} from "../CalendarDateRange";
+import {today, addDaysFromCalendarDate} from "../CalendarDateType";
 import {css} from "aphrodite";
 import moment from "moment-timezone";
 

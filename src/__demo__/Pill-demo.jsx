@@ -4,19 +4,19 @@
  * @flow
  */
 
-import type {DemoFile} from "design_system/types/demoTypes";
+import type {DemoFile} from "../design_system/types/demoTypes";
 import * as React from "react";
-import Group from "Group";
-import Pill from "Pill";
-import Label from "Label";
+import Group from "../Group";
+import Pill from "../Pill";
+import Label from "../Label";
 
 import reflectiveBind from "reflective-bind";
 import {Form} from "formula-one";
-import F1TextInput from "base_candidate/formula_one/F1TextInput";
-import Button from "button/Button";
-import Text from "Text";
-import DeprecatedHorizontalGroup from "DeprecatedHorizontalGroup";
-import DeprecatedVerticalGroup from "DeprecatedVerticalGroup";
+import F1TextInput from "../base_candidate/formula_one/F1TextInput";
+import Button from "../button/Button";
+import Text from "../Text";
+import DeprecatedHorizontalGroup from "../DeprecatedHorizontalGroup";
+import DeprecatedVerticalGroup from "../DeprecatedVerticalGroup";
 
 const demos: DemoFile = {
   demos: [

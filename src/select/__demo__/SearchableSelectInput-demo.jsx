@@ -10,12 +10,12 @@ import {
   demoCommonStyles,
   disabledKnob,
   textInputSizeKnob,
-} from "design_system/types/demoTypes";
+} from "../../design_system/types/demoTypes";
 import * as React from "react";
-import SearchableSelectInput from "select/SearchableSelectInput";
-import Text from "Text";
-import {css} from "styles/aphrodite";
-import {characters} from "tools/demo";
+import SearchableSelectInput from "../SearchableSelectInput";
+import Text from "../../Text";
+import {css} from "../../styles/aphrodite";
+import {characters} from "../../tools/demo";
 
 const demos: DemoFile = {
   demos: [

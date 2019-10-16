@@ -5,7 +5,7 @@
 
 import * as React from "react";
 import {mount} from "enzyme";
-import SettingsToggle from "SettingsToggle";
+import SettingsToggle from "../SettingsToggle";
 
 function mountSettingsToggle(propOverrides: {} = {}) {
   const defaultProps = {onChange: () => {}};

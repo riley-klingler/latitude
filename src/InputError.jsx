@@ -7,10 +7,10 @@
 import * as React from "react";
 
 import {StyleSheet, css} from "aphrodite";
-import {v3ColorMap} from "latitudeColors";
-import {margin} from "styles/whitespace";
-import {include} from "styles";
-import colors from "styles/colors";
+import {v3ColorMap} from "./latitudeColors";
+import {margin} from "./styles/whitespace";
+import {include} from "./styles";
+import colors from "./styles/colors";
 
 type Props = {|
   +errorText: string | React.Node,

@@ -4,9 +4,9 @@
  */
 import * as React from "react";
 import {mount} from "enzyme";
-import {_test, type SelectInputProps} from "select/SelectInput";
-import {inputStyles} from "styles/input";
-import {styleToClassname} from "styles/index";
+import {_test, type SelectInputProps} from "../SelectInput";
+import {inputStyles} from "../../styles/input";
+import {styleToClassname} from "../../styles/index";
 import {isEqual} from "lodash";
 
 function mountSelect<K>(propOverrides?: $Shape<SelectInputProps<K | string>>) {

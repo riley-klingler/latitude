@@ -4,31 +4,31 @@
  */
 
 import * as React from "react";
-import TextLink from "TextLink";
-import IndexedPage from "design_system/interfaces/guidelines/v2/components/IndexedPage";
-import MainHeader from "design_system/interfaces/guidelines/v2/components/MainHeader";
-import SubHeader from "design_system/interfaces/guidelines/v2/components/SubHeader";
-import Headline from "design_system/interfaces/guidelines/v2/components/Headline";
-import Words from "design_system/interfaces/guidelines/v2/components/Words";
-import Image from "design_system/interfaces/guidelines/v2/components/Image";
-import Collection from "design_system/interfaces/guidelines/v2/components/Collection";
-import Half from "design_system/interfaces/guidelines/v2/components/Half";
-import Item from "design_system/interfaces/guidelines/v2/components/Item";
-import CodeBlock from "design_system/interfaces/guidelines/v2/components/CodeBlock";
-import List from "design_system/interfaces/guidelines/v2/components/List";
+import TextLink from "../../../../../../TextLink";
+import IndexedPage from "../../components/IndexedPage";
+import MainHeader from "../../components/MainHeader";
+import SubHeader from "../../components/SubHeader";
+import Headline from "../../components/Headline";
+import Words from "../../components/Words";
+import Image from "../../components/Image";
+import Collection from "../../components/Collection";
+import Half from "../../components/Half";
+import Item from "../../components/Item";
+import CodeBlock from "../../components/CodeBlock";
+import List from "../../components/List";
 
-import FormDiagram from "design_system/interfaces/guidelines/v2/pages/forms/FormDiagram";
-import HorizontalGroupingDemo from "design_system/interfaces/guidelines/v2/pages/forms/HorizontalGroupingDemo";
-import CTADemo from "design_system/interfaces/guidelines/v2/pages/forms/CTADemo";
-import ButtonsDemo from "design_system/interfaces/guidelines/v2/pages/forms/ButtonsDemo";
-import SectionsWithDescriptionsDemo from "design_system/interfaces/guidelines/v2/pages/forms/SectionsWithDescriptionsDemo";
-import SectionsWithSubsectionsDemo from "design_system/interfaces/guidelines/v2/pages/forms/SectionsWithSubsectionsDemo";
-import SectionBordersDemo from "design_system/interfaces/guidelines/v2/pages/forms/SectionBordersDemo";
-import DynamicSectionsDemo from "design_system/interfaces/guidelines/v2/pages/forms/DynamicSectionsDemo";
-import InputLevelErrorsDemo from "design_system/interfaces/guidelines/v2/pages/forms/InputLevelErrorsDemo";
-import SectionLevelErrorsDemo from "design_system/interfaces/guidelines/v2/pages/forms/SectionLevelErrorsDemo";
-import FormLevelErrorsDemo from "design_system/interfaces/guidelines/v2/pages/forms/FormLevelErrorsDemo";
-import InlineEditDemo from "design_system/interfaces/guidelines/v2/pages/forms/InlineEditDemo";
+import FormDiagram from "./FormDiagram";
+import HorizontalGroupingDemo from "./HorizontalGroupingDemo";
+import CTADemo from "./CTADemo";
+import ButtonsDemo from "./ButtonsDemo";
+import SectionsWithDescriptionsDemo from "./SectionsWithDescriptionsDemo";
+import SectionsWithSubsectionsDemo from "./SectionsWithSubsectionsDemo";
+import SectionBordersDemo from "./SectionBordersDemo";
+import DynamicSectionsDemo from "./DynamicSectionsDemo";
+import InputLevelErrorsDemo from "./InputLevelErrorsDemo";
+import SectionLevelErrorsDemo from "./SectionLevelErrorsDemo";
+import FormLevelErrorsDemo from "./FormLevelErrorsDemo";
+import InlineEditDemo from "./InlineEditDemo";
 
 function FormsPage(): React.Node {
   return (

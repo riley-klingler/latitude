@@ -5,7 +5,7 @@
 
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
-import Checkbox from "Checkbox";
+import Checkbox from "../../Checkbox";
 
 type Props = {|
   /** The label associated with the option */

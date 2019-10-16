@@ -5,8 +5,8 @@
  */
 import * as React from "react";
 import {mount} from "enzyme";
-import RadioGroup from "radio/RadioGroup";
-import Radio from "radio/Radio";
+import RadioGroup from "../RadioGroup";
+import Radio from "../Radio";
 
 const options = [
   {label: "Client", value: "client"},

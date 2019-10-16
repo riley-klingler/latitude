@@ -11,8 +11,8 @@ import InputGroupContext, {
   CENTER_INPUT,
   LEFT_INPUT,
   RIGHT_INPUT,
-} from "context/InputGroupContext";
-import invariant from "tools/invariant";
+} from "./context/InputGroupContext";
+import invariant from "./tools/invariant";
 
 type CustomWidthSetting = {|
   flex?: number,

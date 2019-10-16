@@ -6,14 +6,14 @@
 /* eslint-disable react/prefer-stateless-function */
 import * as React from "react";
 
-import type {ToastRecord} from "toast/ToastStore";
+import type {ToastRecord} from "./ToastStore";
 
-import {css, StyleSheet} from "styles/aphrodite";
-import {zIndices} from "tools/zIndices";
-import {padding} from "styles/whitespace";
+import {css, StyleSheet} from "../styles/aphrodite";
+import {zIndices} from "../tools/zIndices";
+import {padding} from "../styles/whitespace";
 import {TransitionGroup, CSSTransition} from "react-transition-group";
 
-import Toast from "toast/Toast";
+import Toast from "./Toast";
 
 export type ToasterPropsFromParent = {
   /* Option to add space to the top so it doesn't overlap with a header */

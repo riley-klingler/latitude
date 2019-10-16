@@ -4,7 +4,7 @@
  * @flow strict
  */
 
-import FileFormat, {type FileFormatType} from "constants/FileFormatConstants";
+import FileFormat, {type FileFormatType} from "../constants/FileFormatConstants";
 
 // categorized uploaded files by their extension
 export default function getFileFormat(file: File): FileFormatType {

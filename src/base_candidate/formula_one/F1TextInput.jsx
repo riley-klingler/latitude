@@ -8,8 +8,8 @@ import * as React from "react";
 
 import withF1, {
   type F1FieldProps,
-} from "base_candidate/formula_one/withF1";
-import TextInput from "TextInput";
+} from "./withF1";
+import TextInput from "../../TextInput";
 
 type TextInputProps = $Exact<
   $Diff<

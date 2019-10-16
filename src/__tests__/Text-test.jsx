@@ -6,8 +6,8 @@
 import * as React from "react";
 import {mount} from "enzyme";
 
-import Text from "Text";
-import TextLink from "TextLink";
+import Text from "../Text";
+import TextLink from "../TextLink";
 
 const textSample = "The freight forwarder for modern logistics teams.";
 

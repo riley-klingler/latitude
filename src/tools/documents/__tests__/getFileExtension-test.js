@@ -3,7 +3,7 @@
  *
  * @flow strict
  */
-import getFileExtension from "tools/documents/getFileExtension";
+import getFileExtension from "../getFileExtension";
 
 describe("getFileExtension", () => {
   const fileName1 = "file_name.pdf";

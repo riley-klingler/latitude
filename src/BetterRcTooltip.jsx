@@ -10,11 +10,11 @@
 import * as React from "react";
 
 // $FlowFixMe(ethan): this file is untyped
-import placeArrow from "tools/placeArrow";
+import placeArrow from "./tools/placeArrow";
 
 // $FlowFixMe(ethan): this file is untyped
 import RcTooltip from "rc-tooltip";
-import "vendor_stylesheets/rc-tooltip.css";
+import "./vendor_stylesheets/rc-tooltip.css";
 
 type Props = {
   +children: React.Node,

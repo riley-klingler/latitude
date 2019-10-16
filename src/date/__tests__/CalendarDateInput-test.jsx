@@ -5,19 +5,19 @@
  */
 
 import * as React from "react";
-import {_test} from "date/CalendarDateInput";
+import {_test} from "../CalendarDateInput";
 import {
   ARROW_DOWN_KEY,
   ARROW_UP_KEY,
   ESCAPE_KEY,
-} from "date/inputUtils";
+} from "../inputUtils";
 import {mount} from "enzyme";
 import {
   type CalendarDate,
   parseStringToCalendarDate,
   calendarDateToMoment,
-} from "date/CalendarDateType";
-import invariant from "tools/invariant";
+} from "../CalendarDateType";
+import invariant from "../../tools/invariant";
 
 // none of our tests depend on a specific time zone or time
 // unmock moment, since we will just be parsing one date

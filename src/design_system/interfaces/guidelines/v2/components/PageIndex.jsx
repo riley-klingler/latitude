@@ -6,8 +6,8 @@
 import React, {useState, useEffect} from "react";
 import {throttle} from "lodash";
 import {StyleSheet, css} from "aphrodite";
-import type {IndexEntry} from "design_system/interfaces/guidelines/v2/components/IndexedPage";
-import colors from "styles/colors";
+import type {IndexEntry} from "./IndexedPage";
+import colors from "../../../../../styles/colors";
 
 type Props = {|
   +entries: Array<IndexEntry>,

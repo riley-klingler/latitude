@@ -3,10 +3,10 @@
  * @flow
  */
 
-import {type DemoFile, bool} from "design_system/types/demoTypes";
+import {type DemoFile, bool} from "../design_system/types/demoTypes";
 import * as React from "react";
-import DropdownButton from "DropdownButton";
-import ToggleButton from "base_candidate/button/ToggleButton";
+import DropdownButton from "../DropdownButton";
+import ToggleButton from "../base_candidate/button/ToggleButton";
 
 const demos: DemoFile = {
   demos: [

@@ -6,11 +6,11 @@
 
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
-import {include, margin} from "styles/index";
+import {include, margin} from "../styles/index";
 import CalendarDateInput, {
   DEFAULT_DATE_FORMAT,
-} from "date/CalendarDateInput";
-import {type Size} from "sizes";
+} from "./CalendarDateInput";
+import {type Size} from "../sizes";
 import {
   formatCalendarDate,
   type CalendarDate,
@@ -18,10 +18,10 @@ import {
   calendarDateCompare,
   addDaysFromCalendarDate,
   shouldBeCalendarDate,
-} from "date/CalendarDateType";
-import DropdownButton from "DropdownButton";
-import colors from "styles/colors";
-import IconButton from "button/IconButton";
+} from "./CalendarDateType";
+import DropdownButton from "../DropdownButton";
+import colors from "../styles/colors";
+import IconButton from "../button/IconButton";
 
 export type CalendarDateRangeValue = {
   +startDate: CalendarDate | null,

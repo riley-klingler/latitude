@@ -6,12 +6,12 @@
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
 
-import colors from "styles/colors";
-import IconButton from "button/IconButton";
-import Text from "Text";
-import Group from "Group";
-import Portal from "Portal";
-import {zIndices} from "tools/zIndices";
+import colors from "./styles/colors";
+import IconButton from "./button/IconButton";
+import Text from "./Text";
+import Group from "./Group";
+import Portal from "./Portal";
+import {zIndices} from "./tools/zIndices";
 import {CSSTransition} from "react-transition-group";
 
 const DRAWER_WIDTH = 400;

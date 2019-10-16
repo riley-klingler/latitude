@@ -8,12 +8,12 @@
 import moment from "moment";
 import "moment/locale/zh-cn";
 import i18next from "i18next";
-import LngDetector from "config/I18nLanguageDetector";
-import zhBooking from "config/locale/booking/zh";
-import zhCommon from "config/locale/common/zh";
-import zhDocuments from "config/locale/documents/zh";
-import zhLatitude from "config/locale/latitude/zh";
-import zhCore from "config/locale/core/zh";
+import LngDetector from "./I18nLanguageDetector";
+import zhBooking from "./locale/booking/zh";
+import zhCommon from "./locale/common/zh";
+import zhDocuments from "./locale/documents/zh";
+import zhLatitude from "./locale/latitude/zh";
+import zhCore from "./locale/core/zh";
 
 // Default the locale back to english (unfortunately importing zh-cn implicitly
 // sets it as the default locale).

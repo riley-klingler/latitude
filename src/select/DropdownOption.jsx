@@ -8,7 +8,7 @@
 
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
-import latitudeColors from "latitudeColors";
+import latitudeColors from "../latitudeColors";
 
 type Props = {|
   /** the unique label associated with the option. */

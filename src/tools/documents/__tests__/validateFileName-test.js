@@ -3,7 +3,7 @@
  *
  * @flow strict
  */
-import validateFileName from "tools/documents/validateFileName";
+import validateFileName from "../validateFileName";
 
 describe("getFileExtension", () => {
   const fileName1 = "file_name.pdf";

@@ -6,7 +6,7 @@
  */
 
 import * as React from "react";
-import jsxToString from "tools/jsxToString";
+import jsxToString from "../../../tools/jsxToString";
 import Highlight from "react-highlight/lib/optimized";
 
 import {
@@ -14,22 +14,22 @@ import {
   type DemoType,
   type DemoProps as FullDemoProps,
   extractDefaults,
-} from "design_system/types/demoTypes";
-import Checkbox from "Checkbox";
-import TextInput from "TextInput";
-import Label from "Label";
+} from "../../types/demoTypes";
+import Checkbox from "../../../Checkbox";
+import TextInput from "../../../TextInput";
+import Label from "../../../Label";
 
-import Text from "Text";
-import SelectInput from "select/SelectInput";
-import SearchableSelectInput from "select/SearchableSelectInput";
-import CalendarDateInput from "date/CalendarDateInput";
-import type {CalendarDate} from "date/CalendarDateType";
-import TextLinkAction from "TextLinkAction";
-import Group from "Group";
-import Markdown from "design_system/components/markdown/Markdown";
+import Text from "../../../Text";
+import SelectInput from "../../../select/SelectInput";
+import SearchableSelectInput from "../../../select/SearchableSelectInput";
+import CalendarDateInput from "../../../date/CalendarDateInput";
+import type {CalendarDate} from "../../../date/CalendarDateType";
+import TextLinkAction from "../../../TextLinkAction";
+import Group from "../../../Group";
+import Markdown from "../markdown/Markdown";
 
-import {css, StyleSheet} from "styles/aphrodite";
-import colors from "styles/colors";
+import {css, StyleSheet} from "../../../styles/aphrodite";
+import colors from "../../../styles/colors";
 
 type DemoProps = {
   +demo: DemoType,

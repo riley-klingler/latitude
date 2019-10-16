@@ -5,17 +5,17 @@
 
 import React, {useState} from "react";
 
-import Grid from "grid/Grid";
-import Row from "grid/Row";
-import Cell from "grid/Cell";
-import Banner from "Banner";
-import Text from "Text";
-import TextInput from "TextInput";
-import TextareaInput from "TextareaInput";
-import RadioGroup from "radio/RadioGroup";
-import Label from "Label";
-import SectionExample from "design_system/interfaces/guidelines/v2/pages/forms/SectionExample";
-import SelectInput from "select/SelectInput";
+import Grid from "../../../../../../grid/Grid";
+import Row from "../../../../../../grid/Row";
+import Cell from "../../../../../../grid/Cell";
+import Banner from "../../../../../../Banner";
+import Text from "../../../../../../Text";
+import TextInput from "../../../../../../TextInput";
+import TextareaInput from "../../../../../../TextareaInput";
+import RadioGroup from "../../../../../../radio/RadioGroup";
+import Label from "../../../../../../Label";
+import SectionExample from "./SectionExample";
+import SelectInput from "../../../../../../select/SelectInput";
 
 const containerTypeOptions = [
   {

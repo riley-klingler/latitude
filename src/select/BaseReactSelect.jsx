@@ -8,7 +8,7 @@ import BaseReactMultiselect, {
   type Option,
   type ReactSelectKey,
   type ReactSelectRenderOptions,
-} from "select/BaseReactMultiselect";
+} from "./BaseReactMultiselect";
 
 export type {Option};
 

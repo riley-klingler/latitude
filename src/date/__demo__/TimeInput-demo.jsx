@@ -11,10 +11,10 @@ import {
   disabledKnob,
   isInvalidKnob,
   textInputSizeKnob,
-} from "design_system/types/demoTypes";
+} from "../../design_system/types/demoTypes";
 import * as React from "react";
-import TimeInput, {getTimeIntervals} from "date/TimeInput";
-import {type WallTime, ZERO_OCLOCK, EOD_OCLOCK} from "date/wallTime";
+import TimeInput, {getTimeIntervals} from "../TimeInput";
+import {type WallTime, ZERO_OCLOCK, EOD_OCLOCK} from "../wallTime";
 import {css} from "aphrodite";
 
 const demos: DemoFile = {

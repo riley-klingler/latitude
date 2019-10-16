@@ -11,13 +11,13 @@ import {
   type SheetDefinition,
 } from "aphrodite";
 import {memoize} from "lodash";
-import {type Theme, BASE} from "context/ThemeNameContext";
-import invariant from "tools/invariant";
-import {margin, padding, deprecatedPaddingSizeConstants} from "styles/whitespace";
-import border from "styles/borders";
-import {typeScale, fontWeights, fontStyles} from "styles/typography";
-import themeColorMaps, {type ThemeColorMap} from "styles/themeColorMaps";
-import getThemeColors, {type ThemeColors} from "styles/getThemeColors";
+import {type Theme, BASE} from "../context/ThemeNameContext";
+import invariant from "../tools/invariant";
+import {margin, padding, deprecatedPaddingSizeConstants} from "./whitespace";
+import border from "./borders";
+import {typeScale, fontWeights, fontStyles} from "./typography";
+import themeColorMaps, {type ThemeColorMap} from "./themeColorMaps";
+import getThemeColors, {type ThemeColors} from "./getThemeColors";
 
 // quick styles
 // our commly referenced base styles

@@ -3,7 +3,7 @@
  * @flow strict
  */
 import * as React from "react";
-import stringOrFalse from "tools/stringOrFalse";
+import stringOrFalse from "./stringOrFalse";
 
 export default function getHocDisplayName(
   hocName: string,

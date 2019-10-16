@@ -5,7 +5,7 @@
 
 import * as React from "react";
 import reactElementToJSXString from "react-element-to-jsx-string";
-import getInnerExpression from "tools/getInnerExpression";
+import getInnerExpression from "./getInnerExpression";
 
 /*
  * calls reactElementToJSXString with an opinionated and consistent set of options

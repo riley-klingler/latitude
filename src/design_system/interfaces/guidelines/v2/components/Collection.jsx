@@ -4,9 +4,9 @@
  */
 
 import * as React from "react";
-import Grid from "grid/Grid";
-import Row from "grid/Row";
-import Cell from "grid/Cell";
+import Grid from "../../../../../grid/Grid";
+import Row from "../../../../../grid/Row";
+import Cell from "../../../../../grid/Cell";
 
 type Props = {|
   +children: React.Node,

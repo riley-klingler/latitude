@@ -3,7 +3,7 @@
  *
  * @flow strict
  */
-import consolidateFileExtension from "tools/documents/consolidateFileExtension";
+import consolidateFileExtension from "../consolidateFileExtension";
 
 describe("consolidateFileExtension", () => {
   const originalFileName = "file_name.pdf";

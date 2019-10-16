@@ -5,8 +5,8 @@
 
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
-import colors from "styles/colors";
-import latitudeColors from "latitudeColors";
+import colors from "../styles/colors";
+import latitudeColors from "../latitudeColors";
 
 type Props = {|
   /** body of the popover */

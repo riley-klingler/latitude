@@ -4,10 +4,10 @@
  * @flow
  */
 
-import type {DemoFile} from "design_system/types/demoTypes";
+import type {DemoFile} from "../../design_system/types/demoTypes";
 import * as React from "react";
 
-import ProgressTracker from "progress/ProgressTracker";
+import ProgressTracker from "../ProgressTracker";
 
 const demos: DemoFile = {
   demos: [

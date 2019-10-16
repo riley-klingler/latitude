@@ -5,20 +5,20 @@
 
 import React, {useState} from "react";
 
-import Grid from "grid/Grid";
-import Row from "grid/Row";
-import Cell from "grid/Cell";
-import Group from "Group";
-import Banner from "Banner";
-import Button from "button/Button";
-import Checkbox from "Checkbox";
-import InputError from "InputError";
-import Text from "Text";
-import SelectInput from "select/SelectInput";
-import TextInput from "TextInput";
-import RadioGroup from "radio/RadioGroup";
-import Label from "Label";
-import SectionExample from "design_system/interfaces/guidelines/v2/pages/forms/SectionExample";
+import Grid from "../../../../../../grid/Grid";
+import Row from "../../../../../../grid/Row";
+import Cell from "../../../../../../grid/Cell";
+import Group from "../../../../../../Group";
+import Banner from "../../../../../../Banner";
+import Button from "../../../../../../button/Button";
+import Checkbox from "../../../../../../Checkbox";
+import InputError from "../../../../../../InputError";
+import Text from "../../../../../../Text";
+import SelectInput from "../../../../../../select/SelectInput";
+import TextInput from "../../../../../../TextInput";
+import RadioGroup from "../../../../../../radio/RadioGroup";
+import Label from "../../../../../../Label";
+import SectionExample from "./SectionExample";
 
 const roleOptions = [
   {

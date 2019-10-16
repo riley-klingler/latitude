@@ -82,7 +82,7 @@
  */
 
 import * as React from "react";
-import {EventTypes} from "constants/_MutationConstants";
+import {EventTypes} from "../constants/_MutationConstants";
 
 // =============================================================================
 // Initialize the Stores

@@ -4,10 +4,10 @@
  */
 import * as React from "react";
 import {css} from "aphrodite";
-import {GridContext, type GridProps} from "grid/Grid";
-import invariant from "tools/invariant";
+import {GridContext, type GridProps} from "./Grid";
+import invariant from "../tools/invariant";
 
-import {columnStyles, GRID_COLUMNS} from "grid/gridTools";
+import {columnStyles, GRID_COLUMNS} from "./gridTools";
 
 type Spans = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 type BreakpointSpan = {|

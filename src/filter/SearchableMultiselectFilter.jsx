@@ -6,15 +6,15 @@
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
 import {isEqual} from "lodash";
-import BaseFilter, {type PopupPlacement} from "filter/BaseFilter";
-import MultiInput from "MultiInput";
-import DropdownList from "select/DropdownList";
-import CheckboxOption from "select/custom_option/CheckboxOption";
-import {type Size} from "sizes";
-import Text from "Text";
-import colors from "styles/colors";
+import BaseFilter, {type PopupPlacement} from "./BaseFilter";
+import MultiInput from "../MultiInput";
+import DropdownList from "../select/DropdownList";
+import CheckboxOption from "../select/custom_option/CheckboxOption";
+import {type Size} from "../sizes";
+import Text from "../Text";
+import colors from "../styles/colors";
 
-import {UP, DOWN, ESC, ENTER} from "constants/interactions/KeyCodes";
+import {UP, DOWN, ESC, ENTER} from "../constants/interactions/KeyCodes";
 
 type Option<T> = {|
   /** the unique label associated with the option */

@@ -7,7 +7,7 @@
 import * as React from "react";
 import {shallow} from "enzyme";
 
-import ToggleButton from "base_candidate/button/ToggleButton";
+import ToggleButton from "../ToggleButton";
 
 describe("ToggleButton", () => {
   it("renders", () => {

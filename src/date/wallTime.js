@@ -7,10 +7,10 @@
 import {
   type CalendarDate,
   calendarDateToMoment,
-} from "date/CalendarDateType";
+} from "./CalendarDateType";
 import type momentT from "moment";
-import stringOrFalse from "tools/stringOrFalse";
-import invariant from "tools/invariant";
+import stringOrFalse from "../tools/stringOrFalse";
+import invariant from "../tools/invariant";
 import moment from "moment-timezone";
 
 /**

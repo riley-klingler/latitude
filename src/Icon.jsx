@@ -7,20 +7,20 @@
 
 import * as React from "react";
 import classnames from "classnames";
-import invariant from "tools/invariant";
-import {type IconNames, iconData} from "tools/icons";
-import {type Color} from "styles/colors";
-import {v3ColorMap} from "latitudeColors";
+import invariant from "./tools/invariant";
+import {type IconNames, iconData} from "./tools/icons";
+import {type Color} from "./styles/colors";
+import {v3ColorMap} from "./latitudeColors";
 import deprecatedColors, {
   type DeprecatedColor,
-} from "styles/deprecatedColorConstants";
-import transmissionDeprecatedColors from "dispatch/styles/colors";
-import {sizes} from "tools/ui/sizes";
+} from "./styles/deprecatedColorConstants";
+import transmissionDeprecatedColors from "./dispatch/styles/colors";
+import {sizes} from "./tools/ui/sizes";
 import {css, StyleSheet} from "aphrodite";
 import ThemeNameContext, {
   type Theme,
   TRANSMISSION,
-} from "context/ThemeNameContext";
+} from "./context/ThemeNameContext";
 
 export type {IconNames};
 

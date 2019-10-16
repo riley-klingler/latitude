@@ -3,13 +3,13 @@
  *
  * @flow
  */
-import * as React from "react";
-import AppDispatcher from "dispatcher/AppDispatcher";
 import EventEmitter from "events";
 import update from "immutability-helper";
-import Toast from "toast/Toast";
-import {ActionTypes, EventTypes} from "constants/ToastConstants";
-import PayloadSources from "constants/PayloadSources";
+import * as React from "react";
+import AppDispatcher from "../dispatcher/AppDispatcher";
+import Toast from "./Toast";
+import {ActionTypes, EventTypes} from "../constants/ToastConstants";
+import PayloadSources from "../constants/PayloadSources";
 import ToastActions from "./ToastActions";
 
 type ToastProps = React.ElementConfig<typeof Toast>;

@@ -4,7 +4,7 @@
  * @flow
  */
 
-import {MAX_FILE_SIZE} from "constants/DocumentConstants";
+import {MAX_FILE_SIZE} from "../constants/DocumentConstants";
 
 function dataURItoFile(dataURI: string, name: string): File | Blob {
   // convert base64/URLEncoded data component to raw binary data held in a string

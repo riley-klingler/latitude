@@ -7,20 +7,20 @@
 
 import * as React from "react";
 
-import Text from "Text";
-import TextInput from "TextInput";
-import Icon from "Icon";
-import Label from "Label";
-import IconButton from "button/IconButton";
-import SelectInput from "select/SelectInput";
-import Group from "Group";
-import componentsMetaList from "design_system/constants/componentsMetaList.json";
+import Text from "../../../Text";
+import TextInput from "../../../TextInput";
+import Icon from "../../../Icon";
+import Label from "../../../Label";
+import IconButton from "../../../button/IconButton";
+import SelectInput from "../../../select/SelectInput";
+import Group from "../../../Group";
+import componentsMetaList from "../../constants/componentsMetaList.json";
 
 import key from "keymaster";
-import colors from "styles/colors";
-import betterGroupBy from "tools/betterGroupBy";
-import {css, StyleSheet} from "styles/aphrodite";
-import {fontWeights} from "styles";
+import colors from "../../../styles/colors";
+import betterGroupBy from "../../../tools/betterGroupBy";
+import {css, StyleSheet} from "../../../styles/aphrodite";
+import {fontWeights} from "../../../styles";
 import {
   guidelines,
   styles as stylesUrl,
@@ -31,10 +31,10 @@ import {
   design,
   components as componentsUrl,
   playground,
-} from "design_system/DesignSystemRoutes";
-import DesignSystemLink from "design_system/components/DesignSystemLink";
-import RouterContext from "context/RouterContext";
-import {type Theme, TRANSMISSION, BASE} from "context/ThemeNameContext";
+} from "../../DesignSystemRoutes";
+import DesignSystemLink from "../../components/DesignSystemLink";
+import RouterContext from "../../../context/RouterContext";
+import {type Theme, TRANSMISSION, BASE} from "../../../context/ThemeNameContext";
 
 const themes = [BASE, TRANSMISSION];
 const THEME_OPTIONS = themes.map(theme => ({

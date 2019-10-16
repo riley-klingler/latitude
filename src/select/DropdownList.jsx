@@ -9,10 +9,10 @@
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
 
-import DropdownOption from "select/DropdownOption";
+import DropdownOption from "./DropdownOption";
 import {entries} from "lodash";
-import latitudeColors from "latitudeColors";
-import invariant from "tools/invariant";
+import latitudeColors from "../latitudeColors";
+import invariant from "../tools/invariant";
 
 export type Option = {|
   /** the unique label associated with the option. */

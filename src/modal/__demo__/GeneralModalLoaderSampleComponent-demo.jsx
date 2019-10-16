@@ -5,8 +5,8 @@
  * @flow
  */
 import React from "react";
-import Button from "button/Button";
-import GeneralModalBody from "modal/GeneralModalBody";
+import Button from "../../button/Button";
+import GeneralModalBody from "../GeneralModalBody";
 
 
 export default class AddUserModal extends React.PureComponent<*, *> {

@@ -4,7 +4,7 @@
  */
 import * as React from "react";
 import ReactDOM from "react-dom";
-import invariant from "tools/invariant";
+import invariant from "./tools/invariant";
 
 type Props = {|
   +children: React.Node,

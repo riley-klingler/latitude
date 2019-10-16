@@ -5,9 +5,9 @@
 
 import React from "react";
 import {StyleSheet, css} from "aphrodite";
-import Text from "Text";
-import {useIndexing} from "design_system/interfaces/guidelines/v2/components/IndexedPage";
-import ElementLink from "design_system/interfaces/guidelines/v2/components/ElementLink";
+import Text from "../../../../../Text";
+import {useIndexing} from "./IndexedPage";
+import ElementLink from "./ElementLink";
 
 type Props = {|
   +children: string,

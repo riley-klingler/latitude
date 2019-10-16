@@ -7,12 +7,12 @@
 
 import * as React from "react";
 
-import {latitudeT as t} from "config/I18n";
-import invariant from "tools/invariant";
+import {latitudeT as t} from "./config/I18n";
+import invariant from "./tools/invariant";
 import {css, StyleSheet} from "aphrodite";
-import HelpTooltip from "HelpTooltip";
-import {fontWeights as typeWeights} from "styles/typography";
-import latitudeColors from "latitudeColors";
+import HelpTooltip from "./HelpTooltip";
+import {fontWeights as typeWeights} from "./styles/typography";
+import latitudeColors from "./latitudeColors";
 
 export type TypeWeights = $Keys<typeof typeWeights>;
 

@@ -5,7 +5,7 @@
 
 import * as React from "react";
 import {mount} from "enzyme";
-import ProgressBar from "ProgressBar";
+import ProgressBar from "../ProgressBar";
 
 function mountProgressBar(propOverrides: {} = {}) {
   const defaultProps = {loaded: false};

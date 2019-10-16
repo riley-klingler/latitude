@@ -10,21 +10,21 @@ import InputGroupContext, {
   CENTER_INPUT,
   LEFT_INPUT,
   RIGHT_INPUT,
-} from "context/InputGroupContext";
-import latitudeColors from "latitudeColors";
-import {LabelContext} from "Label";
-import IconButton from "button/IconButton";
-import Icon, {type IconNames, type StandardIconSizes} from "Icon";
-import {type Size} from "sizes";
+} from "./context/InputGroupContext";
+import latitudeColors from "./latitudeColors";
+import {LabelContext} from "./Label";
+import IconButton from "./button/IconButton";
+import Icon, {type IconNames, type StandardIconSizes} from "./Icon";
+import {type Size} from "./sizes";
 import {
   inputStyles,
   HORIZONTAL_INPUT_PADDING_BASE_PX,
   HORIZONTAL_INPUT_PADDING_LARGE_PX,
   HORIZONTAL_INPUT_PADDING_SMALL_PX,
-} from "styles/input";
-import {sizes} from "tools/ui/sizes";
-import {getWidthOfText} from "styles/fontWidths";
-import {typeScale} from "styles/typography";
+} from "./styles/input";
+import {sizes} from "./tools/ui/sizes";
+import {getWidthOfText} from "./styles/fontWidths";
+import {typeScale} from "./styles/typography";
 
 export type TextAlignment = "left" | "right" | "center";
 export type TextInputType = "text" | "password" | "email";

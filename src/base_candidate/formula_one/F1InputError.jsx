@@ -5,7 +5,7 @@
  */
 
 import * as React from "react";
-import InputError from "InputError";
+import InputError from "../../InputError";
 
 type Props = {|
   // The F1 errors to be linked to the InputError component

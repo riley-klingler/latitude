@@ -6,11 +6,11 @@
 
 import * as React from "react";
 import {StyleSheet} from "aphrodite";
-import {iconData, type IconNames} from "tools/icons";
-import {graphicIconNames, type GraphicIcons} from "tools/graphicIconsConstants";
+import {iconData, type IconNames} from "../../tools/icons";
+import {graphicIconNames, type GraphicIcons} from "../../tools/graphicIconsConstants";
 import deprecatedColors, {
   type DeprecatedColor,
-} from "styles/deprecatedColorConstants";
+} from "../../styles/deprecatedColorConstants";
 
 export type Option<K> = {|
   +label: string,

@@ -4,11 +4,11 @@
  */
 
 import React from "react";
-import Text from "Text";
-import Button from "button/Button";
-import LiveDemo from "design_system/components/LiveDemo/LiveDemo";
-import Half from "design_system/interfaces/guidelines/v2/components/Half";
-import MainHeader from "design_system/interfaces/guidelines/v2/components/MainHeader";
+import Text from "../../Text";
+import Button from "../../button/Button";
+import LiveDemo from "../components/LiveDemo/LiveDemo";
+import Half from "./guidelines/v2/components/Half";
+import MainHeader from "./guidelines/v2/components/MainHeader";
 
 const code = `
 function Counter() {

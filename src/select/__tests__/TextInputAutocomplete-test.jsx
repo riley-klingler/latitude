@@ -7,7 +7,7 @@ import * as React from "react";
 import {mount} from "enzyme";
 import TextInputAutocomplete, {
   defaultFilter,
-} from "TextInputAutocomplete";
+} from "../../TextInputAutocomplete";
 
 function mountTextInputAutocomplete(props?: {}) {
   return mount(

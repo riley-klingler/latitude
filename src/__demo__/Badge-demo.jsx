@@ -3,13 +3,13 @@
  * @flow
  */
 
-import type {DemoFile} from "design_system/types/demoTypes";
+import type {DemoFile} from "../design_system/types/demoTypes";
 import * as React from "react";
-import Badge from "Badge";
-import Button from "button/Button";
-import Icon from "Icon";
-import Text from "Text";
-import Group from "Group";
+import Badge from "../Badge";
+import Button from "../button/Button";
+import Icon from "../Icon";
+import Text from "../Text";
+import Group from "../Group";
 
 const demos: DemoFile = {
   demos: [

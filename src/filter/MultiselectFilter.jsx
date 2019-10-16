@@ -5,9 +5,9 @@
 
 import * as React from "react";
 import {isEqual} from "lodash";
-import BaseFilter, {type PopupPlacement} from "filter/BaseFilter";
-import MultiselectOptions from "select/MultiselectOptions";
-import {type Size} from "sizes";
+import BaseFilter, {type PopupPlacement} from "./BaseFilter";
+import MultiselectOptions from "../select/MultiselectOptions";
+import {type Size} from "../sizes";
 
 export type ValueObj<T> =
   | {|+type: "allSelected"|}

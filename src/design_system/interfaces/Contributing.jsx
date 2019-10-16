@@ -5,9 +5,9 @@
 
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
-import Text from "Text";
-import LinkableHeader from "base_candidate/LinkableHeader";
-import TextLink from "TextLink";
+import Text from "../../Text";
+import LinkableHeader from "../../base_candidate/LinkableHeader";
+import TextLink from "../../TextLink";
 import Highlight from "react-highlight/lib/optimized";
 
 const commentBlockExample = `/**

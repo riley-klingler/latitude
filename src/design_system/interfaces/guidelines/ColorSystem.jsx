@@ -9,19 +9,19 @@ import * as React from "react";
 import ColorPalette, {
   ProductPalette,
   ColorClassificationLegend,
-} from "design_system/components/helpers/ColorPalette";
+} from "../../components/helpers/ColorPalette";
 
-import {css, StyleSheet} from "styles/aphrodite";
-import colors, {type Color} from "styles/colors";
+import {css, StyleSheet} from "../../../styles/aphrodite";
+import colors, {type Color} from "../../../styles/colors";
 
 import {
   deprecatedMarginSizeConstants,
   deprecatedPaddingSizeConstants,
-} from "styles/whitespace";
+} from "../../../styles/whitespace";
 
-import Text from "Text";
-import TextLink from "TextLink";
-import Group from "Group";
+import Text from "../../../Text";
+import TextLink from "../../../TextLink";
+import Group from "../../../Group";
 
 const ColorSystem = () => (
   <div className={css(styles.wrapper)}>

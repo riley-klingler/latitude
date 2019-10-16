@@ -9,10 +9,10 @@ import {
   getGraphicIconKnob,
   number,
   type DemoProps,
-} from "design_system/types/demoTypes";
+} from "../design_system/types/demoTypes";
 import * as React from "react";
 
-import GraphicIcon from "GraphicIcon";
+import GraphicIcon from "../GraphicIcon";
 
 const graphicIconKnobs = {
   icon: getGraphicIconKnob(),

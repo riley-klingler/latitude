@@ -5,17 +5,17 @@
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
 import {Manager} from "react-popper";
-import colors from "styles/colors";
-import {type Size} from "sizes";
-import TextInput from "TextInput";
+import colors from "../styles/colors";
+import {type Size} from "../sizes";
+import TextInput from "../TextInput";
 import DropdownList, {
   type Option as DropdownOption,
-} from "select/DropdownList";
-import useDropdown from "tools/useDropdown";
-import {defaultFilter} from "TextInputAutocomplete";
-import DeprecatedPopperTarget from "popup/DeprecatedPopperTarget";
-import DeprecatedPopper from "popup/DeprecatedPopper";
-import {BACKSPACE} from "constants/interactions/KeyCodes";
+} from "./DropdownList";
+import useDropdown from "../tools/useDropdown";
+import {defaultFilter} from "../TextInputAutocomplete";
+import DeprecatedPopperTarget from "../popup/DeprecatedPopperTarget";
+import DeprecatedPopper from "../popup/DeprecatedPopper";
+import {BACKSPACE} from "../constants/interactions/KeyCodes";
 
 export type Option<K> = {|
   ...DropdownOption,

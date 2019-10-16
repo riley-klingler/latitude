@@ -4,12 +4,12 @@
  * @flow
  */
 
-import invariant from "tools/invariant";
-import {type CalendarDate, isCalendarDateValid} from "date/CalendarDateType";
+import invariant from "../tools/invariant";
+import {type CalendarDate, isCalendarDateValid} from "../date/CalendarDateType";
 import {
   type ValueObj,
   ALL_SELECTED_VALUE_STATE,
-} from "filter/MultiselectFilter";
+} from "./MultiselectFilter";
 
 type FilterValue = string;
 

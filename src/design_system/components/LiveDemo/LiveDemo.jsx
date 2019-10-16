@@ -13,15 +13,15 @@ import React, {
   useRef,
 } from "react";
 import {StyleSheet, css} from "aphrodite";
-import colors from "styles/colors";
+import colors from "../../../styles/colors";
 import {LiveProvider, LiveError, LivePreview} from "react-live";
-import SettingsPopover from "design_system/components/LiveDemo/SettingsPopover";
-import ScopeList from "design_system/components/LiveDemo/ScopeList";
-import Group from "Group";
-import LiveEditor from "design_system/components/LiveEditor";
-import Collection from "design_system/interfaces/guidelines/v2/components/Collection";
-import SubHeader from "design_system/interfaces/guidelines/v2/components/SubHeader";
-import Item from "design_system/interfaces/guidelines/v2/components/Item";
+import SettingsPopover from "./SettingsPopover";
+import ScopeList from "./ScopeList";
+import Group from "../../../Group";
+import LiveEditor from "../LiveEditor";
+import Collection from "../../interfaces/guidelines/v2/components/Collection";
+import SubHeader from "../../interfaces/guidelines/v2/components/SubHeader";
+import Item from "../../interfaces/guidelines/v2/components/Item";
 
 type Props = {|
   +initialCode?: string,

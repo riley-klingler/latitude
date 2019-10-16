@@ -3,11 +3,11 @@
  *
  * @flow
  */
-import AppDispatcher from "dispatcher/AppDispatcher";
+import AppDispatcher from "../dispatcher/AppDispatcher";
 import EventEmitter from "events";
 import update from "immutability-helper";
-import {ActionTypes, EventTypes} from "constants/ModalConstants";
-import PayloadSources from "constants/PayloadSources";
+import {ActionTypes, EventTypes} from "../constants/ModalConstants";
+import PayloadSources from "../constants/PayloadSources";
 
 type ModalMessage = {
   uniqueId: string,

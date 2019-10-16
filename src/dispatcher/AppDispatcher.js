@@ -6,9 +6,9 @@
 // eslint-disable-next-line no-restricted-imports
 import {defer, extend} from "lodash";
 import {Dispatcher} from "flux";
-import invariant from "tools/invariant";
-import {ActionTypes as CRUDActionTypes} from "constants/_CRUDConstants";
-import {ActionTypes as MutationActionTypes} from "constants/_MutationConstants";
+import invariant from "../tools/invariant";
+import {ActionTypes as CRUDActionTypes} from "../constants/_CRUDConstants";
+import {ActionTypes as MutationActionTypes} from "../constants/_MutationConstants";
 
 // This whitelist ensures that we only do the expensive stacktrace calculation
 // on (the relatively rare) http actions. The stacktrace is used to provide a

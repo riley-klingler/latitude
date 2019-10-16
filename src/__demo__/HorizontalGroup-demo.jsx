@@ -4,12 +4,12 @@
  * @flow
  */
 
-import type {DemoFile} from "design_system/types/demoTypes";
+import type {DemoFile} from "../design_system/types/demoTypes";
 import * as React from "react";
-import Text from "Text";
-import Button from "button/Button";
-import Icon from "Icon";
-import DeprecatedHorizontalGroup from "DeprecatedHorizontalGroup";
+import Text from "../Text";
+import Button from "../button/Button";
+import Icon from "../Icon";
+import DeprecatedHorizontalGroup from "../DeprecatedHorizontalGroup";
 import {css, StyleSheet} from "aphrodite";
 
 const demoStyles = StyleSheet.create({

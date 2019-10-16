@@ -3,9 +3,9 @@
  * @flow strict
  */
 
-import {createThemedStylesheet, type ThemeData} from "styles";
-import {TRANSMISSION} from "context/ThemeNameContext";
-import latitudeColors, {transmissionColors} from "latitudeColors";
+import {createThemedStylesheet, type ThemeData} from "./";
+import {TRANSMISSION} from "../context/ThemeNameContext";
+import latitudeColors, {transmissionColors} from "../latitudeColors";
 
 export type LinkStyle = "default" | "emphasized" | "inverse" | "subtle";
 

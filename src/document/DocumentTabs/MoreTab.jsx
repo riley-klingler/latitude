@@ -6,13 +6,13 @@
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
 import Dotdotdot from "react-dotdotdot";
-import PopupWithClickAway from "popup/PopupWithClickAway";
-import Text from "Text";
-import Icon from "Icon";
-import colors from "styles/colors";
-import Clickable from "base_candidate/Clickable";
-import typeof DocumentTab from "document/DocumentTabs/DocumentTab";
-import sizes, {type Size} from "document/DocumentTabs/sizes";
+import PopupWithClickAway from "../../popup/PopupWithClickAway";
+import Text from "../../Text";
+import Icon from "../../Icon";
+import colors from "../../styles/colors";
+import Clickable from "../../base_candidate/Clickable";
+import typeof DocumentTab from "./DocumentTab";
+import sizes, {type Size} from "./sizes";
 
 type Props = {|
   +children: React.ChildrenArray<React.Element<DocumentTab>>,

@@ -4,10 +4,10 @@
  * @flow
  */
 
-import {_test} from "filter/serializeFilters";
-import {today} from "date/CalendarDateType";
+import {_test} from "../serializeFilters";
+import {today} from "../../date/CalendarDateType";
 import "url-polyfill";
-import {ALL_SELECTED_VALUE_STATE} from "filter/MultiselectFilter";
+import {ALL_SELECTED_VALUE_STATE} from "../MultiselectFilter";
 
 jest.unmock("moment-timezone");
 jest.unmock("moment");

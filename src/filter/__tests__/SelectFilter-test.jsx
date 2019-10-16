@@ -5,7 +5,7 @@
 
 import * as React from "react";
 import {mount, type ReactWrapper} from "enzyme";
-import SelectFilter from "filter/SelectFilter";
+import SelectFilter from "../SelectFilter";
 
 function mountSelectFilter(propOverrides: {} = {}) {
   const defaultProps = {

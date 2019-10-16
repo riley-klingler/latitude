@@ -3,13 +3,13 @@
  * @flow
  */
 
-import type {DemoFile} from "design_system/types/demoTypes";
+import type {DemoFile} from "../design_system/types/demoTypes";
 import * as React from "react";
-import Group from "Group";
-import Banner from "Banner";
-import Button from "button/Button";
-import colors from "styles/colors";
-import {padding} from "styles";
+import Group from "../Group";
+import Banner from "../Banner";
+import Button from "../button/Button";
+import colors from "../styles/colors";
+import {padding} from "../styles";
 import {css, StyleSheet} from "aphrodite";
 
 const demos: DemoFile = {

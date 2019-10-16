@@ -3,16 +3,16 @@
  * @flow
  */
 
-import {type DemoFile} from "design_system/types/demoTypes";
+import {type DemoFile} from "../../design_system/types/demoTypes";
 import * as React from "react";
-import Table from "table/Table";
-import Text from "Text";
-import TextCell from "table/TextCell";
-import Button from "button/Button";
-import InteractableCell from "table/InteractableCell";
-import NotificationModal from "modal/NotificationModal";
-import {StyleSheet, css} from "styles/aphrodite";
-import data from "table/__demo__/data.json";
+import Table from "../Table";
+import Text from "../../Text";
+import TextCell from "../TextCell";
+import Button from "../../button/Button";
+import InteractableCell from "../InteractableCell";
+import NotificationModal from "../../modal/NotificationModal";
+import {StyleSheet, css} from "../../styles/aphrodite";
+import data from "./data.json";
 
 const demos: DemoFile = {
   demos: [

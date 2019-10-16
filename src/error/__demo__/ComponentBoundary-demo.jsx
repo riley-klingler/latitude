@@ -3,10 +3,10 @@
  * @flow
  */
 
-import {type DemoFile, bool} from "design_system/types/demoTypes";
+import {type DemoFile, bool} from "../../design_system/types/demoTypes";
 import * as React from "react";
-import ComponentBoundary from "error/ComponentBoundary";
-import {StyleSheet, css} from "styles/aphrodite";
+import ComponentBoundary from "../ComponentBoundary";
+import {StyleSheet, css} from "../../styles/aphrodite";
 
 const demos: DemoFile = {
   demos: [

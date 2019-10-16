@@ -4,13 +4,13 @@
  */
 
 import React from "react";
-import PopupWithClickAway from "popup/PopupWithClickAway";
-import GeneralPopover from "popover/GeneralPopover";
-import IconButton from "button/IconButton";
-import SettingsToggle from "SettingsToggle";
-import Grid from "grid/Grid";
-import Row from "grid/Row";
-import Cell from "grid/Cell";
+import PopupWithClickAway from "../../../popup/PopupWithClickAway";
+import GeneralPopover from "../../../popover/GeneralPopover";
+import IconButton from "../../../button/IconButton";
+import SettingsToggle from "../../../SettingsToggle";
+import Grid from "../../../grid/Grid";
+import Row from "../../../grid/Row";
+import Cell from "../../../grid/Cell";
 
 type Props = {|
   +settings: {|

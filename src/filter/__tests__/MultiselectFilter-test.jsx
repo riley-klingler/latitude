@@ -8,7 +8,7 @@ import {act} from "react-dom/test-utils";
 import MultiselectFilter, {
   getFilterValueFromArray,
   type Option,
-} from "filter/MultiselectFilter";
+} from "../MultiselectFilter";
 
 // Popper uses document.createRange, which JSDOM doesn't support
 jest.mock("popper.js");

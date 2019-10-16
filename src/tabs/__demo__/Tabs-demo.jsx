@@ -4,9 +4,9 @@
  */
 /* eslint-disable flexport/dynamic-import-webchunkname */
 
-import {type DemoFile, number} from "design_system/types/demoTypes";
+import {type DemoFile, number} from "../../design_system/types/demoTypes";
 import React, {type Node, lazy} from "react";
-import Tabs, {Tab} from "tabs/Tabs";
+import Tabs, {Tab} from "../Tabs";
 import {css, StyleSheet} from "aphrodite";
 
 const demos: DemoFile = {

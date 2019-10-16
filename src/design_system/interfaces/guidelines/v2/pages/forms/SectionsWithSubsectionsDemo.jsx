@@ -5,13 +5,13 @@
 
 import * as React from "react";
 
-import Text from "Text";
-import Group from "Group";
-import TextInput from "TextInput";
-import Label from "Label";
-import FormSection from "form/FormSection";
-import FormRow from "form/FormRow";
-import SectionExample from "design_system/interfaces/guidelines/v2/pages/forms/SectionExample";
+import Text from "../../../../../../Text";
+import Group from "../../../../../../Group";
+import TextInput from "../../../../../../TextInput";
+import Label from "../../../../../../Label";
+import FormSection from "../../../../../../form/FormSection";
+import FormRow from "../../../../../../form/FormRow";
+import SectionExample from "./SectionExample";
 
 function SectionsWithSubsectionsDemo() {
   return (

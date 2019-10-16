@@ -5,10 +5,10 @@
 
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
-import Radio from "radio/Radio";
-import {type Size} from "sizes";
+import Radio from "./Radio";
+import {type Size} from "../sizes";
 import {uniqueId} from "lodash";
-import {LabelContext} from "Label";
+import {LabelContext} from "../Label";
 
 export type OptionObject<+T> = {|
   +label: string | React.Node,

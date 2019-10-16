@@ -7,10 +7,10 @@
 
 import * as React from "react";
 import {css, StyleSheet} from "aphrodite";
-import invariant from "tools/invariant";
+import invariant from "../tools/invariant";
 
-import {GridContext} from "form/FormSection";
-import {gridRules, spanRules} from "form/formTools";
+import {GridContext} from "./FormSection";
+import {gridRules, spanRules} from "./formTools";
 
 type ColumnSpan = Array<1 | 2 | 3 | 4 | 5 | 6 | 7 | 8>;
 

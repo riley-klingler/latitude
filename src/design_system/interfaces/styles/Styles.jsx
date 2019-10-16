@@ -5,7 +5,7 @@
  */
 
 import * as React from "react";
-import stylesManifest from "design_system/interfaces/styles/stylesManifest";
+import stylesManifest from "./stylesManifest";
 
 const DEFAULT_STYLE = "overview";
 

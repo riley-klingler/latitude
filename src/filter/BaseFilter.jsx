@@ -7,13 +7,13 @@
 
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
-import {zIndices} from "tools/zIndices";
-import {type Size} from "sizes";
+import {zIndices} from "../tools/zIndices";
+import {type Size} from "../sizes";
 import PopupWithClickAway, {
   type PopperPlacement,
-} from "popup/PopupWithClickAway";
-import FilterButton from "filter/FilterButton";
-import colors from "styles/colors";
+} from "../popup/PopupWithClickAway";
+import FilterButton from "./FilterButton";
+import colors from "../styles/colors";
 
 type Props = {|
   ...React.ElementConfig<typeof FilterButton>,

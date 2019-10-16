@@ -5,9 +5,9 @@
 
 import * as React from "react";
 import {mount} from "enzyme";
-import MultiInput from "MultiInput";
+import MultiInput from "../MultiInput";
 
-import {ENTER, COMMA, BACKSPACE} from "constants/interactions/KeyCodes";
+import {ENTER, COMMA, BACKSPACE} from "../constants/interactions/KeyCodes";
 
 function mountMultiInput(propOverrides: {} = {}) {
   const defaultProps = {

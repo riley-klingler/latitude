@@ -5,8 +5,8 @@
  * @flow
  */
 import * as React from "react";
-import Section from "design_system/components/documentation_layout/Section";
-import DeprecatedHorizontalGroup from "DeprecatedHorizontalGroup";
+import Section from "./Section";
+import DeprecatedHorizontalGroup from "../../../DeprecatedHorizontalGroup";
 import {StyleSheet, css} from "aphrodite";
 
 type Props = {

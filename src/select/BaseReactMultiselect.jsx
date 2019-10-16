@@ -6,20 +6,20 @@
 import * as React from "react";
 import Select, {
   Option as ReactSelectOption,
-} from "select/react-select-exported";
-import Icon from "Icon";
-import TestAlgoliaField from "form/TestAlgoliaField";
-import {inputStyles, focusedStyle} from "styles/input";
-import {styles} from "form/DeprecatedDropdownList";
+} from "./react-select-exported";
+import Icon from "../Icon";
+import TestAlgoliaField from "../form/TestAlgoliaField";
+import {inputStyles, focusedStyle} from "../styles/input";
+import {styles} from "../form/DeprecatedDropdownList";
 import {StyleSheet} from "aphrodite";
-import {css} from "styles";
-import borders from "styles/borders";
-import colors from "styles/colors";
+import {css} from "../styles";
+import borders from "../styles/borders";
+import colors from "../styles/colors";
 import classnames from "classnames";
-import invariant from "tools/invariant";
-import {zIndices} from "tools/zIndices";
+import invariant from "../tools/invariant";
+import {zIndices} from "../tools/zIndices";
 import {uniqBy} from "lodash";
-import {LabelContext, type LabelContextType} from "Label";
+import {LabelContext, type LabelContextType} from "../Label";
 
 export type ReactSelectKey = string;
 

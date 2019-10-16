@@ -4,8 +4,8 @@
  * @flow
  */
 
-import {getTimeIntervals} from "date/TimeInput";
-import {ZERO_OCLOCK, EOD_OCLOCK} from "date/wallTime";
+import {getTimeIntervals} from "../TimeInput";
+import {ZERO_OCLOCK, EOD_OCLOCK} from "../wallTime";
 // none of our tests depend on a specific time zone or time
 // unmock moment, since we will just be parsing one date
 jest.unmock("moment");

@@ -8,9 +8,9 @@
 import * as React from "react";
 import {css, StyleSheet} from "aphrodite";
 
-import Text from "Text";
-import DeprecatedVerticalGroup from "DeprecatedVerticalGroup";
-import IconButton from "button/IconButton";
+import Text from "../Text";
+import DeprecatedVerticalGroup from "../DeprecatedVerticalGroup";
+import IconButton from "../button/IconButton";
 
 type Gutter = 12 | 20 | 32;
 

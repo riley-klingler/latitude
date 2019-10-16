@@ -6,12 +6,12 @@
 import * as React from "react";
 
 
-import Loader from "Loader";
+import Loader from "../Loader";
 import {css, StyleSheet} from "aphrodite";
-import ToastActions from "toast/ToastActions";
-import StaticGeneralModalLoader from "modal/StaticGeneralModalLoader";
-import invariant from "tools/invariant";
-import {deprecatedPaddingSizeConstants} from "styles";
+import ToastActions from "../toast/ToastActions";
+import StaticGeneralModalLoader from "./StaticGeneralModalLoader";
+import invariant from "../tools/invariant";
+import {deprecatedPaddingSizeConstants} from "../styles";
 
 type Props<C, K: React.ComponentType<C>> = {|
   +_debug: {

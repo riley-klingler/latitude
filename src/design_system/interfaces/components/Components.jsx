@@ -6,8 +6,8 @@
  */
 import * as React from "react";
 
-import DocInterface from "design_system/components/documentation_layout/DocInterface";
-import ComponentListing from "design_system/interfaces/components/ComponentListing";
+import DocInterface from "../../components/documentation_layout/DocInterface";
+import ComponentListing from "./ComponentListing";
 
 type Props = {
   +params: {componentName?: string},

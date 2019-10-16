@@ -5,13 +5,13 @@
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
 import {difference} from "lodash";
-import {commonT} from "config/I18n";
-import {InFilterContext} from "filter/BaseFilter";
-import CheckboxList from "CheckboxList";
-import Checkbox from "Checkbox";
-import TextInput from "TextInput";
-import colors from "styles/colors";
-import {border, include, margin, padding} from "styles/index";
+import {commonT} from "../config/I18n";
+import {InFilterContext} from "../filter/BaseFilter";
+import CheckboxList from "../CheckboxList";
+import Checkbox from "../Checkbox";
+import TextInput from "../TextInput";
+import colors from "../styles/colors";
+import {border, include, margin, padding} from "../styles/index";
 
 type FilterMode =
   | {|+type: "none"|}

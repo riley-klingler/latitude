@@ -5,7 +5,7 @@
  * @flow strict
  */
 
-import colors, {type Color, type ColorPalette} from "styles/colors";
+import colors, {type Color, type ColorPalette} from "../../../styles/colors";
 
 export const colorMeta: $ObjMap<
   ColorPalette,

@@ -5,9 +5,9 @@
 
 import * as React from "react";
 import {isEqual} from "lodash";
-import BaseFilter, {type PopupPlacement} from "filter/BaseFilter";
-import DropdownList from "select/DropdownList";
-import {type Size} from "sizes";
+import BaseFilter, {type PopupPlacement} from "./BaseFilter";
+import DropdownList from "../select/DropdownList";
+import {type Size} from "../sizes";
 
 type Option<T> = {|
   /** the unique label associated with the option */

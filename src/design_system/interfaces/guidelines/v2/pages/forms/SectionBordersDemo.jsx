@@ -5,15 +5,15 @@
 
 import * as React from "react";
 
-import Group from "Group";
-import Text from "Text";
-import Rule from "form/Rule";
-import TextInput from "TextInput";
-import RadioGroup from "radio/RadioGroup";
-import Label from "Label";
-import FormSection from "form/FormSection";
-import FormRow from "form/FormRow";
-import SectionExample from "design_system/interfaces/guidelines/v2/pages/forms/SectionExample";
+import Group from "../../../../../../Group";
+import Text from "../../../../../../Text";
+import Rule from "../../../../../../form/Rule";
+import TextInput from "../../../../../../TextInput";
+import RadioGroup from "../../../../../../radio/RadioGroup";
+import Label from "../../../../../../Label";
+import FormSection from "../../../../../../form/FormSection";
+import FormRow from "../../../../../../form/FormRow";
+import SectionExample from "./SectionExample";
 
 function SectionBordersDemo() {
   return (

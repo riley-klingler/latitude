@@ -6,11 +6,11 @@
 /* eslint-disable react/prefer-stateless-function */
 
 import * as React from "react";
-import StaticGeneralModalLoader from "modal/StaticGeneralModalLoader";
-import GeneralModalBody from "modal/GeneralModalBody";
-import typeof Button from "button/Button";
-import typeof Text from "Text";
-import typeof Link from "Link";
+import StaticGeneralModalLoader from "./StaticGeneralModalLoader";
+import GeneralModalBody from "./GeneralModalBody";
+import typeof Button from "../button/Button";
+import typeof Text from "../Text";
+import typeof Link from "../Link";
 
 export type NotificationModalProps = {|
   /** title of the modal body */

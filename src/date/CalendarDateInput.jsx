@@ -5,14 +5,14 @@
 
 import * as React from "react";
 import momentT from "moment";
-import DatePicker from "date/DatePicker";
-import PopupWithClickAway from "popup/PopupWithClickAway";
+import DatePicker from "./DatePicker";
+import PopupWithClickAway from "../popup/PopupWithClickAway";
 import {
   ARROW_DOWN_KEY,
   ARROW_UP_KEY,
   ENTER_KEY,
   isKeyCodeCauseBlur,
-} from "date/inputUtils";
+} from "./inputUtils";
 import {
   addDaysFromCalendarDate,
   today,
@@ -22,11 +22,11 @@ import {
   shouldBeCalendarDate,
   calendarDateToMoment,
   momentToCalendarDate,
-} from "date/CalendarDateType";
-import TextInput from "TextInput";
-import {type Size} from "sizes";
-import invariant from "tools/invariant";
-import {zIndices} from "tools/zIndices";
+} from "./CalendarDateType";
+import TextInput from "../TextInput";
+import {type Size} from "../sizes";
+import invariant from "../tools/invariant";
+import {zIndices} from "../tools/zIndices";
 import moment from "moment-timezone";
 
 export type CalendarDateInputProps = {

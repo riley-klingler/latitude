@@ -5,7 +5,7 @@
 
 import * as React from "react";
 import {mount} from "enzyme";
-import Pill from "Pill";
+import Pill from "../Pill";
 
 describe("Pill", () => {
   it("works as expected, shows close button if onDismiss is provided", () => {

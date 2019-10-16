@@ -7,12 +7,12 @@
 import * as React from "react";
 import {css} from "aphrodite";
 
-import {getButtonStyle} from "button/styles";
-import stringOrFalse from "tools/stringOrFalse";
-import invariant from "tools/invariant";
-import ThemeNameContext, {type Theme} from "context/ThemeNameContext";
-import type {ButtonIntent} from "button/Button";
-import Link from "Link";
+import {getButtonStyle} from "../button/styles";
+import stringOrFalse from "../tools/stringOrFalse";
+import invariant from "../tools/invariant";
+import ThemeNameContext, {type Theme} from "../context/ThemeNameContext";
+import type {ButtonIntent} from "./Button";
+import Link from "../Link";
 
 type AnchorButtonKind = "solid" | "hollow" | "bare" | "blank";
 export type Props = {|

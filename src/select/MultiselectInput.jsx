@@ -4,22 +4,22 @@
  */
 
 import * as React from "react";
-import type {Option as CheckboxListOption} from "CheckboxList";
-import popupWithClickAway from "tools/popupWithClickAway";
-import type {PopupWithClickAwayProps} from "tools/popupWithClickAway";
-import Icon, {type IconNames} from "Icon";
+import type {Option as CheckboxListOption} from "../CheckboxList";
+import popupWithClickAway from "../tools/popupWithClickAway";
+import type {PopupWithClickAwayProps} from "../tools/popupWithClickAway";
+import Icon, {type IconNames} from "../Icon";
 import {StyleSheet, css} from "aphrodite";
-import generateOverviewText from "select/generateOverviewText";
-import {focusedStyle, inputStyles} from "styles/input";
-import Text from "Text";
-import ThemeNameContext, {type Theme} from "context/ThemeNameContext";
-import invariant from "tools/invariant";
-import type {FilterMode} from "filter/MultiselectFilter";
-import {LabelContext, type LabelContextType} from "Label";
-import MultiselectOptions from "select/MultiselectOptions";
-import PopupWithClickAway from "popup/PopupWithClickAway";
+import generateOverviewText from "./generateOverviewText";
+import {focusedStyle, inputStyles} from "../styles/input";
+import Text from "../Text";
+import ThemeNameContext, {type Theme} from "../context/ThemeNameContext";
+import invariant from "../tools/invariant";
+import type {FilterMode} from "../filter/MultiselectFilter";
+import {LabelContext, type LabelContextType} from "../Label";
+import MultiselectOptions from "./MultiselectOptions";
+import PopupWithClickAway from "../popup/PopupWithClickAway";
 
-import {zIndices} from "tools/zIndices";
+import {zIndices} from "../tools/zIndices";
 
 export type Option<K> = {|
   +value: K,

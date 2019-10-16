@@ -5,7 +5,7 @@
 
 import React from "react";
 import {StyleSheet, css} from "aphrodite";
-import Text from "Text";
+import Text from "../Text";
 
 type Props = {|
   +value: ?(string | number),

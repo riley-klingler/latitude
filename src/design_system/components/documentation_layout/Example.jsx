@@ -5,9 +5,9 @@
  * @flow
  */
 import * as React from "react";
-import jsxToString from "tools/jsxToString";
-import Group from "Group";
-import Text from "Text";
+import jsxToString from "../../../tools/jsxToString";
+import Group from "../../../Group";
+import Text from "../../../Text";
 import {StyleSheet, css} from "aphrodite";
 import classnames from "classnames";
 

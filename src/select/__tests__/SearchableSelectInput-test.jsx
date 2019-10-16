@@ -5,7 +5,7 @@
 
 import * as React from "react";
 import {mount} from "enzyme";
-import SearchableSelectInput from "select/SearchableSelectInput";
+import SearchableSelectInput from "../SearchableSelectInput";
 
 function mountSearchableSelectInput(props?: {}) {
   const options = [

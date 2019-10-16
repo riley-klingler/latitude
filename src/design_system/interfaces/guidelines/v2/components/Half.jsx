@@ -4,8 +4,8 @@
  */
 
 import * as React from "react";
-import Collection from "design_system/interfaces/guidelines/v2/components/Collection";
-import Item from "design_system/interfaces/guidelines/v2/components/Item";
+import Collection from "./Collection";
+import Item from "./Item";
 
 type Props = {|
   +children: React.Node,

@@ -8,14 +8,14 @@
 
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
-import Icon from "Icon";
-import Loader from "Loader";
-import type {IconNames} from "tools/icons";
-import colors from "styles/colors";
-import stringOrFalse from "tools/stringOrFalse";
-import {sharedStyles, getButtonStyle} from "button/styles";
-import ThemeNameContext from "context/ThemeNameContext";
-import type {ButtonSize} from "button/Button";
+import Icon from "../Icon";
+import Loader from "../Loader";
+import type {IconNames} from "../tools/icons";
+import colors from "../styles/colors";
+import stringOrFalse from "../tools/stringOrFalse";
+import {sharedStyles, getButtonStyle} from "../button/styles";
+import ThemeNameContext from "../context/ThemeNameContext";
+import type {ButtonSize} from "./Button";
 
 type IconButtonKind = "hollow" | "bare" | "blank";
 export type IconButtonIntent = "basic" | "none" | "danger";

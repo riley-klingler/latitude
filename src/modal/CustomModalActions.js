@@ -3,9 +3,9 @@
  *
  * @flow strict
  */
-import AppDispatcher from "dispatcher/AppDispatcher";
-import PayloadSources from "constants/PayloadSources";
-import {ActionTypes} from "constants/ModalConstants";
+import AppDispatcher from "../dispatcher/AppDispatcher";
+import PayloadSources from "../constants/PayloadSources";
+import {ActionTypes} from "../constants/ModalConstants";
 
 const ModalActions = {
   ActionTypes,

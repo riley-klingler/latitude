@@ -6,7 +6,7 @@
 
 import React from "react";
 import {shallow} from "enzyme";
-import DocumentTabs from "document/DocumentTabs/DocumentTabs";
+import DocumentTabs from "../DocumentTabs";
 
 describe("DocumentTabs", () => {
   it("renders", () => {

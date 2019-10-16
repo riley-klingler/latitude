@@ -15,11 +15,11 @@ import {
   iconButtonKindKnob,
   buttonWidthKnob,
   type DemoProps,
-} from "design_system/types/demoTypes";
+} from "../../design_system/types/demoTypes";
 import * as React from "react";
-import IconButton from "button/IconButton";
-import DeprecatedHorizontalGroup from "DeprecatedHorizontalGroup";
-import invariant from "tools/invariant";
+import IconButton from "../IconButton";
+import DeprecatedHorizontalGroup from "../../DeprecatedHorizontalGroup";
+import invariant from "../../tools/invariant";
 
 const iconButtonKnobs = {
   label: text("demo"),

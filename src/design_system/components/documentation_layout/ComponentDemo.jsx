@@ -8,11 +8,11 @@
 
 import * as React from "react";
 
-import Text from "Text";
-import Demo from "design_system/components/documentation_layout/Demo";
-import type {DemoFile} from "design_system/types/demoTypes";
+import Text from "../../../Text";
+import Demo from "./Demo";
+import type {DemoFile} from "../../types/demoTypes";
 
-import {css, StyleSheet} from "styles/aphrodite";
+import {css, StyleSheet} from "../../../styles/aphrodite";
 
 type Props = {|
   +demo: DemoFile,

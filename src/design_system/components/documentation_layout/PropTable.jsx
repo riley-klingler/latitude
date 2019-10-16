@@ -14,24 +14,24 @@ import type {
   FlowType,
   FlowFunctionSignatureType,
   FlowFunctionArgumentType,
-} from "design_system/types/reactDocgenTypes";
+} from "../../types/reactDocgenTypes";
 
-import Text from "Text";
-import Group from "Group";
+import Text from "../../../Text";
+import Group from "../../../Group";
 
-import {css, StyleSheet} from "styles/aphrodite";
-import colors from "styles/colors";
-import {sharedStyles} from "button/styles";
+import {css, StyleSheet} from "../../../styles/aphrodite";
+import colors from "../../../styles/colors";
+import {sharedStyles} from "../../../button/styles";
 
-import CustomPopover from "popover/CustomPopover";
-import PopupWithClickAway from "popup/PopupWithClickAway";
-import Link from "Link";
+import CustomPopover from "../../../popover/CustomPopover";
+import PopupWithClickAway from "../../../popup/PopupWithClickAway";
+import Link from "../../../Link";
 
-import componentsList from "design_system/constants/componentsList.json";
+import componentsList from "../../constants/componentsList.json";
 import {
   components as componentsUrl,
   guidelines as guidelinesUrl,
-} from "design_system/DesignSystemRoutes";
+} from "../../DesignSystemRoutes";
 
 type PropTableProps = {
   +componentProps: $ReadOnlyArray<PropDoc>,

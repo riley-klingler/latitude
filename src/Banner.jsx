@@ -7,12 +7,12 @@
 
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
-import Icon, {type IconNames} from "Icon";
-import invariant from "tools/invariant";
-import IconButton from "button/IconButton";
-import {type Color} from "styles/colors";
-import latitudeColors from "latitudeColors";
-import Text from "Text";
+import Icon, {type IconNames} from "./Icon";
+import invariant from "./tools/invariant";
+import IconButton from "./button/IconButton";
+import {type Color} from "./styles/colors";
+import latitudeColors from "./latitudeColors";
+import Text from "./Text";
 
 type Intent = "default" | "default-light" | "warning" | "danger";
 

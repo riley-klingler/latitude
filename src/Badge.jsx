@@ -7,8 +7,8 @@
 /* eslint-disable flexport/no-unused-aphrodite-styles */
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
-import latitudeColors from "latitudeColors";
-import Text from "Text";
+import latitudeColors from "./latitudeColors";
+import Text from "./Text";
 
 type BadgeIntent = "ready" | "ready-green" | "pending" | "error" | "complete";
 

@@ -5,12 +5,12 @@
 
 import * as React from "react";
 import {css, StyleSheet} from "aphrodite";
-import connectToStores from "connectors/connectToStores";
+import connectToStores from "../connectors/connectToStores";
 import {uniqueId} from "lodash";
-import {isTestEnvironment} from "tools/test";
+import {isTestEnvironment} from "../tools/test";
 import StaticModalLegacyContext, {
   type StaticModalLegacyContextType,
-} from "modal/StaticModalLegacyContext";
+} from "./StaticModalLegacyContext";
 
 // eslint-disable-next-line import/no-named-as-default
 import ModalStoreNew from "./CustomModalStore";

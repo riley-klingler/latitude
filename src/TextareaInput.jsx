@@ -5,10 +5,10 @@
 
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
-import {inputStyles} from "styles/input";
-import {type Size} from "sizes";
+import {inputStyles} from "./styles/input";
+import {type Size} from "./sizes";
 import {clamp} from "lodash";
-import {LabelContext} from "Label";
+import {LabelContext} from "./Label";
 
 const VERTICAL_PADDING = 10;
 

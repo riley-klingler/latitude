@@ -8,15 +8,15 @@ import * as React from "react";
 
 import DeprecatedDropdownList, {
   type DropdownOption,
-} from "form/DeprecatedDropdownList";
+} from "./form/DeprecatedDropdownList";
 
 import popupWithClickAway, {
   type PopupWithClickAwayProps,
-} from "tools/popupWithClickAway";
-import {CustomDropdownButtonClass} from "CustomDropdownButton";
-import typeof Button from "button/Button";
-import typeof IconButton from "button/IconButton";
-import typeof ToggleButton from "base_candidate/button/ToggleButton";
+} from "./tools/popupWithClickAway";
+import {CustomDropdownButtonClass} from "./CustomDropdownButton";
+import typeof Button from "./button/Button";
+import typeof IconButton from "./button/IconButton";
+import typeof ToggleButton from "./base_candidate/button/ToggleButton";
 
 export type DropdownButtonProps = {|
   ...$Exact<PopupWithClickAwayProps>,

@@ -13,7 +13,7 @@ import {
   ESC,
   SHIFT,
   CAPS,
-} from "constants/interactions/KeyCodes";
+} from "../constants/interactions/KeyCodes";
 
 type OptionalParams = {|
   rememberHighlightPosition?: boolean,

@@ -4,10 +4,10 @@
  */
 
 import * as React from "react";
-import {type DemoFile, bool, list} from "design_system/types/demoTypes";
-import Group from "Group";
-import CheckboxList from "CheckboxList";
-import {characters} from "tools/demo";
+import {type DemoFile, bool, list} from "../design_system/types/demoTypes";
+import Group from "../Group";
+import CheckboxList from "../CheckboxList";
+import {characters} from "../tools/demo";
 
 const demos: DemoFile = {
   demos: [

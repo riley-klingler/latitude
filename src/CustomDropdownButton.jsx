@@ -6,17 +6,17 @@
 import * as React from "react";
 import popupWithClickAway, {
   type PopupWithClickAwayProps,
-} from "tools/popupWithClickAway";
-import typeof Button from "button/Button";
-import typeof IconButton from "button/IconButton";
-import typeof ToggleButton from "base_candidate/button/ToggleButton";
+} from "./tools/popupWithClickAway";
+import typeof Button from "./button/Button";
+import typeof IconButton from "./button/IconButton";
+import typeof ToggleButton from "./base_candidate/button/ToggleButton";
 import {Manager} from "react-popper";
-import DeprecatedPopperTarget from "popup/DeprecatedPopperTarget";
-import DeprecatedPopper from "popup/DeprecatedPopper";
+import DeprecatedPopperTarget from "./popup/DeprecatedPopperTarget";
+import DeprecatedPopper from "./popup/DeprecatedPopper";
 import {StyleSheet, css} from "aphrodite";
-import colors from "styles/colors";
-import {border, include, margin} from "styles/index";
-import {zIndices} from "tools/zIndices";
+import colors from "./styles/colors";
+import {border, include, margin} from "./styles/index";
+import {zIndices} from "./tools/zIndices";
 
 export type DropdownProps = PopupWithClickAwayProps & {
   // Makes the field unclickable and greyed out.

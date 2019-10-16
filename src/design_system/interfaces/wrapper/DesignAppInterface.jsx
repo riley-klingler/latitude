@@ -5,15 +5,15 @@
  * @flow
  */
 import * as React from "react";
-import ConnectedToaster from "toast/ConnectedToaster";
-import {css, StyleSheet} from "styles/aphrodite";
-import invariant from "tools/invariant";
-import colors from "styles/colors";
-import {ThemeProvider, type Theme, BASE} from "context/ThemeNameContext";
-import MainNav from "design_system/interfaces/wrapper/MainNav";
-import RouterContext from "context/RouterContext";
-import {zIndices} from "tools/zIndices";
-import "design_system/interfaces/wrapper/styles/main.css";
+import ConnectedToaster from "../../../toast/ConnectedToaster";
+import {css, StyleSheet} from "../../../styles/aphrodite";
+import invariant from "../../../tools/invariant";
+import colors from "../../../styles/colors";
+import {ThemeProvider, type Theme, BASE} from "../../../context/ThemeNameContext";
+import MainNav from "./MainNav";
+import RouterContext from "../../../context/RouterContext";
+import {zIndices} from "../../../tools/zIndices";
+import "./styles/main.css";
 
 type ComponentName = {
   +router: any,

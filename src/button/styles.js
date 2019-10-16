@@ -8,17 +8,17 @@
 
 import {memoize} from "lodash";
 import {StyleSheet, type SheetEntry} from "aphrodite";
-import {TRANSMISSION, type Theme} from "context/ThemeNameContext";
+import {TRANSMISSION, type Theme} from "../context/ThemeNameContext";
 import type {
   ButtonKind,
   ButtonIntent,
   ButtonSize,
   ButtonWidth,
-} from "button/Button";
-import colors from "styles/colors";
-import latitudeColors, {transmissionColors} from "latitudeColors";
-import {include, padding, margin, typeScale, fontWeights} from "styles";
-import {deprecatedPaddingSizeConstants} from "styles/whitespace";
+} from "./Button";
+import colors from "../styles/colors";
+import latitudeColors, {transmissionColors} from "../latitudeColors";
+import {include, padding, margin, typeScale, fontWeights} from "../styles";
+import {deprecatedPaddingSizeConstants} from "../styles/whitespace";
 
 type Optionals = {|
   +isLoading?: boolean,

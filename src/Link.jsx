@@ -5,7 +5,7 @@
 /* eslint-disable react/forbid-elements */
 
 import * as React from "react";
-import RouterContext from "context/RouterContext";
+import RouterContext from "./context/RouterContext";
 
 /* eslint-disable react/prefer-stateless-function */
 

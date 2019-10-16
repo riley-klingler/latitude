@@ -4,18 +4,18 @@
  */
 
 import React, {useState, useEffect, useRef} from "react";
-import {css, StyleSheet, margin, padding, deprecatedPaddingSizeConstants} from "styles";
-import colors from "styles/colors";
+import {css, StyleSheet, margin, padding, deprecatedPaddingSizeConstants} from "../styles";
+import colors from "../styles/colors";
 import Dropzone from "react-dropzone";
-import Button from "button/Button";
-import GraphicIcon from "GraphicIcon";
-import Icon from "Icon";
-import Text from "Text";
-import TextLinkAction from "TextLinkAction";
-import DeprecatedVerticalGroup from "DeprecatedVerticalGroup";
-import PdfViewer from "document/PdfViewer";
-import Portal from "Portal";
-import Toast from "toast/Toast";
+import Button from "../button/Button";
+import GraphicIcon from "../GraphicIcon";
+import Icon from "../Icon";
+import Text from "../Text";
+import TextLinkAction from "../TextLinkAction";
+import DeprecatedVerticalGroup from "../DeprecatedVerticalGroup";
+import PdfViewer from "./PdfViewer";
+import Portal from "../Portal";
+import Toast from "../toast/Toast";
 import {CSSTransition} from "react-transition-group";
 
 export type ServerState = "waiting" | "uploading" | "deleting" | "error";

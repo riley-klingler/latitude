@@ -4,9 +4,9 @@
  * @flow
  */
 
-import Overview from "design_system/interfaces/styles/components/Overview";
-import Colors from "design_system/interfaces/styles/components/Colors";
-import Whitespace from "design_system/interfaces/styles/components/Whitespace";
+import Overview from "./components/Overview";
+import Colors from "./components/Colors";
+import Whitespace from "./components/Whitespace";
 
 const stylesManifest = {
   overview: {

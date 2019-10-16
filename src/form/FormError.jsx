@@ -5,13 +5,13 @@
  */
 
 import * as React from "react";
-import {css, StyleSheet} from "styles/aphrodite";
+import {css, StyleSheet} from "../styles/aphrodite";
 
-import colors from "styles/colors";
+import colors from "../styles/colors";
 
-import Icon from "Icon";
-import Text from "Text";
-import Group from "Group";
+import Icon from "../Icon";
+import Text from "../Text";
+import Group from "../Group";
 
 const FormError = ({
   errorMessage,

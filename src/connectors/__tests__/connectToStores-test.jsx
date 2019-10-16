@@ -9,7 +9,7 @@
 import * as React from "react";
 import {mount, shallow} from "enzyme";
 import EventEmitter from "events";
-import {EventTypes} from "constants/_MutationConstants";
+import {EventTypes} from "../../constants/_MutationConstants";
 import connectToStores, {
   _unsubscribeFromStores,
   _subscribeToStores,

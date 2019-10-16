@@ -4,19 +4,19 @@
  */
 
 import * as React from "react";
-import IndexedPage from "design_system/interfaces/guidelines/v2/components/IndexedPage";
-import MainHeader from "design_system/interfaces/guidelines/v2/components/MainHeader";
-import SubHeader from "design_system/interfaces/guidelines/v2/components/SubHeader";
-import Headline from "design_system/interfaces/guidelines/v2/components/Headline";
-import Words from "design_system/interfaces/guidelines/v2/components/Words";
-import Image from "design_system/interfaces/guidelines/v2/components/Image";
-import Collection from "design_system/interfaces/guidelines/v2/components/Collection";
-import Half from "design_system/interfaces/guidelines/v2/components/Half";
-import Item from "design_system/interfaces/guidelines/v2/components/Item";
-import DoItem from "design_system/interfaces/guidelines/v2/components/DoItem";
-import DontItem from "design_system/interfaces/guidelines/v2/components/DontItem";
-import List from "design_system/interfaces/guidelines/v2/components/List";
-import TextLink from "TextLink";
+import IndexedPage from "../components/IndexedPage";
+import MainHeader from "../components/MainHeader";
+import SubHeader from "../components/SubHeader";
+import Headline from "../components/Headline";
+import Words from "../components/Words";
+import Image from "../components/Image";
+import Collection from "../components/Collection";
+import Half from "../components/Half";
+import Item from "../components/Item";
+import DoItem from "../components/DoItem";
+import DontItem from "../components/DontItem";
+import List from "../components/List";
+import TextLink from "../../../../../TextLink";
 
 function FilteringPage(): React.Node {
   return (

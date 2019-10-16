@@ -4,7 +4,7 @@
  */
 import * as React from "react";
 import {mount} from "enzyme";
-import Toast from "toast/Toast";
+import Toast from "../Toast";
 
 describe("Toast", () => {
   it("calls callback function when undo is clicked", () => {

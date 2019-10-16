@@ -3,8 +3,8 @@
  * @flow strict
  */
 import * as React from "react";
-import type {Color} from "styles/colors";
-import type {TypeScale} from "Text";
+import type {Color} from "./styles/colors";
+import type {TypeScale} from "./Text";
 
 export type TextLinkContextType = {
   isNested: boolean,

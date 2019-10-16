@@ -7,11 +7,11 @@
 
 import * as React from "react";
 import {css, StyleSheet} from "aphrodite";
-import {typeScale} from "styles";
-import colors from "styles/colors";
-import ThemeNameContext, {type Theme} from "context/ThemeNameContext";
-import getThemeColors from "styles/getThemeColors";
-import Icon from "Icon";
+import {typeScale} from "../styles";
+import colors from "../styles/colors";
+import ThemeNameContext, {type Theme} from "../context/ThemeNameContext";
+import getThemeColors from "../styles/getThemeColors";
+import Icon from "../Icon";
 
 export const DEFAULT_COLUMN_WIDTH_PX = 40;
 

@@ -13,9 +13,9 @@ import {
   textInputSizeKnob,
   type DemoProps,
   number,
-} from "design_system/types/demoTypes";
+} from "../design_system/types/demoTypes";
 import * as React from "react";
-import TextareaInput from "TextareaInput";
+import TextareaInput from "../TextareaInput";
 import {css} from "aphrodite";
 
 const knobs = {

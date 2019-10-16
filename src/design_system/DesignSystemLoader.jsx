@@ -4,10 +4,10 @@
  */
 
 import * as React from "react";
-import type {MaybeBootstrapData} from "tools/bootstrap/bootstrapDataTypes";
-import invariant from "tools/invariant";
-import createBrowserAppLoader from "tools/bootstrap/createBrowserAppLoader";
-import launchWhenReady from "tools/bootstrap/launchWhenReady";
+import type {MaybeBootstrapData} from "../tools/bootstrap/bootstrapDataTypes";
+import invariant from "../tools/invariant";
+import createBrowserAppLoader from "../tools/bootstrap/createBrowserAppLoader";
+import launchWhenReady from "../tools/bootstrap/launchWhenReady";
 
 type DesignSystemProps = {};
 

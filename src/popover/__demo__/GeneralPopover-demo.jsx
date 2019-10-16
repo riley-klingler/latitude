@@ -3,11 +3,11 @@
  * @flow
  */
 
-import type {DemoFile} from "design_system/types/demoTypes";
+import type {DemoFile} from "../../design_system/types/demoTypes";
 import * as React from "react";
-import GeneralPopover from "popover/GeneralPopover";
-import Button from "button/Button";
-import PopupWithClickAway from "popup/PopupWithClickAway";
+import GeneralPopover from "../GeneralPopover";
+import Button from "../../button/Button";
+import PopupWithClickAway from "../../popup/PopupWithClickAway";
 
 const demos: DemoFile = {
   demos: [

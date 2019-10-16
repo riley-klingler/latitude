@@ -4,7 +4,7 @@
  * @flow strict
  */
 
-import {type FileFormatType} from "constants/FileFormatConstants";
+import {type FileFormatType} from "../constants/FileFormatConstants";
 
 export type AttachmentType = {|
   +localId: string,

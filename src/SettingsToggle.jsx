@@ -5,13 +5,13 @@
 import * as React from "react";
 import {css} from "aphrodite";
 
-import colors from "styles/colors";
-import {createThemedStylesheet, type ThemeData} from "styles";
+import colors from "./styles/colors";
+import {createThemedStylesheet, type ThemeData} from "./styles";
 import ThemeNameContext, {
   TRANSMISSION,
   type Theme,
-} from "context/ThemeNameContext";
-import latitudeColors from "latitudeColors";
+} from "./context/ThemeNameContext";
+import latitudeColors from "./latitudeColors";
 
 type Props = {|
   /** Whether the toggle is on. */

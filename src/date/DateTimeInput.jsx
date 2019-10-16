@@ -8,20 +8,20 @@ import * as React from "react";
 import {
   type CalendarDate,
   momentToCalendarDate,
-} from "date/CalendarDateType";
-import {type Size} from "sizes";
+} from "./CalendarDateType";
+import {type Size} from "../sizes";
 import {
   momentToWallTime,
   type WallTime,
   EOD_OCLOCK,
   ZERO_OCLOCK,
-} from "date/wallTime";
-import CalendarDateInput from "date/CalendarDateInput";
-import TimeInput, {getTimeIntervals} from "date/TimeInput";
+} from "./wallTime";
+import CalendarDateInput from "./CalendarDateInput";
+import TimeInput, {getTimeIntervals} from "./TimeInput";
 import moment from "moment-timezone";
 import momentT from "moment";
-import SelectInput from "select/SelectInput";
-import InputGroup from "InputGroup";
+import SelectInput from "../select/SelectInput";
+import InputGroup from "../InputGroup";
 
 /**
  * To convert a date time value into a moment,

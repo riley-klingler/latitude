@@ -6,21 +6,21 @@
 /* eslint-disable flexport/no-unused-aphrodite-styles */
 
 import * as React from "react";
-import Text from "Text";
-import IconButton from "button/IconButton";
+import Text from "../Text";
+import IconButton from "../button/IconButton";
 import CustomModal, {
   defaultModalStyles,
   getWidthStyle,
-} from "modal/CustomModal";
+} from "./CustomModal";
 import {css, StyleSheet} from "aphrodite";
 
-import {margin, padding} from "styles/whitespace";
-import {border, include} from "styles";
-import invariant from "tools/invariant";
-import latitudeColors from "latitudeColors";
+import {margin, padding} from "../styles/whitespace";
+import {border, include} from "../styles";
+import invariant from "../tools/invariant";
+import latitudeColors from "../latitudeColors";
 import StaticModalLegacyContext, {
   type StaticModalLegacyContextType,
-} from "modal/StaticModalLegacyContext";
+} from "./StaticModalLegacyContext";
 
 export type ModalProps = {|
   /** a string rendered along the top of the modal */

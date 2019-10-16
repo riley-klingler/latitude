@@ -5,9 +5,9 @@
  */
 import {mount} from "enzyme";
 import * as React from "react";
-import TextInput from "TextInput";
-import {getNameFromStyle} from "tools/test";
-import {inputStyles} from "styles/input";
+import TextInput from "../TextInput";
+import {getNameFromStyle} from "../tools/test";
+import {inputStyles} from "../styles/input";
 
 function mountTextInput(propOverrides: {} = {}) {
   const defaultProps = {

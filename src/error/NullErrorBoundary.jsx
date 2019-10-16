@@ -5,7 +5,7 @@
 
 // eslint-disable-next-line autofix/no-unused-vars
 import * as React from "react";
-import errorBoundary, {type BoundaryError} from "error/errorBoundary";
+import errorBoundary, {type BoundaryError} from "./errorBoundary";
 
 type WrappedErrorBoundaryProps = {
   // If the error boundary is rendered, there is an error that caused it. This is that error.

@@ -9,9 +9,9 @@
 
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
-import latitudeColors from "latitudeColors";
-import Text from "Text";
-import ThemeNameContext from "context/ThemeNameContext";
+import latitudeColors from "./latitudeColors";
+import Text from "./Text";
+import ThemeNameContext from "./context/ThemeNameContext";
 
 type Props = {|
   /** Whether the checkbox is checked. */

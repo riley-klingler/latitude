@@ -9,10 +9,10 @@ import {
   bool,
   calendarDate,
   textInputSizeKnob,
-} from "design_system/types/demoTypes";
+} from "../../design_system/types/demoTypes";
 import * as React from "react";
-import CalendarDateInput from "date/CalendarDateInput";
-import {type CalendarDate, today} from "date/CalendarDateType";
+import CalendarDateInput from "../CalendarDateInput";
+import {type CalendarDate, today} from "../CalendarDateType";
 
 const demos: DemoFile = {
   demos: [

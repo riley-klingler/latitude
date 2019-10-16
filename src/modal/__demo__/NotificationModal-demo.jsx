@@ -3,12 +3,12 @@
  * @flow
  */
 
-import {type DemoFile, demoCommonStyles} from "design_system/types/demoTypes";
+import {type DemoFile, demoCommonStyles} from "../../design_system/types/demoTypes";
 import * as React from "react";
-import Button from "button/Button";
-import NotificationModal from "modal/NotificationModal";
+import Button from "../../button/Button";
+import NotificationModal from "../NotificationModal";
 import {css} from "aphrodite";
-import Text from "Text";
+import Text from "../../Text";
 
 const demos: DemoFile = {
   demos: [

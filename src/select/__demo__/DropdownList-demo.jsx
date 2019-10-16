@@ -5,10 +5,10 @@
 
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
-import DropdownList, {type Option} from "select/DropdownList";
-import Group from "Group";
-import Link from "Link";
-import Text from "Text";
+import DropdownList, {type Option} from "../DropdownList";
+import Group from "../../Group";
+import Link from "../../Link";
+import Text from "../../Text";
 
 export default {
   demos: [

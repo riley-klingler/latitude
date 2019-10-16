@@ -5,15 +5,15 @@
 import * as React from "react";
 import {mount} from "enzyme";
 
-import Tooltip, {insideTestResetModuleState} from "Tooltip";
+import Tooltip, {insideTestResetModuleState} from "../Tooltip";
 
 jest.mock(
   "rc-tooltip",
   () =>
-    function MockRcTooltip({children}: {+children: React.Node}) {
+    (function MockRcTooltip({children}: {+children: React.Node}) {
       // eslint-disable-next-line flexport/no-oocss
       return <div className="rc-tooltip mock">{children}</div>;
-    }
+    })
 );
 
 const CHILD_TEXT = "Some text";

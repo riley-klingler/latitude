@@ -13,13 +13,13 @@ import {
   calendarDateCompare,
   calendarDateToMoment,
   momentToCalendarDate,
-} from "date/CalendarDateType";
+} from "../CalendarDateType";
 import {
   type CalendarDateRange,
   explodeCalendarDateRange,
   mergeCalendarDates,
   isCalendarDateInCalendarDateRange,
-} from "date/CalendarDateRangeTools";
+} from "../CalendarDateRangeTools";
 
 jest.unmock("moment");
 jest.unmock("moment-timezone");

@@ -5,14 +5,14 @@
 
 import React, {useState, useCallback} from "react";
 import {StyleSheet, css} from "aphrodite";
-import Collection from "design_system/interfaces/guidelines/v2/components/Collection";
-import colors from "styles/colors";
-import Text from "Text";
-import Label from "Label";
-import TextInput from "TextInput";
-import SelectInput from "select/SelectInput";
-import FormSection from "form/FormSection";
-import FormRow from "form/FormRow";
+import Collection from "../../components/Collection";
+import colors from "../../../../../../styles/colors";
+import Text from "../../../../../../Text";
+import Label from "../../../../../../Label";
+import TextInput from "../../../../../../TextInput";
+import SelectInput from "../../../../../../select/SelectInput";
+import FormSection from "../../../../../../form/FormSection";
+import FormRow from "../../../../../../form/FormRow";
 
 const columnsOptions = [
   {

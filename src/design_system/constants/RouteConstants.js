@@ -10,7 +10,7 @@
  *     bundle exec rake js:dynamic_routes
  */
 
-import {type ModuleLoaded} from "tools/webpack";
+import {type ModuleLoaded} from "../../tools/webpack";
 
 /* eslint-disable camelcase, import/extensions, quotes, comma-spacing */
 function DesignSystemApp_core_design(): Promise<ModuleLoaded> {

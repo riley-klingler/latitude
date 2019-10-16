@@ -4,10 +4,10 @@
  */
 
 import * as React from "react";
-import type {DemoFile} from "design_system/types/demoTypes";
-import Group from "Group";
-import Label from "Label";
-import MultiInput from "MultiInput";
+import type {DemoFile} from "../design_system/types/demoTypes";
+import Group from "../Group";
+import Label from "../Label";
+import MultiInput from "../MultiInput";
 
 const demos: DemoFile = {
   demos: [

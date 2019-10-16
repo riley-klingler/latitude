@@ -4,8 +4,8 @@
  */
 
 import * as React from "react";
-import onClickOutside from "tools/onClickOutside";
-import getHocDisplayName from "tools/getHocDisplayName";
+import onClickOutside from "./onClickOutside";
+import getHocDisplayName from "./getHocDisplayName";
 
 export type PopupWithClickAwayProps = {
   +togglePopupVisible: () => void,

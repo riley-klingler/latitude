@@ -6,12 +6,12 @@
 
 import * as React from "react";
 import {css, StyleSheet} from "aphrodite";
-import Tooltip from "Tooltip";
-import Icon from "Icon";
-import {sizes} from "tools/ui/sizes";
-import type {StandardIconSizes} from "Icon";
-import type {IconNames} from "tools/icons";
-import type {Color} from "styles/colors";
+import Tooltip from "./Tooltip";
+import Icon from "./Icon";
+import {sizes} from "./tools/ui/sizes";
+import type {StandardIconSizes} from "./Icon";
+import type {IconNames} from "./tools/icons";
+import type {Color} from "./styles/colors";
 
 type Props = {|
   /** The actual text that should be displayed in the tooltip. */

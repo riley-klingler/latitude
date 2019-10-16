@@ -4,8 +4,8 @@
  * @flow
  */
 import * as React from "react";
-import Group from "Group";
-import Text from "Text";
+import Group from "../../../Group";
+import Text from "../../../Text";
 
 type Props = {
   +children?: React.Node,

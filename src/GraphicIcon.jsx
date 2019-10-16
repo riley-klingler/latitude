@@ -6,9 +6,9 @@
 /* eslint-disable react/prefer-stateless-function */
 
 import * as React from "react";
-import {type GraphicIcons, graphicIcons} from "tools/graphicIcons";
+import {type GraphicIcons, graphicIcons} from "./tools/graphicIcons";
 
-import ThemeNameContext, {type Theme} from "context/ThemeNameContext";
+import ThemeNameContext, {type Theme} from "./context/ThemeNameContext";
 
 type Props = {|
   /** Illustrations available are designed on a case-by-case basis and generally have specific intentions. */

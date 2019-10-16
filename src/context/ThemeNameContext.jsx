@@ -5,8 +5,8 @@
  */
 
 import * as React from "react";
-import {iconColor} from "dispatch/styles/colors";
-import stringOrFalse from "tools/stringOrFalse";
+import {iconColor} from "../dispatch/styles/colors";
+import stringOrFalse from "../tools/stringOrFalse";
 
 export {iconColor};
 

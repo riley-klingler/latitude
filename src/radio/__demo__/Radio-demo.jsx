@@ -7,10 +7,10 @@ import {
   type DemoFile,
   bool,
   textInputSizeKnob,
-} from "design_system/types/demoTypes";
+} from "../../design_system/types/demoTypes";
 import * as React from "react";
-import Radio from "radio/Radio";
-import {type Size} from "sizes";
+import Radio from "../Radio";
+import {type Size} from "../../sizes";
 
 const demos: DemoFile = {
   demos: [

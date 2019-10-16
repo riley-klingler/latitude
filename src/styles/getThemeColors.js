@@ -4,9 +4,9 @@
  * @flow strict
  */
 
-import type {Theme} from "context/ThemeNameContext";
-import themeColorMaps from "styles/themeColorMaps";
-import {type Color} from "styles/colors";
+import type {Theme} from "../context/ThemeNameContext";
+import themeColorMaps from "./themeColorMaps";
+import {type Color} from "./colors";
 
 export type ThemeColors = {|
   +primary: Color,

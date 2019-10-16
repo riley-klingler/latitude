@@ -5,14 +5,14 @@
 
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
-import Group from "Group";
-import TextInput from "TextInput";
-import Label from "Label";
-import Text from "Text";
-import Button from "button/Button";
-import colors from "styles/colors";
+import Group from "../Group";
+import TextInput from "../TextInput";
+import Label from "../Label";
+import Text from "../Text";
+import Button from "../button/Button";
+import colors from "../styles/colors";
 
-import type {DemoFile} from "design_system/types/demoTypes";
+import type {DemoFile} from "../design_system/types/demoTypes";
 
 const demos: DemoFile = {
   demos: [

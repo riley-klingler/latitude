@@ -4,12 +4,12 @@
  */
 
 import * as React from "react";
-import Checkbox from "Checkbox";
-import Group from "Group";
-import invariant from "tools/invariant";
-import {StyleSheet, css} from "styles";
-import latitudeColors from "latitudeColors";
-import {whitespaceSizeConstants} from "styles/whitespace";
+import Checkbox from "./Checkbox";
+import Group from "./Group";
+import invariant from "./tools/invariant";
+import {StyleSheet, css} from "./styles";
+import latitudeColors from "./latitudeColors";
+import {whitespaceSizeConstants} from "./styles/whitespace";
 
 export type Option<T> = {|
   +value: T,

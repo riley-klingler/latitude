@@ -6,11 +6,11 @@
 import * as React from "react";
 import {css, StyleSheet} from "aphrodite";
 
-import {fontWeights, typeScale} from "styles/typography";
-import linkStyles, {type LinkStyle} from "styles/linkStyles";
-import ThemeNameContext, {type Theme} from "context/ThemeNameContext";
-import {sharedStyles} from "button/styles";
-import TextLinkContext from "TextLinkContext";
+import {fontWeights, typeScale} from "./styles/typography";
+import linkStyles, {type LinkStyle} from "./styles/linkStyles";
+import ThemeNameContext, {type Theme} from "./context/ThemeNameContext";
+import {sharedStyles} from "./button/styles";
+import TextLinkContext from "./TextLinkContext";
 
 /* eslint-disable react/prefer-stateless-function */
 

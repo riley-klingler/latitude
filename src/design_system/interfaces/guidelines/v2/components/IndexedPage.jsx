@@ -5,8 +5,8 @@
 
 import type {Node} from "react";
 import React, {useState, useCallback, useContext} from "react";
-import {css, StyleSheet} from "styles/aphrodite";
-import PageIndex from "design_system/interfaces/guidelines/v2/components/PageIndex";
+import {css, StyleSheet} from "../../../../../styles/aphrodite";
+import PageIndex from "./PageIndex";
 
 export type IndexEntry = {|
   +name: string,

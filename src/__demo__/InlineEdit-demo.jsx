@@ -4,13 +4,13 @@
  */
 
 import * as React from "react";
-import type {DemoFile} from "design_system/types/demoTypes";
-import Group from "Group";
-import InlineEdit from "InlineEdit";
-import Label from "Label";
-import TextInput from "TextInput";
-import TextareaInput from "TextareaInput";
-import FloatInput from "FloatInput";
+import type {DemoFile} from "../design_system/types/demoTypes";
+import Group from "../Group";
+import InlineEdit from "../InlineEdit";
+import Label from "../Label";
+import TextInput from "../TextInput";
+import TextareaInput from "../TextareaInput";
+import FloatInput from "../FloatInput";
 
 const demos: DemoFile = {
   demos: [

@@ -11,11 +11,11 @@ import {
   demoCommonStyles,
   disabledKnob,
   isInvalidKnob,
-} from "design_system/types/demoTypes";
+} from "../../design_system/types/demoTypes";
 import * as React from "react";
-import BaseReactSelect from "select/BaseReactSelect";
-import {css} from "styles/aphrodite";
-import {type StarWarsCharacter, characters} from "tools/demo";
+import BaseReactSelect from "../BaseReactSelect";
+import {css} from "../../styles/aphrodite";
+import {type StarWarsCharacter, characters} from "../../tools/demo";
 
 const demos: DemoFile = {
   demos: [

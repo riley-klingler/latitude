@@ -8,10 +8,10 @@
 
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
-import sizes, {type Size} from "sizes";
-import latitudeColors from "latitudeColors";
-import Icon from "Icon";
-import IconButton from "button/IconButton";
+import sizes, {type Size} from "../sizes";
+import latitudeColors from "../latitudeColors";
+import Icon from "../Icon";
+import IconButton from "../button/IconButton";
 
 type Props = {|
   /** Description of the filter, e.g. `date` */

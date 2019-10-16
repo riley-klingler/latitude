@@ -6,16 +6,16 @@
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
 import Dotdotdot from "react-dotdotdot";
-import PopupWithClickAway from "popup/PopupWithClickAway";
-import GeneralPopover from "popover/GeneralPopover";
-import Button from "button/Button";
-import IconButton from "button/IconButton";
-import Tooltip from "Tooltip";
-import Text from "Text";
-import Clickable from "base_candidate/Clickable";
-import colors from "styles/colors";
-import sizes, {type Size} from "document/DocumentTabs/sizes";
-import {ListPopupContext} from "document/DocumentTabs/MoreTab";
+import PopupWithClickAway from "../../popup/PopupWithClickAway";
+import GeneralPopover from "../../popover/GeneralPopover";
+import Button from "../../button/Button";
+import IconButton from "../../button/IconButton";
+import Tooltip from "../../Tooltip";
+import Text from "../../Text";
+import Clickable from "../../base_candidate/Clickable";
+import colors from "../../styles/colors";
+import sizes, {type Size} from "./sizes";
+import {ListPopupContext} from "./MoreTab";
 
 type Props = {|
   +children: string,

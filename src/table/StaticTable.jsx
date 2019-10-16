@@ -6,14 +6,14 @@
  */
 
 import * as React from "react";
-import invariant from "tools/invariant";
+import invariant from "../tools/invariant";
 import {css, StyleSheet} from "aphrodite";
 
-import Loader from "Loader";
+import Loader from "../Loader";
 
-import Column, {type SortDirection} from "table/Column";
-import TableRow, {TableHeader, type RowPadding} from "table/TableRow";
-import StaticCell from "table/StaticCell";
+import Column, {type SortDirection} from "./Column";
+import TableRow, {TableHeader, type RowPadding} from "./TableRow";
+import StaticCell from "./StaticCell";
 
 type ColumnComponent = React.Element<typeof Column>;
 

@@ -5,8 +5,8 @@
 
 import {mount} from "enzyme";
 import * as React from "react";
-import Label from "Label";
-import TextInput from "TextInput";
+import Label from "../Label";
+import TextInput from "../TextInput";
 
 function mountLabel(propOverrides: {} = {}) {
   const defaultProps = {

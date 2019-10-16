@@ -5,13 +5,13 @@
  */
 
 // $FlowFixMe(kaye) the club can't handle me right now
-import overview from "design_system/interfaces/guidelines/Overview.txt";
-import Iconography from "design_system/interfaces/guidelines/Iconography";
-import ColorSystem from "design_system/interfaces/guidelines/ColorSystem";
-import FilteringPage from "design_system/interfaces/guidelines/v2/pages/FilteringPage";
-import FormsPage from "design_system/interfaces/guidelines/v2/pages/forms/FormsPage";
-import TypographyPage from "design_system/interfaces/guidelines/v2/pages/TypographyPage";
-import ShipmentsPage from "design_system/interfaces/guidelines/v2/pages/ShipmentsPage";
+import overview from "./Overview.txt";
+import Iconography from "./Iconography";
+import ColorSystem from "./ColorSystem";
+import FilteringPage from "./v2/pages/FilteringPage";
+import FormsPage from "./v2/pages/forms/FormsPage";
+import TypographyPage from "./v2/pages/TypographyPage";
+import ShipmentsPage from "./v2/pages/ShipmentsPage";
 
 const guidelinesManifest = {
   overview: {

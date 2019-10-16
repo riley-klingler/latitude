@@ -4,14 +4,14 @@
  */
 
 import * as React from "react";
-import {StyleSheet, css} from "styles/aphrodite";
-import {type DemoFile, bool} from "design_system/types/demoTypes";
+import {StyleSheet, css} from "../../styles/aphrodite";
+import {type DemoFile, bool} from "../../design_system/types/demoTypes";
 import MultiselectFilter, {
   getValueArrayFromFilterValue,
   getFilterValueFromArray,
   type ValueObj,
-} from "filter/MultiselectFilter";
-import {type StarWarsCharacter, characters} from "tools/demo";
+} from "../MultiselectFilter";
+import {type StarWarsCharacter, characters} from "../../tools/demo";
 
 const demos: DemoFile = {
   demos: [

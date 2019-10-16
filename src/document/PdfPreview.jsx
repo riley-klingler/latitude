@@ -9,14 +9,14 @@
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
 import {Document, Page, pdfjs} from "react-pdf";
-import latitudeColors from "latitudeColors";
-import {deprecatedPaddingSizeConstants} from "styles/whitespace";
-import type {AttachmentType} from "document/AttachmentTypes";
+import latitudeColors from "../latitudeColors";
+import {deprecatedPaddingSizeConstants} from "../styles/whitespace";
+import type {AttachmentType} from "./AttachmentTypes";
 import {
   documentPreviewWidth,
   previewContainerWidth,
   documentPreviewHeight,
-} from "document/AttachmentList";
+} from "./AttachmentList";
 
 /**
  * TODO(zyang): Cannot import react-pdf from `react-pdf/dist/entry.webpack` because

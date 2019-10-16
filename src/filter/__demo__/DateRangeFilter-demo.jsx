@@ -3,13 +3,13 @@
  * @flow
  */
 
-import type {DemoFile} from "design_system/types/demoTypes";
+import type {DemoFile} from "../../design_system/types/demoTypes";
 import * as React from "react";
 import DateRangeFilter, {
   type DateFilterValue,
-} from "filter/DateRangeFilter";
-import {StyleSheet, css} from "styles/aphrodite";
-import {addDaysFromCalendarDate, today} from "date/CalendarDateType";
+} from "../DateRangeFilter";
+import {StyleSheet, css} from "../../styles/aphrodite";
+import {addDaysFromCalendarDate, today} from "../../date/CalendarDateType";
 import moment from "moment-timezone";
 
 const demos: DemoFile = {

@@ -9,21 +9,21 @@ import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
 import Dropzone from "react-dropzone";
 
-import {documentsT as t} from "config/I18n";
+import {documentsT as t} from "../config/I18n";
 
-import {whitespaceSizeConstants} from "styles/whitespace";
-import latitudeColors from "latitudeColors";
-import Flex from "Flex";
-import Loader from "Loader";
-import Button from "button/Button";
-import Text from "Text";
-import AttachmentList from "document/AttachmentList";
-import type {AttachmentType} from "document/AttachmentTypes";
+import {whitespaceSizeConstants} from "../styles/whitespace";
+import latitudeColors from "../latitudeColors";
+import Flex from "../Flex";
+import Loader from "../Loader";
+import Button from "../button/Button";
+import Text from "../Text";
+import AttachmentList from "./AttachmentList";
+import type {AttachmentType} from "./AttachmentTypes";
 
-import createAttachmentsFromFiles from "tools/documents/createAttachmentsFromFiles";
-import getScaledImageForAttachment from "tools/documents/getScaledImageForAttachment";
-import validateFileOfAttachment from "tools/documents/validateFileOfAttachment";
-import removeAttachmentsWithError from "tools/documents/removeAttachmentsWithError";
+import createAttachmentsFromFiles from "../tools/documents/createAttachmentsFromFiles";
+import getScaledImageForAttachment from "../tools/documents/getScaledImageForAttachment";
+import validateFileOfAttachment from "../tools/documents/validateFileOfAttachment";
+import removeAttachmentsWithError from "../tools/documents/removeAttachmentsWithError";
 
 type Props = {|
   /** List of files uploaded */

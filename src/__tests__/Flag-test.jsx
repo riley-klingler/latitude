@@ -6,7 +6,7 @@
 import {mount, shallow} from "enzyme";
 import * as React from "react";
 
-import Flag from "Flag";
+import Flag from "../Flag";
 
 function shallowFlag(propOverrides: {} = {}) {
   const defaultProps = {

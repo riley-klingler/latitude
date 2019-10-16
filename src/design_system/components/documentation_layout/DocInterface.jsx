@@ -7,25 +7,25 @@
 
 import * as React from "react";
 import Highlight from "react-highlight/lib/optimized";
-import Tooltip from "Tooltip";
+import Tooltip from "../../../Tooltip";
 
-import Text from "Text";
-import TextLink from "TextLink";
-import Group from "Group";
-import colors from "styles/colors";
-import Markdown from "design_system/components/markdown/Markdown";
-import IconButton from "button/IconButton";
+import Text from "../../../Text";
+import TextLink from "../../../TextLink";
+import Group from "../../../Group";
+import colors from "../../../styles/colors";
+import Markdown from "../markdown/Markdown";
+import IconButton from "../../../button/IconButton";
 
-import {css, StyleSheet} from "styles/aphrodite";
+import {css, StyleSheet} from "../../../styles/aphrodite";
 
-import PropTable from "design_system/components/documentation_layout/PropTable";
-import ComponentDemo from "design_system/components/documentation_layout/ComponentDemo";
+import PropTable from "./PropTable";
+import ComponentDemo from "./ComponentDemo";
 
-import copyToClipboard from "tools/CopyToClipboard";
+import copyToClipboard from "../../../tools/CopyToClipboard";
 
-import componentsMetaList from "design_system/constants/componentsMetaList.json";
-import componentsStatList from "design_system/constants/componentsStatList.json";
-import componentsDemoList from "design_system/constants/componentsDemoList";
+import componentsMetaList from "../../constants/componentsMetaList.json";
+import componentsStatList from "../../constants/componentsStatList.json";
+import componentsDemoList from "../../constants/componentsDemoList";
 
 type DocInterfaceProps = {
   +componentName: string,

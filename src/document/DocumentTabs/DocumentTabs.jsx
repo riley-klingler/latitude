@@ -5,11 +5,11 @@
 
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
-import Icon from "Icon";
-import colors from "styles/colors";
-import DocumentTab from "document/DocumentTabs/DocumentTab";
-import MoreTab from "document/DocumentTabs/MoreTab";
-import type {Size} from "document/DocumentTabs/sizes";
+import Icon from "../../Icon";
+import colors from "../../styles/colors";
+import DocumentTab from "./DocumentTab";
+import MoreTab from "./MoreTab";
+import type {Size} from "./sizes";
 
 const MIN_ELEMENT_WIDTH = 130;
 const MAX_ELEMENT_WIDTH = 200;

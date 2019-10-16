@@ -6,11 +6,11 @@
 import * as React from "react";
 import {Manager} from "react-popper";
 import {StyleSheet, css} from "aphrodite";
-import TextInput from "TextInput";
-import DropdownList from "select/DropdownList";
-import DeprecatedPopperTarget from "popup/DeprecatedPopperTarget";
-import DeprecatedPopper from "popup/DeprecatedPopper";
-import useDropdown from "tools/useDropdown";
+import TextInput from "./TextInput";
+import DropdownList from "./select/DropdownList";
+import DeprecatedPopperTarget from "./popup/DeprecatedPopperTarget";
+import DeprecatedPopper from "./popup/DeprecatedPopper";
+import useDropdown from "./tools/useDropdown";
 
 type Option = string;
 

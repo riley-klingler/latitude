@@ -4,10 +4,10 @@
  */
 
 import * as React from "react";
-import typeof Button from "button/Button";
-import Group from "Group";
+import typeof Button from "../button/Button";
+import Group from "../Group";
 import {css, StyleSheet} from "aphrodite";
-import colors from "styles/colors";
+import colors from "../styles/colors";
 
 export type ModalProps = {|
   /** a set of buttons corresponding to actions that can be taken in the modal form */

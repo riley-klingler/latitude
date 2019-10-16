@@ -5,11 +5,11 @@
  * @flow strict
  */
 
-import {StyleSheet} from "styles/aphrodite";
-import {typeScale} from "styles/index";
-import borders from "styles/borders";
-import latitudeColors from "latitudeColors";
-import sizes from "sizes";
+import {StyleSheet} from "./aphrodite";
+import {typeScale} from "./index";
+import borders from "./borders";
+import latitudeColors from "../latitudeColors";
+import sizes from "../sizes";
 
 export const focusedStyle = {
   transitionProperty: "border-color, box-shadow, background",

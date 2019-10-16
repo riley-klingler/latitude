@@ -4,8 +4,8 @@
  */
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
-import {GridContext} from "grid/Grid";
-import typeof Cell from "grid/Cell";
+import {GridContext} from "./Grid";
+import typeof Cell from "./Cell";
 
 type Props = {|
   +children: React.ChildrenArray<React.Element<Cell>>,

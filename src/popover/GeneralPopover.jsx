@@ -5,11 +5,11 @@
 
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
-import CustomPopover from "popover/CustomPopover";
-import Group from "Group";
-import Text from "Text";
+import CustomPopover from "./CustomPopover";
+import Group from "../Group";
+import Text from "../Text";
 
-import typeof Button from "button/Button";
+import typeof Button from "../button/Button";
 
 type Props = {|
   /** main heading */

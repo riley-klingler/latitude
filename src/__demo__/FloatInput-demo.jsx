@@ -11,9 +11,9 @@ import {
   textAlignKnob,
   demoCommonStyles,
   textInputSizeKnob,
-} from "design_system/types/demoTypes";
+} from "../design_system/types/demoTypes";
 import * as React from "react";
-import FloatInput from "FloatInput";
+import FloatInput from "../FloatInput";
 import {css} from "aphrodite";
 
 const demos: DemoFile = {

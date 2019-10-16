@@ -8,22 +8,22 @@ import {FixedSizeList} from "react-window";
 import InfiniteLoader from "react-window-infinite-loader";
 import {StyleSheet, css} from "aphrodite";
 
-import PopupWithClickAway from "popup/PopupWithClickAway";
-import Button from "button/Button";
-import IconButton from "button/IconButton";
-import Tooltip from "Tooltip";
-import Checkbox from "Checkbox";
-import CheckboxList from "CheckboxList";
+import PopupWithClickAway from "../popup/PopupWithClickAway";
+import Button from "../button/Button";
+import IconButton from "../button/IconButton";
+import Tooltip from "../Tooltip";
+import Checkbox from "../Checkbox";
+import CheckboxList from "../CheckboxList";
 import AutoSizer from "react-virtualized-auto-sizer";
-import invariant from "tools/invariant";
-import Text from "Text";
-import Icon from "Icon";
-import Loader from "Loader";
-import colors from "styles/colors";
-import Clickable from "base_candidate/Clickable";
-import RowContext from "table/RowContext";
-import latitudeColors from "latitudeColors";
-import {padding} from "styles/whitespace";
+import invariant from "../tools/invariant";
+import Text from "../Text";
+import Icon from "../Icon";
+import Loader from "../Loader";
+import colors from "../styles/colors";
+import Clickable from "../base_candidate/Clickable";
+import RowContext from "./RowContext";
+import latitudeColors from "../latitudeColors";
+import {padding} from "../styles/whitespace";
 
 export type Style = {[string]: string | number};
 

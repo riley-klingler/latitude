@@ -6,7 +6,7 @@
 
 import * as React from "react";
 import {mount} from "enzyme";
-import Checkbox from "Checkbox";
+import Checkbox from "../Checkbox";
 
 function mountCheckbox(propOverrides: {} = {}) {
   const defaultProps = {onChange: () => {}};

@@ -6,8 +6,8 @@
  */
 import * as React from "react";
 
-import {css, StyleSheet} from "styles/aphrodite";
-import colors from "styles/colors";
+import {css, StyleSheet} from "../../../../../../styles/aphrodite";
+import colors from "../../../../../../styles/colors";
 
 type Props = {|
   +children: React.Node,

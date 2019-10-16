@@ -3,7 +3,7 @@
  *
  * @flow strict
  */
-import colors from "styles/colors";
+import colors from "./colors";
 
 const defaultBorderColor = colors.grey20;
 

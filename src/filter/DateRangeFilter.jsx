@@ -6,17 +6,17 @@
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
 import moment from "moment-timezone";
-import BaseFilter, {type PopupPlacement} from "filter/BaseFilter";
-import DropdownList from "select/DropdownList";
-import CalendarDateInput from "date/CalendarDateInput";
+import BaseFilter, {type PopupPlacement} from "./BaseFilter";
+import DropdownList from "../select/DropdownList";
+import CalendarDateInput from "../date/CalendarDateInput";
 import {
   formatCalendarDate,
   today,
   calendarDateMin,
   calendarDateMax,
   type CalendarDate,
-} from "date/CalendarDateType";
-import {type Size} from "sizes";
+} from "../date/CalendarDateType";
+import {type Size} from "../sizes";
 
 type PresetDateFilterValue = {|
   +type: "preset",

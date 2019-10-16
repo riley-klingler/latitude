@@ -5,16 +5,16 @@
  */
 /* eslint-disable react/prefer-stateless-function */
 import * as React from "react";
-import Button from "button/Button";
-import Text from "Text";
+import Button from "../button/Button";
+import Text from "../Text";
 import {css, StyleSheet} from "aphrodite";
-import {coreT as t} from "config/I18n";
-import {include, margin, border, padding} from "styles/index";
+import {coreT as t} from "../config/I18n";
+import {include, margin, border, padding} from "../styles/index";
 import errorBoundary, {
   type BoundaryError,
   ERROR_BOUNDARY_BUTTON_CLASSNAME,
   ERROR_BOUNDARY_CONTAINER_CLASSNAME,
-} from "error/errorBoundary";
+} from "./errorBoundary";
 import classnames from "classnames";
 
 type WrappedErrorBoundaryProps = {

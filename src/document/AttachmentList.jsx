@@ -9,25 +9,25 @@
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
 
-import {ENTER} from "constants/interactions/KeyCodes";
-import latitudeColors from "latitudeColors";
-import {deprecatedMarginSizeConstants, deprecatedPaddingSizeConstants} from "styles/whitespace";
-import groupBy from "tools/betterGroupBy";
-import getFileExtension from "tools/documents/getFileExtension";
-import getFileNameWithoutExtension from "tools/documents/getFileNameWithoutExtension";
-import consolidateFileExtension from "tools/documents/consolidateFileExtension";
-import validateFileName from "tools/documents/validateFileName";
-import {documentsT as t} from "config/I18n";
-import IconButton from "button/IconButton";
-import Icon from "Icon";
-import Text from "Text";
-import Flex from "Flex";
-import TextInput from "TextInput";
-import InputError from "InputError";
-import HelpTooltip from "HelpTooltip";
-import SearchableSelectInput from "select/SearchableSelectInput";
-import FileFormat from "constants/FileFormatConstants";
-import type {AttachmentType} from "document/AttachmentTypes";
+import {ENTER} from "../constants/interactions/KeyCodes";
+import latitudeColors from "../latitudeColors";
+import {deprecatedMarginSizeConstants, deprecatedPaddingSizeConstants} from "../styles/whitespace";
+import groupBy from "../tools/betterGroupBy";
+import getFileExtension from "../tools/documents/getFileExtension";
+import getFileNameWithoutExtension from "../tools/documents/getFileNameWithoutExtension";
+import consolidateFileExtension from "../tools/documents/consolidateFileExtension";
+import validateFileName from "../tools/documents/validateFileName";
+import {documentsT as t} from "../config/I18n";
+import IconButton from "../button/IconButton";
+import Icon from "../Icon";
+import Text from "../Text";
+import Flex from "../Flex";
+import TextInput from "../TextInput";
+import InputError from "../InputError";
+import HelpTooltip from "../HelpTooltip";
+import SearchableSelectInput from "../select/SearchableSelectInput";
+import FileFormat from "../constants/FileFormatConstants";
+import type {AttachmentType} from "./AttachmentTypes";
 
 type Props = {|
   +attachments: $ReadOnlyArray<AttachmentType>,

@@ -4,8 +4,8 @@
  */
 
 import * as React from "react";
-import ThemeNameContext, {type Theme} from "context/ThemeNameContext";
-import Portal from "Portal";
+import ThemeNameContext, {type Theme} from "../context/ThemeNameContext";
+import Portal from "../Portal";
 import Takeover from "./Takeover";
 
 type TakeoverLoaderProps<C, K: React.ComponentType<C>> = {|

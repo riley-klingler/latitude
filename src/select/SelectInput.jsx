@@ -5,18 +5,18 @@
 
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
-import {inputStyles} from "styles/input";
-import invariant from "tools/invariant";
-import Icon from "Icon";
-import {padding, include} from "styles/index";
-import {LabelContext} from "Label";
-import colors from "styles/colors";
-import latitudeColors from "latitudeColors";
+import {inputStyles} from "../styles/input";
+import invariant from "../tools/invariant";
+import Icon from "../Icon";
+import {padding, include} from "../styles/index";
+import {LabelContext} from "../Label";
+import colors from "../styles/colors";
+import latitudeColors from "../latitudeColors";
 import InputGroupContext, {
   CENTER_INPUT,
   LEFT_INPUT,
   RIGHT_INPUT,
-} from "context/InputGroupContext";
+} from "../context/InputGroupContext";
 
 export type Option<K> = {|
   +label: string,

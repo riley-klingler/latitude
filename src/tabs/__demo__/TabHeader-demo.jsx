@@ -4,10 +4,10 @@
  */
 
 import * as React from "react";
-import {type DemoFile, bool} from "design_system/types/demoTypes";
+import {type DemoFile, bool} from "../../design_system/types/demoTypes";
 
-import TabHeader from "tabs/TabHeader";
-import Button from "button/Button";
+import TabHeader from "../TabHeader";
+import Button from "../../button/Button";
 
 type State = {|
   active: string,

@@ -8,8 +8,8 @@ import * as React from "react";
 import {Field} from "formula-one";
 import type {FieldLink, Validation} from "formula-one";
 
-import Label from "Label";
-import F1InputError from "base_candidate/formula_one/F1InputError";
+import Label from "../../Label";
+import F1InputError from "./F1InputError";
 
 export type F1FieldProps<T> = {|
   +link: FieldLink<T>,

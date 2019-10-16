@@ -5,10 +5,10 @@
 
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
-import Text from "Text";
-import IconButton from "button/IconButton";
+import Text from "./Text";
+import IconButton from "./button/IconButton";
 
-import latitudeColors from "latitudeColors";
+import latitudeColors from "./latitudeColors";
 
 const sizes = {
   xs: 20,

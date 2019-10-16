@@ -7,8 +7,8 @@
 import * as React from "react";
 import {mount} from "enzyme";
 
-import FullPageBoundary from "error/FullPageBoundary";
-import Logo from "Logo";
+import FullPageBoundary from "../FullPageBoundary";
+import Logo from "../../Logo";
 
 function shallowErrorBoundary(propOverrides: {} = {}) {
   const mergedProps = {

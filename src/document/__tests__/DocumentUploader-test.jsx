@@ -5,7 +5,7 @@
  */
 import React from "react";
 import {shallow} from "enzyme";
-import DocumentUploader from "document/DocumentUploader";
+import DocumentUploader from "../DocumentUploader";
 
 describe("DocumentUploader", () => {
   it("renders", () => {

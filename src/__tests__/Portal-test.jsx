@@ -6,7 +6,7 @@
 
 import * as React from "react";
 import {mount} from "enzyme";
-import Portal from "Portal";
+import Portal from "../Portal";
 
 function mountPortal(children: React.Node) {
   return mount(

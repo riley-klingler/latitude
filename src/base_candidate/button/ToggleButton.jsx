@@ -6,13 +6,13 @@
 /* eslint-disable react/forbid-elements */
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
-import {sharedStyles, getButtonStyle} from "button/styles";
-import invariant from "tools/invariant";
-import ThemeNameContext from "context/ThemeNameContext";
-import Icon from "Icon";
-import type {IconNames} from "tools/icons";
-import colors from "styles/colors";
-import stringOrFalse from "tools/stringOrFalse";
+import {sharedStyles, getButtonStyle} from "../../button/styles";
+import invariant from "../../tools/invariant";
+import ThemeNameContext from "../../context/ThemeNameContext";
+import Icon from "../../Icon";
+import type {IconNames} from "../../tools/icons";
+import colors from "../../styles/colors";
+import stringOrFalse from "../../tools/stringOrFalse";
 
 type ButtonSize = "s" | "m" | "l";
 type ButtonWidth = "responsive" | "full";

@@ -5,7 +5,7 @@
  */
 import * as React from "react";
 import {mount} from "enzyme";
-import Button from "button/Button";
+import Button from "../../button/Button";
 import PopupWithClickAway from "../PopupWithClickAway";
 
 function onClickOutsideHelper(

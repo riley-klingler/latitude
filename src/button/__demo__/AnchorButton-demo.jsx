@@ -4,10 +4,10 @@
  * @flow
  */
 
-import type {DemoFile} from "design_system/types/demoTypes";
+import type {DemoFile} from "../../design_system/types/demoTypes";
 import * as React from "react";
-import AnchorButton from "button/AnchorButton";
-import DeprecatedHorizontalGroup from "DeprecatedHorizontalGroup";
+import AnchorButton from "../AnchorButton";
+import DeprecatedHorizontalGroup from "../../DeprecatedHorizontalGroup";
 
 const demos: DemoFile = {
   demos: [

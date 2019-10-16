@@ -7,8 +7,8 @@
 import {StyleSheet, css} from "aphrodite";
 import deprecatedColors, {
   type DeprecatedColorScheme,
-} from "styles/deprecatedColorConstants";
-import type {Color} from "styles/colors";
+} from "../../styles/deprecatedColorConstants";
+import type {Color} from "../../styles/colors";
 
 export type DeprecatedColor = $Keys<typeof deprecatedColors>;
 

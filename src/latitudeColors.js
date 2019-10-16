@@ -11,7 +11,7 @@
  *
  */
 
-import type {Color} from "styles/colors";
+import type {Color} from "./styles/colors";
 
 const latitudeColors = Object.freeze({
   black: "#14171B",

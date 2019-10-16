@@ -7,9 +7,9 @@
 
 import * as React from "react";
 import {css, StyleSheet} from "aphrodite";
-import colors from "styles/colors";
+import colors from "../styles/colors";
 
-import Column, {type SortDirection} from "table/Column";
+import Column, {type SortDirection} from "./Column";
 
 const PADDING = {
   none: "0px",

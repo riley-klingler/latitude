@@ -5,13 +5,13 @@
 
 import React from "react";
 
-import Home from "design_system/interfaces/Home";
-import DesignAppInterface from "design_system/interfaces/wrapper/DesignAppInterface";
-import Guidelines from "design_system/interfaces/guidelines/Guidelines";
-import Styles from "design_system/interfaces/styles/Styles";
-import componentsList from "design_system/constants/componentsList.json";
-import guidelinesManifest from "design_system/interfaces/guidelines/guidelinesManifest";
-import stylesManifest from "design_system/interfaces/styles/stylesManifest";
+import Home from "./interfaces/Home";
+import DesignAppInterface from "./interfaces/wrapper/DesignAppInterface";
+import Guidelines from "./interfaces/guidelines/Guidelines";
+import Styles from "./interfaces/styles/Styles";
+import componentsList from "./constants/componentsList.json";
+import guidelinesManifest from "./interfaces/guidelines/guidelinesManifest";
+import stylesManifest from "./interfaces/styles/stylesManifest";
 
 import {Route, makeRouteConfig, hotRouteConfig, HttpError} from "found";
 

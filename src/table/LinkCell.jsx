@@ -5,9 +5,9 @@
 
 import React from "react";
 import {StyleSheet, css} from "aphrodite";
-import Text from "Text";
-import TextLink from "TextLink";
-import RowContext from "table/RowContext";
+import Text from "../Text";
+import TextLink from "../TextLink";
+import RowContext from "./RowContext";
 
 type Props = {|
   +value: ?(string | number),

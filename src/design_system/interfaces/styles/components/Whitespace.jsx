@@ -5,18 +5,18 @@
  */
 import * as React from "react";
 
-import Text from "Text";
-import TextLink from "TextLink";
-import Group from "Group";
+import Text from "../../../../Text";
+import TextLink from "../../../../TextLink";
+import Group from "../../../../Group";
 
-import {css, StyleSheet} from "styles/aphrodite";
-import colors from "styles/colors";
-import {deprecatedPaddingSizeConstants} from "styles/whitespace";
+import {css, StyleSheet} from "../../../../styles/aphrodite";
+import colors from "../../../../styles/colors";
+import {deprecatedPaddingSizeConstants} from "../../../../styles/whitespace";
 import Highlight from "react-highlight/lib/optimized";
-import Markdown from "design_system/components/markdown/Markdown";
-import Demo from "design_system/components/documentation_layout/Demo";
-import HorizontalGroupDemo from "__demo__/HorizontalGroup-demo";
-import VerticalGroupDemo from "__demo__/VerticalGroup-demo";
+import Markdown from "../../../components/markdown/Markdown";
+import Demo from "../../../components/documentation_layout/Demo";
+import HorizontalGroupDemo from "../../../../__demo__/HorizontalGroup-demo";
+import VerticalGroupDemo from "../../../../__demo__/VerticalGroup-demo";
 
 export default function Whitespace() {
   return (
