@@ -97,7 +97,6 @@ module.exports = {
       presets,
       plugins: [
         "lodash",
-        "ramda",
         reflectiveBind,
         prismJs,
         "relay",
