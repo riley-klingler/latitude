@@ -9,7 +9,6 @@ import moment from "moment";
 import "moment/locale/zh-cn";
 import i18next from "i18next";
 import LngDetector from "./I18nLanguageDetector";
-import zhBooking from "./locale/booking/zh";
 import zhCommon from "./locale/common/zh";
 import zhDocuments from "./locale/documents/zh";
 import zhLatitude from "./locale/latitude/zh";
@@ -20,7 +19,6 @@ moment.locale("en");
 
 const resources = {
   zh: {
-    booking: zhBooking,
     common: zhCommon,
     documents: zhDocuments,
     latitude: zhLatitude,
@@ -59,10 +57,6 @@ export function changeLanguage(lang: string) {
   }
 }
 
-export const bookingT = (
-  key: $Keys<typeof resources.zh.booking>,
-  data?: {[string]: string}
-): string => i18next.t(key, {...data, ns: "booking"});
 export const commonT = (key: string): string => i18next.t(key, {ns: "common"});
 export const documentsT = (
   key: $Keys<typeof resources.zh.documents>,
