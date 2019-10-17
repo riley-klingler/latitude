@@ -28,7 +28,6 @@ const prismJs = [
 ];
 
 const babelCommon = [
-  "babel-plugin-idx",
   ["@babel/plugin-proposal-decorators", {legacy: true}],
   "@babel/plugin-proposal-function-sent",
   "@babel/plugin-proposal-export-namespace-from",
