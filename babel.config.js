@@ -56,7 +56,6 @@ module.exports = {
         //   "lodash", the lodash plugin does not play nice with jest-code-coverage
         reflectiveBind,
         prismJs,
-        "relay",
         "@babel/plugin-transform-runtime",
         // this is required to handle the webpack import() syntax, which is preferred over require.ensure.
         "dynamic-import-node",
@@ -65,7 +64,7 @@ module.exports = {
     },
     thirdPartyNoTransformRuntime: {
       presets,
-      plugins: ["lodash", reflectiveBind, prismJs, "relay", ...babelCommon],
+      plugins: ["lodash", reflectiveBind, prismJs, ...babelCommon],
     },
     development: {
       presets,
@@ -73,7 +72,6 @@ module.exports = {
         "lodash",
         reflectiveBind,
         prismJs,
-        "relay",
         "@babel/plugin-transform-runtime",
         // this allows for webpack hot reloading whe developing
         "react-hot-loader/babel",
@@ -86,7 +84,6 @@ module.exports = {
         "lodash",
         reflectiveBind,
         prismJs,
-        "relay",
         "@babel/plugin-transform-runtime",
         // we only remove test ids from production code and integration tests
         ...babelCommon,
@@ -98,7 +95,6 @@ module.exports = {
         "lodash",
         reflectiveBind,
         prismJs,
-        "relay",
         "@babel/plugin-transform-runtime",
         "add-react-displayname",
         // we only remove test ids from production code and integration tests
