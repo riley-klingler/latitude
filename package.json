@@ -50,7 +50,6 @@
     "math-expression-evaluator": "^1.2.8",
     "moment": "^2.11.2",
     "moment-timezone": "^0.5.4",
-    "murmurhash-js": "^1.0.0",
     "parse-decimal-number": "^1.0.0",
     "positions": "^1.6.2",
     "prettier": "^1.16.4",
