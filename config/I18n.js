@@ -13,7 +13,6 @@ import zhBooking from "./locale/booking/zh";
 import zhCommon from "./locale/common/zh";
 import zhDocuments from "./locale/documents/zh";
 import zhLatitude from "./locale/latitude/zh";
-import zhCore from "./locale/core/zh";
 
 // Default the locale back to english (unfortunately importing zh-cn implicitly
 // sets it as the default locale).
@@ -25,7 +24,6 @@ const resources = {
     common: zhCommon,
     documents: zhDocuments,
     latitude: zhLatitude,
-    core: zhCore,
   },
 };
 
@@ -74,7 +72,3 @@ export const latitudeT = (
   key: $Keys<typeof resources.zh.latitude>,
   data?: {[string]: string}
 ): string => i18next.t(key, {...data, ns: "latitude"});
-export const coreT = (
-  key: $Keys<typeof resources.zh.core>,
-  data?: {[string]: string}
-): string => i18next.t(key, {...data, ns: "core"});

@@ -14,14 +14,9 @@ type DesignSystemProps = {};
 function DesignSystemLoader(_props: DesignSystemProps) {
   // eslint-disable-next-line global-require
   const DesignSystemApp = require("./DesignSystemApp").default;
-  // eslint-disable-next-line global-require
-  const FullPageBoundary = require("../error/FullPageBoundary").default;
 
-  return (
-    <FullPageBoundary>
-      <DesignSystemApp />
-    </FullPageBoundary>
-  );
+  // TODO(dmnd): Restore error boundary
+  return <DesignSystemApp />;
 }
 
 function validateCompleteDesignSystemBootstrapData(
