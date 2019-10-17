@@ -133,10 +133,6 @@ rules:
                 ],
               message: "Don't use these lodash methods; use lodash only when necessary. Visit https://flexport.atlassian.net/wiki/spaces/EN/pages/179077263/Lodash+usage+guide for alternatives.",
             },
-            {
-              name: "raven-js",
-              message: "Import Raven from tools/sentry/raven. This file will either check window for Raven or import it from our webpack bundle.",
-            },
           ],
       },
     ]
