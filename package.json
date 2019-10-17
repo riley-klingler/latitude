@@ -37,7 +37,6 @@
     "eslint-plugin-lodash": "^3.1.0",
     "eslint-plugin-react": "7.13.0",
     "eslint-plugin-react-hooks": "^1.0.1",
-    "fetch-mock": "^5.13.1",
     "flow-bin": "0.109.0",
     "flow-remove-types": "^1.2.3",
     "flux": "^3.1.3",
