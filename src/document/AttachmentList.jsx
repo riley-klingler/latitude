@@ -272,7 +272,7 @@ export default class AttachmentList extends React.PureComponent<Props, State> {
 }
 
 const PdfPreview = React.lazy(() =>
-  import(/* webpackChunkName: "latitude_document_PdfPreview" */ "document/PdfPreview")
+  import(/* webpackChunkName: "document_PdfPreview" */ "../document/PdfPreview")
 );
 
 function FilePreview({attachment}: {|+attachment: AttachmentType|}) {

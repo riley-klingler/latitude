@@ -9,7 +9,7 @@ import Group from "./Group";
 import invariant from "./tools/invariant";
 import {StyleSheet, css} from "./styles";
 import latitudeColors from "./latitudeColors";
-import {whitespaceSizeConstants} from "./styles/whitespace";
+import {whitespaceSizeConstants} from "./tabs/../styles/whitespace";
 
 export type Option<T> = {|
   +value: T,

@@ -15,7 +15,7 @@ function DesignSystemLoader(_props: DesignSystemProps) {
   // eslint-disable-next-line global-require
   const DesignSystemApp = require("./DesignSystemApp").default;
   // eslint-disable-next-line global-require
-  const FullPageBoundary = require("error/FullPageBoundary").default;
+  const FullPageBoundary = require("../error/FullPageBoundary").default;
 
   return (
     <FullPageBoundary>
