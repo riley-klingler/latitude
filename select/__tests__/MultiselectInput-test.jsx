@@ -25,8 +25,9 @@ function mountMultiselect(propOverrides: {} = {}) {
     ...defaultProps,
     ...propOverrides,
   };
-  // $FlowFixMe(uforic)
-  return mount(<MultiselectInputClass {...mergedProps} />);
+  // TODO(dmnd): Re-suppress once Flow v110 is out.
+  // FlowFixMe(uforic)
+  return mount(<MultiselectInputClass {...(mergedProps: any)} />);
 }
 
 describe("Multiselect", () => {

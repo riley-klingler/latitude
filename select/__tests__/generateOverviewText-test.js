@@ -3,13 +3,15 @@
  * WATCHERS: uforic
  * @flow
  */
-import generateOverviewText, {
-  _test,
-} from "../generateOverviewText";
+import generateOverviewText, {_test} from "../generateOverviewText";
+
+import type {Option} from "../MultiselectInput";
 
 function convertStringsToOptions(strs: Array<string>) {
-  // $FlowUpgradeFixMe(0.69.0 -> 0.70.0)
-  return strs.map(str => ({label: str, value: str}));
+  return strs.map<Option<string>>(str => ({
+    label: str,
+    value: str,
+  }));
 }
 
 // eslint-disable-next-line import/prefer-default-export
