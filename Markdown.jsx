@@ -14,14 +14,14 @@ import type {
 import ReactDOMServer from "react-dom/server";
 import xss from "xss";
 
-type Props = {|
+export type MarkdownProps = {|
   +source: ?string,
   +renderer?: Renderers,
   +enableHtml?: boolean,
   +breaks?: boolean,
 |};
 
-export default function Markdown(props: Props) {
+export default function Markdown(props: MarkdownProps) {
   const {source, enableHtml, breaks = true} = props;
   let renderer = {...defaultRenderer, ...props.renderer};
 
@@ -47,13 +47,13 @@ export default function Markdown(props: Props) {
   );
 }
 
-export function renderMarkdownToHtmlString(props: Props): string {
+export function renderMarkdownToHtmlString(props: MarkdownProps): string {
   const renderer: Renderers = {...defaultRenderer, ...props.renderer};
   const newProps = {...props, renderer};
   return ReactDOMServer.renderToStaticMarkup(<Markdown {...newProps} />);
 }
 
-export function renderMarkdownToPlainString(props: Props): string {
+export function renderMarkdownToPlainString(props: MarkdownProps): string {
   const renderer: Renderers = {...plainTextRenderer, ...props.renderer};
   return renderMarkdownToHtmlString({...props, renderer});
 }
