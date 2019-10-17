@@ -27,7 +27,7 @@ testEnvMacro.__isTestEnvMacro = true;
 
 function webpackConfig(env) {
   var config = {
-    context: path.join(__dirname, "src"),
+    context: __dirname,
     entry: entryPoints,
     // Necessary because a dependency of jsonlint-lines uses fs (the former is
     // in turn a dependency of MapboxDraw).
@@ -46,7 +46,7 @@ function webpackConfig(env) {
     },
     resolve: {
       // If you update modules, please update moduleRoots in package.json
-      modules: [path.join(__dirname, "src"), "node_modules"],
+      modules: [__dirname, "node_modules"],
       extensions: [".js", ".jsx", ".json"],
     },
     // These globals are provided by application.js. Eventually we should move

@@ -1,6 +1,6 @@
 [options]
 module.name_mapper='.*\.s?css' -> 'empty/object'
-module.name_mapper='^\(.*\)$' -> '<PROJECT_ROOT>/src/\1'
+module.name_mapper='^\(.*\)$' -> '<PROJECT_ROOT>/\1'
 emoji=true
 suppress_comment=\\(.\\|\n\\)*\\$ExpectError
 suppress_comment=\\(.\\|\n\\)*\\$FlowFixMe
@@ -62,7 +62,6 @@ untyped-type-import
 <PROJECT_ROOT>/app/.*
 <PROJECT_ROOT>/lib/.*
 <PROJECT_ROOT>/db/.*
-<PROJECT_ROOT>/config/.*
 <PROJECT_ROOT>/spec/.*
 <PROJECT_ROOT>/tmp/.*
 <PROJECT_ROOT>/log/.*

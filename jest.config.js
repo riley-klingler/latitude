@@ -11,7 +11,7 @@ const chunkd = require("chunkd");
 const config = {
   timers: "fake",
   setupFilesAfterEnv: [
-    "<rootDir>/src/_harness/jestTestSetup.js",
+    "<rootDir>/_harness/jestTestSetup.js",
   ],
   snapshotSerializers: ["enzyme-to-json/serializer"],
   unmockedModulePathPatterns: ["<rootDir>/node_modules"],
@@ -19,17 +19,17 @@ const config = {
   transform: {
     "^.+\\.jsx?$": "babel-jest",
     "^.+\\.(css|less)$":
-      "<rootDir>/src/_harness/mockStyle.js",
+      "<rootDir>/_harness/mockStyle.js",
   },
   transformIgnorePatterns: ["node_modules/(?!(flexport-shared)/)"],
   testRegex: "/__tests__/.*-test\\.jsx?$",
   testMatch: undefined,
   moduleFileExtensions: ["js", "jsx", "json"],
-  modulePaths: ["<rootDir>/src"],
-  moduleDirectories: ["src", "node_modules"],
+  modulePaths: ["<rootDir>", "."],
+  moduleDirectories: [".", "node_modules"],
   moduleNameMapper: {
     "(\\.(css|less)$|^reset-css$)":
-      "<rootDir>/src/_harness/mockStyle.js",
+      "<rootDir>/_harness/mockStyle.js",
   },
   coverageDirectory: "./coverage/",
   coveragePathIgnorePatterns: [
@@ -40,7 +40,7 @@ const config = {
     url: "https://app.flexport.com/",
   },
   testEnvironment: "jest-environment-jsdom-global",
-  setupFiles: ["<rootDir>/src/_harness/jestSetup.js"],
+  setupFiles: ["<rootDir>/_harness/jestSetup.js"],
   globals: {
     USE_UNWRAPPED_FRAGMENT_CONTAINERS: true,
     AVOID_PORTAL_RENDER: true,

@@ -189,14 +189,14 @@ class WebpackConfigurationBuilder {
       // which environments:
       // https://github.com/webpack/webpack/blob/master/lib/WebpackOptionsDefaulter.js
       mode: "none",
-      context: path.join(__dirname, "src"),
+      context: __dirname,
       entry, // Necessary because a dependency of jsonlint-lines uses fs (the former is
       // in turn a dependency of MapboxDraw).
       node: {fs: "empty"},
       output,
       resolve: {
         // If you update modules, please update moduleRoots in package.json
-        modules: [path.join(__dirname, "src"), "node_modules"],
+        modules: [__dirname, "node_modules"],
         extensions: [".js", ".jsx", ".json"],
       }, // These globals are provided by application.js. Eventually we should move
       // them to the vendor chunk to remove a network request, but at the moment

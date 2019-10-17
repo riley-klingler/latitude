@@ -1,6 +1,6 @@
 module.exports = async ({config}) => {
   config.resolve.modules.unshift("stories");
-  config.resolve.modules.unshift("src");
+  config.resolve.modules.unshift(".");
 
   // Strip out the babel-plugin-react-docgen
   // This crashes Storybook when using certain Flow features 🙃
