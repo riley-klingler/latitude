@@ -1,6 +1,5 @@
 [options]
 module.name_mapper='.*\.s?css' -> 'empty/object'
-module.name_mapper='^\(.*\)$' -> '<PROJECT_ROOT>/\1'
 emoji=true
 suppress_comment=\\(.\\|\n\\)*\\$ExpectError
 suppress_comment=\\(.\\|\n\\)*\\$FlowFixMe

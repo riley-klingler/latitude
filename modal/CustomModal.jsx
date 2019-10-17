@@ -30,7 +30,7 @@ if (
   // eslint-disable-next-line global-require
   const modal = require("react-modal");
   // eslint-disable-next-line autofix/no-unused-vars,global-require
-  const unusedCss = require("vendor_stylesheets/react_modal.css");
+  const unusedCss = require("../vendor_stylesheets/react_modal.css");
   // should only perform this on the client. server side rendering doesn't have a document tag.
   // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
   modal.setAppElement(document.getElementsByTagName("body")[0]);

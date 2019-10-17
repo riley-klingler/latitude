@@ -5,7 +5,7 @@
 
 import React from "react";
 
-import { Route, makeRouteConfig, hotRouteConfig, HttpError } from "found";
+import {Route, makeRouteConfig, hotRouteConfig, HttpError} from "found";
 import DesignAppInterface from "./interfaces/wrapper/DesignAppInterface";
 import Guidelines from "./interfaces/guidelines/Guidelines";
 import Styles from "./interfaces/styles/Styles";
@@ -16,27 +16,27 @@ import stylesManifest from "./interfaces/styles/stylesManifest";
 import Home from "./interfaces/Home";
 
 const Components = () =>
-  import(/* webpackChunkName: "design_system_interfaces_components_Components" */ "design_system/interfaces/components/Components")
+  import(/* webpackChunkName: "design_system_interfaces_components_Components" */ "./interfaces/components/Components")
     .then(module => module.default)
     .catch(() => "An error occurred while loading the component");
 
 const getGettingStarted = () =>
-  import(/* webpackChunkName: "design_system_interfaces_GettingStarted" */ "design_system/interfaces/GettingStarted")
+  import(/* webpackChunkName: "design_system_interfaces_GettingStarted" */ "./interfaces/GettingStarted")
     .then(module => module.default)
     .catch(() => "An error occurred while loading the component");
 
 const getContributing = () =>
-  import(/* webpackChunkName: "design_system_interfaces_Contributing" */ "design_system/interfaces/Contributing")
+  import(/* webpackChunkName: "design_system_interfaces_Contributing" */ "./interfaces/Contributing")
     .then(module => module.default)
     .catch(() => "An error occurred while loading the component");
 
 const getResources = () =>
-  import(/* webpackChunkName: "design_system_interfaces_Resources" */ "design_system/interfaces/Resources")
+  import(/* webpackChunkName: "design_system_interfaces_Resources" */ "./interfaces/Resources")
     .then(module => module.default)
     .catch(() => "An error occurred while loading the component");
 
 const getPlayground = () =>
-  import(/* webpackChunkName: "design_system_interfaces_Playground" */ "design_system/interfaces/Playground")
+  import(/* webpackChunkName: "design_system_interfaces_Playground" */ "./interfaces/Playground")
     .then(module => module.default)
     .catch(() => "An error occurred while loading the component");
 
