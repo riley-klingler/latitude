@@ -19,7 +19,7 @@ import componentsMetaList from "../../constants/componentsMetaList.json";
 import Text from "../../../Text";
 import colors from "../../../styles/colors";
 import betterGroupBy from "../../../tools/betterGroupBy";
-import {css, StyleSheet} from "../../../styles/aphrodite";
+import {css, StyleSheet} from "aphrodite";
 import {fontWeights} from "../../../styles";
 import {
   guidelines,

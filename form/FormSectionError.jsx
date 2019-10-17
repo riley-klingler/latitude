@@ -5,7 +5,7 @@
  */
 
 import * as React from "react";
-import {css, StyleSheet} from "../styles/aphrodite";
+import {css, StyleSheet} from "aphrodite";
 
 import colors from "../styles/colors";
 

@@ -15,7 +15,7 @@ import ColorPalette, {
   ColorClassificationLegend,
 } from "../../../components/helpers/ColorPalette";
 
-import {css, StyleSheet} from "../../../../styles/aphrodite";
+import {css, StyleSheet} from "aphrodite";
 
 const backgroundRule = "backgroundColor: colors.grey10";
 // eslint-disable-next-line no-template-curly-in-string

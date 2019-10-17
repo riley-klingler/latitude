@@ -9,7 +9,7 @@ import type {DemoFile} from "../../design_system/types/demoTypes";
 import DateRangeFilter, {
   type DateFilterValue,
 } from "../DateRangeFilter";
-import {StyleSheet, css} from "../../styles/aphrodite";
+import {StyleSheet, css} from "aphrodite";
 import {addDaysFromCalendarDate, today} from "../../date/CalendarDateType";
 
 const demos: DemoFile = {

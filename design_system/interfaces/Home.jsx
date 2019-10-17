@@ -5,7 +5,7 @@
  * @flow
  */
 import * as React from "react";
-import {StyleSheet, css} from "../../styles/aphrodite";
+import {StyleSheet, css} from "aphrodite";
 import colors from "../../styles/colors";
 
 import Text from "../../Text";

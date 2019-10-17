@@ -11,7 +11,7 @@ import TextCell from "../TextCell";
 import Button from "../../button/Button";
 import InteractableCell from "../InteractableCell";
 import NotificationModal from "../../modal/NotificationModal";
-import {StyleSheet, css} from "../../styles/aphrodite";
+import {StyleSheet, css} from "aphrodite";
 import data from "./data.json";
 
 const demos: DemoFile = {

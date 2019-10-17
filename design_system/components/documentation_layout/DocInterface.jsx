@@ -16,7 +16,7 @@ import colors from "../../../styles/colors";
 import Markdown from "../markdown/Markdown";
 import IconButton from "../../../button/IconButton";
 
-import {css, StyleSheet} from "../../../styles/aphrodite";
+import {css, StyleSheet} from "aphrodite";
 
 import PropTable from "./PropTable";
 import ComponentDemo from "./ComponentDemo";

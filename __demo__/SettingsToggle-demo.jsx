@@ -5,7 +5,7 @@
 
 import * as React from "react";
 import type {DemoFile} from "../design_system/types/demoTypes";
-import {StyleSheet, css} from "../styles/aphrodite";
+import {StyleSheet, css} from "aphrodite";
 import SettingsToggle from "../SettingsToggle";
 import Table from "../table/Table";
 import StaticCell from "../table/StaticCell";

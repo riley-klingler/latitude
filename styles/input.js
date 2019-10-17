@@ -5,7 +5,7 @@
  * @flow strict
  */
 
-import {StyleSheet} from "./aphrodite";
+import {StyleSheet} from "aphrodite";
 import {typeScale} from "./index";
 import borders from "./borders";
 import latitudeColors from "../latitudeColors";

@@ -6,7 +6,7 @@
 
 import * as React from "react";
 
-import {css, StyleSheet} from "../../styles/aphrodite";
+import {css, StyleSheet} from "aphrodite";
 import Text from "../../Text";
 import Group from "../../Group";
 import AnchorButton from "../../button/AnchorButton";

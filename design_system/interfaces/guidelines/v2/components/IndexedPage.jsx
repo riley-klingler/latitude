@@ -5,7 +5,7 @@
 
 import type {Node} from "react";
 import React, {useState, useCallback, useContext} from "react";
-import {css, StyleSheet} from "../../../../../styles/aphrodite";
+import {css, StyleSheet} from "aphrodite";
 import PageIndex from "./PageIndex";
 
 export type IndexEntry = {|

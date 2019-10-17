@@ -19,7 +19,7 @@ import type {
 import Text from "../../../Text";
 import Group from "../../../Group";
 
-import {css, StyleSheet} from "../../../styles/aphrodite";
+import {css, StyleSheet} from "aphrodite";
 import colors from "../../../styles/colors";
 import {sharedStyles} from "../../../button/styles";
 

@@ -11,7 +11,7 @@ import ColorPalette, {
   ColorClassificationLegend,
 } from "../../components/helpers/ColorPalette";
 
-import {css, StyleSheet} from "../../../styles/aphrodite";
+import {css, StyleSheet} from "aphrodite";
 import colors, {type Color} from "../../../styles/colors";
 
 import {

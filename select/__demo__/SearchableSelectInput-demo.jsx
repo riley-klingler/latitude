@@ -14,7 +14,7 @@ import {
 } from "../../design_system/types/demoTypes";
 import SearchableSelectInput from "../SearchableSelectInput";
 import Text from "../../Text";
-import {css} from "../../styles/aphrodite";
+import {css} from "aphrodite";
 import {characters} from "../../tools/demo";
 
 const demos: DemoFile = {

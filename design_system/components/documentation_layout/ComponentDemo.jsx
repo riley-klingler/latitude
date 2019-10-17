@@ -12,7 +12,7 @@ import Text from "../../../Text";
 import Demo from "./Demo";
 import type {DemoFile} from "../../types/demoTypes";
 
-import {css, StyleSheet} from "../../../styles/aphrodite";
+import {css, StyleSheet} from "aphrodite";
 
 type Props = {|
   +demo: DemoFile,

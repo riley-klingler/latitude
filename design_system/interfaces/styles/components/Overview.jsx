@@ -9,7 +9,7 @@ import Highlight from "react-highlight/lib/optimized";
 import Link from "../../../../Link";
 import Group from "../../../../Group";
 
-import {css, StyleSheet} from "../../../../styles/aphrodite";
+import {css, StyleSheet} from "aphrodite";
 import {deprecatedPaddingSizeConstants} from "../../../../styles";
 import colors from "../../../../styles/colors";
 import Text from "../../../../Text";
@@ -85,7 +85,7 @@ import colors from "styles/colors";`}
             <Text weight="bold">Simple Usage</Text>
             {/* eslint-disable-next-line flexport/no-oocss */}
             <Highlight languages={["typescript"]} className="typescript">
-              {`import {css, StyleSheet} from "styles/aphrodite";
+              {`import {css, StyleSheet} from "aphrodite";
 
 import color from "styles/color";
 import {deprecatedPaddingSizeConstants} from "styles/whitespace";

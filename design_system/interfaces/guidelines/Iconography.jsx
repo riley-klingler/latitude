@@ -9,7 +9,7 @@ import * as React from "react";
 import Icon from "../../../Icon";
 import Text from "../../../Text";
 import {iconData, type IconNames} from "../../../tools/icons";
-import {css, StyleSheet} from "../../../styles/aphrodite";
+import {css, StyleSheet} from "aphrodite";
 
 import betterGroupBy from "../../../tools/betterGroupBy";
 

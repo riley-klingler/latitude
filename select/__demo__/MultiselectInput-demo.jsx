@@ -6,7 +6,7 @@
 import * as React from "react";
 import type {DemoFile} from "../../design_system/types/demoTypes";
 import MultiselectInput from "../MultiselectInput";
-import {StyleSheet, css} from "../../styles/aphrodite";
+import {StyleSheet, css} from "aphrodite";
 import {type StarWarsCharacter, characters} from "../../tools/demo";
 
 const demos: DemoFile = {

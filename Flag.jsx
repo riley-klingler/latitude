@@ -5,7 +5,7 @@
  */
 
 import * as React from "react";
-import {css, StyleSheet} from "./styles/aphrodite";
+import {css, StyleSheet} from "aphrodite";
 
 import typeof {countries as countriesType} from "./constants/AddressOptionConstants.generated";
 
