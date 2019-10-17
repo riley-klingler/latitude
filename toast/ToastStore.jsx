@@ -8,7 +8,7 @@ import update from "immutability-helper";
 import * as React from "react";
 import FluxDispatcher from "../tools/FluxDispatcher";
 import Toast from "./Toast";
-import {ActionTypes, EventTypes} from "../constants/ToastConstants";
+import {ActionTypes, EventTypes} from "./Constants";
 import PayloadSources from "../constants/PayloadSources";
 import ToastActions from "./ToastActions";
 

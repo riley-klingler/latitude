@@ -4,7 +4,7 @@
  * @flow
  */
 import PayloadSources from "../constants/PayloadSources";
-import {ActionTypes} from "../constants/ToastConstants";
+import {ActionTypes} from "./Constants";
 import type {ToastRecord} from "./ToastStore";
 import Toast from "./Toast";
 import FluxDispatcher from "../tools/FluxDispatcher";
