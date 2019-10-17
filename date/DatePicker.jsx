@@ -2,7 +2,6 @@
  * TEAM: frontend_infra
  * @flow
  */
-/* eslint-disable flexport/dynamic-import-webchunkname */
 
 import Loadable from "react-loadable";
 
@@ -14,7 +13,7 @@ const LazyDatePicker = () => {
   // if server side rendering, don't call CSS Loader
   if (document) {
     imports.push(
-      import(/* webpackChunkName: "react-datepicker" */ "vendor_stylesheets/react-datepicker.css")
+      import(/* webpackChunkName: "react-datepicker" */ "../vendor_stylesheets/react-datepicker.css")
     );
   }
 
@@ -25,8 +24,7 @@ const LazyDatePicker = () => {
   return Promise.all(imports).then(data => data[0]);
 };
 
-// $FlowUpgradeFixMe(0.84.0 -> 0.85.0)
-const DatePicker = Loadable({
+const DatePicker = Loadable<{}, any>({
   loader: LazyDatePicker,
   loading: () => null,
 });

@@ -32,8 +32,8 @@ function SectionsWithSubsectionsDemo() {
         >
           <FormRow columnSpans={[1]}>
             <Label value="Label">
-              {/** $FlowFixMe(kaye) This is just a demo - it doesnt matter */}
-              <TextInput onChange={() => undefined} />
+              
+              <TextInput onChange={() => undefined} value="" />
             </Label>
           </FormRow>
         </FormSection>
@@ -45,8 +45,8 @@ function SectionsWithSubsectionsDemo() {
         >
           <FormRow columnSpans={[1]}>
             <Label value="Label">
-              {/** $FlowFixMe(kaye) This is just a demo - it doesnt matter */}
-              <TextInput onChange={() => undefined} />
+              
+              <TextInput onChange={() => undefined} value="" />
             </Label>
           </FormRow>
         </FormSection>

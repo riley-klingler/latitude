@@ -5,10 +5,16 @@
  */
 
 import * as React from "react";
-import { css } from "aphrodite";
+import {css} from "aphrodite";
 import TextInput from "../TextInput";
 import InputError from "../InputError";
-import { type DemoFile, text, bool, demoCommonStyles } from "../design_system/types/demoTypes";
+import {
+  type DemoFile,
+  text,
+  bool,
+  demoCommonStyles,
+} from "../design_system/types/demoTypes";
+import invariant from "../tools/invariant";
 
 const demos: DemoFile = {
   demos: [
@@ -39,12 +45,12 @@ export class InputShim extends React.PureComponent<
 
   render() {
     const {elementToCodeFn, demoProps} = this.props;
+    invariant(demoProps !== undefined);
     const element = (
       <InputError {...demoProps}>
         <TextInput
           value={this.state.value}
           onChange={this.handleChange}
-          // $FlowFixMe(dirak) demoProps doesn't typecheck
           isInvalid={demoProps.showError}
         />
       </InputError>

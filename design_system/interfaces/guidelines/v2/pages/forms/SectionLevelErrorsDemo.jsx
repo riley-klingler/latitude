@@ -123,20 +123,18 @@ function SectionLevelErrorsDemo() {
         <Row>
           <Cell span={{xs: {span: 12}, lg: {span: 3}}}>
             <Label value="Total weight" indicateRequired={true}>
-              {/** $FlowFixMe(kaye) This is just a demo - it doesnt matter */}
               <TextInput
                 suffix="kg"
-                value={totalWeight}
+                value={totalWeight.toString()}
                 onChange={val => setTotalWeight(val)}
               />
             </Label>
           </Cell>
           <Cell span={{xs: {span: 12}, lg: {span: 3}}}>
             <Label value="Total volume" indicateRequired={true}>
-              {/** $FlowFixMe(kaye) This is just a demo - it doesnt matter */}
               <TextInput
                 suffix="cbm"
-                value={totalVolume}
+                value={totalVolume.toString()}
                 onChange={val => setTotalVolume(val)}
               />
             </Label>

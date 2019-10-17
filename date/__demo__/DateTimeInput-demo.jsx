@@ -4,7 +4,7 @@
  */
 
 import * as React from "react";
-import { css } from "aphrodite";
+import {css} from "aphrodite";
 import DateTimeInput, {type DateTimeValue} from "../DateTimeInput";
 import {
   type DemoFile,
@@ -57,10 +57,11 @@ export class DateTimeInputShim extends React.PureComponent<
   };
 
   render() {
+    // TODO(dmnd): Re-suppress once Flow v110 is out.
     const element = (
-      // $FlowFixMe(uforic): Figure out how to shims without expanding all props
+      // FlowFixMe(uforic): Figure out how to shims without expanding all props
       <DateTimeInput
-        {...this.props.demoProps}
+        {...(this.props.demoProps: any)}
         value={this.state.value}
         onChange={this.handleChange}
       />

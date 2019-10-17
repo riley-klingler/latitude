@@ -7,7 +7,7 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 
 import {Manager} from "react-popper";
-import { StyleSheet, css } from "aphrodite";
+import {StyleSheet, css} from "aphrodite";
 import invariant from "../tools/invariant";
 import {today} from "./CalendarDateType";
 import {
@@ -77,7 +77,10 @@ type TimeInputState = {
  * @brandStatus V2
  * @status Stable
  * @extends React.Component */
-class TimeInputClass extends React.PureComponent<TimeInputProps, TimeInputState> {
+class TimeInputClass extends React.PureComponent<
+  TimeInputProps,
+  TimeInputState
+> {
   static defaultProps = {
     isPrefilled: false,
     militaryTime: false,
@@ -112,8 +115,8 @@ class TimeInputClass extends React.PureComponent<TimeInputProps, TimeInputState>
     }
     invariant(
       isWallTime(wallTime),
-      // $FlowFixMe(uforic): Something has gone horribly wrong here, so best to toString it
-      `Invalid wall clock time passed in ${wallTime}`
+      // flowlint-next-line unclear-type:off
+      `Invalid wall clock time passed in ${((wallTime: any): string)}`
     );
   }
 
@@ -203,14 +206,19 @@ class TimeInputClass extends React.PureComponent<TimeInputProps, TimeInputState>
   scrollSelectedIntoView = () => {
     if (this.listRef) {
       /* eslint-disable react/no-find-dom-node */
-      // $FlowFixMe(uforic) we know this isn't text
-      const domRef: Element | null = ReactDOM.findDOMNode(this.listRef);
+      // TODO(dmnd): Re-suppress once Flow v110 is out.
+      // FlowFixMe(uforic) we know this isn't text
+      // flowlint-next-line unclear-type:off
+      const domRef: Element | null = (ReactDOM.findDOMNode(this.listRef): any);
       /* eslint-enable react/no-find-don-node */
       if (!domRef) {
         return;
       }
-      // $FlowFixMe(uforic) - we know this field is here, just not aphrodite typechecked
-      const selectedClassName = timeInputStyleSheet.listItemSelected._name;
+      // TODO(dmnd): Re-suppress once Flow v110 is out.
+      // FlowFixMe(uforic) - we know this field is here, just not aphrodite typechecked
+      // flowlint-next-line unclear-type:off
+      const selectedClassName = (timeInputStyleSheet.listItemSelected: any)
+        ._name;
       /* eslint-enable flexport/no-use-before-define-except-styles */
       // eslint-disable-next-line no-plusplus
       for (let i = 0; i < domRef.children.length; i++) {

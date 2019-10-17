@@ -5,11 +5,13 @@
 
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
-import { Manager } from "react-popper";
+import {Manager} from "react-popper";
 import typeof Button from "./button/Button";
 import typeof IconButton from "./button/IconButton";
 import typeof ToggleButton from "./base_candidate/button/ToggleButton";
-import popupWithClickAway, { type PopupWithClickAwayProps } from "./tools/popupWithClickAway";
+import popupWithClickAway, {
+  type PopupWithClickAwayProps,
+} from "./tools/popupWithClickAway";
 import DeprecatedPopperTarget from "./popup/DeprecatedPopperTarget";
 import DeprecatedPopper from "./popup/DeprecatedPopper";
 import colors from "./styles/colors";
@@ -53,17 +55,21 @@ export class CustomDropdownButtonClass extends React.PureComponent<DropdownProps
     } = this.props;
     const btn: React.Element<
       Button | IconButton | ToggleButton
-      // $FlowFixMe(alanhu1996)
-    > = React.cloneElement(button, {
-      ...button.props,
-      disabled,
-      isToggled: isPopupVisible,
-      onClick: e => {
-        if (disabled) return;
-        togglePopupVisible();
-        e.stopPropagation();
-      },
-    });
+      // TODO(dmnd): Re-suppress once Flow v110 is out.
+      // FlowFixMe(alanhu1996)
+    > = React.cloneElement(
+      button,
+      ({
+        ...button.props,
+        disabled,
+        isToggled: isPopupVisible,
+        onClick: e => {
+          if (disabled) return;
+          togglePopupVisible();
+          e.stopPropagation();
+        },
+      }: any)
+    );
     return (
       <div className={css(styles.outerDiv)}>
         <Manager>

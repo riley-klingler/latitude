@@ -22,7 +22,6 @@ import Button from "../../button/Button";
 import Toast from "../Toast";
 import ToastActions from "../ToastActions";
 
-
 export function getToastIntentKnob(): ListKnob<"none" | "success" | "danger"> {
   const toastIntents = ["none", "success", "danger"];
 
@@ -58,8 +57,9 @@ export function getToastActionKnob(): ListKnob<
     toastActions.map(action => ({value: action, label: action.type})),
     false,
     true,
-    // $FlowFixMe(uforic): Need to fix some flow types here.
-    value => value.type
+    // TODO(dmnd): Re-suppress once Flow v110 is out.
+    // FlowFixMe(uforic): Need to fix some flow types here.
+    value => (value: any).type
   );
 }
 
@@ -139,7 +139,8 @@ const demos: DemoFile = {
       },
     },
   ],
-}; export class ToastShim extends React.PureComponent<
+};
+export class ToastShim extends React.PureComponent<
   {+elementToCodeFn?: React.Node => void, +demoProps: DemoProps<typeof knobs>},
   {}
 > {

@@ -53,8 +53,9 @@ class FullPageBoundaryInner extends React.PureComponent<WrappedErrorBoundaryProp
           <div className={css(margin.t.l)}>
             <Text display="block">
               {t(
-                // $FlowFixMe(nicolay) Flow doesn't keep track of super long keys
-                "We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing or navigating to another page."
+                // TODO(dmnd): Re-suppress once Flow v110 is out.
+                // FlowFixMe(nicolay) Flow doesn't keep track of super long keys
+                ("We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing or navigating to another page.": any)
               )}
             </Text>
           </div>

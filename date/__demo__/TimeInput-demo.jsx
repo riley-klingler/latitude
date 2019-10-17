@@ -4,7 +4,7 @@
  */
 
 import * as React from "react";
-import { css } from "aphrodite";
+import {css} from "aphrodite";
 import TimeInput, {getTimeIntervals} from "../TimeInput";
 import {type WallTime, ZERO_OCLOCK, EOD_OCLOCK} from "../wallTime";
 import {
@@ -52,8 +52,9 @@ export class TimeInputShim extends React.PureComponent<
   };
 
   render() {
-    // $FlowFixMe(uforic) get default props typing correctly
-    const {elementToCodeFn, demoProps} = this.props;
+    // TODO(dmnd): Re-suppress once Flow v110 is out.
+    // FlowFixMe(uforic) get default props typing correctly
+    const {elementToCodeFn, demoProps} = (this.props: any);
     const element = (
       <TimeInput
         options={getTimeIntervals(ZERO_OCLOCK, EOD_OCLOCK, 30)}

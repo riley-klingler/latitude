@@ -30,18 +30,18 @@ function SectionBordersDemo() {
         >
           <FormRow columnSpans={[2]}>
             <Label value="Label">
-              {/** $FlowFixMe(kaye) This is just a demo - it doesnt matter */}
-              <TextInput onChange={() => undefined} />
+              
+              <TextInput onChange={() => undefined} value="" />
             </Label>
           </FormRow>
           <FormRow columnSpans={[1, 1]}>
             <Label value="Label" indicateRequired={true}>
-              {/** $FlowFixMe(kaye) This is just a demo - it doesnt matter */}
-              <TextInput onChange={() => undefined} />
+              
+              <TextInput onChange={() => undefined} value="" />
             </Label>
             <Label value="Label" indicateRequired={true}>
-              {/** $FlowFixMe(kaye) This is just a demo - it doesnt matter */}
-              <TextInput onChange={() => undefined} />
+              
+              <TextInput onChange={() => undefined} value="" />
             </Label>
           </FormRow>
           <FormRow columnSpans={[2]}>
@@ -72,8 +72,8 @@ function SectionBordersDemo() {
         >
           <FormRow columnSpans={[1]}>
             <Label value="Label" indicateOptional={true}>
-              {/** $FlowFixMe(kaye) This is just a demo - it doesnt matter */}
-              <TextInput onChange={() => undefined} />
+              
+              <TextInput onChange={() => undefined} value="" />
             </Label>
           </FormRow>
         </FormSection>

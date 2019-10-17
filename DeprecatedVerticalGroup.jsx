@@ -104,8 +104,10 @@ export default class DeprecatedVerticalGroup extends React.PureComponent<Props> 
         )}
       </div>
     ) : (
-      // $FlowUpgradeFixMe(0.81.0 -> 0.82.0)
-      children
+      // TODO(dmnd): Re-suppress once Flow v110 is out.
+      // FlowUpgradeFixMe(0.81.0 -> 0.82.0)
+      // flowlint-next-line unclear-type:off
+      (children: any)
     );
   }
 }

@@ -18,8 +18,7 @@ function ButtonsDemo() {
       <FormSection columns={1} columnGap={12} minColumnWidth={160}>
         <FormRow columnSpans={[1]}>
           <Label value="Label" indicateRequired={true}>
-            {/** $FlowFixMe(kaye) This is just a demo - it doesnt matter */}
-            <TextInput onChange={() => undefined} />
+            <TextInput onChange={() => undefined} value="" />
           </Label>
         </FormRow>
         <FormRow columnSpans={[1]}>

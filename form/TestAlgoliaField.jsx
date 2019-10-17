@@ -10,7 +10,7 @@ import colors from "../styles/colors";
 
 type Props = {
   +value: any,
-  +onChange: ({value: string | number, label: string}) => void,
+  +onChange: ({value: string | number, label: string, full: mixed}) => void,
 };
 
 type State = {

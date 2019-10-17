@@ -7,9 +7,7 @@ import * as React from "react";
 import {StyleSheet} from "aphrodite";
 import classnames from "classnames";
 import {uniqBy} from "lodash";
-import Select, {
-  Option as ReactSelectOption,
-} from "./react-select-exported";
+import Select, {Option as ReactSelectOption} from "./react-select-exported";
 import Icon from "../Icon";
 import TestAlgoliaField from "../form/TestAlgoliaField";
 import {inputStyles, focusedStyle} from "../styles/input";
@@ -276,7 +274,6 @@ export default class BaseReactMultiselect<T> extends React.PureComponent<
     return (
       <TestAlgoliaField
         value={this.props.values}
-        // $FlowFixMe(uforic) - this isn't typed yet, old code.
         onChange={({value, full}) => {
           if (full !== null) {
             invariant(typeof value === "string", "Expect value to be a string");

@@ -19,8 +19,7 @@ function InputLevelErrorsDemo() {
         <FormRow columnSpans={[1]}>
           <Label value="Contract #" indicateRequired={true}>
             <InputError showError={true} errorText="Missing contract #">
-              {/** $FlowFixMe(kaye) This is just a demo - it doesnt matter */}
-              <TextInput onChange={() => undefined} isInvalid={true} />
+              <TextInput onChange={() => undefined} isInvalid={true} value="" />
             </InputError>
           </Label>
         </FormRow>

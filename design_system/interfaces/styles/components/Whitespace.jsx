@@ -91,26 +91,32 @@ export default function Whitespace() {
             />
             <div className={css(styles.demoGrid)}>
               <Demo
-                // $FlowFixMe(Kaye) - Flow doesn't know what to do here since DemoType can't figure out which type to use
-                demo={{
-                  ...HorizontalGroupDemo.demos[1],
-                  type: "code",
-                  showCode: false,
-                  description:
-                    "Use `spacing='m'` to add 12px of padding between children.",
-                  title: "Easily layout buttons horizontally",
-                }}
+                // TODO(dmnd): Re-suppress once Flow v110 is out.
+                // FlowFixMe(Kaye) - Flow doesn't know what to do here since DemoType can't figure out which type to use
+                demo={
+                  ({
+                    ...HorizontalGroupDemo.demos[1],
+                    type: "code",
+                    showCode: false,
+                    description:
+                      "Use `spacing='m'` to add 12px of padding between children.",
+                    title: "Easily layout buttons horizontally",
+                  }: any)
+                }
               />
               <Demo
-                // $FlowFixMe(Kaye) - Flow doesn't know what to do here since DemoType can't figure out which type to use
-                demo={{
-                  ...VerticalGroupDemo.demos[0],
-                  type: "code",
-                  showCode: false,
-                  description:
-                    "VerticalGroup defaults to `spacing='s'` which adds 6px of padding between children.",
-                  title: "Easily layout text blocks vertically",
-                }}
+                // TODO(dmnd): Re-suppress once Flow v110 is out.
+                // FlowFixMe(Kaye) - Flow doesn't know what to do here since DemoType can't figure out which type to use
+                demo={
+                  ({
+                    ...VerticalGroupDemo.demos[0],
+                    type: "code",
+                    showCode: false,
+                    description:
+                      "VerticalGroup defaults to `spacing='s'` which adds 6px of padding between children.",
+                    title: "Easily layout text blocks vertically",
+                  }: any)
+                }
               />
             </div>
           </Group>
