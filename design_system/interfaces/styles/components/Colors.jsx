@@ -4,6 +4,7 @@
  * @flow
  */
 import * as React from "react";
+import {css, StyleSheet} from "aphrodite";
 import Highlight from "react-highlight/lib/optimized";
 
 import Text from "../../../../Text";
@@ -14,8 +15,6 @@ import ColorPalette, {
   ProductPalette,
   ColorClassificationLegend,
 } from "../../../components/helpers/ColorPalette";
-
-import {css, StyleSheet} from "aphrodite";
 
 const backgroundRule = "backgroundColor: colors.grey10";
 // eslint-disable-next-line no-template-curly-in-string

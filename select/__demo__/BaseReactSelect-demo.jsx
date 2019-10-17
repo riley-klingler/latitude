@@ -4,6 +4,7 @@
  */
 
 import * as React from "react";
+import {css} from "aphrodite";
 import {
   type DemoFile,
   bool,
@@ -14,7 +15,6 @@ import {
   isInvalidKnob,
 } from "../../design_system/types/demoTypes";
 import BaseReactSelect from "../BaseReactSelect";
-import {css} from "aphrodite";
 import {type StarWarsCharacter, characters} from "../../tools/demo";
 
 const demos: DemoFile = {

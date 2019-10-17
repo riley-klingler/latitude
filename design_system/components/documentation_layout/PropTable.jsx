@@ -7,6 +7,7 @@
 /* eslint-disable react/prefer-stateless-function */
 
 import * as React from "react";
+import {css, StyleSheet} from "aphrodite";
 import Highlight from "react-highlight/lib/optimized";
 
 import type {
@@ -19,7 +20,6 @@ import type {
 import Text from "../../../Text";
 import Group from "../../../Group";
 
-import {css, StyleSheet} from "aphrodite";
 import colors from "../../../styles/colors";
 import {sharedStyles} from "../../../button/styles";
 
@@ -293,7 +293,10 @@ function PropLinkAction(props: {
   );
 }
 
-export default class PropTable extends React.PureComponent<PropTableProps, State> {
+export default class PropTable extends React.PureComponent<
+  PropTableProps,
+  State
+> {
   constructor(props: PropTableProps) {
     super(props);
     this.state = {height: 400};

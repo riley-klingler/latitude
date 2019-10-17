@@ -6,6 +6,7 @@
  */
 
 import * as React from "react";
+import {css, StyleSheet} from "aphrodite";
 import Highlight from "react-highlight/lib/optimized";
 import Tooltip from "../../../Tooltip";
 
@@ -15,8 +16,6 @@ import Group from "../../../Group";
 import colors from "../../../styles/colors";
 import Markdown from "../markdown/Markdown";
 import IconButton from "../../../button/IconButton";
-
-import {css, StyleSheet} from "aphrodite";
 
 import PropTable from "./PropTable";
 import ComponentDemo from "./ComponentDemo";

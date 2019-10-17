@@ -4,6 +4,7 @@
  */
 
 import * as React from "react";
+import {StyleSheet, css} from "aphrodite";
 import {type DemoFile} from "../../design_system/types/demoTypes";
 import Table from "../Table";
 import Text from "../../Text";
@@ -11,7 +12,6 @@ import TextCell from "../TextCell";
 import Button from "../../button/Button";
 import InteractableCell from "../InteractableCell";
 import NotificationModal from "../../modal/NotificationModal";
-import {StyleSheet, css} from "aphrodite";
 import data from "./data.json";
 
 const demos: DemoFile = {

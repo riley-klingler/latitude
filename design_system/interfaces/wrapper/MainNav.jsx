@@ -6,6 +6,7 @@
  */
 
 import * as React from "react";
+import {css, StyleSheet} from "aphrodite";
 
 import key from "keymaster";
 import TextInput from "../../../TextInput";
@@ -19,7 +20,6 @@ import componentsMetaList from "../../constants/componentsMetaList.json";
 import Text from "../../../Text";
 import colors from "../../../styles/colors";
 import betterGroupBy from "../../../tools/betterGroupBy";
-import {css, StyleSheet} from "aphrodite";
 import {fontWeights} from "../../../styles";
 import {
   guidelines,
@@ -34,7 +34,11 @@ import {
 } from "../../DesignSystemRoutes";
 import DesignSystemLink from "../../components/DesignSystemLink";
 import RouterContext from "../../../context/RouterContext";
-import {type Theme, TRANSMISSION, BASE} from "../../../context/ThemeNameContext";
+import {
+  type Theme,
+  TRANSMISSION,
+  BASE,
+} from "../../../context/ThemeNameContext";
 
 const themes = [BASE, TRANSMISSION];
 const THEME_OPTIONS = themes.map(theme => ({

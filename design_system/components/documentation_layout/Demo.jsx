@@ -6,6 +6,7 @@
  */
 
 import * as React from "react";
+import {css, StyleSheet} from "aphrodite";
 import Highlight from "react-highlight/lib/optimized";
 import jsxToString from "../../../tools/jsxToString";
 
@@ -28,7 +29,6 @@ import TextLinkAction from "../../../TextLinkAction";
 import Group from "../../../Group";
 import Markdown from "../markdown/Markdown";
 
-import {css, StyleSheet} from "aphrodite";
 import colors from "../../../styles/colors";
 
 type DemoProps = {

@@ -4,12 +4,10 @@
  */
 
 import * as React from "react";
+import {StyleSheet, css} from "aphrodite";
 import moment from "moment-timezone";
 import type {DemoFile} from "../../design_system/types/demoTypes";
-import DateRangeFilter, {
-  type DateFilterValue,
-} from "../DateRangeFilter";
-import {StyleSheet, css} from "aphrodite";
+import DateRangeFilter, {type DateFilterValue} from "../DateRangeFilter";
 import {addDaysFromCalendarDate, today} from "../../date/CalendarDateType";
 
 const demos: DemoFile = {

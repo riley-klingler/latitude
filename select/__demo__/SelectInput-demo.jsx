@@ -4,9 +4,12 @@
  */
 
 import * as React from "react";
-import {demoCommonStyles, type DemoFile} from "../../design_system/types/demoTypes";
-import SelectInput from "../SelectInput";
 import {css} from "aphrodite";
+import {
+  demoCommonStyles,
+  type DemoFile,
+} from "../../design_system/types/demoTypes";
+import SelectInput from "../SelectInput";
 import {characters} from "../../tools/demo";
 
 const demos: DemoFile = {

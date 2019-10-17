@@ -4,12 +4,12 @@
  * @flow
  */
 import * as React from "react";
+import {css, StyleSheet} from "aphrodite";
 
 import Highlight from "react-highlight/lib/optimized";
 import Link from "../../../../Link";
 import Group from "../../../../Group";
 
-import {css, StyleSheet} from "aphrodite";
 import {deprecatedPaddingSizeConstants} from "../../../../styles";
 import colors from "../../../../styles/colors";
 import Text from "../../../../Text";

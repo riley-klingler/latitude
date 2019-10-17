@@ -4,6 +4,7 @@
  */
 
 import * as React from "react";
+import {css} from "aphrodite";
 import {
   type DemoFile,
   bool,
@@ -14,7 +15,6 @@ import {
 } from "../../design_system/types/demoTypes";
 import SearchableSelectInput from "../SearchableSelectInput";
 import Text from "../../Text";
-import {css} from "aphrodite";
 import {characters} from "../../tools/demo";
 
 const demos: DemoFile = {
