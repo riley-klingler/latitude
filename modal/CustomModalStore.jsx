@@ -6,7 +6,7 @@
 import EventEmitter from "events";
 import update from "immutability-helper";
 import FluxDispatcher from "../tools/FluxDispatcher";
-import {ActionTypes, EventTypes} from "./CustomModalConstants";
+import {ActionTypes, EventTypes} from "./Constants";
 import PayloadSources from "../constants/PayloadSources";
 
 type ModalMessage = {

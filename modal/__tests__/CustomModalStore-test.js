@@ -6,7 +6,7 @@
 // eslint-disable-next-line import/no-named-as-default
 import CustomModalStore from "../CustomModalStore";
 // eslint-disable-next-line import/first
-import {EventTypes} from "../CustomModalConstants";
+import {EventTypes} from "../Constants";
 
 describe("CustomModalStore", () => {
   const modalUniqueId = "FirstModal";
