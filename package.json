@@ -45,7 +45,6 @@
     "keymaster": "^1.6.2",
     "keymirror": "0.1.x",
     "lodash": "^4.17.11",
-    "math-expression-evaluator": "^1.2.8",
     "moment": "^2.11.2",
     "moment-timezone": "^0.5.4",
     "parse-decimal-number": "^1.0.0",
