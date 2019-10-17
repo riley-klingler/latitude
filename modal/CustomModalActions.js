@@ -5,7 +5,7 @@
  */
 import FluxDispatcher from "../tools/FluxDispatcher";
 import PayloadSources from "../constants/PayloadSources";
-import {ActionTypes} from "../constants/ModalConstants";
+import {ActionTypes} from "./CustomModalConstants";
 
 const ModalActions = {
   ActionTypes,
