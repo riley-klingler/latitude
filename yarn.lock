@@ -6204,14 +6204,6 @@ flow-parser@0.*:
   resolved "https://registry.yarnpkg.com/flow-parser/-/flow-parser-0.102.0.tgz#5b42d36759d50bd73509b2a2fc8b5a00162a03c1"
   integrity sha512-lePuMLr6QXv3AwTCl/pnh55YIzHNHHNPl0FW0wuug+tJKSN2UoWFCriANsYNax0Bm0GivHUGQPPQ/GmGgEXbSA==
 
-flow-remove-types@^1.2.3:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/flow-remove-types/-/flow-remove-types-1.2.3.tgz#6131aefc7da43364bb8b479758c9dec7735d1a18"
-  integrity sha512-ypq/U3V+t9atYiOuSJd40tekCra03EHKoRsiK/wXGrsZimuum0kdwVY7Yv0HTaoXgHW1WiayomYd+Q3kkvPl9Q==
-  dependencies:
-    babylon "^6.15.0"
-    vlq "^0.2.1"
-
 flush-write-stream@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/flush-write-stream/-/flush-write-stream-1.0.2.tgz#c81b90d8746766f1a609a46809946c45dd8ae417"
