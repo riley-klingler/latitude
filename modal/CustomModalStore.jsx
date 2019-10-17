@@ -5,7 +5,7 @@
  */
 import EventEmitter from "events";
 import update from "immutability-helper";
-import AppDispatcher from "../dispatcher/AppDispatcher";
+import FluxDispatcher from "../tools/FluxDispatcher";
 import {ActionTypes, EventTypes} from "../constants/ModalConstants";
 import PayloadSources from "../constants/PayloadSources";
 
@@ -43,7 +43,7 @@ export class ModalStoreNew extends EventEmitter {
     super();
     this._records = [];
 
-    AppDispatcher.register(
+    FluxDispatcher.register(
       (payload: Payload): boolean => {
         if (payload.source !== PayloadSources.MODAL) {
           return false;

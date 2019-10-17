@@ -3,7 +3,7 @@
  *
  * @flow strict
  */
-import AppDispatcher from "../dispatcher/AppDispatcher";
+import FluxDispatcher from "../tools/FluxDispatcher";
 import PayloadSources from "../constants/PayloadSources";
 import {ActionTypes} from "../constants/ModalConstants";
 
@@ -12,7 +12,7 @@ const ModalActions = {
   source: PayloadSources.MODAL,
 
   show(uniqueId: string) {
-    AppDispatcher.handleViewAction(PayloadSources.MODAL, {
+    FluxDispatcher.handleViewAction(PayloadSources.MODAL, {
       actionType: ActionTypes.SHOW,
       modal: {
         uniqueId,
@@ -22,7 +22,7 @@ const ModalActions = {
     });
   },
   hide(uniqueId: string) {
-    AppDispatcher.handleViewAction(PayloadSources.MODAL, {
+    FluxDispatcher.handleViewAction(PayloadSources.MODAL, {
       actionType: ActionTypes.HIDE,
       modal: {
         uniqueId,

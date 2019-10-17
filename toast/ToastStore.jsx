@@ -6,7 +6,7 @@
 import EventEmitter from "events";
 import update from "immutability-helper";
 import * as React from "react";
-import AppDispatcher from "../dispatcher/AppDispatcher";
+import FluxDispatcher from "../tools/FluxDispatcher";
 import Toast from "./Toast";
 import {ActionTypes, EventTypes} from "../constants/ToastConstants";
 import PayloadSources from "../constants/PayloadSources";
@@ -44,7 +44,7 @@ export class ToastStore extends EventEmitter {
     this._counter = 0;
     this._records = [];
 
-    AppDispatcher.register(
+    FluxDispatcher.register(
       (payload: Payload): boolean => {
         const {action, source} = payload;
 

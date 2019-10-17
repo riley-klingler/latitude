@@ -29,7 +29,7 @@ type Action = {
   options?: {} | null,
 };
 
-const AppDispatcher = extend(new Dispatcher(), {
+const FluxDispatcher = extend(new Dispatcher(), {
   handleViewAction(source: string, action: Action) {
     invariant(
       source != null,
@@ -66,4 +66,4 @@ const AppDispatcher = extend(new Dispatcher(), {
   },
 });
 
-export default AppDispatcher;
+export default FluxDispatcher;

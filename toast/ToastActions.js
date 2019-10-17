@@ -7,7 +7,7 @@ import PayloadSources from "../constants/PayloadSources";
 import {ActionTypes} from "../constants/ToastConstants";
 import type {ToastRecord} from "./ToastStore";
 import Toast from "./Toast";
-import AppDispatcher from "../dispatcher/AppDispatcher";
+import FluxDispatcher from "../tools/FluxDispatcher";
 
 const ToastActions = {
   ActionTypes,
@@ -17,7 +17,7 @@ const ToastActions = {
     toastProps: React.ElementConfig<typeof Toast>,
     removeAfter: number = 3000
   ) {
-    AppDispatcher.handleViewAction(PayloadSources.TOAST, {
+    FluxDispatcher.handleViewAction(PayloadSources.TOAST, {
       actionType: ActionTypes.SHOW,
       toast: {
         ...toastProps,
@@ -28,7 +28,7 @@ const ToastActions = {
   },
 
   remove(toast: ToastRecord) {
-    AppDispatcher.handleViewAction(PayloadSources.TOAST, {
+    FluxDispatcher.handleViewAction(PayloadSources.TOAST, {
       actionType: ActionTypes.REMOVE,
       toast,
     });
