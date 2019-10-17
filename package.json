@@ -81,7 +81,6 @@
     "webpack-bundle-analyzer": "^3.3.2",
     "webpack-manifest-plugin": "^2.0.4",
     "webpack-plugin-hash-output": "^3.2.1",
-    "webpack-shell-plugin": "^0.5.0",
     "xss": "^0.2.12"
   },
   "devDependencies": {
