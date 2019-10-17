@@ -3,7 +3,7 @@
  * @flow
  */
 
-import DatePicker from "react-datepicker-hackerone";
+import DatePicker from "react-datepicker";
 
 /*
  * This class is needed to override componentWillReceiveProps on DatePicker.

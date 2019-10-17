@@ -25,7 +25,7 @@ const config = {
   testRegex: "/__tests__/.*-test\\.jsx?$",
   testMatch: undefined,
   moduleFileExtensions: ["js", "jsx", "json"],
-  modulePaths: ["<rootDir>", "."],
+  modulePaths: ["<rootDir>"],
   moduleDirectories: [".", "node_modules"],
   moduleNameMapper: {
     "(\\.(css|less)$|^reset-css$)":
