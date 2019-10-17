@@ -6,13 +6,13 @@
 
 import * as React from "react";
 import reflectiveBind from "reflective-bind";
-import { Form } from "formula-one";
+import {Form, Field} from "formula-one";
 import Pill from "../Pill";
 import Label from "../Label";
 
-import { type DemoFile } from "../design_system/types/demoTypes";
+import {type DemoFile} from "../design_system/types/demoTypes";
 import Group from "../Group";
-import F1TextInput from "../base_candidate/formula_one/F1TextInput";
+import TextInput from "../TextInput";
 import Button from "../button/Button";
 import Text from "../Text";
 import DeprecatedHorizontalGroup from "../DeprecatedHorizontalGroup";
@@ -95,7 +95,17 @@ export class PillShim extends React.PureComponent<Props, State> {
         {(link, onSubmit) => (
           <DeprecatedVerticalGroup spacing="l">
             <DeprecatedHorizontalGroup crossAlign="end">
-              <F1TextInput link={link} label="Add a tag" />
+              <Field link={link}>
+                {(value, _errors, onChange, onBlur) => (
+                  <Label value="Add a tag">
+                    <TextInput
+                      value={value}
+                      onChange={onChange}
+                      onBlur={onBlur}
+                    />
+                  </Label>
+                )}
+              </Field>
               <Button onClick={onSubmit}>Submit</Button>
             </DeprecatedHorizontalGroup>
             <DeprecatedHorizontalGroup>
