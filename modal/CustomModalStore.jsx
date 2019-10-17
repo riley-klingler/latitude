@@ -6,7 +6,7 @@
 import EventEmitter from "events";
 import update from "immutability-helper";
 import FluxDispatcher from "../tools/FluxDispatcher";
-import {ActionTypes, EventTypes} from "../constants/ModalConstants";
+import {ActionTypes, EventTypes} from "./CustomModalConstants";
 import PayloadSources from "../constants/PayloadSources";
 
 type ModalMessage = {
@@ -36,7 +36,7 @@ type Payload =
       action: Action,
     };
 
-export class ModalStoreNew extends EventEmitter {
+export class CustomModalStore extends EventEmitter {
   _records: Array<ModalRecord>;
 
   constructor() {
@@ -90,4 +90,4 @@ export class ModalStoreNew extends EventEmitter {
   getVisible: () => $ReadOnlyArray<ModalRecord> = () => this._records;
 }
 
-export default new ModalStoreNew();
+export default new CustomModalStore();
