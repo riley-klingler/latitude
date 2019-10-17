@@ -12,7 +12,9 @@ const MAX_LISTENERS_PER_EVENT = 300;
 
 let _count = 0;
 
-type HideRecord = {};
+type HideRecord = {
+  id?: number | string,
+};
 
 type ModalRecord = {
   render: ({close: () => void, handleHidden: () => void}) => React.Node,
@@ -43,7 +45,6 @@ export class ModalStore extends EventEmitter {
 
   hide = (record: HideRecord) => {
     this._stack = this._stack.filter(r => {
-      // $FlowUpgradeFixMe(0.67.1 -> 0.68.0)
       const isMatch = r === record || (record.id && r.id === record.id);
       return !isMatch;
     });
