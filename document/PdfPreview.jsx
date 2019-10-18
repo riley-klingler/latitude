@@ -9,7 +9,7 @@
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
 import {Document, Page, pdfjs} from "react-pdf";
-import latitudeColors from "../latitudeColors";
+import latitudeColors from "../colors";
 import {deprecatedPaddingSizeConstants} from "../styles/whitespace";
 import type {AttachmentType} from "./AttachmentTypes";
 import {

@@ -5,7 +5,7 @@
 
 import {createThemedStylesheet, type ThemeData} from "./";
 import {TRANSMISSION} from "../context/ThemeNameContext";
-import latitudeColors, {transmissionColors} from "../latitudeColors";
+import latitudeColors, {transmissionColors} from "../colors";
 
 export type LinkStyle = "default" | "emphasized" | "inverse" | "subtle";
 

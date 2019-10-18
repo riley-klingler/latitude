@@ -6,7 +6,7 @@
 import * as React from "react";
 import {css, StyleSheet} from "aphrodite";
 
-import {v3ColorMap as colors} from "../latitudeColors";
+import {v3ColorMap as colors} from "../colors";
 import Group from "../Group";
 import Icon, {type IconNames} from "../Icon";
 import Text from "../Text";

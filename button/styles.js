@@ -16,7 +16,7 @@ import type {
   ButtonWidth,
 } from "./Button";
 import colors from "../styles/colors";
-import latitudeColors, {transmissionColors} from "../latitudeColors";
+import latitudeColors, {transmissionColors} from "../colors";
 import {include, padding, margin, typeScale, fontWeights} from "../styles";
 import {deprecatedPaddingSizeConstants} from "../styles/whitespace";
 

@@ -6,7 +6,7 @@
 
 import * as React from "react";
 import {css, StyleSheet} from "aphrodite";
-import latitudeColors from "./latitudeColors";
+import latitudeColors from "./colors";
 
 type Props = {|
   /** The content that is loading */

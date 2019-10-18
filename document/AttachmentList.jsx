@@ -10,7 +10,7 @@ import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
 
 import {ENTER} from "../constants/interactions/KeyCodes";
-import latitudeColors from "../latitudeColors";
+import latitudeColors from "../colors";
 import {deprecatedMarginSizeConstants, deprecatedPaddingSizeConstants} from "../styles/whitespace";
 import groupBy from "../tools/betterGroupBy";
 import getFileExtension from "../tools/documents/getFileExtension";

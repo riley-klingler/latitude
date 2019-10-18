@@ -7,7 +7,7 @@
 import * as React from "react";
 
 import {StyleSheet, css} from "aphrodite";
-import {v3ColorMap} from "./latitudeColors";
+import {v3ColorMap} from "./colors";
 import {margin} from "./styles/whitespace";
 import {include} from "./styles";
 import colors from "./styles/colors";

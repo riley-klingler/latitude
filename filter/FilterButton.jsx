@@ -9,7 +9,7 @@
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
 import sizes, {type Size} from "../sizes";
-import latitudeColors from "../latitudeColors";
+import latitudeColors from "../colors";
 import Icon from "../Icon";
 import IconButton from "../button/IconButton";
 

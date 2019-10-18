@@ -11,7 +11,7 @@ import ThemeNameContext, {
   TRANSMISSION,
   type Theme,
 } from "./context/ThemeNameContext";
-import latitudeColors from "./latitudeColors";
+import latitudeColors from "./colors";
 
 type Props = {|
   /** Whether the toggle is on. */

@@ -11,7 +11,7 @@ import InputGroupContext, {
   LEFT_INPUT,
   RIGHT_INPUT,
 } from "./context/InputGroupContext";
-import latitudeColors from "./latitudeColors";
+import latitudeColors from "./colors";
 import {LabelContext} from "./Label";
 import IconButton from "./button/IconButton";
 import Icon, {type IconNames, type StandardIconSizes} from "./Icon";

@@ -10,7 +10,7 @@ import {css, StyleSheet} from "aphrodite";
 
 import {typeScale} from "../styles/typography";
 import TextLinkAction from "../TextLinkAction";
-import latitudeColors from "../latitudeColors";
+import latitudeColors from "../colors";
 import {whitespaceSizeConstants} from "../styles/whitespace";
 
 export type ToastIntent = "none" | "success" | "danger";

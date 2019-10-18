@@ -11,7 +11,7 @@ import classnames from "classnames";
 import invariant from "./tools/invariant";
 import {type IconNames, iconData} from "./tools/icons";
 import {type Color} from "./styles/colors";
-import {v3ColorMap} from "./latitudeColors";
+import {v3ColorMap} from "./colors";
 import deprecatedColors, {
   type DeprecatedColor,
 } from "./styles/deprecatedColorConstants";

@@ -9,7 +9,7 @@
 
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
-import latitudeColors from "./latitudeColors";
+import latitudeColors from "./colors";
 import Text from "./Text";
 import ThemeNameContext from "./context/ThemeNameContext";
 

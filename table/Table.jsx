@@ -22,7 +22,7 @@ import Loader from "../Loader";
 import colors from "../styles/colors";
 import Clickable from "../base_candidate/Clickable";
 import RowContext from "./RowContext";
-import latitudeColors from "../latitudeColors";
+import latitudeColors from "../colors";
 import {padding} from "../styles/whitespace";
 
 export type Style = {[string]: string | number};

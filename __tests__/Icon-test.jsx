@@ -8,7 +8,7 @@ import * as React from "react";
 
 import {getNameFromStyle} from "../tools/test";
 import {_test, styles} from "../Icon";
-import latitudeColors from "../latitudeColors";
+import latitudeColors from "../colors";
 import {BASE} from "../context/ThemeNameContext";
 
 function shallowIcon(propOverrides: {} = {}) {

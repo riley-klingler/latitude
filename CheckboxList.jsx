@@ -8,7 +8,7 @@ import Checkbox from "./Checkbox";
 import Group from "./Group";
 import invariant from "./tools/invariant";
 import {StyleSheet, css} from "./styles";
-import latitudeColors from "./latitudeColors";
+import latitudeColors from "./colors";
 // silly import path to work around what seems like a flow bug
 import {whitespaceSizeConstants} from "./tabs/../styles/whitespace";
 

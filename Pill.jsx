@@ -8,7 +8,7 @@ import {StyleSheet, css} from "aphrodite";
 import Text from "./Text";
 import IconButton from "./button/IconButton";
 
-import latitudeColors from "./latitudeColors";
+import latitudeColors from "./colors";
 
 const sizes = {
   xs: 20,

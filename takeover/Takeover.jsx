@@ -10,7 +10,7 @@ import {CSSTransition} from "react-transition-group";
 import Button from "../button/Button";
 import DeprecatedHorizontalGroup from "../DeprecatedHorizontalGroup";
 import {whitespaceSizeConstants} from "../styles/whitespace";
-import latitudeColors from "../latitudeColors";
+import latitudeColors from "../colors";
 import Text from "../Text";
 
 type TakeoverProps = {

@@ -11,7 +11,7 @@ import {StyleSheet, css} from "aphrodite";
 import {entries} from "lodash";
 
 import DropdownOption from "./DropdownOption";
-import latitudeColors from "../latitudeColors";
+import latitudeColors from "../colors";
 import invariant from "../tools/invariant";
 
 export type Option = {|

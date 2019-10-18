@@ -17,7 +17,7 @@ import CustomModal, {
 import {margin, padding} from "../styles/whitespace";
 import {border, include} from "../styles";
 import invariant from "../tools/invariant";
-import latitudeColors from "../latitudeColors";
+import latitudeColors from "../colors";
 import StaticModalLegacyContext, {
   type StaticModalLegacyContextType,
 } from "./StaticModalLegacyContext";

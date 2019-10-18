@@ -12,7 +12,7 @@ import {type Color} from "./styles/colors";
 import invariant from "./tools/invariant";
 import {type Size} from "./sizes";
 import TextLinkContext from "./TextLinkContext";
-import {v3ColorMap} from "./latitudeColors";
+import {v3ColorMap} from "./colors";
 
 const tagMap = {
   display: "h1",

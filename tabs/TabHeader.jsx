@@ -19,7 +19,7 @@ import {border, include, typeScale, fontWeights} from "../styles/index";
 import typeof Button from "../button/Button";
 import typeof IconButton from "../button/IconButton";
 import typeof AnchorButton from "../button/AnchorButton";
-import latitudeColors from "../latitudeColors";
+import latitudeColors from "../colors";
 import {margin, padding} from "../styles/whitespace";
 
 type Tab = {|

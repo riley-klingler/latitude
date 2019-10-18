@@ -12,7 +12,7 @@ import Dropzone from "react-dropzone";
 import {documentsT as t} from "../config/I18n";
 
 import {whitespaceSizeConstants} from "../styles/whitespace";
-import latitudeColors from "../latitudeColors";
+import latitudeColors from "../colors";
 import Flex from "../Flex";
 import Loader from "../Loader";
 import Button from "../button/Button";
