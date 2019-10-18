@@ -1,7 +1,0 @@
-# Overview
-
-Our mission at Flexport is to make trade easy for everyone. For those of us charged with building the technologies to realize that mission, this means creating intuitive, scalable, and reliable experiences that users love. The foundation for those experiences is our design system: Latitude.
-
-Latitude was developed to give us a standard set of design principles and shared design elements. It enables us with the flexibility to design for a diverse range of products and features that will delight our users. It provides us a common visual language that ensures quality and consistency – aligned with our brand, across our organization. What’s more, Latitude helps us work efficiently, without having to continually recreate assets or patterns.
-
-We’ve built Latitude to drive great user experiences with the flexibility to foster innovation. Please adhere to these guidelines and use them to empower your products. And, please stay tuned for updates and additions.
