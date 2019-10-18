@@ -131,6 +131,6 @@ workflows:
     jobs:
       - jest
       - flow
-      - percy
+      # - percy
       - webpack
       - eslint
