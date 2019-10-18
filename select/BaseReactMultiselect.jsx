@@ -142,7 +142,7 @@ export default class BaseReactMultiselect<T> extends React.PureComponent<
   isSingleSelect = () => this.props.singleSelect != null;
 
   render() {
-    if (process.env.NODE_ENV !== "test") {
+    if (!__TEST_ENV__) {
       const {values, keyFn} = this.props;
       let textInputStyle = {...unsetInputStyle};
       if (this.state.isFocused) {
