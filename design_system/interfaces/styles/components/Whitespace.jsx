@@ -11,7 +11,7 @@ import TextLink from "../../../../TextLink";
 import Group from "../../../../Group";
 
 import colors from "../../../../styles/colors";
-import {deprecatedPaddingSizeConstants} from "../../../../styles/whitespace";
+import {deprecatedPaddingSizeConstants} from "../../../../styles/deprecatedWhitespace";
 import Text from "../../../../Text";
 import Markdown from "../../../components/markdown/Markdown";
 import Demo from "../../../components/documentation_layout/Demo";

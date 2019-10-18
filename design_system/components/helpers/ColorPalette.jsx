@@ -7,14 +7,11 @@ import * as React from "react";
 
 import {css, StyleSheet} from "aphrodite";
 import colors, {type Color} from "../../../styles/colors";
-import {
-  colorFamilies,
-  colorMeta,
-} from "./colorMeta";
+import {colorFamilies, colorMeta} from "./colorMeta";
 import Text from "../../../Text";
 import Group from "../../../Group";
 
-import {deprecatedPaddingSizeConstants} from "../../../styles/whitespace";
+import {deprecatedPaddingSizeConstants} from "../../../styles/deprecatedWhitespace";
 
 const classificationMap = {
   brand: "◉",

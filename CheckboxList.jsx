@@ -9,8 +9,7 @@ import Group from "./Group";
 import invariant from "./tools/invariant";
 import {StyleSheet, css} from "./styles";
 import latitudeColors from "./colors";
-// silly import path to work around what seems like a flow bug
-import {whitespaceSizeConstants} from "./tabs/../styles/whitespace";
+import {whitespaceSizeConstants} from "./styles/whitespace";
 
 export type Option<T> = {|
   +value: T,

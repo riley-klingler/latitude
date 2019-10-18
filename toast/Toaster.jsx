@@ -11,7 +11,7 @@ import {TransitionGroup, CSSTransition} from "react-transition-group";
 import type {ToastRecord} from "./ToastStore";
 
 import {zIndices} from "../tools/zIndices";
-import {padding} from "../styles/whitespace";
+import {padding} from "../styles/deprecatedWhitespace";
 
 import Toast from "./Toast";
 

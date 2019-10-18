@@ -17,7 +17,7 @@ import colors, {type Color} from "../../../styles/colors";
 import {
   deprecatedMarginSizeConstants,
   deprecatedPaddingSizeConstants,
-} from "../../../styles/whitespace";
+} from "../../../styles/deprecatedWhitespace";
 
 import Text from "../../../Text";
 import TextLink from "../../../TextLink";

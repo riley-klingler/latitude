@@ -11,7 +11,10 @@ import {StyleSheet, css} from "aphrodite";
 
 import {ENTER} from "../constants/interactions/KeyCodes";
 import latitudeColors from "../colors";
-import {deprecatedMarginSizeConstants, deprecatedPaddingSizeConstants} from "../styles/whitespace";
+import {
+  deprecatedMarginSizeConstants,
+  deprecatedPaddingSizeConstants,
+} from "../styles/deprecatedWhitespace";
 import groupBy from "../tools/betterGroupBy";
 import getFileExtension from "../tools/documents/getFileExtension";
 import getFileNameWithoutExtension from "../tools/documents/getFileNameWithoutExtension";

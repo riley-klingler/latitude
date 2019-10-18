@@ -13,7 +13,11 @@ import {
 import {memoize} from "lodash";
 import {type Theme, BASE} from "../context/ThemeNameContext";
 import invariant from "../tools/invariant";
-import {margin, padding, deprecatedPaddingSizeConstants} from "./whitespace";
+import {
+  margin,
+  padding,
+  deprecatedPaddingSizeConstants,
+} from "./deprecatedWhitespace";
 import border from "./borders";
 import {typeScale, fontWeights, fontStyles} from "./typography";
 import themeColorMaps, {type ThemeColorMap} from "./themeColorMaps";

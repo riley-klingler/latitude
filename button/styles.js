@@ -9,16 +9,11 @@
 import {memoize} from "lodash";
 import {StyleSheet, type SheetEntry} from "aphrodite";
 import {TRANSMISSION, type Theme} from "../context/ThemeNameContext";
-import type {
-  ButtonKind,
-  ButtonIntent,
-  ButtonSize,
-  ButtonWidth,
-} from "./Button";
+import type {ButtonKind, ButtonIntent, ButtonSize, ButtonWidth} from "./Button";
 import colors from "../styles/colors";
 import latitudeColors, {transmissionColors} from "../colors";
 import {include, padding, margin, typeScale, fontWeights} from "../styles";
-import {deprecatedPaddingSizeConstants} from "../styles/whitespace";
+import {deprecatedPaddingSizeConstants} from "../styles/deprecatedWhitespace";
 
 type Optionals = {|
   +isLoading?: boolean,
