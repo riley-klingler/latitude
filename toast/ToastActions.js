@@ -25,6 +25,7 @@ const ToastActions = {
       },
       removeAfter,
     });
+    if (__TEST_ENV__) global.testHook.addToast(toastProps.message);
   },
 
   remove(toast: ToastRecord) {
