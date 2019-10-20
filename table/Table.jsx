@@ -146,9 +146,9 @@ export default function Table<T>({
   /** Whether or not the checkboxes for row selection will be pinned to the left of the table */
   +rowSelectionPinned?: boolean,
   /** Callback for when the user changes the selected rows */
-  +onSelectedRowsChange?: (Set<string>) => void,
+  +onSelectedRowsChange?: ($ReadOnlySet<string>) => void,
   /** Which rows are selected, based on IDs returned from getUniqueRowId */
-  +selectedRows?: Set<string>,
+  +selectedRows?: $ReadOnlySet<string>,
   /** Controls the height of each row in the table */
   +rowHeight?: number,
   /** Which columns are pinned to either the left or right side of the table (other columns will scroll underneath) */
@@ -172,9 +172,9 @@ export default function Table<T>({
   /** A function to determine which row group the row belongs to, this ID is what is returned in the row expansions set  */
   +getRowGroupId?: T => string,
   /** Which row groups are expanded, based on IDs returned from getRowGroupId */
-  +expandedRows?: Set<string>,
+  +expandedRows?: $ReadOnlySet<string>,
   /** Callback for when the user expands a row group */
-  +onExpandedRowsChange?: (Set<string>) => void,
+  +onExpandedRowsChange?: ($ReadOnlySet<string>) => void,
   /** Whether additional data can be loaded from the server. Used for scrolling pagination */
   +hasNextPage?: boolean,
   /** Whether additional data is currently being loaded. Used for scrolling pagination */
@@ -326,12 +326,13 @@ export default function Table<T>({
         <Checkbox
           checked={selectedRows.has(getUniqueRowId(row))}
           onChange={isSelected => {
+            const newSelection = new Set(selectedRows);
             if (isSelected) {
-              selectedRows.add(getUniqueRowId(row));
+              newSelection.add(getUniqueRowId(row));
             } else {
-              selectedRows.delete(getUniqueRowId(row));
+              newSelection.delete(getUniqueRowId(row));
             }
-            onSelectedRowsChange(new Set(selectedRows));
+            onSelectedRowsChange(newSelection);
           }}
         />
       </div>
@@ -345,12 +346,13 @@ export default function Table<T>({
         <Checkbox
           checked={rows.every(row => selectedRows.has(getUniqueRowId(row)))}
           onChange={isSelected => {
+            const newSelection = new Set(selectedRows);
             if (isSelected) {
-              rows.forEach(row => selectedRows.add(getUniqueRowId(row)));
+              rows.forEach(row => newSelection.add(getUniqueRowId(row)));
             } else {
-              rows.forEach(row => selectedRows.delete(getUniqueRowId(row)));
+              rows.forEach(row => newSelection.delete(getUniqueRowId(row)));
             }
-            onSelectedRowsChange(new Set(selectedRows));
+            onSelectedRowsChange(newSelection);
           }}
         />
       </div>
@@ -386,12 +388,13 @@ export default function Table<T>({
             }
             onClick={() => {
               const rowGroupId = getRowGroupId(rows[0]);
+              const newExpandedRows = new Set(expandedRows);
               if (expandedRows.has(rowGroupId)) {
-                expandedRows.delete(rowGroupId);
+                newExpandedRows.delete(rowGroupId);
               } else {
-                expandedRows.add(rowGroupId);
+                newExpandedRows.add(rowGroupId);
               }
-              onExpandedRowsChange(new Set(expandedRows));
+              onExpandedRowsChange(newExpandedRows);
             }}
           />
         </div>

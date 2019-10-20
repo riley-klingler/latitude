@@ -71,7 +71,7 @@ type UseDropdown = {|
 
 /** A hook that handles the dropdown logic of the multiselect filter */
 function useDropdown<T>(
-  valueSet: Set<T>,
+  valueSet: $ReadOnlySet<T>,
   options: $ReadOnlyArray<Option<T>>,
   onChange: (value: $ReadOnlyArray<T>) => void
 ): UseDropdown {
@@ -111,11 +111,11 @@ function useDropdown<T>(
           const selectedValue = options[highlightedIndex].value;
 
           if (valueSet.has(selectedValue)) {
-            valueSet.delete(selectedValue);
-            onChange(Array.from(valueSet));
+            const updatedValueSet = new Set(valueSet);
+            updatedValueSet.delete(selectedValue);
+            onChange(Array.from(updatedValueSet));
           } else {
-            valueSet.add(selectedValue);
-            onChange(Array.from(valueSet));
+            onChange([...valueSet, selectedValue]);
           }
         }
         break;
@@ -253,7 +253,7 @@ function SearchableMultiselectFilter<T>({
 }
 
 type CheckboxDropdownProps<T> = {|
-  +valueSet: Set<T>,
+  +valueSet: $ReadOnlySet<T>,
   +onChange: (newValue: $ReadOnlyArray<T>) => void,
   +options: $ReadOnlyArray<Option<T>>,
   +highlightedIndex: number | null,
