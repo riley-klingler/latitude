@@ -3,11 +3,16 @@
  * @flow
  */
 
-import Loadable from "react-loadable";
+import * as React from "react";
 
-const LazyDatePicker = () => {
+import typeof DatePickerOverrideType from "./DatePickerOverride";
+
+const LazyDatePicker = React.lazy(() => {
+  // TODO(dmnd): Confusingly, one of these imports uses CSS loader despite the
+  // comment on the guarded import below...
   const imports = [
     import(/* webpackChunkName: "react-datepicker" */ "./DatePickerOverride"),
+    import(/* webpackChunkName: "react-datepicker" */ "./DatePickerStylesOverride.css"),
   ];
 
   // if server side rendering, don't call CSS Loader
@@ -17,16 +22,15 @@ const LazyDatePicker = () => {
     );
   }
 
-  imports.push(
-    import(/* webpackChunkName: "react-datepicker" */ "./DatePickerStylesOverride.css")
-  );
-
-  return Promise.all(imports).then(data => data[0]);
-};
-
-const DatePicker = Loadable<{}, any>({
-  loader: LazyDatePicker,
-  loading: () => null,
+  return Promise.all(imports).then(([componentModule]) => componentModule);
 });
 
-export default DatePicker;
+export default function DatePicker(
+  props: React.ElementConfig<DatePickerOverrideType>
+) {
+  return (
+    <React.Suspense fallback={null}>
+      <LazyDatePicker {...props} />
+    </React.Suspense>
+  );
+}
