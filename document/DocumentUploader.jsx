@@ -5,8 +5,14 @@
 
 import React, {useState, useEffect, useRef} from "react";
 import Dropzone from "react-dropzone";
-import { CSSTransition } from "react-transition-group";
-import { css, StyleSheet, margin, padding, deprecatedPaddingSizeConstants } from "../styles";
+import {CSSTransition} from "react-transition-group";
+import {
+  css,
+  StyleSheet,
+  margin,
+  padding,
+  deprecatedPaddingSizeConstants,
+} from "../styles";
 import Button from "../button/Button";
 import GraphicIcon from "../GraphicIcon";
 import Icon from "../Icon";
@@ -124,7 +130,7 @@ export default function DocumentUploader({
       {document ? (
         <div className={css(styles.pdfContainer)}>
           <PdfViewer pdf={document} />
-          {!canDeleteDocument ? (
+          {canDeleteDocument ? (
             <div className={css(styles.deleteButtonPosition)}>
               <Button
                 onClick={() => {
