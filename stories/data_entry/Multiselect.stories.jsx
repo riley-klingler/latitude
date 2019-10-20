@@ -84,7 +84,7 @@ class MultiselectHoist extends React.Component<
       <div style={{width: 200}}>
         <Label value="Record multiselect">
           <Multiselect
-            value={this.state.values}
+            values={this.state.values}
             options={options}
             onChange={this.handleRecordChange}
             toKeyFn={option => option.not_key}

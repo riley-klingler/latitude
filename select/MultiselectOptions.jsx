@@ -4,27 +4,16 @@
  */
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
-import {difference} from "lodash";
-import {commonT} from "../config/I18n";
 import {InFilterContext} from "../filter/BaseFilter";
-import CheckboxList from "../CheckboxList";
-import Checkbox from "../Checkbox";
+import CheckboxList, {type Option} from "../CheckboxList";
 import TextInput from "../TextInput";
 import colors from "../styles/colors";
-import {border, include, margin, padding} from "../styles/index";
+import {border} from "../styles/index";
+import {whitespaceSizeConstants} from "../styles/whitespace";
 
 type FilterMode =
   | {|+type: "none"|}
   | {|+type: "filter", +placeholder?: string|};
-
-export type Option<T> = {|
-  /** The unique label associated with the option */
-  +label: string,
-  /** The unqiue value of the option */
-  +value: T,
-  /** Whether the option can be selected */
-  +disabled?: boolean,
-|};
 
 type Props<T> = {
   /** The currently selected list of values */
@@ -54,14 +43,19 @@ function filterOptions(
   );
 }
 
-function areAllItemsSelected<T>(
+function separateFilteredValues<T>(
   values: $ReadOnlyArray<T>,
-  options: $ReadOnlyArray<Option<T>>
-): boolean {
-  const optionValues = options
-    .filter(option => !option.disabled)
-    .map(option => option.value);
-  return difference(optionValues, values).length === 0;
+  filteredOptions: $ReadOnlyArray<Option<T>>
+): [$ReadOnlyArray<T>, $ReadOnlyArray<T>] {
+  const filteredValues = new Set(values);
+  const remainingValues = new Set();
+  filteredOptions.forEach(option => {
+    if (filteredValues.has(option.value)) {
+      filteredValues.delete(option.value);
+      remainingValues.add(option.value);
+    }
+  });
+  return [Array.from(filteredValues), Array.from(remainingValues)];
 }
 
 /**
@@ -84,21 +78,12 @@ function MultiselectOptions<T>({
   const placeholder = filterSearchMode.placeholder || defaultSearchPlaceholder;
 
   const displayOptions = filterOptions(options, searchText);
-
-  const handleSelectAll = (selectAll: boolean) => {
-    const disabledSelectedOptions = options
-      .filter(option => option.disabled)
-      .filter(option => values.includes(option.value));
-    const nonDisabledOptions = options.filter(option => !option.disabled);
-
-    if (selectAll) {
-      onChange([
-        ...disabledSelectedOptions.map(option => option.value),
-        ...nonDisabledOptions.map(option => option.value),
-      ]);
-    } else {
-      onChange([...disabledSelectedOptions.map(option => option.value)]);
-    }
+  const [filteredValues, remainingValues] = separateFilteredValues(
+    values,
+    displayOptions
+  );
+  const onChangeWithFilteredValues = newValues => {
+    onChange([...filteredValues, ...newValues]);
   };
 
   const searchBar =
@@ -118,26 +103,14 @@ function MultiselectOptions<T>({
       <div className={css(styles.filterMsg)}>No options available</div>
     ) : null;
 
-  const selectAllButton = displaySelectAllButton ? (
-    <div className={css(styles.selectAllCheckbox)}>
-      <div style={{display: "inline-block"}}>
-        <Checkbox
-          onChange={handleSelectAll}
-          label={commonT("Select all")}
-          checked={areAllItemsSelected(values, options)}
-        />
-      </div>
-    </div>
-  ) : null;
-
   const optionsDisplay =
     displayOptions.length !== 0 ? (
       <div className={css(styles.checkboxList)}>
         <CheckboxList
-          values={values}
-          onChange={onChange}
+          showSelectAllOption={displaySelectAllButton}
+          values={remainingValues}
+          onChange={onChangeWithFilteredValues}
           options={displayOptions}
-          gap={12}
         />
       </div>
     ) : null;
@@ -148,7 +121,6 @@ function MultiselectOptions<T>({
     >
       {searchBar}
       {searchBarMsg}
-      {selectAllButton}
       {optionsDisplay}
     </div>
   );
@@ -166,36 +138,36 @@ const MAX_DROPDOWN_WIDTH = "256px";
 
 export const styles = StyleSheet.create({
   selectAllCheckbox: {
-    ...include(padding.b.s),
-    ...include(margin.b.s),
-    ...include(padding.h.m),
+    paddingBottom: whitespaceSizeConstants.s,
+    paddingLeft: whitespaceSizeConstants.m,
+    paddingRight: whitespaceSizeConstants.m,
+    marginBottom: whitespaceSizeConstants.s,
     ...border.b.s,
     borderColor: colors.grey20,
   },
   searchBox: {
-    ...include(margin.l.s),
-    ...include(margin.r.s),
-    ...include(margin.t.s),
-    ...include(margin.b.s),
+    margin: whitespaceSizeConstants.s,
   },
   checkboxList: {
-    ...include(padding.h.m),
+    paddingLeft: whitespaceSizeConstants.m,
+    paddingRight: whitespaceSizeConstants.m,
   },
   listContainer: {
     minWidth: MIN_WIDTH,
     backgroundColor: colors.white,
-    ...include(padding.v.s),
+    paddingTop: whitespaceSizeConstants.s,
+    paddingBottom: whitespaceSizeConstants.s,
     maxHeight: MAX_DROPDOWN_HEIGHT,
     maxWidth: MAX_DROPDOWN_WIDTH,
     overflowY: "auto",
   },
   listDecoration: {
     ...border.a.s,
-    ...include(margin.t.s),
+    marginTop: whitespaceSizeConstants.s,
     borderRadius: 3,
     boxShadow: "2px 2px 2px rgba(0,0,0,0.06)",
   },
   filterMsg: {
-    ...include(padding.l.m),
+    paddingLeft: whitespaceSizeConstants.m,
   },
 });

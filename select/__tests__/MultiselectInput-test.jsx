@@ -91,43 +91,4 @@ describe("Multiselect", () => {
       )
     ).toBe(true);
   });
-  it('does not exclude options when filtering and pressing "Select All"', () => {
-    const onChange = jest.fn();
-    const recordOptions = [
-      {
-        label: "test",
-        value: "test",
-      },
-      {
-        label: "filterOut",
-        value: "filterOut",
-      },
-    ];
-    const selectedVals = [];
-    const wrapper = mountMultiselect({
-      options: recordOptions,
-      value: selectedVals,
-      filterSearchMode: {type: "filter", placeholder: "Filter"},
-      onChange,
-    });
-    wrapper.find("SelectButton").simulate("click");
-
-    // Filter on letter "t"
-    const filterInput = wrapper.find("input").at(0);
-    filterInput.simulate("change", {target: {value: "test"}});
-
-    const selectAll = wrapper
-      .find(MultiselectOptions)
-      .find("label")
-      .at(0);
-    selectAll.find("input").simulate("change");
-
-    expect(onChange.mock.calls.length).toBe(1);
-    expect(
-      isEqual(
-        onChange.mock.calls[0][0],
-        recordOptions.map(option => option.value)
-      )
-    ).toBe(true);
-  });
 });

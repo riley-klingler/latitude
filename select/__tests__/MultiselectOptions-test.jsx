@@ -26,13 +26,15 @@ function mountMultiselectOptions(propOverrides: {} = {}) {
 describe("MultiselectOptions", () => {
   it("can select a value", () => {
     const handleChange = jest.fn();
-    const wrapper = mountMultiselectOptions({onChange: handleChange});
-
+    const wrapper = mountMultiselectOptions({
+      values: ["b"],
+      onChange: handleChange,
+    });
     const firstCheckbox = wrapper.find("label").at(0);
     firstCheckbox.find("input").simulate("change");
 
-    expect(handleChange.mock.calls[0][0]).toContain("a");
-    expect(handleChange.mock.calls[0][0]).toContain("b");
+    const valuesArray = handleChange.mock.calls[0][0];
+    expect(valuesArray.sort()).toEqual(["a", "b"]);
   });
 
   it("can deselect a value", () => {
@@ -47,6 +49,8 @@ describe("MultiselectOptions", () => {
 
     expect(handleChange.mock.calls[0][0]).not.toContain("a");
     expect(handleChange.mock.calls[0][0]).toContain("b");
+    const valuesArray = handleChange.mock.calls[0][0];
+    expect(valuesArray.sort()).toEqual(["b"]);
   });
 
   it("selects all when select all is pressed (ignoring disabled)", () => {
@@ -59,11 +63,8 @@ describe("MultiselectOptions", () => {
     const selectAllCheckbox = wrapper.find("label").at(0);
     selectAllCheckbox.find("input").simulate("change");
 
-    expect(handleChange.mock.calls[0][0]).toContain("a");
-    expect(handleChange.mock.calls[0][0]).toContain("b");
-    // disabled options don't get toggled
-    expect(handleChange.mock.calls[0][0]).not.toContain("c");
-    expect(handleChange.mock.calls[0][0]).toContain("d");
+    const valuesArray = handleChange.mock.calls[0][0];
+    expect(valuesArray.sort()).toEqual(["a", "b", "d"]);
   });
 
   it("deselects all when select all is pressed again (ignoring disabled)", () => {
@@ -77,10 +78,66 @@ describe("MultiselectOptions", () => {
     const selectAllCheckbox = wrapper.find("label").at(0);
     selectAllCheckbox.find("input").simulate("change");
 
-    expect(handleChange.mock.calls[0][0]).not.toContain("a");
-    // disabled options don't get toggled
-    expect(handleChange.mock.calls[0][0]).toContain("b");
-    expect(handleChange.mock.calls[0][0]).not.toContain("c");
-    expect(handleChange.mock.calls[0][0]).not.toContain("d");
+    expect(handleChange).toHaveBeenCalledWith(["b"]);
+  });
+
+  describe("filterSearchMode", () => {
+    it("should not check values when selecting all with filtered options", () => {
+      const handleChange = jest.fn();
+      const options = [
+        {value: "a", label: "Filtered out"},
+        {value: "b", label: "filtered out but disabled", disabled: true},
+        {value: "dd", label: "included"},
+        {value: "dddd", label: "included 2"},
+      ];
+      const values = [];
+      const wrapper = mountMultiselectOptions({
+        values,
+        options,
+        displaySelectAllButton: true,
+        onChange: handleChange,
+        filterSearchMode: true,
+      });
+
+      const mockEvent = {target: {value: "included"}};
+      wrapper
+        .find("input")
+        .at(0)
+        .simulate("change", mockEvent); // filter results
+      const selectAllCheckbox = wrapper.find("label").at(0);
+      selectAllCheckbox.find("input").simulate("change");
+
+      const valuesArray = handleChange.mock.calls[0][0];
+      expect(valuesArray.sort()).toEqual(["dd", "dddd"]);
+    });
+
+    it("should not uncheck values when selecting none with filtered options", () => {
+      const handleChange = jest.fn();
+      const options = [
+        {value: "a", label: "Filtered out"},
+        {value: "b", label: "included but disabled", disabled: true},
+        {value: "c", label: "included"},
+        {value: "d", label: "included 2"},
+      ];
+      const values = ["a", "b", "c", "d"];
+      const wrapper = mountMultiselectOptions({
+        values,
+        options,
+        displaySelectAllButton: true,
+        onChange: handleChange,
+        filterSearchMode: true,
+      });
+
+      const mockEvent = {target: {value: "included"}};
+      wrapper
+        .find("input")
+        .at(0)
+        .simulate("change", mockEvent); // filter results
+      const selectAllCheckbox = wrapper.find("label").at(0);
+      selectAllCheckbox.find("input").simulate("change");
+
+      const valuesArray = handleChange.mock.calls[0][0];
+      expect(valuesArray.sort()).toEqual(["a", "b"]);
+    });
   });
 });

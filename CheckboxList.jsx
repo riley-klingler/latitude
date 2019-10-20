@@ -4,6 +4,7 @@
  */
 
 import * as React from "react";
+import {difference} from "lodash";
 import Checkbox from "./Checkbox";
 import Group from "./Group";
 import invariant from "./tools/invariant";
@@ -11,6 +12,7 @@ import {StyleSheet, css} from "./styles";
 import latitudeColors from "./colors";
 // silly import path to work around what seems like a flow bug
 import {whitespaceSizeConstants} from "./tabs/../styles/whitespace";
+import {commonT} from "./config/I18n";
 
 export type Option<T> = {|
   +value: T,
@@ -23,8 +25,7 @@ export type Props<T> = {|
   +values: $ReadOnlyArray<T>,
   /**
    * onChange is called with the array of the values of every checkbox that
-   * is currently checked. The order of values is consistent with the order
-   * in which they are provided via options.
+   * is currently checked.
    */
   +onChange: (values: $ReadOnlyArray<T>) => void,
   /**
@@ -44,6 +45,46 @@ export type Props<T> = {|
   /** Whether the checkbox list has a select all checkbox at the top of the list */
   +showSelectAllOption?: boolean,
 |};
+
+type ItemsSelectedState = "all" | "none" | "some";
+
+function itemsSelectedState<T>(
+  values: $ReadOnlyArray<T>,
+  options: $ReadOnlyArray<Option<T>>
+): ItemsSelectedState {
+  const optionValues = options
+    .filter(option => !option.disabled)
+    .map(option => option.value);
+  const diff = difference(optionValues, values);
+  if (diff.length === 0) {
+    return "all";
+  } else if (diff.length === optionValues.length) {
+    return "none";
+  }
+  return "some";
+}
+
+function getAllSelectedValues<T>(
+  values: $ReadOnlyArray<T>,
+  options: $ReadOnlyArray<Option<T>>
+): $ReadOnlyArray<T> {
+  const nonDisabledOptions = options.filter(option => !option.disabled);
+  return [
+    ...getDisabledSelectedValues(values, options),
+    ...nonDisabledOptions.map(option => option.value),
+  ];
+}
+
+function getDisabledSelectedValues<T>(
+  values: $ReadOnlyArray<T>,
+  options: $ReadOnlyArray<Option<T>>
+): $ReadOnlyArray<T> {
+  const valuesSet = new Set(values);
+  const disabledSelectedOptions = options
+    .filter(option => option.disabled)
+    .filter(option => valuesSet.has(option.value));
+  return [...disabledSelectedOptions.map(option => option.value)];
+}
 
 /**
  * @short CheckboxList manages the states of multiple checkboxes via an array of options and values
@@ -79,18 +120,21 @@ export default function CheckboxList<T>({
     onChange(newValues);
   };
 
-  const noneChecked = values.length === 0;
-  const allChecked = options.length === values.length;
-  const handleSelectAll = () =>
-    allChecked ? onChange([]) : onChange(options.map(option => option.value));
-  const indeterminate = !noneChecked && !allChecked;
+  const handleSelectAll = selectAll =>
+    selectAll
+      ? onChange(getAllSelectedValues(values, options))
+      : onChange(getDisabledSelectedValues(values, options));
+
+  const itemsSelected = itemsSelectedState(values, options);
 
   const selectAllCheckbox = showSelectAllOption ? (
     <Checkbox
       onChange={handleSelectAll}
-      label={allChecked ? "Select None" : "Select All"}
-      checked={allChecked}
-      indeterminate={indeterminate}
+      label={
+        itemsSelected === "all" ? commonT("Select none") : commonT("Select all")
+      }
+      indeterminate={itemsSelected === "some"}
+      checked={itemsSelected === "all"}
     />
   ) : null;
 
