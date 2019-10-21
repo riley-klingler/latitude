@@ -1,0 +1,62 @@
+/**
+ * TEAM: frontend_infra
+ * WATCHERS: vishnu
+ *
+ * @flow strict
+ */
+
+export default {
+  Driver: "司机",
+  "Measurement groups": "量度分组",
+  "Measurement group ": "量度分组",
+  Damages: "损坏",
+  "Driver details": "司机信息",
+  "Driver ID": "司机证件号码",
+  "Driver name": "司机姓名",
+  "Driver phone": "司机电话号码",
+  "Driver company": "司机所属公司",
+  "Plate number": "车牌号码",
+  Cancel: "取消",
+  Continue: "继续",
+  "Dangerous goods": "危险品",
+  "Lithium batteries": "锂电池",
+  None: "无",
+  Length: "长度",
+  Width: "宽度",
+  Height: "高度",
+  Type: "类型",
+  "Total weight": "总重量",
+  "No apparent issues": "没有明显问题",
+  "Cartons crushed/collapsed": "纸箱被压损（压碎)",
+  "Units punctured": "有穿孔",
+  "Units re-taped": "被重新用胶带打包",
+  "Water or grease damage": "水浸/油浸",
+  "Pallet damaged": "托盘损坏",
+  Other: "其他",
+  "Units torn open": "打包单元被撕开",
+  Remarks: "备注",
+  Total: "总计",
+  pallet: "托盘",
+  bag: "袋",
+  bale: "捆",
+  barrel: "桶（42加仑）",
+  carton: "纸箱",
+  crate: "板条箱",
+  roll: "卷",
+  "Add another measurement group": "添加另一组尺寸",
+  "Can this travel on a passenger aircraft?": "此票货物可否可用客机运输？",
+  Yes: "可以",
+  No: "不可以",
+  "No photos taken yet": "未提供照片",
+  Upload: "上传 ",
+  "Gross weight": "毛重",
+  Save: "保存",
+  Cargo: "货物",
+  "Pallet type": "托盘类型",
+  "Pallet weight": "托盘重量",
+  "Net weight": "净重",
+  "The weight as it appears on the scale, including the weight of the pallet if any.":
+    "总重量包含托盘重量（如有）",
+  "The weight of the cargo only without including the weight of pallets that are not traveling with the cargo on the aircraft.":
+    "总重量不包含托盘重量（起飞前将卸掉托盘）",
+};
