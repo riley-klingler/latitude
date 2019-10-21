@@ -7,9 +7,7 @@
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
 import {include, margin} from "../styles/index";
-import CalendarDateInput, {
-  DEFAULT_DATE_FORMAT,
-} from "./CalendarDateInput";
+import CalendarDateInput, {DEFAULT_DATE_FORMAT} from "./CalendarDateInput";
 import {type Size} from "../sizes";
 import {
   formatCalendarDate,
@@ -49,6 +47,10 @@ type CalendarDateRangeProps = {
   /** blocks calendar off after this date */
   +maxDate: CalendarDate | null,
   +size: Size,
+  /** sets the placeholder text of the start date field */
+  +startDatePlaceholder?: string,
+  /** sets the placeholder text of the end date field */
+  +endDatePlaceholder?: string,
   +disabled: boolean,
   /** controls the red outline of the start date field */
   +isStartDateInvalid: boolean,
@@ -64,6 +66,8 @@ const RANGE_DEFAULTS = {
   disabled: false,
   minDate: null,
   maxDate: null,
+  startDatePlaceholder: "Enter start date",
+  endDatePlaceholder: "Enter end date",
   isStartDateInvalid: false,
   isEndDateInvalid: false,
   isInvalid: false,
@@ -207,7 +211,16 @@ export default class CalendarDateRange extends React.PureComponent<CalendarDateR
   };
 
   render() {
-    const {value, minDate, maxDate, disabled, size, presets} = this.props;
+    const {
+      value,
+      minDate,
+      maxDate,
+      disabled,
+      size,
+      presets,
+      startDatePlaceholder,
+      endDatePlaceholder,
+    } = this.props;
 
     return (
       <span style={{display: "flex"}}>
@@ -217,7 +230,7 @@ export default class CalendarDateRange extends React.PureComponent<CalendarDateR
           minDate={minDate}
           maxDate={maxDate}
           dateFormatString={DEFAULT_DATE_FORMAT}
-          placeholder="Enter start date"
+          placeholder={startDatePlaceholder}
           disabled={disabled}
           size={size}
           isInvalid={this.isStartDateInvalid()}
@@ -239,7 +252,7 @@ export default class CalendarDateRange extends React.PureComponent<CalendarDateR
           minDate={this.getEndDateMinDate()}
           maxDate={maxDate}
           dateFormatString={DEFAULT_DATE_FORMAT}
-          placeholder="Enter end date"
+          placeholder={endDatePlaceholder}
           disabled={disabled}
           size={size}
           isInvalid={this.isEndDateInvalid()}
