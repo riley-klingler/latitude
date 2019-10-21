@@ -4,9 +4,6 @@
  */
 
 module.exports = {
-  // The documentation web site at flexport.com/design. aka LatitudeApp.
-  DesignSystemApp: "design_system/DesignSystemLoader",
-
   // Documented components. Found with `rg '@status'`.
   Portal: "Portal.jsx",
   Logo: "Logo.jsx",
