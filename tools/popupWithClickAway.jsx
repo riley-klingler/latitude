@@ -20,7 +20,7 @@ type State = {|
 export default function popupWithClickAway<P: PopupWithClickAwayProps>(
   WrappedComponent: React.ComponentType<P>
 ) {
-    class PopupWithClickAway extends React.PureComponent<
+  class PopupWithClickAway extends React.PureComponent<
     $Diff<P, PopupWithClickAwayProps>,
     State
   > {

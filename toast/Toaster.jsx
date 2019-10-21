@@ -30,7 +30,7 @@ export type ToasterProps = {
  *
  * **Adding toasts:**
  *
- * 1. Ensure ConnectedToaster is rendered in your app (`import ConnectedToaster from "toast/ConnectedToaster";`)
+ * 1. Ensure ConnectedToaster is rendered in your app (`import ConnectedToaster from "latitude/toast/ConnectedToaster";`)
  *
  * 2. Use ToastActions to emit a toast: `ToastActions.show({message, intent});`
  *
