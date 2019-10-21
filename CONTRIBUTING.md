@@ -1,7 +1,7 @@
 Contributing
 ============
 
-Latitude is currently only designed for internal use at Flexport. If you're not
+Latitude is currently designed only for internal use at Flexport. If you're not
 at Flexport, feel free to poke around, but we don't recommend using Latitude.
 (At least, not yet.)
 
