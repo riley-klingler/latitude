@@ -1,73 +1,68 @@
-# Contributing
+Contributing
+============
 
-_If you are a flexport employee, see our [internal contributing guidelines](https://github.com/flexport/latitude/blob/master/CONTRIBUTING_INTERNAL.md) for additional guidelines._
+Latitude is currently only designed for internal use at Flexport. If you're not
+at Flexport, feel free to poke around, but we don't recommend using Latitude.
+(At least, not yet.)
 
-We believe that our design system is strongest when everyone contributes. This page outlines the various methods for contributing to Latitude.
+Flexport engineers: we believe that our design system is strongest when everyone
+contributes. This page contains guidelines and workflow tips that should make
+it easy to contribute.
 
-## Setting up your environment
+## Versioning philosophy
+Latitude is versionless. It's also not published as an npm module. Instead,
+in the monorepo:
 
-Before contributing to Latitude, do the following steps to get started:
+* `package.json` file points at the Latitude master branch on GitHub
+* `yarn.lock` pins Latitude to a particular SHA
+
+This setup aims to reduce friction for internal Latitude contributors.
+
+## Workflow tip: work concurrently
+
+You don't need to wait for a Latitude PR to be merged before beginning your
+product work. It's easy to work on your Latitude and product changes
+concurrently.
+
+To set this up, point your monorepo's latitude dependency to your branch:
 
 ```bash
+cd ~/monorepo
 
-# clone Latitude into the root directory of your local machine
-cd ~/
-
-# clone your fork of the project. If you're an internal developer, you can work
-# off flexport/latitude directly.
-git clone git@github.com:flexport/latitude.git
-
-# step into the local repo
-cd ~/latitude
-
-# latitude requires node 8.11, switch versions via nvm
-nvm use 8.11
-
-# install dependencies
-yarn install
+# point to your latitude feature branch
+yarn upgrade latitude@https://github.com/flexport/latitude.git#feature-branch-name
 ```
 
-## Development Guidelines
+After pushing updates to your latitude branch, run `yarn upgrade latitude` from
+your monorepo to see your changes there. Feel free to push as many times as you
+like. Remember, you can squash changes before opening a PR or requesting review.
 
-### Running Tests
-
-The test suit runs on Jest and Enzyme. Visual changes can be tested manually via storybook.
+Once your Latitude PR merges, point your branch at master again by running
 
 ```bash
-# run jest tests
-yarn test
-
-# run storybook to manually test visual changes
-yarn storybook
+yarn upgrade latitude@https://github.com/flexport/latitude.git#master
 ```
 
-If you are actively developing, the recommended workflow is to have the tests and storybook running in the background in separate terminals. This should provide you with realtime feedback:
+
+## Workflow tip: watch mode
+
+If you are actively developing, the recommended workflow is to have tests and
+storybook running in the background in separate terminals. This should provide
+you with realtime feedback:
 
 ```bash
-# rerun tests upon save
 yarn jest --watch
-
-# run storybook in the background
 yarn storybook
 ```
 
-### Style and Linting
 
-This codebase adheres to [Airbnb Styleguide](https://github.com/airbnb/javascript) and is enforced using [ESLint](https://eslint.org/). For formatting, [Prettier](https://prettier.io/) is used.
-
-It is recommended that you install ESLint plugin for your editor of choice when working on this codebase.
-
-```bash
-# run eslint
-yarn eslint .
-```
-
-## Pull Request Guidelines
+## Pull request guidelines
 
 Before you submit a pull request, check that it meets these guidelines:
 
-1. If your pull request fixes a bug, it should include tests that fail without the change, and passes with them.
-
-2. If your pull request adds functionality, update all relevant documentation (component doc blocks, prop doc blocks, etc).
-
-3. Please rebase and resolve all conflicts before submitting.
+1. If your pull request fixes a bug, it should include tests that fail without
+   the change, and passes with them.
+2. If your pull request adds functionality, update all relevant documentation
+   (component doc blocks, prop doc blocks, etc). Don't forget tests.
+3. Pull requests that introduce breaking changes should be accompanied by a
+   monorepo pull request that updates all call-sites.
