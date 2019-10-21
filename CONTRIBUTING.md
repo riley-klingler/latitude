@@ -1,5 +1,7 @@
 # Contributing
 
+_If you are a flexport employee, see our [internal contributing guidelines](https://github.com/flexport/latitude/blob/master/CONTRIBUTING_INTERNAL.md) for additional guidelines._
+
 We believe that our design system is strongest when everyone contributes. This page outlines the various methods for contributing to Latitude.
 
 ## Setting up your environment
@@ -64,45 +66,8 @@ yarn eslint .
 
 Before you submit a pull request, check that it meets these guidelines:
 
-1. If you're an internal contributor and the pull request introduces a breaking change, follow our guidelines on how to [upgrade call-sites in the mono-repo](#Introducing-Breaking-changes-(Internal)).
+1. If your pull request fixes a bug, it should include tests that fail without the change, and passes with them.
 
-2. If your pull request fixes a bug, it should include tests that fail without the change, and passes with them.
+2. If your pull request adds functionality, update all relevant documentation (component doc blocks, prop doc blocks, etc).
 
-3. If your pull request adds functionality, update all relevant documentation (component doc blocks, prop doc blocks, etc).
-
-4. Please rebase and resolve all conflicts before submitting.
-
-### Introducing Breaking changes (Internal)
-
-In an effort to keep the Flexport monorepo always dependent on the latest version of Latitude, we require any pull request that introduces breaking changes to update all monorepo call-sites directly. Below is a step by step example:
-
-```bash
-# cd into the local repo
-cd ~/latitude
-
-# check out a branch for your breaking change
-git checkout -b github_name/my-breaking-change
-
-# introduce breaking change to latitude (example)
-mv TextField TextInput
-
-# put up a pull request for your breaking change to recieve feedback.
-# Upon approval, continue:
-
-# cd into the local flexport repo
-cd ~/flexport
-
-# check out a branch for updating call-sites for your breaking change
-git checkout -b github_name/my-breaking-change
-
-# upgrade flexport's latitude dependency to point to your latitude branch
-yarn upgrade latitude@https://github.com/flexport/latitude.git#github_name/my-breaking-change
-
-# fix all call sites in the monorepo
-
-# put up a pull request for your breaking change
-mpr
-
-# link to the monorepo pull request in the latitude pull request.
-# Upon approval, A latitude maintainer will merge both pull requests for you.
-```
+3. Please rebase and resolve all conflicts before submitting.
