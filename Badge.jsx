@@ -6,8 +6,13 @@
 
 /* eslint-disable flexport/no-unused-aphrodite-styles */
 import * as React from "react";
-import {StyleSheet, css} from "aphrodite";
-import latitudeColors from "./colors";
+import {css} from "aphrodite";
+import {createThemedStylesheet, type ThemeData} from "./styles";
+import ThemeNameContext, {
+  TRANSMISSION,
+  type Theme,
+} from "./context/ThemeNameContext";
+import latitudeColors, {transmissionColors} from "./colors";
 import Text from "./Text";
 
 type BadgeIntent = "ready" | "ready-green" | "pending" | "error" | "complete";
@@ -39,6 +44,9 @@ export default function Badge({
   intent = "ready",
   children = null,
 }: Props) {
+  const theme = React.useContext(ThemeNameContext);
+  const styles = getStyle(theme);
+
   // Either undefined, false or 0
   if (count == null || count === 0) {
     return children;
@@ -76,45 +84,59 @@ function getTextColor(intent: BadgeIntent) {
   return "white";
 }
 
-const styles = StyleSheet.create({
-  badgeBase: {
-    display: "inline-block",
-    position: "relative",
-  },
-  badgeWrapper: {
-    position: "absolute",
-    pointerEvents: "none",
-    top: 0,
-    right: 0,
-    transform: "translateX(50%) translateY(-50%)",
-  },
-  ready: {
-    backgroundColor: latitudeColors.indigo30,
-  },
-  "ready-green": {
-    backgroundColor: latitudeColors.green40,
-    color: latitudeColors.grey60,
-  },
-  pending: {
-    backgroundColor: latitudeColors.grey30,
-  },
-  error: {
-    backgroundColor: latitudeColors.red40,
-  },
-  complete: {
-    backgroundColor: latitudeColors.black,
-  },
-  badge: {
-    display: "inline-flex",
-    justifyContent: "center",
-    minWidth: 20,
-    borderRadius: 20,
-    padding: "2px 5px",
-  },
-  dotBadge: {
-    display: "block",
-    borderRadius: 100,
-    height: 8,
-    width: 8,
-  },
+function getThemeColors(themeName: Theme) {
+  if (themeName === TRANSMISSION) {
+    return {
+      ready: transmissionColors.green40,
+    };
+  }
+  return {
+    ready: latitudeColors.indigo30,
+  };
+}
+
+const getStyle = createThemedStylesheet(({themeName}: ThemeData) => {
+  const themeColors = getThemeColors(themeName);
+  return {
+    badgeBase: {
+      display: "inline-block",
+      position: "relative",
+    },
+    badgeWrapper: {
+      position: "absolute",
+      pointerEvents: "none",
+      top: 0,
+      right: 0,
+      transform: "translateX(50%) translateY(-50%)",
+    },
+    ready: {
+      backgroundColor: themeColors.ready,
+    },
+    "ready-green": {
+      backgroundColor: latitudeColors.green40,
+      color: latitudeColors.grey60,
+    },
+    pending: {
+      backgroundColor: latitudeColors.grey30,
+    },
+    error: {
+      backgroundColor: latitudeColors.red40,
+    },
+    complete: {
+      backgroundColor: latitudeColors.black,
+    },
+    badge: {
+      display: "inline-flex",
+      justifyContent: "center",
+      minWidth: 20,
+      borderRadius: 20,
+      padding: "2px 5px",
+    },
+    dotBadge: {
+      display: "block",
+      borderRadius: 100,
+      height: 8,
+      width: 8,
+    },
+  }
 });
