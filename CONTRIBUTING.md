@@ -66,3 +66,42 @@ Before you submit a pull request, check that it meets these guidelines:
    (component doc blocks, prop doc blocks, etc). Don't forget tests.
 3. Pull requests that introduce breaking changes should be accompanied by a
    monorepo pull request that updates all call-sites.
+
+
+### Using personal forks
+
+Most contributors will need to setup a personal fork to be able to open pull requests. If you directly clone this repository it will reject your pushes unless you are an owner.
+
+Note: your fork will not automatically sync with the main repository. Make sure you keep it updated with `git pull upstream master`.
+
+#### One-time setup
+
+1. Fork the repository - notice the "Fork" button at the top of the page
+2. Clone your personal version of the repo into you machine
+```bash
+git clone git@github.com:<YOUR GITHUB USERNAME>/latitude.git
+```
+3. Set the upstream repository
+```bash
+git remote add upstream https://github.com/flexport/latitude.git
+```
+
+#### Pushing
+
+1. Commit your change
+```bash
+git commit -m "<COMMIT NAME>"
+```
+2. Fetch latest
+```bash
+git fetch upstream
+```
+3. Rebase to latest on the main repository
+```bash
+git rebase upstream/master
+```
+4. Push up your branch to your fork
+```bash
+git push origin <BRANCH NAME>
+```
+5. Open Github and open the pull request
