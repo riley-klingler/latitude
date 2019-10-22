@@ -11,7 +11,7 @@ import Icon from "./Icon";
 import {sizes} from "./tools/ui/sizes";
 import type {StandardIconSizes} from "./Icon";
 import type {IconNames} from "./tools/icons";
-import type {Color} from "./styles/colors";
+import type {LatitudeColor} from "./colors";
 
 type Props = {|
   /** The actual text that should be displayed in the tooltip. */
@@ -23,7 +23,7 @@ type Props = {|
   /** The icon selected as the tooltip trigger. */
   +iconName: IconNames,
   /** The color of the tooltip icon trigger (see styles/colors for a full list of usable colors) */
-  +iconColor?: Color,
+  +iconColor?: LatitudeColor,
   /** maxWidth of the overlay, strings added to support input like 100%, 50%, em, etc. */
   +maxWidth?: number | string,
   /** Alignment can be used to either align the `HelpTooltip` to text baseline or to its `center` */

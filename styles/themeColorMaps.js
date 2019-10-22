@@ -6,11 +6,10 @@
  */
 
 import {type Theme, TRANSMISSION, BASE} from "../context/ThemeNameContext";
-import type {Color} from "./colors";
 
 export type ThemeColorMap = {|
-  +primary: Color,
-  +brand: Color,
+  +primary: "blue30" | "green40",
+  +brand: "blue40" | "green30",
 |};
 
 const themeColorMaps: {[Theme]: ThemeColorMap} = {

@@ -81,7 +81,7 @@ export default function ToggleButton({
   const IconComponent = iconName && (
     <Icon
       iconName={iconName}
-      color={isInvalid ? "red45" : "grey50"}
+      color={isInvalid ? "red40" : "grey50"}
       size={getIconSize(size)}
       alignment="center"
       deprecatedAllowColorInheritance={true}

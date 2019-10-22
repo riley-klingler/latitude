@@ -22,7 +22,7 @@ const FormError = ({
 }) => (
   <div className={css(formErrorStyles.wrapper)}>
     <Group gap={12} flexDirection="row">
-      <Icon iconName="attention" color="red45" />
+      <Icon iconName="attention" color="red40" />
       <Group flexDirection="column">
         <Text>{errorMessage}</Text>
         {errors ? (

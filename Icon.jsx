@@ -10,8 +10,7 @@ import {css, StyleSheet} from "aphrodite";
 import classnames from "classnames";
 import invariant from "./tools/invariant";
 import {type IconNames, iconData} from "./tools/icons";
-import {type Color} from "./styles/colors";
-import {v3ColorMap} from "./colors";
+import latitudeColors, {type LatitudeColor} from "./colors";
 import deprecatedColors, {
   type DeprecatedColor,
 } from "./styles/deprecatedColorConstants";
@@ -44,7 +43,7 @@ type Props = {|
   /** Please do not pass classnames to components via a prop like this. */
   +className?: string,
   /** Icons inherit text color by default but can be any one of our approved colors. */
-  +color?: Color | "inherit",
+  +color?: LatitudeColor | "inherit",
   +deprecatedColor?: DeprecatedColor,
   /* eslint-enable react/require-default-props */
   /**
@@ -196,7 +195,7 @@ const getDimensions = (proportion: ?number, customSize: ?number) => {
 
 const getIconColor = (
   theme: Theme,
-  color?: Color | "inherit",
+  color?: LatitudeColor | "inherit",
   deprecatedColor?: DeprecatedColor
 ) => {
   if (color == null) {
@@ -214,7 +213,7 @@ const getIconColor = (
     return "inherit";
   }
 
-  return v3ColorMap[color];
+  return latitudeColors[color];
 };
 
 export const styles = StyleSheet.create({

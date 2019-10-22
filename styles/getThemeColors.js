@@ -6,11 +6,10 @@
 
 import type {Theme} from "../context/ThemeNameContext";
 import themeColorMaps from "./themeColorMaps";
-import {type Color} from "./colors";
 
 export type ThemeColors = {|
-  +primary: Color,
-  +brand: Color,
+  +primary: "blue30" | "green40",
+  +brand: "blue40" | "green30",
 |};
 
 export default function getThemeColors(theme: Theme): ThemeColors {

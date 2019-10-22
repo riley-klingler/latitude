@@ -10,8 +10,7 @@ import {StyleSheet, css} from "aphrodite";
 import Icon, {type IconNames} from "./Icon";
 import invariant from "./tools/invariant";
 import IconButton from "./button/IconButton";
-import {type Color} from "./styles/colors";
-import latitudeColors from "./colors";
+import latitudeColors, {type LatitudeColor} from "./colors";
 import Text from "./Text";
 
 type Intent = "default" | "default-light" | "warning" | "danger";
@@ -125,11 +124,11 @@ export default function Banner({
   );
 }
 
-const getIconColor = (intent: Intent): Color => {
+const getIconColor = (intent: Intent): LatitudeColor => {
   if (intent === "danger") {
     return "white";
   } else if (intent === "warning") {
-    return "red45";
+    return "red40";
   }
   return "grey60";
 };
