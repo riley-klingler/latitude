@@ -49,61 +49,52 @@ function DocumentTab({
                 listPopupContext.togglePopup();
               }}
             >
-              {/*
-                TODO(dmnd): Re-suppress once Flow v110 is out.
-                FlowFixMe(dirak) Clickable effectively wraps a div here
-                */}
-              {
-                ((
-                  <Tooltip
-                    placement={isOverflow ? "right" : "bottom"}
-                    mouseEnterDelay={0.5}
-                    overlay={
-                      <div style={{width, wordWrap: "break-word"}}>
-                        {children}
-                      </div>
-                    }
+              {/* $FlowFixMe(dirak): Clickable effectively wraps a div here */}
+              <Tooltip
+                placement={isOverflow ? "right" : "bottom"}
+                mouseEnterDelay={0.5}
+                overlay={
+                  <div style={{width, wordWrap: "break-word"}}>{children}</div>
+                }
+              >
+                <div
+                  className={css(
+                    styles.container,
+                    !isOverflow && styles.underline,
+                    isOverflow && isSelected && styles.greyBackground,
+                    isSelected && styles.selected
+                  )}
+                  style={{width, height: sizes[size]}}
+                >
+                  <div
+                    className={css(styles.textContainer)}
+                    // width offset by container margins
+                    style={{width: width - 48}}
                   >
-                    <div
-                      className={css(
-                        styles.container,
-                        !isOverflow && styles.underline,
-                        isOverflow && isSelected && styles.greyBackground,
-                        isSelected && styles.selected
-                      )}
-                      style={{width, height: sizes[size]}}
-                    >
-                      <div
-                        className={css(styles.textContainer)}
-                        // width offset by container margins
-                        style={{width: width - 48}}
-                      >
-                        <Dotdotdot clamp={size !== "s" ? 2 : 1}>
-                          {children}
-                        </Dotdotdot>
-                      </div>
+                    <Dotdotdot clamp={size !== "s" ? 2 : 1}>
+                      {children}
+                    </Dotdotdot>
+                  </div>
 
-                      <div
-                        className={css(
-                          styles.buttonContainer,
-                          !isSelected && styles.hidden
-                        )}
-                      >
-                        <IconButton
-                          iconName="trash"
-                          type="button"
-                          intent="none"
-                          kind="blank"
-                          onClick={e => {
-                            togglePopup();
-                            e.stopPropagation();
-                          }}
-                        />
-                      </div>
-                    </div>
-                  </Tooltip>
-                ): any)
-              }
+                  <div
+                    className={css(
+                      styles.buttonContainer,
+                      !isSelected && styles.hidden
+                    )}
+                  >
+                    <IconButton
+                      iconName="trash"
+                      type="button"
+                      intent="none"
+                      kind="blank"
+                      onClick={e => {
+                        togglePopup();
+                        e.stopPropagation();
+                      }}
+                    />
+                  </div>
+                </div>
+              </Tooltip>
             </Clickable>
           </Target>
           <Popup placement={isOverflow ? "right-start" : "bottom-start"}>

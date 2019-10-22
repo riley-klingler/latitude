@@ -206,19 +206,14 @@ class TimeInputClass extends React.PureComponent<
   scrollSelectedIntoView = () => {
     if (this.listRef) {
       /* eslint-disable react/no-find-dom-node */
-      // TODO(dmnd): Re-suppress once Flow v110 is out.
-      // FlowFixMe(uforic) we know this isn't text
-      // flowlint-next-line unclear-type:off
-      const domRef: Element | null = (ReactDOM.findDOMNode(this.listRef): any);
+      // $FlowFixMe(uforic) we know this isn't text
+      const domRef: Element | null = ReactDOM.findDOMNode(this.listRef);
       /* eslint-enable react/no-find-don-node */
       if (!domRef) {
         return;
       }
-      // TODO(dmnd): Re-suppress once Flow v110 is out.
-      // FlowFixMe(uforic) - we know this field is here, just not aphrodite typechecked
-      // flowlint-next-line unclear-type:off
-      const selectedClassName = (timeInputStyleSheet.listItemSelected: any)
-        ._name;
+      // $FlowFixMe(uforic) - we know this field is here, just not aphrodite typechecked
+      const selectedClassName = timeInputStyleSheet.listItemSelected._name;
       /* eslint-enable flexport/no-use-before-define-except-styles */
       // eslint-disable-next-line no-plusplus
       for (let i = 0; i < domRef.children.length; i++) {

@@ -39,8 +39,6 @@ untyped-type-import
 
 [untyped]
 .*/node_modules/react-select/
-// TODO(dmnd): Remove once Flow v110 is out.
-<PROJECT_ROOT>/design_system/interfaces/GettingStarted.*
 
 [ignore]
 .*/node_modules/editions/*

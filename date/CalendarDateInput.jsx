@@ -141,9 +141,8 @@ class CalendarDateInputClass extends React.PureComponent<
   handleDatePickerChange = (newDate: momentT, closePopup: () => void) => {
     // changed from devInvariant on 5/24; Sentry search for this phrase yielded 0 results.
     invariant(
-      // TODO(dmnd): Re-suppress once Flow v110 is out.
-      // FlowFixMe(uforic) isUTC method isn't on moment object, just on moment-timezone object
-      (newDate: any).isUTC(),
+      // $FlowFixMe(uforic) isUTC method isn't on moment object, just on moment-timezone object
+      newDate.isUTC(),
       "date incoming from date picker is not in UTC"
     );
     const calDate = momentToCalendarDate(newDate, "UTC");

@@ -24,9 +24,8 @@ function jsxToString(jsxElement: React.Node): string {
     sortProps: false,
   };
 
-  // TODO(dmnd): Re-suppress once Flow v110 is out.
-  // FlowFixMe(dirak) React.Node === React.Element<any>
-  return reactElementToJSXString((jsxElement: any), options);
+  // $FlowFixMe(dirak) React.Node === React.Element<any>
+  return reactElementToJSXString(jsxElement, options);
 }
 
 export default jsxToString;

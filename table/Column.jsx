@@ -48,9 +48,8 @@ type Props<Data> = {
 };
 
 /* eslint-disable react/prefer-stateless-function */
-// TODO(dmnd): Re-suppress once Flow v110 is out.
-// FlowUpgradeFixMe(0.84.0 -> 0.85.0)
-export default class Column extends React.Component<Props<any>> {
+// $FlowUpgradeFixMe(0.84.0 -> 0.85.0)
+export default class Column<Data> extends React.Component<Props<Data>> {
   static defaultProps = {
     flex: "1",
     width: DEFAULT_COLUMN_WIDTH_PX,

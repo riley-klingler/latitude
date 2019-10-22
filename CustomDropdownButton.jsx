@@ -55,21 +55,17 @@ export class CustomDropdownButtonClass extends React.PureComponent<DropdownProps
     } = this.props;
     const btn: React.Element<
       Button | IconButton | ToggleButton
-      // TODO(dmnd): Re-suppress once Flow v110 is out.
-      // FlowFixMe(alanhu1996)
-    > = React.cloneElement(
-      button,
-      ({
-        ...button.props,
-        disabled,
-        isToggled: isPopupVisible,
-        onClick: e => {
-          if (disabled) return;
-          togglePopupVisible();
-          e.stopPropagation();
-        },
-      }: any)
-    );
+      // $FlowFixMe(alanhu1996)
+    > = React.cloneElement(button, {
+      ...button.props,
+      disabled,
+      isToggled: isPopupVisible,
+      onClick: e => {
+        if (disabled) return;
+        togglePopupVisible();
+        e.stopPropagation();
+      },
+    });
     return (
       <div className={css(styles.outerDiv)}>
         <Manager>

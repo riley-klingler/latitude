@@ -153,10 +153,8 @@ export default class IconButton extends React.PureComponent<Props, State> {
       this.context,
       kind,
       intent,
-      // TODO(dmnd): Re-suppress once Flow v110 is out.
-      // FlowFixMe(dirak) need to deprecate fixed size buttons
-      // flowlint-next-line unclear-type:off
-      height.type === "fixed" ? size : (undefined: any),
+      // $FlowFixMe(dirak) need to deprecate fixed size buttons
+      height.type === "fixed" ? size : undefined,
       width,
       disabled,
       {

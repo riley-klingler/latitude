@@ -97,11 +97,10 @@ export default function RadioGroup<T>({
             disabled={disabled || optionDisabled}
             checked={value === optionValue}
             /*
-             * TODO(dmnd): Re-suppress once Flow v110 is out.
-             * FlowFixMe(dirak): Flow doesn't support conditional generics.
+             * $FlowFixMe(dirak): Flow doesn't support conditional generics.
              * This FlowFixMe is necessary for generic T to be unconstrained.
              */
-            onChange={(onChange: any)}
+            onChange={onChange}
             label={label}
             size={size}
             isInvalid={isInvalid}

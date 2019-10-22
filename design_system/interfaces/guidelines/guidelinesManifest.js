@@ -1,9 +1,9 @@
 /**
  * TEAM: frontend_infra
+ * @flow
  */
-// TODO(dmnd): Re-enable Flow once v110 is out.
-/* eslint-disable flowtype/require-valid-file-annotation */
 
+// $FlowFixMe(kaye)
 import overview from "./Overview.txt";
 import Iconography from "./Iconography";
 import ColorSystem from "./ColorSystem";

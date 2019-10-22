@@ -300,9 +300,8 @@ class Knobs<O: {[string]: any}> extends React.PureComponent<{
             <SearchableSelectInput
               value={knobState[name]}
               onChange={this.handleListKnob.bind(this, name)}
-              // TODO(dmnd): Re-suppress once Flow v110 is out.
-              // FlowFixMe(dirak) options of selectinput is different
-              options={(listKnob.options: any)}
+              // $FlowFixMe(dirak): options of selectinput is different
+              options={listKnob.options}
               isNullable={listKnob.isNullable}
             />
           ) : (

@@ -64,10 +64,8 @@ export function include(style: SheetEntry): SheetDefinition {
  * @param {*} style
  */
 export function styleToClassname(style: SheetEntry) {
-  // TODO(dmnd): Re-suppress once Flow v110 is out.
-  // FlowFixMe(uforic)
-  // flowlint-next-line unclear-type:off
-  return (style: any)._name;
+  // $FlowFixMe(uforic)
+  return style._name;
 }
 
 export type ThemeData = {|

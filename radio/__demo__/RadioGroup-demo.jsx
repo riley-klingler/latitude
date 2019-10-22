@@ -41,9 +41,8 @@ export class RadioGroupShim extends React.PureComponent<
   };
 
   render() {
-    // TODO(dmnd): Re-suppress once Flow v110 is out.
-    // FlowFixMe(uforic) get default props typing correctly
-    const {elementToCodeFn, demoProps} = (this.props: any);
+    // $FlowFixMe(uforic) get default props typing correctly
+    const {elementToCodeFn, demoProps} = this.props;
     const options = characters.map(character => ({
       label: character.name,
       value: character.name,

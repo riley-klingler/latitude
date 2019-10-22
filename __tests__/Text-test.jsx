@@ -45,11 +45,8 @@ describe("Text", () => {
   });
   it("can contain a Link", () => {
     const wrapper = mountText({
-      // TODO(dmnd): Re-suppress once Flow v110 is out.
-      // FlowFixMe(notandrewkaye)
-      children: `hey ${((
-        <TextLink href="flexport.com">click me</TextLink>
-      ): any)}`,
+      // $FlowFixMe(notandrewkaye)
+      children: `hey ${<TextLink href="flexport.com">click me</TextLink>}`,
     });
 
     expect(wrapper.find(Text).find("p")).toBeDefined();
