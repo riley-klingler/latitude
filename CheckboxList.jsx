@@ -12,7 +12,7 @@ import {StyleSheet, css} from "./styles";
 import latitudeColors from "./colors";
 // silly import path to work around what seems like a flow bug
 import {whitespaceSizeConstants} from "./tabs/../styles/whitespace";
-import {commonT} from "./config/I18n";
+import {t} from "./config/I18n";
 
 export type Option<T> = {|
   +value: T,
@@ -131,7 +131,7 @@ export default function CheckboxList<T>({
     <Checkbox
       onChange={handleSelectAll}
       label={
-        itemsSelected === "all" ? commonT("Select none") : commonT("Select all")
+        itemsSelected === "all" ? t("Select none") : t("Select all")
       }
       indeterminate={itemsSelected === "some"}
       checked={itemsSelected === "all"}

@@ -6,7 +6,7 @@
 import * as React from "react";
 import RadioGroup from "./RadioGroup";
 import {type Size} from "../sizes";
-import {commonT as t} from "../config/I18n";
+import {t} from "../config/I18n";
 
 type Props = {
   +value: boolean | null | void,

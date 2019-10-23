@@ -16,7 +16,7 @@ import IconButton from "./button/IconButton";
 import Button from "./button/Button";
 import Text from "./Text";
 import useSetTimeout from "./hooks/useSetTimeout";
-import {commonT as t} from "./config/I18n";
+import {t} from "./config/I18n";
 
 export type RenderProp<T> = (props: {
   +value: T,

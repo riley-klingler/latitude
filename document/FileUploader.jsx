@@ -9,7 +9,7 @@ import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
 import Dropzone from "react-dropzone";
 
-import {documentsT as t} from "../config/I18n";
+import {t} from "../config/I18n";
 
 import {whitespaceSizeConstants} from "../styles/whitespace";
 import latitudeColors from "../colors";

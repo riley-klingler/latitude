@@ -8,7 +8,7 @@
 import * as React from "react";
 import {css, StyleSheet} from "aphrodite";
 
-import {latitudeT as t} from "./config/I18n";
+import {t} from "./config/I18n";
 import invariant from "./tools/invariant";
 import HelpTooltip from "./HelpTooltip";
 import {fontWeights as typeWeights} from "./styles/typography";

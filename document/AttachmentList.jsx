@@ -20,7 +20,7 @@ import getFileExtension from "../tools/documents/getFileExtension";
 import getFileNameWithoutExtension from "../tools/documents/getFileNameWithoutExtension";
 import consolidateFileExtension from "../tools/documents/consolidateFileExtension";
 import validateFileName from "../tools/documents/validateFileName";
-import {documentsT as t} from "../config/I18n";
+import {t} from "../config/I18n";
 import IconButton from "../button/IconButton";
 import Icon from "../Icon";
 import Text from "../Text";

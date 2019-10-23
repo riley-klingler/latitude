@@ -5,7 +5,7 @@
  */
 import type {AttachmentType} from "../../document/AttachmentTypes";
 import {MAX_FILE_SIZE} from "../../constants/DocumentConstants";
-import {documentsT as t} from "../../config/I18n";
+import {t} from "../../config/I18n";
 
 // validate uploaded files: file sizes, etc.
 export default function validateFileOfAttachment(

@@ -9,20 +9,15 @@ import moment from "moment";
 import "moment/locale/zh-cn";
 import i18next from "i18next";
 import LngDetector from "./I18nLanguageDetector";
-import zhCommon from "./locale/common/zh";
-import zhDocuments from "./locale/documents/zh";
-import zhLatitude from "./locale/latitude/zh";
+
+import zh from './locale/zh';
 
 // Default the locale back to english (unfortunately importing zh-cn implicitly
 // sets it as the default locale).
 moment.locale("en");
 
 const resources = {
-  zh: {
-    common: zhCommon,
-    documents: zhDocuments,
-    latitude: zhLatitude,
-  },
+  zh,
 };
 
 i18next.use(LngDetector).init(
@@ -57,12 +52,7 @@ export function changeLanguage(lang: string) {
   }
 }
 
-export const commonT = (key: string): string => i18next.t(key, {ns: "common"});
-export const documentsT = (
-  key: $Keys<typeof resources.zh.documents>,
+export const t = (
+  key: $Keys<typeof zh>,
   data?: {[string]: string}
-): string => i18next.t(key, {...data, ns: "documents"});
-export const latitudeT = (
-  key: $Keys<typeof resources.zh.latitude>,
-  data?: {[string]: string}
-): string => i18next.t(key, {...data, ns: "latitude"});
+): string => i18next.t(key, {...data});
