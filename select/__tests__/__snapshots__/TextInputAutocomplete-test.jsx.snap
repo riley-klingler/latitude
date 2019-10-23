@@ -45,7 +45,7 @@ exports[`TextInputAutocomplete matches snapshot 1`] = `
                   className="wrapper_oxngbz"
                 >
                   <input
-                    className="baseNoPadding_xj5s6"
+                    className="baseNoPadding_656545"
                     disabled={false}
                     maxLength={255}
                     onBlur={[Function]}
@@ -85,7 +85,7 @@ exports[`TextInputAutocomplete matches snapshot 1`] = `
                   class="wrapper_oxngbz"
                 >
                   <input
-                    class="baseNoPadding_xj5s6"
+                    class="baseNoPadding_656545"
                     maxlength="255"
                     placeholder=""
                     style="text-align: left; padding-left: 10px; padding-right: 10px;"

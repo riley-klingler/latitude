@@ -193,7 +193,8 @@ export default class IconButton extends React.PureComponent<Props, State> {
       <button
         className={css(
           ...buttonStyles.button,
-          intent === "none" ? styles.none : null
+          intent === "none" ? styles.none : null,
+          styles[size]
         )}
         onClick={onClick}
         onMouseDown={onMouseDown}
@@ -253,5 +254,19 @@ const styles = StyleSheet.create({
     ":hover span svg": {
       fill: colors.blackDoNotUse,
     },
+  },
+  /*
+    Padding differences for IconButton to make icon-only IconButtons perfect
+    squares. deprecatedWhitespace.js and whitespace.js do not support this
+    specific use case.
+  */
+  s: {
+    padding: "0 6.5px",
+  },
+  m: {
+    padding: "0 9px",
+  },
+  l: {
+    padding: "0 12px",
   },
 });

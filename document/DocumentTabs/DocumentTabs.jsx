@@ -5,15 +5,14 @@
 
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
-import Icon from "../../Icon";
-import colors from "../../styles/colors";
+import colors from "../../colors";
 import DocumentTab from "./DocumentTab";
 import MoreTab from "./MoreTab";
+import IconButton from "../../button/IconButton";
 import type {Size} from "./sizes";
 
 const MIN_ELEMENT_WIDTH = 130;
 const MAX_ELEMENT_WIDTH = 200;
-const ADD_BUTTON_WIDTH = 52;
 
 type Props = {|
   /** A list of document names to be displayed. */
@@ -79,7 +78,7 @@ function DocumentTabs({
     if (containerRef.current !== null) {
       const dimensions = calculateWidths(
         // container size offset by size of addition button
-        containerRef.current.offsetWidth - ADD_BUTTON_WIDTH,
+        containerRef.current.offsetWidth,
         MIN_ELEMENT_WIDTH,
         MAX_ELEMENT_WIDTH,
         documentNameOptions.length
@@ -96,80 +95,99 @@ function DocumentTabs({
     <div
       className={css(styles.container, tabWidth === 0 && styles.hidden)}
       style={{display: documentNameOptions.length !== 0 ? "flex" : "none"}}
-      ref={containerRef}
     >
-      {documentNameOptions.slice(0, nonOverflowCount).map(({name, key}) => (
-        <DocumentTab
-          isOverflow={false}
-          width={tabWidth}
-          isSelected={key === selectedKey}
-          onClick={() => onSelect(key)}
-          onDelete={() => onDelete(key)}
-          size={size}
-          key={key}
-        >
-          {name}
-        </DocumentTab>
-      ))}
+      <div className={css(styles.tabsContainer)} ref={containerRef}>
+        {documentNameOptions.slice(0, nonOverflowCount).map(({name, key}) => (
+          <DocumentTab
+            isOverflow={false}
+            width={tabWidth}
+            isSelected={key === selectedKey}
+            onClick={() => onSelect(key)}
+            onDelete={() => onDelete(key)}
+            size={size}
+            isInDropdown={false}
+            key={key}
+          >
+            {name}
+          </DocumentTab>
+        ))}
 
-      {isOverflowing ? (
-        <MoreTab
-          width={tabWidth}
-          size={size}
-          selectedLabel={
-            selectedKey < nonOverflowCount
-              ? null
-              : (documentNameOptions.find(({key}) => key === selectedKey) || {})
-                  .name
-          }
-        >
-          {documentNameOptions.slice(nonOverflowCount).map(({name, key}) => (
-            <DocumentTab
-              isOverflow={true}
-              width={tabWidth}
-              isSelected={key === selectedKey}
-              onClick={() => onSelect(key)}
-              onDelete={() => onDelete(key)}
-              size={size}
-              key={key}
-            >
-              {name}
-            </DocumentTab>
-          ))}
-        </MoreTab>
-      ) : (
-        undefined
-      )}
+        {isOverflowing ? (
+          <MoreTab
+            width={tabWidth}
+            size={size}
+            selectedLabel={
+              selectedKey < nonOverflowCount
+                ? null
+                : (
+                    documentNameOptions.find(({key}) => key === selectedKey) ||
+                    {}
+                  ).name
+            }
+          >
+            {documentNameOptions.slice(nonOverflowCount).map(({name, key}) => (
+              <DocumentTab
+                isOverflow={true}
+                width={tabWidth}
+                isSelected={key === selectedKey}
+                onClick={() => onSelect(key)}
+                onDelete={() => onDelete(key)}
+                isInDropdown={true}
+                size={size}
+                key={key}
+              >
+                {name}
+              </DocumentTab>
+            ))}
+          </MoreTab>
+        ) : (
+          undefined
+        )}
+      </div>
 
-      {/* eslint-disable react/forbid-elements */}
-      <button
-        className={css(styles.addDocumentButton)}
-        type="button"
-        onClick={onAdd}
-      >
-        <Icon iconName="plus" color="blue30" />
-      </button>
+      <div className={css(styles.addButtonWrapper)}>
+        <IconButton
+          iconName="upload"
+          type="button"
+          intent="none"
+          kind="bare"
+          onClick={onAdd}
+        />
+      </div>
     </div>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: colors.black,
+    padding: "12px 28px",
     flexDirection: "row",
     width: "100%",
-    ":nth-child(1n) > *": {
-      borderRight: `1px solid ${colors.grey30}`,
-    },
+    alignItems: "stretch",
   },
-  addDocumentButton: {
+  tabsContainer: {
+    flexDirection: "row",
+    display: "flex",
+    flex: "1 1 auto",
+    alignItems: "stretch",
+    overflow: "hidden",
+  },
+  addButtonWrapper: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    width: ADD_BUTTON_WIDTH,
-    border: "none",
-    outline: "none",
-    padding: "0",
-    margin: "0",
+    margin: "0 4px 0 28px",
+    // Hack: since inverted colors for buttons are not yet supported
+    ":nth-child(1n) > button": {
+      fill: colors.white,
+      ":hover": {
+        background: colors.grey60,
+      },
+      ":hover span svg": {
+        fill: colors.white,
+      },
+    },
   },
   hidden: {
     visibility: "hidden",

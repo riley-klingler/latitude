@@ -14,7 +14,7 @@
 import type {Color} from "./styles/colors";
 
 const latitudeColors = Object.freeze({
-  black: "#14171B",
+  black: "#272C34",
   white: "#FFFFFF",
   grey10: "#F7F9FD",
   grey20: "#DAE3F3",

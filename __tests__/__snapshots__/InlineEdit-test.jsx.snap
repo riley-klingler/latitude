@@ -19,7 +19,7 @@ exports[`InlineEdit matches snapshot 1`] = `
           className="standardOverride_eiiwmj"
           style={
             Object {
-              "color": "#14171B",
+              "color": "#272C34",
               "display": "inline-block",
               "fontFamily": Array [
                 "gt-america",

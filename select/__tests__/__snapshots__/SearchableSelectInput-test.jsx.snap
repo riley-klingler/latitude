@@ -64,7 +64,7 @@ exports[`SearchableSelectInput matches snapshot 1`] = `
                     className="wrapper_oxngbz"
                   >
                     <input
-                      className="baseNoPadding_xj5s6-o_O-applyEllipsis_lspcml"
+                      className="baseNoPadding_656545-o_O-applyEllipsis_lspcml"
                       disabled={false}
                       maxLength={255}
                       onBlur={[Function]}
@@ -125,7 +125,7 @@ exports[`SearchableSelectInput matches snapshot 1`] = `
                           width="responsive"
                         >
                           <button
-                            className="base_i7qsly-o_O-m_12juzcr-o_O-blank_z2ox4-o_O-responsive_zk4wup-o_O-none_ifax78"
+                            className="base_i7qsly-o_O-m_12juzcr-o_O-blank_1tdfl6w-o_O-responsive_zk4wup-o_O-none_ifax78-o_O-m_cvqqax"
                             disabled={false}
                             onBlur={[Function]}
                             onClick={[Function]}
@@ -219,7 +219,7 @@ exports[`SearchableSelectInput matches snapshot 1`] = `
                     class="wrapper_oxngbz"
                   >
                     <input
-                      class="baseNoPadding_xj5s6-o_O-applyEllipsis_lspcml"
+                      class="baseNoPadding_656545-o_O-applyEllipsis_lspcml"
                       maxlength="255"
                       placeholder="a"
                       style="text-align: left; padding-left: 10px; padding-right: 32px;"
@@ -231,7 +231,7 @@ exports[`SearchableSelectInput matches snapshot 1`] = `
                       style="right: 10px;"
                     >
                       <button
-                        class="base_i7qsly-o_O-m_12juzcr-o_O-blank_z2ox4-o_O-responsive_zk4wup-o_O-none_ifax78"
+                        class="base_i7qsly-o_O-m_12juzcr-o_O-blank_1tdfl6w-o_O-responsive_zk4wup-o_O-none_ifax78-o_O-m_cvqqax"
                         type="button"
                       >
                         <span

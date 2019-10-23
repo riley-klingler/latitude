@@ -13,15 +13,18 @@ import IconButton from "../../button/IconButton";
 import Tooltip from "../../Tooltip";
 import Text from "../../Text";
 import Clickable from "../../base_candidate/Clickable";
-import colors from "../../styles/colors";
-import sizes, {type Size} from "./sizes";
+import colors from "../../colors";
+import {type Size} from "./sizes";
 import {ListPopupContext} from "./MoreTab";
+
+const HORIZONTAL_MARGIN = 4;
 
 type Props = {|
   +children: string,
   +isOverflow: boolean,
   +width: number,
   +isSelected: boolean,
+  +isInDropdown: boolean,
   +onClick: () => void,
   +onDelete: () => void,
   +size: Size,
@@ -35,8 +38,10 @@ function DocumentTab({
   isSelected,
   onClick,
   onDelete,
+  isInDropdown,
 }: Props) {
   const listPopupContext = React.useContext(ListPopupContext);
+  const marginAdjustedWidth = width - HORIZONTAL_MARGIN * 2;
 
   return (
     <PopupWithClickAway>
@@ -49,52 +54,57 @@ function DocumentTab({
                 listPopupContext.togglePopup();
               }}
             >
-              {/* $FlowFixMe(dirak): Clickable effectively wraps a div here */}
-              <Tooltip
-                placement={isOverflow ? "right" : "bottom"}
-                mouseEnterDelay={0.5}
-                overlay={
-                  <div style={{width, wordWrap: "break-word"}}>{children}</div>
-                }
-              >
-                <div
-                  className={css(
-                    styles.container,
-                    !isOverflow && styles.underline,
-                    isOverflow && isSelected && styles.greyBackground,
-                    isSelected && styles.selected
-                  )}
-                  style={{width, height: sizes[size]}}
+              {
+                /* $FlowFixMe(dirak): Clickable effectively wraps a div here */
+                <Tooltip
+                  placement={isOverflow ? "right" : "bottom"}
+                  mouseEnterDelay={0.5}
+                  overlay={
+                    <div
+                      style={{
+                        minWidth: marginAdjustedWidth,
+                        wordWrap: "break-word",
+                      }}
+                    >
+                      {children}
+                    </div>
+                  }
                 >
                   <div
-                    className={css(styles.textContainer)}
-                    // width offset by container margins
-                    style={{width: width - 48}}
-                  >
-                    <Dotdotdot clamp={size !== "s" ? 2 : 1}>
-                      {children}
-                    </Dotdotdot>
-                  </div>
-
-                  <div
                     className={css(
-                      styles.buttonContainer,
-                      !isSelected && styles.hidden
+                      styles.container,
+                      isSelected && styles.selected,
+                      isInDropdown && styles.dropdownContainer,
+                      isOverflow && isSelected && styles.dropdownSelected
                     )}
+                    style={{width: marginAdjustedWidth}}
                   >
-                    <IconButton
-                      iconName="trash"
-                      type="button"
-                      intent="none"
-                      kind="blank"
-                      onClick={e => {
-                        togglePopup();
-                        e.stopPropagation();
-                      }}
-                    />
+                    <div className={css(styles.textContainer)}>
+                      <Dotdotdot clamp={size !== "s" ? 2 : 1}>
+                        {children}
+                      </Dotdotdot>
+                    </div>
+
+                    <div
+                      className={css(
+                        styles.buttonContainer,
+                        !isSelected && styles.hidden
+                      )}
+                    >
+                      <IconButton
+                        iconName="trash"
+                        type="button"
+                        intent="none"
+                        kind="blank"
+                        onClick={e => {
+                          togglePopup();
+                          e.stopPropagation();
+                        }}
+                      />
+                    </div>
                   </div>
-                </div>
-              </Tooltip>
+                </Tooltip>
+              }
             </Clickable>
           </Target>
           <Popup placement={isOverflow ? "right-start" : "bottom-start"}>
@@ -140,69 +150,59 @@ const styles = StyleSheet.create({
     display: "flex",
     position: "relative",
     alignItems: "center",
-    padding: "4px 0 4px 20px",
+    padding: "6px 8px",
+    margin: `0 ${HORIZONTAL_MARGIN}px`,
+    justifyContent: "space-between",
     cursor: "pointer",
-    background: colors.white,
+    minHeight: "100%",
+    backgroundColor: colors.black,
+    color: colors.white,
     ":hover": {
-      background: colors.grey10,
-      ":after": {
-        backgroundColor: colors.grey30,
-      },
+      backgroundColor: colors.grey60,
     },
     ":hover > :nth-child(2)": {
-      display: "flex",
+      visibility: "visible",
     },
-
     ":active": {
-      background: colors.grey20,
-      ":after": {
-        backgroundColor: colors.grey40,
-      },
+      backgroundColor: colors.grey40,
     },
   },
-  underline: {
-    ":after": {
-      content: '""',
-      position: "absolute",
-      left: "0",
-      bottom: "0",
-      right: "0",
-      height: "2px",
-      backgroundColor: colors.white,
+  dropdownContainer: {
+    padding: "8px 12px",
+    backgroundColor: colors.grey60,
+    margin: "0",
+    ":hover": {
+      backgroundColor: colors.grey50,
     },
   },
   selected: {
-    fontWeight: "bold",
-    ":after": {
-      backgroundColor: colors.blue30,
-    },
-    ":hover": {
-      ":after": {
-        backgroundColor: colors.blue30,
-      },
-    },
-    ":active": {
-      ":after": {
-        backgroundColor: colors.blue30,
-      },
-    },
+    backgroundColor: colors.grey50,
   },
   textContainer: {
-    display: "block",
     wordWrap: "break-word",
+    fontSize: "12px",
+    lineHeight: "16px",
+    overflow: "hidden",
+    flex: "0 1 auto",
   },
   buttonContainer: {
-    display: "flex",
     justifyContent: "center",
-    minWidth: "28px",
     height: "100%",
-    alignSelf: "flex-start",
+    margin: "0 -4px 0 4px",
+    padding: "4px",
+    // Hack: since inverted colors for buttons are not yet supported
+    ":nth-child(1n) > button": {
+      fill: colors.grey20,
+      ":hover span svg": {
+        fill: colors.white,
+      },
+    },
   },
   hidden: {
-    display: "none",
+    visibility: "hidden",
   },
-  greyBackground: {
-    background: colors.grey20,
+  dropdownSelected: {
+    background: colors.black,
   },
   popoverBody: {
     display: "flex",

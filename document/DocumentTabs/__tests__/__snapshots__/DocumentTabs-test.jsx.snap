@@ -2,53 +2,67 @@
 
 exports[`DocumentTabs renders 1`] = `
 <div
-  className="container_zhnr9x-o_O-hidden_gxjeqd"
+  className="container_t0nwzw-o_O-hidden_gxjeqd"
   style={
     Object {
       "display": "flex",
     }
   }
 >
-  <DocumentTab
-    isOverflow={false}
-    isSelected={true}
-    key="0"
-    onClick={[Function]}
-    onDelete={[Function]}
-    size="m"
-    width={0}
-  >
-    doc1.pdf
-  </DocumentTab>
-  <MoreTab
-    selectedLabel="doc1.pdf"
-    size="m"
-    width={0}
+  <div
+    className="tabsContainer_1nheg92"
   >
     <DocumentTab
-      isOverflow={true}
-      isSelected={false}
-      key="1"
+      isInDropdown={false}
+      isOverflow={false}
+      isSelected={true}
+      key="0"
       onClick={[Function]}
       onDelete={[Function]}
       size="m"
       width={0}
     >
-      doc2.pdf
+      doc1.pdf
     </DocumentTab>
-  </MoreTab>
-  <button
-    className="addDocumentButton_karj7w"
-    onClick={[Function]}
-    type="button"
+    <MoreTab
+      selectedLabel="doc1.pdf"
+      size="m"
+      width={0}
+    >
+      <DocumentTab
+        isInDropdown={true}
+        isOverflow={true}
+        isSelected={false}
+        key="1"
+        onClick={[Function]}
+        onDelete={[Function]}
+        size="m"
+        width={0}
+      >
+        doc2.pdf
+      </DocumentTab>
+    </MoreTab>
+  </div>
+  <div
+    className="addButtonWrapper_h2lsf5"
   >
-    <Icon
-      alignment="baseline"
-      color="blue30"
-      deprecatedAllowColorInheritance={true}
-      iconName="plus"
-      isARIAAccessible={false}
+    <IconButton
+      disabled={false}
+      height={
+        Object {
+          "type": "fixed",
+        }
+      }
+      iconAlignment="left"
+      iconName="upload"
+      intent="none"
+      isLoading={false}
+      kind="bare"
+      onClick={[Function]}
+      size="m"
+      type="button"
+      width="responsive"
     />
-  </button>
+  </div>
 </div>
 `;
