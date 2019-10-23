@@ -8,8 +8,11 @@
 import {type Theme, TRANSMISSION, BASE} from "../context/ThemeNameContext";
 
 export type ThemeColorMap = {|
-  +primary: "blue30" | "green40",
-  +brand: "blue40" | "green30",
+  +primary: "blue30",
+  +brand: "blue40",
+|} | {|
+  +primary: "green40",
+  +brand: "green30",
 |};
 
 const themeColorMaps: {[Theme]: ThemeColorMap} = {
