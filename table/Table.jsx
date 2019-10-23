@@ -10,7 +10,6 @@ import {StyleSheet, css} from "aphrodite";
 import AutoSizer from "react-virtualized-auto-sizer";
 
 import PopupWithClickAway from "../popup/PopupWithClickAway";
-import Button from "../button/Button";
 import IconButton from "../button/IconButton";
 import Tooltip from "../Tooltip";
 import Checkbox from "../Checkbox";
@@ -23,7 +22,6 @@ import colors from "../styles/colors";
 import Clickable from "../base_candidate/Clickable";
 import RowContext from "./RowContext";
 import latitudeColors from "../colors";
-import {padding} from "../styles/whitespace";
 
 export type Style = {[string]: string | number};
 
@@ -640,12 +638,11 @@ export default function Table<T>({
           visibleColumnIds={visibleColumnDefinitions.map(cd => cd.id)}
           onVisibleColumnIdsChange={visibleColumnIds => {
             onHiddenColumnsChange(
-              columnDefinitions
+              customizableColumns
                 .filter(cd => !visibleColumnIds.includes(cd.id))
                 .map(cd => ({columnId: cd.id}))
             );
           }}
-          onSelectAll={() => onHiddenColumnsChange([])}
         />
       ) : null}
       <AutoSizer>
@@ -681,12 +678,10 @@ function ColumnCustomization<T>({
   columnDefinitions,
   visibleColumnIds,
   onVisibleColumnIdsChange,
-  onSelectAll,
 }: {|
   +columnDefinitions: $ReadOnlyArray<ColumnDefinition<T>>,
   +visibleColumnIds: $ReadOnlyArray<string>,
   +onVisibleColumnIdsChange: ($ReadOnlyArray<string>) => void,
-  +onSelectAll: () => void,
 |}) {
   return (
     <div className={css(styles.columnCustomizationContainer)}>
@@ -713,12 +708,8 @@ function ColumnCustomization<T>({
                     }))}
                     onChange={onVisibleColumnIdsChange}
                     gap={8}
+                    showSelectAllOption={true}
                   />
-                </div>
-                <div className={css(padding.t.s)}>
-                  <Button intent="none" kind="blank" onClick={onSelectAll}>
-                    Restore defaults
-                  </Button>
                 </div>
               </div>
             </Popup>
