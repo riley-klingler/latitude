@@ -6,6 +6,7 @@
 
 import BadgeDemo from "../../__demo__/Badge-demo";
 import BannerDemo from "../../__demo__/Banner-demo";
+import BreadcrumbsDemo from "../../__demo__/Breadcrumbs-demo";
 import CheckboxDemo from "../../__demo__/Checkbox-demo";
 import CheckboxListDemo from "../../__demo__/CheckboxList-demo";
 import DrawerDemo from "../../__demo__/Drawer-demo";
@@ -65,6 +66,10 @@ import ToastDemo from "../../toast/__demo__/Toast-demo";
 const componentsDemoList = {
   Badge: {demo: BadgeDemo, demoPath: "__demo__/Badge-demo"},
   Banner: {demo: BannerDemo, demoPath: "__demo__/Banner-demo"},
+  Breadcrumbs: {
+    demo: BreadcrumbsDemo,
+    demoPath: "latitude/__demo__/Breadcrumbs-demo",
+  },
   Checkbox: {demo: CheckboxDemo, demoPath: "__demo__/Checkbox-demo"},
   CheckboxList: {
     demo: CheckboxListDemo,
