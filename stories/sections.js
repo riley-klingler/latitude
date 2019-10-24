@@ -15,6 +15,7 @@ const sections = Object.freeze({
   general: `${latitudeSectionTitle}|General`,
   interaction: `${latitudeSectionTitle}|Interaction`,
   navigation: `${latitudeSectionTitle}|Navigation`,
+  table: `${latitudeSectionTitle}|Table`,
   takeover: `${latitudeSectionTitle}|Takeover`,
   toast: `${latitudeSectionTitle}|Toast`,
   formLayout: `${latitudeSectionTitle}|Form Layout`,
