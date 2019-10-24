@@ -32,7 +32,7 @@ exports[`SearchableSelectInput matches snapshot 1`] = `
           >
             <div>
               <div
-                className="inputWrapper_4qqzg7"
+                className="inputWrapper_e296pg"
               >
                 <TextInput
                   disabled={false}
@@ -203,7 +203,7 @@ exports[`SearchableSelectInput matches snapshot 1`] = `
         </Reference>
       </DeprecatedPopperTarget>
       <DeprecatedPopper
-        className=""
+        className="inactiveDropdownContainer_1u9fru1"
       >
         <Popper>
           <InnerPopper
@@ -213,7 +213,7 @@ exports[`SearchableSelectInput matches snapshot 1`] = `
             referenceElement={
               <div>
                 <div
-                  class="inputWrapper_4qqzg7"
+                  class="inputWrapper_e296pg"
                 >
                   <div
                     class="wrapper_oxngbz"
@@ -275,7 +275,7 @@ exports[`SearchableSelectInput matches snapshot 1`] = `
             }
           >
             <PopperContent
-              className=""
+              className="inactiveDropdownContainer_1u9fru1"
               popperProps={
                 Object {
                   "ref": [Function],
@@ -291,7 +291,7 @@ exports[`SearchableSelectInput matches snapshot 1`] = `
               scheduleUpdate={[Function]}
             >
               <div
-                className=""
+                className="inactiveDropdownContainer_1u9fru1"
                 style={
                   Object {
                     "left": 0,

@@ -8,9 +8,7 @@ import {Manager} from "react-popper";
 import colors from "../styles/colors";
 import {type Size} from "../sizes";
 import TextInput from "../TextInput";
-import DropdownList, {
-  type Option as DropdownOption,
-} from "./DropdownList";
+import DropdownList, {type Option as DropdownOption} from "./DropdownList";
 import useDropdown from "../tools/useDropdown";
 import {defaultFilter} from "../TextInputAutocomplete";
 import DeprecatedPopperTarget from "../popup/DeprecatedPopperTarget";
@@ -217,7 +215,11 @@ function SearchableSelectInput<T>({
           </div>
         </DeprecatedPopperTarget>
         {/* Dropdown should only have containing style when visible, otherwise there are overlapping zIndex issues */}
-        <DeprecatedPopper className={css(isOpen && styles.dropdownContainer)}>
+        <DeprecatedPopper
+          className={css(
+            isOpen ? styles.dropdownContainer : styles.inactiveDropdownContainer
+          )}
+        >
           <DropdownList
             options={dropdownOptions}
             highlightedOption={
@@ -242,14 +244,18 @@ const styles = StyleSheet.create({
     position: "relative",
   },
   inputWrapper: {
-    display: "relative",
+    position: "relative",
   },
   darkPlaceholderText: {
     ":nth-child(1n) > div > div > div > input::placeholder": {
       color: colors.grey60,
     },
   },
+  inactiveDropdownContainer: {
+    display: "none",
+  },
   dropdownContainer: {
+    display: "block",
     position: "absolute",
     left: "0",
     top: "100%",
