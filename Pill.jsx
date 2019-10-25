@@ -39,6 +39,8 @@ type Props = {|
   +onMouseLeave?: (e: Event) => void,
   /** Called when the Pill is focused */
   +onFocus?: (e: Event) => void,
+  /** Whether or not it's possible to highlight text */
+  +selectable?: boolean,
 |};
 
 /**
@@ -59,11 +61,13 @@ export default function Pill({
   onMouseEnter,
   onMouseLeave,
   onFocus,
+  selectable = true,
 }: Props) {
   const style = {
     height: sizes[size],
     padding: `0 ${spacing[size]}px`,
     borderRadius: sizes[size] / 2,
+    ...(!selectable ? {userSelect: "none"} : null),
   };
 
   return (

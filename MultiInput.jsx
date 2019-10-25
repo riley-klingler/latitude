@@ -173,6 +173,7 @@ function MultiInput({
       {value.map((pillText, i) => (
         <span key={pillText} className={pillContainerStyles}>
           <Pill
+            selectable={false}
             size={getPillSize(size)}
             onDismiss={() => {
               const newValue = [...value.slice(0, i), ...value.slice(i + 1)];
