@@ -50,7 +50,6 @@ function BreadcrumbsDemo({elementToCodeFn}: *) {
               content: "Buckwheat",
             },
             {
-              onClick: () => setDepth(4),
               content: "Origin",
             },
           ].slice(0, depth)}

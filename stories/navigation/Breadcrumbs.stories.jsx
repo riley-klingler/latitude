@@ -41,7 +41,6 @@ stories.add("Breadcrumbs", () => {
             content: "Buckwheat",
           },
           {
-            onClick: () => setDepth(4),
             content: "Origin",
           },
         ].slice(0, depth)}

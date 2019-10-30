@@ -77,19 +77,27 @@ function Breadcrumb({
 |}) {
   return (
     <>
-      <Link
-        href={href}
-        onClick={onClick}
-        disableSpaHijack={true}
-        className={css(
-          styles.breadcrumb,
-          active && styles.activeBreadcrumb,
-          (href != null || onClick != null) && styles.clickableBreadcrumb
-        )}
-        key={href}
-      >
-        {content}
-      </Link>
+      {href != null || onClick != null ? (
+        <Link
+          onClick={onClick}
+          href={href}
+          disableSpaHijack={true}
+          className={css(
+            styles.breadcrumb,
+            active && styles.activeBreadcrumb,
+            styles.clickableBreadcrumb
+          )}
+        >
+          {content}
+        </Link>
+      ) : (
+        <div
+          className={css(styles.breadcrumb, active && styles.activeBreadcrumb)}
+        >
+          {content}
+        </div>
+      )}
+
       {!active && (
         <div className={css(styles.iconWrapper)}>
           <Icon
