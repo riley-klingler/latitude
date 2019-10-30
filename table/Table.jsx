@@ -90,6 +90,72 @@ function handleCellClick(e: SyntheticEvent<HTMLDivElement>) {
   e.stopPropagation();
 }
 
+// IE11 Sticky scrolling implementation
+const StickyScrollContext = React.createContext();
+
+function createStickyScrollPolyfill() {
+  const isPositionStickySupported = (() => {
+    const testStyle = document.createElement("a").style;
+
+    testStyle.cssText =
+      "position:sticky;position:-webkit-sticky;position:-ms-sticky;";
+
+    return testStyle.position.indexOf("sticky") !== -1;
+  })();
+  const context = {
+    addRef,
+    pinElements: {
+      top: [],
+      left: [],
+      right: [],
+    },
+    scrollLeft: 0,
+    rightOffset: 0,
+    scrollTop: 0,
+    isPositionStickySupported,
+  };
+
+  // This position updater applies for recreating sticky behavior on IE11
+  function processScrollPosition(targetElement: HTMLElement) {
+    context.scrollLeft = targetElement.scrollLeft;
+
+    context.pinElements.left.forEach((element: HTMLElement) => {
+      // eslint-disable-next-line no-param-reassign
+      element.style.transform = `translateX(${context.scrollLeft}px)`;
+    });
+
+    context.rightOffset =
+      targetElement.offsetWidth -
+      targetElement.scrollWidth +
+      targetElement.scrollLeft;
+
+    context.pinElements.right.forEach((element: HTMLElement) => {
+      // eslint-disable-next-line no-param-reassign
+      element.style.transform = `translateX(${context.rightOffset}px)`;
+    });
+
+    context.scrollTop = targetElement.scrollTop;
+
+    context.pinElements.top.forEach((element: HTMLElement) => {
+      // eslint-disable-next-line no-param-reassign
+      element.style.transform = `translateY(${context.scrollTop}px)`;
+    });
+  }
+
+  function addRef(type: "top" | "left" | "right") {
+    if (context.isPositionStickySupported) return;
+
+    return (element: ?HTMLElement) => {
+      if (!element) return;
+
+      if (context.pinElements[type].indexOf(element) === -1)
+        context.pinElements[type].push(element);
+    };
+  }
+
+  return {context, processScrollPosition, addRef, isPositionStickySupported};
+}
+
 /**
  * @short Displays tabular data
  * @brandStatus V2
@@ -191,6 +257,7 @@ export default function Table<T>({
   const visibleColumnDefinitions = columnDefinitions.filter(
     cd => !hiddenColumns.find(c => c.columnId === cd.id)
   );
+  const StickyScrollPolyfill = createStickyScrollPolyfill();
 
   function sortRows(rows: $ReadOnlyArray<T>, sortBy: ?Sort) {
     if (!sortBy) {
@@ -499,6 +566,23 @@ export default function Table<T>({
     </div>
   ));
 
+  const outerElementType = React.forwardRef((props, ref) => (
+    <div
+      ref={element => {
+        if (element) StickyScrollPolyfill.processScrollPosition(element);
+
+        if (typeof ref === "function") return ref(element);
+
+        return ref;
+      }}
+      {...props}
+      onScroll={event => {
+        onScroll(event);
+        props.onScroll(event);
+      }}
+    />
+  ));
+
   function isRowSelected(flattenedRow: ?FlattenedRow<T>) {
     if (!flattenedRow) {
       return false;
@@ -519,6 +603,14 @@ export default function Table<T>({
       return clickedRowGroup === flattenedRow.id;
     }
     return clickedRow === flattenedRow.id;
+  }
+
+  // This handler applies for recreating sticky behavior on IE11
+  function onScroll(event: SyntheticEvent<HTMLDivElement>) {
+    const {currentTarget} = event;
+    requestAnimationFrame(() => {
+      StickyScrollPolyfill.processScrollPosition(currentTarget);
+    });
   }
 
   /* Scrolling Pagination */
@@ -632,44 +724,50 @@ export default function Table<T>({
 
   return (
     <div className={css(styles.table)}>
-      {columnCustomizationEnabled ? (
-        <ColumnCustomization
-          columnDefinitions={customizableColumns}
-          visibleColumnIds={visibleColumnDefinitions.map(cd => cd.id)}
-          onVisibleColumnIdsChange={visibleColumnIds => {
-            onHiddenColumnsChange(
-              customizableColumns
-                .filter(cd => !visibleColumnIds.includes(cd.id))
-                .map(cd => ({columnId: cd.id}))
-            );
-          }}
-        />
-      ) : null}
-      <AutoSizer>
-        {({width, height}: {|+width: number, +height: number|}) => (
-          <InfiniteLoader
-            isItemLoaded={isItemLoaded}
-            itemCount={rowCount}
-            loadMoreItems={loadMoreItems}
-          >
-            {({onItemsRendered, ref}) => (
-              <FixedSizeList
-                height={height}
-                itemSize={rowHeight}
-                itemCount={rowCount}
-                width={width}
-                innerElementType={innerElementType}
-                onItemsRendered={onItemsRendered}
-                ref={ref}
-                // Overscan by roughly one page
-                overscanCount={Math.ceil(height / rowHeight)}
-              >
-                {ItemRenderer}
-              </FixedSizeList>
-            )}
-          </InfiniteLoader>
-        )}
-      </AutoSizer>
+      <StickyScrollContext.Provider value={StickyScrollPolyfill.context}>
+        {columnCustomizationEnabled ? (
+          <ColumnCustomization
+            columnDefinitions={customizableColumns}
+            visibleColumnIds={visibleColumnDefinitions.map(cd => cd.id)}
+            onVisibleColumnIdsChange={visibleColumnIds => {
+              onHiddenColumnsChange(
+                customizableColumns
+                  .filter(cd => !visibleColumnIds.includes(cd.id))
+                  .map(cd => ({columnId: cd.id}))
+              );
+            }}
+          />
+        ) : null}
+        <AutoSizer>
+          {({width, height}: {|+width: number, +height: number|}) => (
+            <InfiniteLoader
+              isItemLoaded={isItemLoaded}
+              itemCount={rowCount}
+              loadMoreItems={loadMoreItems}
+            >
+              {({onItemsRendered, ref}) => (
+                <FixedSizeList
+                  height={height}
+                  itemSize={rowHeight}
+                  itemCount={rowCount}
+                  width={width}
+                  innerElementType={innerElementType}
+                  outerElementType={
+                    !StickyScrollPolyfill.isPositionStickySupported &&
+                    outerElementType
+                  }
+                  onItemsRendered={onItemsRendered}
+                  ref={ref}
+                  // Overscan by roughly one page
+                  overscanCount={Math.ceil(height / rowHeight)}
+                >
+                  {ItemRenderer}
+                </FixedSizeList>
+              )}
+            </InfiniteLoader>
+          )}
+        </AutoSizer>
+      </StickyScrollContext.Provider>
     </div>
   );
 }
@@ -697,7 +795,8 @@ function ColumnCustomization<T>({
                 onClick={openPopup}
               />
             </Target>
-            <Popup placement="bottom-end">
+            {/* zIndex needed for IE11 */}
+            <Popup placement="bottom-end" zIndex={1}>
               <div className={css(styles.columnCustomizationPopup)}>
                 <div>
                   <CheckboxList
@@ -730,28 +829,33 @@ function HeaderRow<T>({
   const leftPinnedColumns = columns.filter(({pinned}) => pinned === "left");
   const unpinnedColumns = columns.filter(({pinned}) => pinned === null);
   const rightPinnedColumns = columns.filter(({pinned}) => pinned === "right");
+  const scrollContext = React.useContext(StickyScrollContext);
 
   return (
-    <div className={css(styles.headerRow)} style={style}>
-      {leftPinnedColumns.length ? (
-        <div className={css(styles.leftPinnedDrawer)}>
-          {leftPinnedColumns.map(({id, Header}) => (
-            <Header key={id} />
-          ))}
-        </div>
-      ) : null}
+    <div
+      className={css(styles.headerRow)}
+      ref={scrollContext && scrollContext.addRef("top")}
+      style={{
+        ...style,
+        ...(scrollContext && !scrollContext.isPositionStickySupported
+          ? {
+              transform: `translateY(${scrollContext.scrollTop}px)`,
+              position: "relative",
+            }
+          : {position: "sticky"}),
+      }}
+    >
+      <PinnedColumns columns={leftPinnedColumns} type="left">
+        {({id, Header}) => <Header key={id} />}
+      </PinnedColumns>
       <div className={css(styles.unpinnedDrawer)}>
         {unpinnedColumns.map(({id, Header}) => (
           <Header key={id} />
         ))}
       </div>
-      {rightPinnedColumns.length ? (
-        <div className={css(styles.rightPinnedDrawer)}>
-          {rightPinnedColumns.map(({id, Header}) => (
-            <Header key={id} />
-          ))}
-        </div>
-      ) : null}
+      <PinnedColumns columns={rightPinnedColumns} type="right">
+        {({id, Header}) => <Header key={id} />}
+      </PinnedColumns>
     </div>
   );
 }
@@ -918,25 +1022,17 @@ function Row<T>({
         className={className}
         style={style}
       >
-        {leftPinnedColumns.length ? (
-          <div className={css(styles.leftPinnedDrawer)}>
-            {leftPinnedColumns.map(({id, Cell}) => (
-              <Cell key={id} row={data} />
-            ))}
-          </div>
-        ) : null}
+        <PinnedColumns columns={leftPinnedColumns} type="left">
+          {({id, Cell}) => <Cell key={id} row={data} />}
+        </PinnedColumns>
         <div className={css(styles.unpinnedDrawer)}>
           {unpinnedColumns.map(({id, Cell}) => (
             <Cell key={id} row={data} />
           ))}
         </div>
-        {rightPinnedColumns.length ? (
-          <div className={css(styles.rightPinnedDrawer)}>
-            {rightPinnedColumns.map(({id, Cell}) => (
-              <Cell key={id} row={data} />
-            ))}
-          </div>
-        ) : null}
+        <PinnedColumns columns={rightPinnedColumns} type="right">
+          {({id, Cell}) => <Cell key={id} row={data} />}
+        </PinnedColumns>
       </div>
     </Clickable>
   );
@@ -969,28 +1065,55 @@ function AggregateRow<T>({
         className={className}
         style={style}
       >
-        {leftPinnedColumns.length ? (
-          <div className={css(styles.leftPinnedDrawer)}>
-            {leftPinnedColumns.map(({id, AggregateCell}) => (
-              <AggregateCell key={id} rows={data} />
-            ))}
-          </div>
-        ) : null}
+        <PinnedColumns columns={leftPinnedColumns} type="left">
+          {({id, AggregateCell}) => <AggregateCell key={id} rows={data} />}
+        </PinnedColumns>
         <div className={css(styles.unpinnedDrawer)}>
           {unpinnedColumns.map(({id, AggregateCell}) => (
             <AggregateCell key={id} rows={data} />
           ))}
         </div>
-        {rightPinnedColumns.length ? (
-          <div className={css(styles.rightPinnedDrawer)}>
-            {rightPinnedColumns.map(({id, AggregateCell}) => (
-              <AggregateCell key={id} rows={data} />
-            ))}
-          </div>
-        ) : null}
+        <PinnedColumns columns={rightPinnedColumns} type="right">
+          {({id, AggregateCell}) => <AggregateCell key={id} rows={data} />}
+        </PinnedColumns>
       </div>
     </Clickable>
   );
+}
+
+function PinnedColumns<T>({
+  columns,
+  children,
+  type,
+}: {|
+  +columns: Array<Column<T>>,
+  +children: (Column<T>) => React.Node,
+  +type: "left" | "right",
+|}) {
+  const scrollContext = React.useContext(StickyScrollContext);
+
+  return columns.length ? (
+    <div
+      className={css(
+        type === "left" ? styles.leftPinnedDrawer : styles.rightPinnedDrawer
+      )}
+      ref={scrollContext && scrollContext.addRef(type)}
+      style={
+        scrollContext && !scrollContext.isPositionStickySupported
+          ? {
+              transform: `translateX(${
+                type === "left"
+                  ? scrollContext.scrollLeft
+                  : scrollContext.rightOffset
+              }px)`,
+              position: "relative",
+            }
+          : {position: "sticky"}
+      }
+    >
+      {columns.map(column => children(column))}
+    </div>
+  ) : null;
 }
 
 const styles = StyleSheet.create({
@@ -1000,7 +1123,6 @@ const styles = StyleSheet.create({
     position: "relative",
   },
   leftPinnedDrawer: {
-    position: "sticky",
     display: "flex",
     left: 0,
     backgroundColor: "inherit",
@@ -1013,7 +1135,6 @@ const styles = StyleSheet.create({
     paddingLeft: 12,
   },
   rightPinnedDrawer: {
-    position: "sticky",
     display: "flex",
     right: 0,
     backgroundColor: "inherit",
@@ -1061,7 +1182,6 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     borderTop: `1px solid ${colors.grey30}`,
     borderBottom: `1px solid ${colors.grey30}`,
-    position: "sticky",
     zIndex: 2,
     top: 0,
     left: 0,
