@@ -8,7 +8,6 @@ import * as React from "react";
 import {type DemoFile} from "../design_system/types/demoTypes";
 import IconButton from "../button/IconButton";
 import Breadcrumbs from "../Breadcrumbs";
-import Text from "../Text";
 
 const demos: DemoFile = {
   demos: [
@@ -34,27 +33,25 @@ function BreadcrumbsDemo({elementToCodeFn}: *) {
         alignItems: "center",
       }}
     >
-      <Text scale="title" fontStyle="italic">
-        <Breadcrumbs
-          items={[
-            {
-              onClick: () => setDepth(1),
-              content: "Breads",
-            },
-            {
-              onClick: () => setDepth(2),
-              content: "Flours",
-            },
-            {
-              onClick: () => setDepth(3),
-              content: "Buckwheat",
-            },
-            {
-              content: "Origin",
-            },
-          ].slice(0, depth)}
-        />
-      </Text>
+      <Breadcrumbs
+        items={[
+          {
+            onClick: () => setDepth(1),
+            content: "Breads",
+          },
+          {
+            onClick: () => setDepth(2),
+            content: "Flours",
+          },
+          {
+            onClick: () => setDepth(3),
+            content: "Buckwheat",
+          },
+          {
+            content: "Origin",
+          },
+        ].slice(0, depth)}
+      />
       {depth !== 4 && (
         <IconButton
           iconName="revert"
