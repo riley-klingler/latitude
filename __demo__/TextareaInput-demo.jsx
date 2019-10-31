@@ -5,7 +5,7 @@
  */
 
 import * as React from "react";
-import { css } from "aphrodite";
+import {css} from "aphrodite";
 import TextareaInput from "../TextareaInput";
 import {
   type DemoFile,
@@ -17,6 +17,7 @@ import {
   type DemoProps,
   number,
 } from "../design_system/types/demoTypes";
+import TextareaInputRows from "./TextareaInputRows.demo";
 
 const knobs = {
   disabled: bool(false),
@@ -39,14 +40,9 @@ const demos: DemoFile = {
       knobs,
     },
     {
-      type: "code",
-      title: "Static Row Count",
+      type: "live",
       fullWidth: true,
-      description:
-        "TextareaInput's row count can be set to a static value by specifying rows as a number",
-      example: elementToCodeFn => (
-        <RowsDemo elementToCodeFn={elementToCodeFn} />
-      ),
+      example: TextareaInputRows,
     },
   ],
 };
@@ -81,20 +77,6 @@ class InputShim extends React.PureComponent<
     elementToCodeFn && elementToCodeFn(element);
     return <div className={css(demoCommonStyles.smallWrapper)}>{element}</div>;
   }
-}
-
-type RowsDemoProps = {|
-  +elementToCodeFn: React.Node => void,
-|};
-
-function RowsDemo({elementToCodeFn}: RowsDemoProps) {
-  const [text, setText] = React.useState("");
-
-  const component = <TextareaInput value={text} onChange={setText} rows={4} />;
-
-  elementToCodeFn(component);
-
-  return <div className={css(demoCommonStyles.smallWrapper)}>{component}</div>;
 }
 
 export default demos;

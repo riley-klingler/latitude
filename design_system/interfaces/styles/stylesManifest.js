@@ -6,7 +6,6 @@
 
 import Overview from "./components/Overview";
 import Colors from "./components/Colors";
-import Whitespace from "./components/Whitespace";
 
 const stylesManifest = {
   overview: {
@@ -15,10 +14,6 @@ const stylesManifest = {
   },
   colors: {
     content: Colors,
-    type: "jsx",
-  },
-  whitespace: {
-    content: Whitespace,
     type: "jsx",
   },
 };

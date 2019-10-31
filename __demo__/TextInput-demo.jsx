@@ -5,9 +5,8 @@
  */
 
 import * as React from "react";
-import { css } from "aphrodite";
+import {css} from "aphrodite";
 import TextInput, {type TextInputType} from "../TextInput";
-import Group from "../Group";
 import {
   type DemoFile,
   text,
@@ -18,6 +17,7 @@ import {
   list,
   type Option,
 } from "../design_system/types/demoTypes";
+import TextInputPrefixSuffix from "./TextInputPrefixSuffix.demo";
 
 const textInputTypes: $ReadOnlyArray<Option<TextInputType>> = [
   "text",
@@ -51,21 +51,8 @@ const demos: DemoFile = {
       knobs,
     },
     {
-      type: "code",
-      title: "Add a Prefix / Suffix",
-      description:
-        "provide a `prefix` and/or `suffix` to have a sigil appear within the Input's field",
-      example: elementToCodeFn => {
-        const component = (
-          <Group flexDirection="column">
-            <TextInputShim prefix={{iconName: "airport"}} />
-            <TextInputShim suffix="kg" />
-          </Group>
-        );
-
-        elementToCodeFn(component);
-        return component;
-      },
+      type: "live",
+      example: TextInputPrefixSuffix,
     },
   ],
 };
