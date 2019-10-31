@@ -38,12 +38,12 @@ export default function Colors() {
               </Text>
             </div>
             <Highlight languages={["javascript"]}>
-              {`import colors from "styles/colors";`}
+              {`import colors from "latitude/colors";`}
             </Highlight>
             <Tooltip overlay="View our colors on GitHub!" placement="bottom">
               <span>
                 <TextLink
-                  href="https://github.com/flexport/flexport/blob/master/webpack/assets/javascripts/styles/colors.js"
+                  href="https://github.com/flexport/latitude/blob/master/colors.js"
                   openInNewTab={true}
                   weight="bold"
                 >

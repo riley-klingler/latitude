@@ -5,7 +5,7 @@
  * @flow strict
  */
 
-import colors, {type Color, type ColorPalette} from "../../../styles/colors";
+import colors, {type Color, type ColorPalette} from "../../../colors";
 
 export const colorMeta: $ObjMap<
   ColorPalette,
@@ -18,40 +18,35 @@ export const colorMeta: $ObjMap<
       | "grey"
       | "blue"
       | "red"
-      | "yellow"
+      | "orange"
       | "green"
-      | "cyan"
+      | "indigo"
       | "purple",
     +additionalInformation?: string,
   |}
 > = {
-  blackDoNotUse: {
-    contrastColor: "white",
-    classification: "brand",
-    colorFamily: "base",
-  },
   white: {
-    contrastColor: "grey60",
+    contrastColor: "black",
     classification: "utility",
     colorFamily: "base",
   },
   grey10: {
-    contrastColor: "grey60",
+    contrastColor: "black",
     classification: "utility",
     colorFamily: "grey",
   },
   grey20: {
-    contrastColor: "grey60",
+    contrastColor: "black",
     classification: "utility",
     colorFamily: "grey",
   },
   grey30: {
-    contrastColor: "grey60",
+    contrastColor: "black",
     classification: "utility",
     colorFamily: "grey",
   },
   grey40: {
-    contrastColor: "grey60",
+    contrastColor: "white",
     classification: "utility",
     colorFamily: "grey",
   },
@@ -65,22 +60,27 @@ export const colorMeta: $ObjMap<
     classification: "utility",
     colorFamily: "grey",
   },
+  black: {
+    contrastColor: "white",
+    classification: "brand",
+    colorFamily: "base",
+  },
   blue10: {
-    contrastColor: "grey60",
+    contrastColor: "black",
     colorFamily: "blue",
   },
   blue20: {
-    contrastColor: "grey60",
+    contrastColor: "black",
     colorFamily: "blue",
   },
   blue30: {
-    contrastColor: "white",
+    contrastColor: "black",
     description: "The primary product color.",
     classification: "product",
     colorFamily: "blue",
   },
   blue40: {
-    contrastColor: "white",
+    contrastColor: "black",
     classification: "brand",
     colorFamily: "blue",
   },
@@ -92,52 +92,52 @@ export const colorMeta: $ObjMap<
     contrastColor: "white",
     colorFamily: "blue",
   },
-  cyan10: {
-    contrastColor: "grey60",
-    colorFamily: "cyan",
+  indigo10: {
+    contrastColor: "black",
+    colorFamily: "indigo",
   },
-  cyan20: {
-    contrastColor: "grey60",
-    colorFamily: "cyan",
+  indigo20: {
+    contrastColor: "black",
+    colorFamily: "indigo",
   },
-  cyan30: {
-    contrastColor: "grey60",
+  indigo30: {
+    contrastColor: "white",
     classification: "product",
-    colorFamily: "cyan",
+    colorFamily: "indigo",
   },
-  cyan40: {
-    contrastColor: "grey60",
+  indigo40: {
+    contrastColor: "white",
     classification: "brand",
-    colorFamily: "cyan",
+    colorFamily: "indigo",
   },
-  cyan50: {
+  indigo50: {
     contrastColor: "white",
-    colorFamily: "cyan",
+    colorFamily: "indigo",
   },
-  cyan60: {
+  indigo60: {
     contrastColor: "white",
-    colorFamily: "cyan",
+    colorFamily: "indigo",
   },
   green10: {
-    contrastColor: "grey60",
+    contrastColor: "black",
     colorFamily: "green",
   },
   green20: {
-    contrastColor: "grey60",
+    contrastColor: "black",
     colorFamily: "green",
   },
   green30: {
-    contrastColor: "grey60",
+    contrastColor: "black",
     classification: "product",
     colorFamily: "green",
   },
   green40: {
-    contrastColor: "white",
+    contrastColor: "black",
     classification: "brand",
     colorFamily: "green",
   },
   green50: {
-    contrastColor: "white",
+    contrastColor: "black",
     colorFamily: "green",
   },
   green60: {
@@ -145,27 +145,20 @@ export const colorMeta: $ObjMap<
     colorFamily: "green",
   },
   red10: {
-    contrastColor: "grey60",
+    contrastColor: "black",
     colorFamily: "red",
   },
   red20: {
-    contrastColor: "grey60",
+    contrastColor: "black",
     colorFamily: "red",
   },
   red30: {
-    contrastColor: "white",
+    contrastColor: "black",
     colorFamily: "red",
   },
   red40: {
     contrastColor: "white",
     classification: "brand",
-    colorFamily: "red",
-  },
-  red45: {
-    contrastColor: "white",
-    classification: "product",
-    additionalInformation:
-      "red45 meets AA contrast standards and therefore is the designated product color when used in critical UI",
     colorFamily: "red",
   },
   red50: {
@@ -177,15 +170,15 @@ export const colorMeta: $ObjMap<
     colorFamily: "red",
   },
   purple10: {
-    contrastColor: "grey60",
+    contrastColor: "black",
     colorFamily: "purple",
   },
   purple20: {
-    contrastColor: "grey60",
+    contrastColor: "black",
     colorFamily: "purple",
   },
   purple30: {
-    contrastColor: "white",
+    contrastColor: "black",
     classification: "product",
     colorFamily: "purple",
   },
@@ -202,32 +195,32 @@ export const colorMeta: $ObjMap<
     contrastColor: "white",
     colorFamily: "purple",
   },
-  yellow10: {
-    contrastColor: "grey60",
-    colorFamily: "yellow",
+  orange10: {
+    contrastColor: "black",
+    colorFamily: "orange",
   },
-  yellow20: {
-    contrastColor: "grey60",
-    colorFamily: "yellow",
+  orange20: {
+    contrastColor: "black",
+    colorFamily: "orange",
   },
-  yellow30: {
-    contrastColor: "grey60",
+  orange30: {
+    contrastColor: "black",
     classification: "product",
-    colorFamily: "yellow",
+    colorFamily: "orange",
   },
-  yellow40: {
-    contrastColor: "grey60",
+  orange40: {
+    contrastColor: "white",
     classification: "brand",
-    colorFamily: "yellow",
+    colorFamily: "orange",
   },
-  yellow50: {
+  orange50: {
     contrastColor: "white",
     classification: "product",
-    colorFamily: "yellow",
+    colorFamily: "orange",
   },
-  yellow60: {
+  orange60: {
     contrastColor: "white",
-    colorFamily: "yellow",
+    colorFamily: "orange",
   },
 };
 
