@@ -30,7 +30,7 @@ export type ColumnDefinition<T> = {|
   +render: T => React.Node,
   +renderAggregate?: ($ReadOnlyArray<T>) => React.Node,
   +width: number,
-  +comparator?: (T, T) => number,
+  +comparator?: (T, T, "asc" | "desc") => number,
   +aggregateComparator?: ($ReadOnlyArray<T>, $ReadOnlyArray<T>) => number,
   +headerAlignment?: "left" | "center" | "right",
   +tooltipText?: string,
@@ -277,7 +277,9 @@ export default function Table<T>({
       }`
     );
     const multiplier = sortBy.direction === "asc" ? 1 : -1;
-    return [...rows].sort((a, b) => multiplier * comparator(a, b));
+    return [...rows].sort(
+      (a, b) => multiplier * comparator(a, b, sortBy.direction)
+    );
   }
 
   const sortedRows = sortRows(data, sortBy);
@@ -322,7 +324,7 @@ export default function Table<T>({
           sortBy.columnId
         }`
       );
-      return multiplier * comparator(as[0], bs[0]);
+      return multiplier * comparator(as[0], bs[0], sortBy.direction);
     });
   }
 
