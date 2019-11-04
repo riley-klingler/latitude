@@ -18,8 +18,15 @@ import {
   type DemoProps,
 } from "../../design_system/types/demoTypes";
 import IconButton from "../IconButton";
-import DeprecatedHorizontalGroup from "../../DeprecatedHorizontalGroup";
 import invariant from "../../tools/invariant";
+
+import IconButtonAlignment from "./IconButtonAlignment.demo";
+import IconButtonBare from "./IconButtonBare.demo";
+import IconButtonBasicUsage from "./IconButtonBasicUsage.demo";
+import IconButtonBlank from "./IconButtonBlank.demo";
+import IconButtonIntents from "./IconButtonIntents.demo";
+import IconButtonLabel from "./IconButtonLabel.demo";
+import IconButtonSizes from "./IconButtonSizes.demo";
 
 const iconButtonKnobs = {
   label: text("demo"),
@@ -35,118 +42,24 @@ const iconButtonKnobs = {
 const demos: DemoFile = {
   demos: [
     {
-      type: "code",
-      title: "Basic Usage",
-      example: fn => {
-        const component = (
-          <IconButton iconName="ellipsis" type="button" onClick={() => null} />
-        );
-        fn(component);
-        return component;
-      },
+      type: "live",
+      example: IconButtonBasicUsage,
     },
     {
-      type: "code",
-      title: "Bare icon button",
-      description:
-        "Bare buttons retain normal button padding but have no button styles besides hover and focus states.",
-      example: fn => {
-        const component = (
-          <IconButton
-            kind="bare"
-            iconName="cog"
-            type="button"
-            onClick={() => null}
-          />
-        );
-        fn(component);
-        return component;
-      },
+      type: "live",
+      example: IconButtonBare,
     },
     {
-      type: "code",
-      title: "Blank Buttons",
-      description:
-        "Blank buttons abandon all button styles except hover and focus states.",
-      example: fn => {
-        const component = (
-          <IconButton
-            kind="blank"
-            iconName="rocket"
-            size="l"
-            type="button"
-            onClick={() => null}
-          />
-        );
-        fn(component);
-        return component;
-      },
+      type: "live",
+      example: IconButtonBlank,
     },
     {
-      type: "code",
-      title: "Icon with label",
-      example: fn => {
-        const component = (
-          <DeprecatedHorizontalGroup>
-            <IconButton
-              iconName="ship"
-              kind="hollow"
-              label="Shipments"
-              type="button"
-              onClick={() => null}
-            />
-            <IconButton
-              iconName="truck"
-              kind="bare"
-              label="Deliveries"
-              type="button"
-              onClick={() => null}
-            />
-          </DeprecatedHorizontalGroup>
-        );
-        fn(component);
-        return component;
-      },
+      type: "live",
+      example: IconButtonLabel,
     },
     {
-      type: "code",
-      title: "Sizes",
-      example: fn => {
-        const component = (
-          <DeprecatedHorizontalGroup>
-            <IconButton
-              iconName="rocket"
-              kind="hollow"
-              size="s"
-              type="button"
-              onClick={() => null}
-            />
-            <IconButton
-              iconName="rocket"
-              kind="hollow"
-              type="button"
-              onClick={() => null}
-            />
-            <IconButton
-              iconName="rocket"
-              kind="hollow"
-              size="l"
-              type="button"
-              onClick={() => null}
-            />
-            <IconButton
-              iconName="rocket"
-              kind="hollow"
-              size="l"
-              type="button"
-              onClick={() => null}
-              height={{type: "customDontUse", height: 60}}
-            />
-          </DeprecatedHorizontalGroup>
-        );
-        fn(component);
-        return component;
-      },
+      type: "live",
+      example: IconButtonSizes,
     },
     {
       type: "full",
@@ -160,61 +73,12 @@ const demos: DemoFile = {
       defaultProps: {iconName: "rocket", type: "button"},
     },
     {
-      type: "code",
-      title: "Intents",
-      example: fn => {
-        const component = (
-          <DeprecatedHorizontalGroup>
-            <IconButton
-              kind="hollow"
-              iconName="print"
-              intent="basic"
-              type="button"
-              onClick={() => null}
-            />
-            <IconButton
-              kind="hollow"
-              iconName="add"
-              type="button"
-              onClick={() => null}
-            />
-            <IconButton
-              kind="hollow"
-              iconName="cancel"
-              intent="danger"
-              type="button"
-              onClick={() => null}
-            />
-          </DeprecatedHorizontalGroup>
-        );
-        fn(component);
-        return component;
-      },
+      type: "live",
+      example: IconButtonIntents,
     },
     {
-      type: "code",
-      title: "Icon Alignment",
-      example: fn => {
-        const component = (
-          <DeprecatedHorizontalGroup>
-            <IconButton
-              iconName="search"
-              label="Container Id"
-              type="button"
-              onClick={() => null}
-            />
-            <IconButton
-              iconName="search"
-              iconAlignment="right"
-              label="Container Id"
-              type="button"
-              onClick={() => null}
-            />
-          </DeprecatedHorizontalGroup>
-        );
-        fn(component);
-        return component;
-      },
+      type: "live",
+      example: IconButtonAlignment,
     },
   ],
 };
