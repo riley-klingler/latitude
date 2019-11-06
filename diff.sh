@@ -52,7 +52,6 @@ function wajdiffdir() {
 ## root latitude files - lgtm!
 # diff flexport/$WAJ/latitude/Badge.jsx latitude/Badge.jsx
 # diff flexport/$WAJ/latitude/Banner.jsx latitude/Banner.jsx
-# diff flexport/$WAJ/latitude/BetterRcTooltip.jsx latitude/BetterRcTooltip.jsx
 # diff flexport/$WAJ/latitude/Checkbox.jsx latitude/Checkbox.jsx
 # diff flexport/$WAJ/latitude/CheckboxList.jsx latitude/CheckboxList.jsx
 # diff flexport/$WAJ/latitude/CustomDropdownButton.jsx latitude/CustomDropdownButton.jsx

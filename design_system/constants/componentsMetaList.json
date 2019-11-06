@@ -1170,7 +1170,7 @@
   "HelpTooltip": {
     "brandStatus": "V2",
     "category": "Data Display",
-    "description": "Tooltips often provide additional information that doesn't fit in the standard layout. HelpTooltip, a thin wrapper around `Tooltip` ([rc-tooltip](https://github.com/react-component/tooltip)), provides easy access to a simple icon-triggered tooltip. Icons are a great way to indicate tooltips while saving crucial space. The icon selected should, in some way, correlate to the information provided (ie. if it is a warnining, attention would be a good choice).",
+    "description": "Tooltips often provide additional information that doesn't fit in the standard layout. HelpTooltip, a thin wrapper around `Tooltip`, provides easy access to a simple icon-triggered tooltip. Icons are a great way to indicate tooltips while saving crucial space. The icon selected should, in some way, correlate to the information provided (ie. if it is a warnining, attention would be a good choice).",
     "name": "HelpTooltip",
     "shortDescription": "A simple icon-triggered message that provides auxilliary information that might be too verbose to always expose.",
     "status": "Stable",

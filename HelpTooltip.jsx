@@ -38,7 +38,7 @@ type Props = {|
  * @status Stable
  * @category Data Display
  *
- * Tooltips often provide additional information that doesn't fit in the standard layout. HelpTooltip, a thin wrapper around `Tooltip` ([rc-tooltip](https://github.com/react-component/tooltip)), provides easy access to a simple icon-triggered tooltip. Icons are a great way to indicate tooltips while saving crucial space. The icon selected should, in some way, correlate to the information provided (ie. if it is a warnining, attention would be a good choice).
+ * Tooltips often provide additional information that doesn't fit in the standard layout. HelpTooltip, a thin wrapper around `Tooltip`, provides easy access to a simple icon-triggered tooltip. Icons are a great way to indicate tooltips while saving crucial space. The icon selected should, in some way, correlate to the information provided (ie. if it is a warnining, attention would be a good choice).
  *
  * @extends React.Component */
 export default class HelpTooltip extends React.PureComponent<Props> {
