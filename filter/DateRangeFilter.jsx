@@ -116,6 +116,7 @@ function DateRangeFilter({
       const selectedPreset = presets.find(
         preset => preset.label === optionLabel
       );
+      // $FlowUpgradeFixMe(0.110.1 -> 0.111.1)
       onChange({type: "preset", ...selectedPreset});
     }
   };

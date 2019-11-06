@@ -10,6 +10,7 @@ import Checkbox from "../Checkbox";
 
 function mountCheckbox(propOverrides: {} = {}) {
   const defaultProps = {onChange: () => {}};
+  // $FlowUpgradeFixMe(0.110.1 -> 0.111.1)
   const mergedProps = {...defaultProps, ...propOverrides};
   return mount(<Checkbox {...mergedProps} />);
 }

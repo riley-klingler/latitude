@@ -287,6 +287,7 @@ const dateRangeStyleSheet = StyleSheet.create({
   toStyle: {
     marginTop: "auto",
     marginBottom: "auto",
+    // $FlowUpgradeFixMe(0.110.1 -> 0.111.1)
     ...include(margin.h.s),
   },
   dropdownButton: {

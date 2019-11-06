@@ -80,6 +80,7 @@ export default class DesignSys extends React.PureComponent<Props> {
           ...styles.standardOverride._definition,
           ...typeScale[scale],
           fontWeight: fontWeights[weight],
+          // $FlowUpgradeFixMe(0.110.1 -> 0.111.1)
           ...linkStyles(BASE)[linkStyle]._definition,
           display,
           ...(isActive && activeStyles),

@@ -14,10 +14,12 @@ export type ThemeColorMap = {|
 |};
 
 const themeColorMaps: {[Theme]: ThemeColorMap} = {
+  // $FlowUpgradeFixMe(0.110.1 -> 0.111.1)
   [BASE]: Object.freeze({
     primary: "blue30",
     brand: "blue40",
   }),
+  // $FlowUpgradeFixMe(0.110.1 -> 0.111.1)
   [TRANSMISSION]: Object.freeze({
     primary: "green40",
     brand: "green30",

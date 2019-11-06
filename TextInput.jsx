@@ -142,7 +142,7 @@ function Sigil({
     <span
       className={css(styles.sigil)}
       style={{
-        [side]: `${paddingDefaultTextInput}px`,
+        [(side: string)]: `${paddingDefaultTextInput}px`,
         ...(typeof sigil === "string" || !sigil.onClick
           ? {
               pointerEvents: "none",

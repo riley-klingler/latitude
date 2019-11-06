@@ -13,6 +13,7 @@ function mountFloatInput(propOverrides: {} = {}) {
     value: 1,
     onChange: () => {},
   };
+  // $FlowUpgradeFixMe(0.110.1 -> 0.111.1)
   const mergedProps = {...defaultProps, ...propOverrides};
   return mount(<FloatInput {...mergedProps} />);
 }

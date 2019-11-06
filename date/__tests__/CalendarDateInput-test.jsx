@@ -46,6 +46,7 @@ function getCalendarDateProps(propOverrides: {} = {}) {
   const mergedProps = {
     ...defaultProps,
     ...defaultPopupWithClickAwayProps,
+    // $FlowUpgradeFixMe(0.110.1 -> 0.111.1)
     ...propOverrides,
   };
   return mergedProps;

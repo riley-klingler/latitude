@@ -72,7 +72,7 @@ export default function DropdownList({
           label={option.label}
           customView={option.customView}
           isHighlighted={option.label === highlightedOption}
-          onClick={option.disabled ? () => {} : onClick}
+          onClick={option.disabled === true ? () => {} : onClick}
           disabled={option.disabled}
         />
       ))}
@@ -91,7 +91,7 @@ export default function DropdownList({
 
     dropdownOptions.forEach(option => {
       invariant(
-        option.section,
+        option.section != null,
         "each option must have a section when sectionOrder is included"
       );
       sections[option.section].push(option);

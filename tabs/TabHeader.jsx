@@ -108,6 +108,7 @@ export const _test = {TabComponent};
 const styles = StyleSheet.create({
   tab: {
     color: latitudeColors.grey60,
+    // $FlowUpgradeFixMe(0.110.1 -> 0.111.1)
     ...include(padding.v.m),
     ...border.b.m,
     ...typeScale.base,

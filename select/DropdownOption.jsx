@@ -20,7 +20,7 @@ type Props = {|
   /** called when the option is clicked */
   +onClick?: (selected: string) => void,
   /** whether the option is disabled */
-  +disabled: boolean,
+  +disabled?: boolean,
 |};
 
 /**

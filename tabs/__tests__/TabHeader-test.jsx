@@ -16,6 +16,7 @@ function shallowTabHeader(propOverrides: {} = {}) {
     activeTab: "a",
     onTabChange: () => {},
   };
+  // $FlowUpgradeFixMe(0.110.1 -> 0.111.1)
   const mergedProps = {...defaultProps, ...propOverrides};
   return shallow(<TabHeader {...mergedProps} />);
 }
@@ -26,6 +27,7 @@ function mountTabHeader(propOverrides: {} = {}) {
     activeTab: "a",
     onTabChange: () => {},
   };
+  // $FlowUpgradeFixMe(0.110.1 -> 0.111.1)
   const mergedProps = {...defaultProps, ...propOverrides};
   return mount(<TabHeader {...mergedProps} />);
 }

@@ -214,6 +214,7 @@ const styles = StyleSheet.create({
   arrow: {
     display: "flex",
     alignItems: "center",
+    // $FlowUpgradeFixMe(0.110.1 -> 0.111.1)
     ...include(padding.l.s),
     position: "absolute",
     top: "2px",

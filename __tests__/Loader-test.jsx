@@ -9,6 +9,7 @@ import Loader from "../Loader";
 
 function shallowLoader(propOverrides: {} = {}) {
   const defaultProps = {loaded: false};
+  // $FlowUpgradeFixMe(0.110.1 -> 0.111.1)
   const mergedProps = {...defaultProps, ...propOverrides};
   return shallow(<Loader {...mergedProps} />);
 }

@@ -23,6 +23,7 @@ function mountMultiselect(propOverrides: {} = {}) {
   };
   const mergedProps = {
     ...defaultProps,
+    // $FlowUpgradeFixMe(0.110.1 -> 0.111.1)
     ...propOverrides,
   };
   // $FlowFixMe(uforic)

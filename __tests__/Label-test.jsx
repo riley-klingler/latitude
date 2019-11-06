@@ -15,6 +15,7 @@ function mountLabel(propOverrides: {} = {}) {
 
   const mergedProps = {
     ...defaultProps,
+    // $FlowUpgradeFixMe(0.110.1 -> 0.111.1)
     ...propOverrides,
   };
   return mount(<Label {...mergedProps} />);

@@ -30,6 +30,7 @@ function mountMultiSelectFilter(propOverrides: {} = {}) {
     value: getFilterValueFromArray([], testOptions),
     onChange: () => {},
     options: testOptions,
+    // $FlowUpgradeFixMe(0.110.1 -> 0.111.1)
     ...propOverrides,
   };
 

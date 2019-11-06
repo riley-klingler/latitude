@@ -154,12 +154,14 @@ export default class BaseReactMultiselect<T> extends React.PureComponent<
       if (this.props.disabled) {
         textInputStyle = {
           ...textInputStyle,
+          // $FlowUpgradeFixMe(0.110.1 -> 0.111.1)
           ...inputStyles.disabled._definition,
         };
       }
       if (this.props.isInvalid) {
         textInputStyle = {
           ...textInputStyle,
+          // $FlowUpgradeFixMe(0.110.1 -> 0.111.1)
           ...inputStyles.isInvalid._definition,
         };
       }
@@ -279,6 +281,7 @@ export default class BaseReactMultiselect<T> extends React.PureComponent<
             invariant(typeof value === "string", "Expect value to be a string");
             // TODO(elmiratapkanova) create TestAlgoliaMultiInput component
             if (Array.isArray(full)) {
+              // $FlowUpgradeFixMe(0.110.1 -> 0.111.1)
               this.handleChange(full.map(option => ({value, ...option})));
             } else {
               // $FlowFixMe(osuushi) untyped code only used in browser tests

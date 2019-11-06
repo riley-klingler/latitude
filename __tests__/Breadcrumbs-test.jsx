@@ -25,12 +25,14 @@ function StatefulBreadcrumb({items}: {|+items: Array<string>|}) {
 
 function mountBreadcrumbs(propOverrides: {} = {}) {
   const defaultProps = {items: []};
+  // $FlowUpgradeFixMe(0.110.1 -> 0.111.1)
   const mergedProps = {...defaultProps, ...propOverrides};
   return mount(<Breadcrumbs {...mergedProps} />);
 }
 
 function mountStatefulBreadcrumbs(propOverrides: {} = {}) {
   const defaultProps = {items: []};
+  // $FlowUpgradeFixMe(0.110.1 -> 0.111.1)
   const mergedProps = {...defaultProps, ...propOverrides};
   return mount(<StatefulBreadcrumb {...mergedProps} />);
 }

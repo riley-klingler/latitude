@@ -138,6 +138,7 @@ export class CustomModalShim extends React.PureComponent<
 const styles = StyleSheet.create({
   modal: {
     backgroundColor: "white",
+    // $FlowUpgradeFixMe(0.110.1 -> 0.111.1)
     ...include(padding.a.m),
     display: "flex",
     padding: 0,

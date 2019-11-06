@@ -28,8 +28,8 @@ declare module 'react-popper' {
   declare type Style = {[string]: string | number};
   declare type getRefFn = (?HTMLElement) => void;
   declare type ReferenceElement = ReferenceObject | HTMLElement | null;
-  declare type StyleOffsets = { top: number, left: number };
-  declare type StylePosition = { position: 'absolute' | 'fixed' };
+  declare type StyleOffsets = {| top: number, left: number |};
+  declare type StylePosition = {| position: 'absolute' | 'fixed' |};
   declare type PopperArrowProps = {
     +ref: getRefFn,
     +style: StyleOffsets & Style,

@@ -250,14 +250,17 @@ function InlineEdit<T>({
     marginLeft: horizontalPadding,
   };
 
+  let style;
+  if (transitioningOut) {
+    style = transitionOutStyle;
+  } else if (transitioningIn) {
+    style = transitionInStyle;
+  } else {
+    style = {};
+  }
+
   return (
-    <div
-      className={css(styles.container)}
-      style={{
-        ...(transitioningIn ? transitionInStyle : {}),
-        ...(transitioningOut ? transitionOutStyle : {}),
-      }}
-    >
+    <div className={css(styles.container)} style={style}>
       {content}
     </div>
   );

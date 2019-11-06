@@ -127,6 +127,7 @@ const styles = memoize(
         borderRadius: "0",
         ...typeScale.base,
         fontWeight: fontWeights.bold,
+        // $FlowUpgradeFixMe(0.110.1 -> 0.111.1)
         ...include(padding.h.m),
         ...include(padding.v.n),
         whiteSpace: "nowrap",
@@ -206,6 +207,7 @@ const styles = memoize(
         boxShadow: "none",
         border: "none",
         height: "100%",
+        // $FlowUpgradeFixMe(0.110.1 -> 0.111.1)
         ...include(padding.a.n),
         ":after": {
           content: '""',
@@ -387,6 +389,7 @@ export const sharedStyles = StyleSheet.create({
   },
   label: {
     ...typeScale.base,
+    // $FlowUpgradeFixMe(0.110.1 -> 0.111.1)
     ...include(margin.l.s),
   },
   labelLeft: {
