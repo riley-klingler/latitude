@@ -14,6 +14,9 @@ import {
   textInputSizeKnob,
 } from "../../design_system/types/demoTypes";
 import SearchableSelectInput from "../SearchableSelectInput";
+import SearchableSelectInputNullableUsage from "./SearchableSelectInputNullableUsage.demo";
+import SearchableSelectInputCustomViewUsage from "./SearchableSelectInputCustomViewUsage.demo";
+import SearchableSelectInputHeaderFooterUsage from "./SearchableSelectInputHeaderFooterUsage.demo";
 import Text from "../../Text";
 import {characters} from "../../tools/demo";
 
@@ -39,44 +42,19 @@ const demos: DemoFile = {
       },
     },
     {
-      type: "code",
-      title: "SelectInput is nullable",
-      description:
-        "Set isNullable to true to allow the user to reset the input to null",
-      example: elementToCodeFn => (
-        <SearchableSelectInputShim
-          elementToCodeFn={elementToCodeFn}
-          demoProps={{isNullable: true, placeholder: "placeholder"}}
-        />
-      ),
+      type: "live",
+      fullWidth: true,
+      example: SearchableSelectInputNullableUsage,
     },
     {
-      type: "code",
-      title: "SelectInput can have custom rendered options",
-      description:
-        "Set customView in each of the options to render custom option markdown",
-      example: elementToCodeFn => (
-        <SearchableSelectInputShim
-          elementToCodeFn={elementToCodeFn}
-          demoProps={{customView: true, placeholder: "Select a character"}}
-        />
-      ),
+      type: "live",
+      fullWidth: true,
+      example: SearchableSelectInputCustomViewUsage,
     },
     {
-      type: "code",
-      title: "SelectInput can have a custom header / footer",
-      description:
-        "set a header or footer to add a sticky header / footer to your dropdown",
-      example: elementToCodeFn => (
-        <SearchableSelectInputShim
-          elementToCodeFn={elementToCodeFn}
-          demoProps={{
-            hasHeader: true,
-            hasFooter: true,
-            placeholder: "Select a character",
-          }}
-        />
-      ),
+      type: "live",
+      fullWidth: true,
+      example: SearchableSelectInputHeaderFooterUsage,
     },
   ],
 };

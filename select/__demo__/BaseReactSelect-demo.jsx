@@ -15,6 +15,7 @@ import {
   isInvalidKnob,
 } from "../../design_system/types/demoTypes";
 import BaseReactSelect from "../BaseReactSelect";
+import BaseReactSelectNullableUsage from "./BaseReactSelectNullableUsage.demo";
 import {type StarWarsCharacter, characters} from "../../tools/demo";
 
 const demos: DemoFile = {
@@ -38,16 +39,9 @@ const demos: DemoFile = {
       defaultProps: BaseReactSelect.defaultProps,
     },
     {
-      type: "code",
-      title: "SelectInput is nullable",
-      description:
-        "Set isNullable to true to allow the user to reset the input to null",
-      example: elementToCodeFn => (
-        <BaseReactSelectShim
-          elementToCodeFn={elementToCodeFn}
-          demoProps={{isNullable: true}}
-        />
-      ),
+      type: "live",
+      fullWidth: true,
+      example: BaseReactSelectNullableUsage,
     },
   ],
 };
