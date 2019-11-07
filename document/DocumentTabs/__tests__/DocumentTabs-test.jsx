@@ -6,7 +6,7 @@
 
 import React from "react";
 import {shallow} from "enzyme";
-import DocumentTabs from "../DocumentTabs";
+import DocumentTabs, {test} from "../DocumentTabs";
 
 describe("DocumentTabs", () => {
   it("renders", () => {
@@ -24,5 +24,22 @@ describe("DocumentTabs", () => {
         />
       )
     ).toMatchSnapshot();
+  });
+  it("calculateWidths will handle zero slices scenario", () => {
+    const containerWidth = 99;
+    const elementCount = 1;
+    const minWidth = 100;
+    const maxWidth = 100;
+    expect(
+      test.calculateWidths(
+        containerWidth,
+        minWidth,
+        maxWidth,
+        elementCount
+      )
+    ).toEqual({
+      tabWidth: 0,
+      slices: 0,
+    });
   });
 });

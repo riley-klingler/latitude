@@ -46,9 +46,11 @@ function calculateWidths(
 
   const maxSlicesCount = Math.floor(containerWidth / minWidth);
   const slices = Math.min(maxSlicesCount, elementCount);
+  // slices will be 0 sometimes.
+  const tabWidth = (slices !== 0) ? containerWidth / slices : 0;
 
   return {
-    tabWidth: containerWidth / slices,
+    tabWidth,
     slices,
   };
 }
@@ -194,4 +196,5 @@ const styles = StyleSheet.create({
   },
 });
 
+export const test = {calculateWidths};
 export default DocumentTabs;
