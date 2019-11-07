@@ -88,19 +88,7 @@ export default function NewTable<T>({
   data,
   columnDefinitions,
   getUniqueRowId,
-  pinnedColumns = [],
-  rowAggregationEnabled = false,
-  rowAggregationPinned = true,
-  getRowGroupId,
-  expandedRows = new Set(),
-  onExpandedRowsChange = noop,
-  rowClickingEnabled = false,
-  clickedRow,
   onRowClick = null,
-  rowGroupClickingEnabled = false,
-  clickedRowGroup,
-  onRowGroupClick = noop,
-  isLoading = false,
   customRow = null,
   hideHeader = null,
 }: {
@@ -239,6 +227,38 @@ export function withRowAggregation(WrappedTable: NewTable, getRowGroupId) {
 
     return <WrappedTable customRow={AggregationRow} data={rowGroups} getUniqueRowId={getUniqueRowId} {...props} />;
   }
+}
+
+export function RowAggregationTable({data, columnDefinitions, getUniqueRowId, getRowGroupId, ...props}) {
+  const rowGroups = groupRows(data, getRowGroupId);
+
+  function AggregationRow({columnDefinitions, rowData}) {
+    const [showChildren, setShowChildren] = React.useState(false);
+    return (
+      <>
+        <Row columnDefinitions={columnDefinitions} rowData={rowData[0]} onClick={setShowChildren.bind(null, !showChildren)} />
+        {
+          showChildren ?
+            <NewTable
+              data={rowData}
+              columnDefinitions={columnDefinitions}
+              getUniqueRowId={getUniqueRowId}
+              hideHeader={true}
+            /> : null
+        }
+      </>
+    );
+  }
+
+  return (
+    <NewTable
+      customRow={AggregationRow}
+      columnDefinitions={columnDefinitions}
+      data={rowGroups}
+      getUniqueRowId={getUniqueRowId}
+      {...props}
+    />
+  );
 }
 
 function ColumnCustomization<T>({

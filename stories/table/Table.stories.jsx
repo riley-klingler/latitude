@@ -16,6 +16,7 @@ import InteractableCell from "../../table/InteractableCell";
 import Text from "../../Text";
 import NotificationModal from "../../modal/NotificationModal";
 import NewTable, {
+  RowAggregationTable,
   withColumnCustomization,
   withRowAggregation,
   withRowSelection,
@@ -26,7 +27,7 @@ const ColumnCustomizationTable = withColumnCustomization(NewTable);
 const RowSelectionTable = withRowSelection(NewTable);
 const SortingTable = withSorting(NewTable);
 const SelectionSortTable = withRowSelection(withSorting(NewTable));
-const RowAggregationTable = withRowAggregation(NewTable, row => row.network)
+const HocRowAggregationTable = withRowAggregation(NewTable, row => row.network)
 
 const columnDefinitions = [
   {
@@ -375,17 +376,28 @@ const RowAggregationHoist = () => {
       onSortByChange={setSortBy}
     />
   );
-  const newTable = (
-    <RowAggregationTable
+  const hocNewTable = (
+    <HocRowAggregationTable
       data={data.slice(0, 100)}
       columnDefinitions={columnDefinitions}
       getUniqueRowId={row => row.id}
     />
   );
+  const newTable = (
+    <RowAggregationTable
+      data={data.slice(0, 100)}
+      columnDefinitions={columnDefinitions}
+      getUniqueRowId={row => row.id}
+      getRowGroupId={row => row.network}
+    />
+  );
   return (
-    <div className={css(styles.container)}>
+    <div className={css(styles.bigContainer)}>
       <div style={{height: 400, marginBottom: 100}}>
         {table}
+      </div>
+      <div style={{height: 400, marginBottom: 100}}>
+        {hocNewTable}
       </div>
       <div style={{height: 400, marginBottom: 100}}>
         {newTable}
