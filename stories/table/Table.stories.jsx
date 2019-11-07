@@ -15,12 +15,18 @@ import TextCell from "../../table/TextCell";
 import InteractableCell from "../../table/InteractableCell";
 import Text from "../../Text";
 import NotificationModal from "../../modal/NotificationModal";
-import NewTable, {withColumnCustomization, withRowSelection, withSorting} from "../../table/NewTable";
+import NewTable, {
+  withColumnCustomization,
+  withRowAggregation,
+  withRowSelection,
+  withSorting
+} from "../../table/NewTable";
 
 const ColumnCustomizationTable = withColumnCustomization(NewTable);
 const RowSelectionTable = withRowSelection(NewTable);
 const SortingTable = withSorting(NewTable);
 const SelectionSortTable = withRowSelection(withSorting(NewTable));
+const RowAggregationTable = withRowAggregation(NewTable, row => row.network)
 
 const columnDefinitions = [
   {
@@ -369,8 +375,24 @@ const RowAggregationHoist = () => {
       onSortByChange={setSortBy}
     />
   );
-  return <div className={css(styles.container)}>{table}</div>;
-}
+  const newTable = (
+    <RowAggregationTable
+      data={data.slice(0, 100)}
+      columnDefinitions={columnDefinitions}
+      getUniqueRowId={row => row.id}
+    />
+  );
+  return (
+    <div className={css(styles.container)}>
+      <div style={{height: 400, marginBottom: 100}}>
+        {table}
+      </div>
+      <div style={{height: 400, marginBottom: 100}}>
+        {newTable}
+      </div>
+    </div>
+  );
+};
 
 const RowAggregationSelectionHoist = () => {
   const [expandedRows, setExpandedRows] = React.useState(new Set());
@@ -397,8 +419,24 @@ const RowAggregationSelectionHoist = () => {
       onSortByChange={setSortBy}
     />
   );
-  return <div className={css(styles.container)}>{table}</div>;
-}
+  const newTable = (
+    <NewTable
+      data={data.slice(0, 100)}
+      columnDefinitions={columnDefinitions}
+      getUniqueRowId={row => row.id}
+    />
+  );
+  return (
+    <div className={css(styles.container)}>
+      <div style={{height: 400, marginBottom: 100}}>
+        {table}
+      </div>
+      <div style={{height: 400, marginBottom: 100}}>
+        {newTable}
+      </div>
+    </div>
+  );
+};
 
 const PinnedColumnsHoist = () => {
   const [sortBy, setSortBy] = React.useState({

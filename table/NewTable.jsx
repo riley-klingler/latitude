@@ -4,23 +4,16 @@
  * @flow strict-local
  */
 import * as React from "react";
-import {FixedSizeList} from "react-window";
-import InfiniteLoader from "react-window-infinite-loader";
 import {StyleSheet, css} from "aphrodite";
-import AutoSizer from "react-virtualized-auto-sizer";
 
 import PopupWithClickAway from "../popup/PopupWithClickAway";
 import IconButton from "../button/IconButton";
-import Tooltip from "../Tooltip";
 import Checkbox from "../Checkbox";
 import CheckboxList from "../CheckboxList";
-import invariant from "../tools/invariant";
 import Text from "../Text";
 import Icon from "../Icon";
-import Loader from "../Loader";
 import colors from "../colors";
 import Clickable from "../base_candidate/Clickable";
-import RowContext from "./RowContext";
 import InteractableCell from "./InteractableCell";
 
 export type Style = { [string]: string | number };
@@ -64,18 +57,6 @@ type Column<T> = {
   width: number,
 };
 
-type FlattenedRow<T> =
-  | {
-  id: string,
-  isAggregate: true,
-  rows: $ReadOnlyArray<T>,
-}
-  | {
-  id: string,
-  isAggregate: false,
-  row: T,
-};
-
 export const HEADER_HEIGHT = 32;
 export const DEFAULT_ROW_HEIGHT = 44;
 export const COLUMN_PADDING = 20;
@@ -107,25 +88,12 @@ export default function NewTable<T>({
   data,
   columnDefinitions,
   getUniqueRowId,
-  rowSelectionEnabled = false,
-  rowSelectionPinned = true,
-  onSelectedRowsChange = noop,
-  selectedRows = new Set(),
-  rowHeight = DEFAULT_ROW_HEIGHT,
   pinnedColumns = [],
-  columnCustomizationEnabled = false,
-  hiddenColumns = [],
-  onHiddenColumnsChange = noop,
-  sortBy,
-  onSortByChange = noop,
   rowAggregationEnabled = false,
   rowAggregationPinned = true,
   getRowGroupId,
   expandedRows = new Set(),
   onExpandedRowsChange = noop,
-  hasNextPage = false,
-  isNextPageLoading = false,
-  loadNextPage = noop,
   rowClickingEnabled = false,
   clickedRow,
   onRowClick = null,
@@ -133,6 +101,8 @@ export default function NewTable<T>({
   clickedRowGroup,
   onRowGroupClick = noop,
   isLoading = false,
+  customRow = null,
+  hideHeader = null,
 }: {
   /** An array of data for each row in the table */
   +data: $ReadOnlyArray<T>,
@@ -188,29 +158,87 @@ export default function NewTable<T>({
   +onRowGroupClick?: string => void,
   /** Initial results are loading */
   +isLoading?: boolean,
+  +customRow?: any => React.Node | null,
+  +hideHeader?: boolean,
 }) {
-
+  const RenderRow = customRow ? CustomRow : Row;
   const width = columnDefinitions.reduce((sum, cell) => sum + cell.width, 0) + columnDefinitions.length * 40;
   return (
     <div style={{overflow: "scroll", maxHeight: "100%"}}>
       <div style={{width}}>
         <table style={{width: "100%", tableLayout: "fixed", borderCollapse: 'collapse'}}>
-          <HeaderRow columns={columnDefinitions} />
+          {hideHeader ? null : <HeaderRow columns={columnDefinitions} />}
           <tbody>
-          {/*this was just to prove column spacing works*/}
-          {/*<tr><td colSpan={columnDefinitions.length}>*/}
-          {/*  <Row key={`1${getUniqueRowId(data[0])}`} columns={columnDefinitions} data={data[0]}/>*/}
-          {/*</td></tr>*/}
-          {/*<tr><td colSpan={columnDefinitions.length}><div>whatever i want?</div></td></tr>*/}
           {data.map(item => {
             const rowId = getUniqueRowId(item);
-            return <Row key={rowId} columns={columnDefinitions} data={item} onClick={onRowClick.bind(null, rowId)}/>
+            const props = {
+              columnDefinitions,
+              rowData: item,
+              onClick: onRowClick?.bind(null, rowId),
+            };
+            if(customRow) props.children = customRow;
+            return <RenderRow key={rowId} {...props} />
           })}
           </tbody>
         </table>
       </div>
     </div>
   );
+}
+
+type CustomRowProps = {|
+  +children: React.Node,
+  +columnDefinitions: ColumnDefinition,
+  +rowData: T,
+|};
+
+export function CustomRow({children, columnDefinitions, rowData}: CustomRowProps) {
+  return (
+    <tr className={css(styles.row)}>
+      <td colSpan={columnDefinitions.length}>
+        {children({columnDefinitions, rowData})}
+      </td>
+    </tr>
+  )
+}
+
+function groupRows<T>(
+  rows: $ReadOnlyArray<T>,
+  getRowGroupId: T => string,
+): $ReadOnlyArray<$ReadOnlyArray<T>> {
+  const rowGroupIdToRows = new Map<string, $ReadOnlyArray<T>>();
+  rows.forEach(row => {
+    const rowGroupId = getRowGroupId(row);
+    const rows = rowGroupIdToRows.get(rowGroupId);
+    rowGroupIdToRows.set(rowGroupId, rows ? [...rows, row] : [row]);
+  });
+  return [...rowGroupIdToRows.values()];
+}
+
+export function withRowAggregation(WrappedTable: NewTable, getRowGroupId) {
+  return function WithColumnCustomization({data, getUniqueRowId, ...props}) {
+    const [rowGroups, setRowGroups] = React.useState(groupRows(data, getRowGroupId));
+
+    function AggregationRow({columnDefinitions, rowData}) {
+      const [showChildren, setShowChildren] = React.useState(false);
+      return (
+        <>
+          <Row columnDefinitions={columnDefinitions} rowData={rowData[0]} onClick={setShowChildren.bind(null, !showChildren)} />
+          {
+            showChildren ?
+            <NewTable
+              data={rowData}
+              columnDefinitions={columnDefinitions}
+              getUniqueRowId={getUniqueRowId}
+              hideHeader={true}
+            /> : null
+          }
+        </>
+      );
+    }
+
+    return <WrappedTable customRow={AggregationRow} data={rowGroups} getUniqueRowId={getUniqueRowId} {...props} />;
+  }
 }
 
 function ColumnCustomization<T>({
@@ -261,10 +289,8 @@ function ColumnCustomization<T>({
 
 function HeaderRow<T>({
   columns,
-  style,
 }: {|
   +columns: $ReadOnlyArray<Column<T>>,
-  +style?: Style,
 |}) {
   // TODO reimplement column pinning
   // const leftPinnedColumns = columns.filter(({pinned}) => pinned === "left");
@@ -281,7 +307,6 @@ function HeaderRow<T>({
               {column.header}
             </Text>
           }
-
         </th>
       ))}
     </tr>
@@ -290,18 +315,12 @@ function HeaderRow<T>({
 }
 
 function Row<T>({
-  data,
-  columns,
-  className,
-  style,
-  onHighlightedChange,
+  rowData,
+  columnDefinitions,
   onClick,
 }: {|
-  +data: T,
-  +columns: $ReadOnlyArray<Column<T>>,
-  +className: string,
-  +style: Style,
-  +onHighlightedChange: boolean => void,
+  +rowData: T,
+  +columnDefinitions: $ReadOnlyArray<Column<T>>,
   +onClick: (() => void) | null,
 |}) {
   // const leftPinnedColumns = columns.filter(({pinned}) => pinned === "left");
@@ -311,13 +330,12 @@ function Row<T>({
   return (
     <Clickable onClick={onClick}>
       <tr className={css(styles.row)}>
-        {columns.map(column => (
-          <td style={{width: column.width + 40, paddingLeft: 20}}>{column.render(data)}</td>
+        {columnDefinitions.map(column => (
+          <td style={{width: column.width + 40, paddingLeft: 20}}>{column.render(rowData)}</td>
         ))}
       </tr>
     </Clickable>
   );
-
 }
 
 // function AggregateRow<T>({
@@ -570,7 +588,7 @@ const styles = StyleSheet.create({
   },
   row: {
     // display: "flex",
-    backgroundColor: colors.white,
+    // backgroundColor: colors.white, this could maybe break some things but it gets us row aggregation highlighting
     borderBottom: `1px solid ${colors.grey30}`,
     borderTop: `1px solid ${colors.grey30}`,
     // minHeight: 44,
