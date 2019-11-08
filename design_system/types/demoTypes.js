@@ -21,7 +21,16 @@ export type Option<K> = {|
   +disabled?: boolean,
 |};
 
-export type DemoType = TextDemo | CodeDemo | FullDemo | LiveDemo;
+export type DemoType = TextDemo | FullDemo | LiveDemo;
+
+export type EditorConfig = {|
+  +initialInline?: boolean,
+  +initialSplit?: boolean,
+  +initialShowCode?: boolean,
+  +showSettings?: boolean,
+  +showScope?: boolean,
+  +codeFirst?: boolean,
+|};
 
 type TextDemo = {|
   type: "text",
@@ -29,14 +38,7 @@ type TextDemo = {|
   description: string,
   fullWidth?: boolean,
 |};
-type CodeDemo = {|
-  type: "code",
-  title: string,
-  description?: string,
-  example: (renderCodeFn: (React.Node) => void) => React.Node,
-  showCode?: boolean,
-  fullWidth?: boolean,
-|};
+
 type LiveDemo = {|
   type: "live",
   fullWidth?: boolean,

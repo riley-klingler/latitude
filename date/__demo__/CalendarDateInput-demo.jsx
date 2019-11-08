@@ -14,36 +14,23 @@ import {
 import CalendarDateInput from "../CalendarDateInput";
 import {type CalendarDate, today} from "../CalendarDateType";
 
+import CalendarDateInputSimple from "./CalendarDateInputSimple.demo";
+import CalendarDateInputDisabled from "./CalendarDateInputDisabled.demo";
+import CalendarDateInputInvalid from "./CalendarDateInputInvalid.demo";
+
 const demos: DemoFile = {
   demos: [
     {
-      type: "code",
-      title: "Simple",
-      description:
-        "CalendarDateInput is both a visual calendar component and a functional text field.",
-      example: elementToCodeFn => (
-        <CalendarDateShim elementToCodeFn={elementToCodeFn} />
-      ),
+      type: "live",
+      example: CalendarDateInputSimple,
     },
     {
-      type: "code",
-      title: "Disabled",
-      example: elementToCodeFn => (
-        <CalendarDateShim
-          elementToCodeFn={elementToCodeFn}
-          demoProps={{disabled: true}}
-        />
-      ),
+      type: "live",
+      example: CalendarDateInputDisabled,
     },
     {
-      type: "code",
-      title: "Invalid",
-      example: elementToCodeFn => (
-        <CalendarDateShim
-          elementToCodeFn={elementToCodeFn}
-          demoProps={{isInvalid: true}}
-        />
-      ),
+      type: "live",
+      example: CalendarDateInputInvalid,
     },
     {
       type: "full",
