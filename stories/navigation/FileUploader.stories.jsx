@@ -5,13 +5,13 @@
 
 import * as React from "react";
 import {storiesOf} from "@storybook/react";
-import {StyleSheet, css} from "aphrodite";
-import sections from "sections";
 import {withKnobs} from "@storybook/addon-knobs";
+import {StyleSheet, css} from "aphrodite";
+import sections from "../sections";
 
-import Text from "Text";
-import Flex from "Flex";
-import FileUploader from "document/FileUploader";
+import Text from "../../Text";
+import Flex from "../../Flex";
+import FileUploader from "../../document/FileUploader";
 
 const stories = storiesOf(
   `${sections.dataEntry}/File Uploader`,

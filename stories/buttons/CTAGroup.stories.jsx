@@ -8,7 +8,7 @@
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
 import {storiesOf} from "@storybook/react";
-import sections from "sections";
+import sections from "../sections";
 
 import DeprecatedVerticalGroup from "../../DeprecatedVerticalGroup";
 import Group from "../../Group";

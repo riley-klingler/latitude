@@ -7,23 +7,23 @@
 import * as React from "react";
 import {storiesOf} from "@storybook/react";
 import {number, withKnobs} from "@storybook/addon-knobs";
-import sections from "sections";
-import FormSection from "form/FormSection";
-import FormRow from "form/FormRow";
-import Rule from "form/Rule";
-import Label from "Label";
-import TextInput from "TextInput";
+import sections from "./sections";
+import FormSection from "../form/FormSection";
+import FormRow from "../form/FormRow";
+import Rule from "../form/Rule";
+import Label from "../Label";
+import TextInput from "../TextInput";
 
-import Text from "Text";
-import TextareaInput from "TextareaInput";
-import DeprecatedVerticalGroup from "DeprecatedVerticalGroup";
-import DeprecatedHorizontalGroup from "DeprecatedHorizontalGroup";
-import FloatInput from "FloatInput";
-import Checkbox from "Checkbox";
-import RadioGroup from "radio/RadioGroup";
-import Button from "button/Button";
-import DateTimeInput from "date/DateTimeInput";
-import InputError from "InputError";
+import Text from "../Text";
+import TextareaInput from "../TextareaInput";
+import DeprecatedVerticalGroup from "../DeprecatedVerticalGroup";
+import DeprecatedHorizontalGroup from "../DeprecatedHorizontalGroup";
+import FloatInput from "../FloatInput";
+import Checkbox from "../Checkbox";
+import RadioGroup from "../radio/RadioGroup";
+import Button from "../button/Button";
+import DateTimeInput from "../date/DateTimeInput";
+import InputError from "../InputError";
 
 const stories = storiesOf(sections.formLayout, module);
 
@@ -502,11 +502,11 @@ stories
         >
           <FormRow columnSpans={[2, 2]}>
             <Label value="Carrier" indicateRequired={true}>
-              
+
               <TextInput onChange={() => undefined} value="" />
             </Label>
             <Label value="Contract" indicateRequired={true}>
-              
+
               <TextInput onChange={() => undefined} value="" />
             </Label>
           </FormRow>
@@ -532,15 +532,15 @@ stories
 
           <FormRow columnSpans={[2]}>
             <Label value="Client" indicateRequired={true}>
-              
+
               <TextInput onChange={() => undefined} value="" />
             </Label>
           </FormRow>
 
           <FormRow columnSpans={[2]}>
             <Label value="Booking number" indicateRequired={true}>
-              
-              <FloatInput onChange={() => undefined} />
+
+              <FloatInput value={null} onChange={() => {}} />
             </Label>
           </FormRow>
         </FormSection>
@@ -563,17 +563,17 @@ stories
         >
           <FormRow columnSpans={[2, 2]}>
             <Label value="From" indicateRequired={true}>
-              
+
               <TextInput onChange={() => undefined} value="" />
             </Label>
             <Label value="To" indicateRequired={true}>
-              
+
               <TextInput onChange={() => undefined} value="" />
             </Label>
           </FormRow>
           <FormRow columnSpans={[1]}>
             <Label value="Departure (+3days)" indicateRequired={true}>
-              
+
               <TextInput onChange={() => undefined} value="" />
             </Label>
           </FormRow>
@@ -618,19 +618,19 @@ stories
           >
             <FormRow columnSpans={[1, 1, 1, 1]}>
               <Label value="Container" indicateRequired={true}>
-                
+
                 <TextInput onChange={() => undefined} value="" />
               </Label>
               <Label value="Quantity" indicateRequired={true}>
-                
+
                 <TextInput onChange={() => undefined} value="" />
               </Label>
               <Label value="Status" indicateRequired={true}>
-                
+
                 <TextInput onChange={() => undefined} value="" />
               </Label>
               <Label value="SO Number" indicateRequired={true}>
-                
+
                 <TextInput onChange={() => undefined} value="" />
               </Label>
             </FormRow>
@@ -699,14 +699,14 @@ stories
         >
           <FormRow columnSpans={[2]}>
             <Label value="Booking office">
-              
+
               <TextInput onChange={() => undefined} value="" />
             </Label>
           </FormRow>
           <FormRow columnSpans={[3]}>
             <Label value="Description of goods">
-              
-              <TextareaInput rows={4} onChange={() => undefined} />
+
+              <TextareaInput rows={4} value="" onChange={() => undefined} />
             </Label>
           </FormRow>
           <FormRow columnSpans={[1, 1, 1]}>
@@ -722,8 +722,8 @@ stories
           </FormRow>
           <FormRow columnSpans={[3]}>
             <Label value="Additional notes and remarks">
-              
-              <TextareaInput rows={4} onChange={() => undefined} />
+
+              <TextareaInput rows={4} value="" onChange={() => undefined} />
             </Label>
           </FormRow>
         </FormSection>

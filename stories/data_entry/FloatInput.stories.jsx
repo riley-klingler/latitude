@@ -7,8 +7,8 @@
 
 import * as React from "react";
 import {storiesOf} from "@storybook/react";
-import sections from "sections";
-import FloatInput from "FloatInput";
+import sections from "../sections";
+import FloatInput from "../../FloatInput";
 
 const stories = storiesOf(`${sections.dataEntry}/Float Input`, module);
 stories.add("FloatInput", () => <FloatInputHoist />);

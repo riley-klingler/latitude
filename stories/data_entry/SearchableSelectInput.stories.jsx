@@ -6,10 +6,10 @@
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
 import {storiesOf} from "@storybook/react/dist/client/preview";
-import sections from "sections";
+import sections from "../sections";
 import SearchableSelectInput, {
   type Option,
-} from "select/SearchableSelectInput";
+} from "../../select/SearchableSelectInput";
 
 const stories = storiesOf(
   `${sections.dataEntry}/SearchableSelectInput`,

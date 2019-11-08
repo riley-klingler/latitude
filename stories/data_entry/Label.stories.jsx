@@ -7,11 +7,11 @@
 
 import * as React from "react";
 import {storiesOf} from "@storybook/react";
-import sections from "sections";
-import Label from "Label";
-import TextInput from "TextInput";
-import HelpTooltip from "HelpTooltip";
-import DeprecatedVerticalGroup from "DeprecatedVerticalGroup";
+import sections from "../sections";
+import Label from "../../Label";
+import TextInput from "../../TextInput";
+import HelpTooltip from "../../HelpTooltip";
+import DeprecatedVerticalGroup from "../../DeprecatedVerticalGroup";
 
 const stories = storiesOf(`${sections.dataEntry}/Label`, module);
 stories.add("basic usage", () => (

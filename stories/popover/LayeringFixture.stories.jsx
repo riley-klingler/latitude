@@ -5,15 +5,15 @@
 
 import * as React from "react";
 import {storiesOf} from "@storybook/react";
-import sections from "sections";
-import ConnectedToaster from "toast/ConnectedToaster";
-import ToastActions from "toast/ToastActions";
-import Group from "Group";
-import PopupWithClickAway from "popup/PopupWithClickAway";
-import CustomModal from "modal/CustomModal";
-import FloatInput from "FloatInput";
-import Button from "button/Button";
-import Text from "Text";
+import sections from "../sections";
+import ConnectedToaster from "../../toast/ConnectedToaster";
+import ToastActions from "../../toast/ToastActions";
+import Group from "../../Group";
+import PopupWithClickAway from "../../popup/PopupWithClickAway";
+import CustomModal from "../../modal/CustomModal";
+import FloatInput from "../../FloatInput";
+import Button from "../../button/Button";
+import Text from "../../Text";
 
 const stories = storiesOf(sections.popover, module);
 

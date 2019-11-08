@@ -6,10 +6,10 @@
 
 import * as React from "react";
 import {storiesOf} from "@storybook/react";
-import sections from "sections";
-import Button from "button/Button";
-import Takeover from "takeover/Takeover";
-import TakeoverLoader from "takeover/TakeoverLoader";
+import sections from "./sections";
+import Button from "../button/Button";
+import Takeover from "../takeover/Takeover";
+import TakeoverLoader from "../takeover/TakeoverLoader";
 
 const stories = storiesOf(sections.takeover, module);
 stories.add("basic usage", () => <TakeoverHoist />);

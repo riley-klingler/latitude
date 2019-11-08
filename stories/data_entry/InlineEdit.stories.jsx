@@ -6,14 +6,14 @@
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
 import {storiesOf} from "@storybook/react";
-import sections from "sections";
-import Group from "Group";
-import InlineEdit from "InlineEdit";
-import TextInput from "TextInput";
-import FloatInput from "FloatInput";
-import SelectInput from "select/SelectInput";
-import TextareaInput from "TextareaInput";
-import Label from "Label";
+import sections from "../sections";
+import Group from "../../Group";
+import InlineEdit from "../../InlineEdit";
+import TextInput from "../../TextInput";
+import FloatInput from "../../FloatInput";
+import SelectInput from "../../select/SelectInput";
+import TextareaInput from "../../TextareaInput";
+import Label from "../../Label";
 
 const stories = storiesOf(sections.interaction, module);
 

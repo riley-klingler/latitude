@@ -7,12 +7,12 @@
 
 import * as React from "react";
 import {storiesOf} from "@storybook/react";
-import sections from "sections";
-import Group from "Group";
-import TextInput from "TextInput";
-import Label from "Label";
-import InputError from "InputError";
 import {boolean, select, text, withKnobs} from "@storybook/addon-knobs";
+import sections from "../sections";
+import Group from "../../Group";
+import TextInput from "../../TextInput";
+import Label from "../../Label";
+import InputError from "../../InputError";
 
 const stories = storiesOf(`${sections.dataEntry}/Text Input`, module);
 stories.addDecorator(withKnobs);

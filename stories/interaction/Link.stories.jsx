@@ -7,11 +7,11 @@
 import * as React from "react";
 import {storiesOf} from "@storybook/react";
 import {select, withKnobs} from "@storybook/addon-knobs";
-import sections from "sections";
-import {ThemeProvider} from "context/ThemeNameContext";
-import Group from "Group";
-import Text from "Text";
-import TextLink from "TextLink";
+import sections from "../sections";
+import {ThemeProvider} from "../../context/ThemeNameContext";
+import Group from "../../Group";
+import Text from "../../Text";
+import TextLink from "../../TextLink";
 
 const stories = storiesOf(`${sections.interaction}/Link`, module);
 stories.addDecorator(withKnobs);

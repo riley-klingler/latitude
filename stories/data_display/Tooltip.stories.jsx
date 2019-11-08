@@ -8,9 +8,9 @@ import * as React from "react";
 import { StyleSheet, css } from "aphrodite";
 import {storiesOf} from "@storybook/react";
 import {withKnobs, select, text, number} from "@storybook/addon-knobs";
-import sections from "sections";
+import sections from "../sections";
 
-import Tooltip from "Tooltip";
+import Tooltip from "../../Tooltip";
 
 const stories = storiesOf(`${sections.dataDisplay}/Tooltip`, module);
 stories.addDecorator(withKnobs);
@@ -21,7 +21,6 @@ stories.add("with full knobs", () => (
   <Tooltip
     placement={select("Placement", placementOptions, "top")}
     overlay={text("Tooltip Text", "I am a tooltip")}
-    trigger={select("Trigger", ["hover", "click"], "hover")}
     mouseEnterDelay={number("Mouse enter delay (seconds)", 0)}
     mouseExitDelay={number("Mouse exit delay (seconds)", 0)}
     maxWidth={number("Max width", null)}

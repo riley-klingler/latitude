@@ -6,20 +6,20 @@
 import * as React from "react";
 import {storiesOf} from "@storybook/react";
 import {boolean, withKnobs} from "@storybook/addon-knobs";
-import sections from "sections";
-import Group from "Group";
-import Text from "Text";
-import FilterButton from "filter/FilterButton";
-import BaseFilter from "filter/BaseFilter";
-import SelectFilter from "filter/SelectFilter";
-import DateRangeFilter from "filter/DateRangeFilter";
+import moment from "moment-timezone";
+import sections from "../sections";
+import Group from "../../Group";
+import Text from "../../Text";
+import FilterButton from "../../filter/FilterButton";
+import BaseFilter from "../../filter/BaseFilter";
+import SelectFilter from "../../filter/SelectFilter";
+import DateRangeFilter from "../../filter/DateRangeFilter";
 import MultiselectFilter, {
   getValueArrayFromFilterValue,
   getFilterValueFromArray,
-} from "filter/MultiselectFilter";
-import SearchableMultiselectFilter from "filter/SearchableMultiselectFilter";
-import {addDaysFromCalendarDate, today} from "date/CalendarDateType";
-import moment from "moment-timezone";
+} from "../../filter/MultiselectFilter";
+import SearchableMultiselectFilter from "../../filter/SearchableMultiselectFilter";
+import {addDaysFromCalendarDate, today} from "../../date/CalendarDateType";
 
 const stories = storiesOf(sections.filter, module);
 stories.addDecorator(withKnobs);

@@ -5,9 +5,9 @@
  */
 import * as React from "react";
 import {storiesOf} from "@storybook/react";
-import sections from "sections";
-import Icon from "Icon";
 import {text, withKnobs} from "@storybook/addon-knobs";
+import sections from "../sections";
+import Icon from "../../Icon";
 
 const stories = storiesOf(`${sections.general}/Icon`, module);
 stories.addDecorator(withKnobs);

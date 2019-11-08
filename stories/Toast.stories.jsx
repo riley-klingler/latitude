@@ -8,14 +8,14 @@
 import * as React from "react";
 import {storiesOf} from "@storybook/react";
 import {withKnobs, select, text} from "@storybook/addon-knobs";
-import sections from "sections";
+import sections from "./sections";
 
-import ConnectedToaster from "toast/ConnectedToaster";
-import ToastActions from "toast/ToastActions";
-import Toast from "toast/Toast";
+import ConnectedToaster from "../toast/ConnectedToaster";
+import ToastActions from "../toast/ToastActions";
+import Toast from "../toast/Toast";
 
-import DeprecatedVerticalGroup from "DeprecatedVerticalGroup";
-import Button from "button/Button";
+import DeprecatedVerticalGroup from "../DeprecatedVerticalGroup";
+import Button from "../button/Button";
 
 const intents = ["none", "success", "danger"];
 

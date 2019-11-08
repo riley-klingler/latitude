@@ -5,13 +5,13 @@
 
 import * as React from "react";
 import {storiesOf} from "@storybook/react";
-import sections from "sections";
+import sections from "../sections";
 
-import DeprecatedVerticalGroup from "DeprecatedVerticalGroup";
-import CustomPopover from "popover/CustomPopover";
-import GeneralPopover from "popover/GeneralPopover";
-import Button from "button/Button";
-import PopupWithClickAway from "popup/PopupWithClickAway";
+import DeprecatedVerticalGroup from "../../DeprecatedVerticalGroup";
+import CustomPopover from "../../popover/CustomPopover";
+import GeneralPopover from "../../popover/GeneralPopover";
+import Button from "../../button/Button";
+import PopupWithClickAway from "../../popup/PopupWithClickAway";
 
 const stories = storiesOf(sections.popover, module);
 

@@ -9,9 +9,9 @@ import {storiesOf} from "@storybook/react";
 import {withKnobs, boolean, select, text} from "@storybook/addon-knobs";
 import {action} from "@storybook/addon-actions";
 
-import sections from "sections";
+import sections from "../sections";
 
-import Pill from "Pill";
+import Pill from "../../Pill";
 
 const stories = storiesOf(`${sections.dataDisplay}/Pill`, module);
 stories.addDecorator(withKnobs);

@@ -9,11 +9,11 @@ import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
 import {storiesOf} from "@storybook/react";
 import {withKnobs} from "@storybook/addon-knobs";
-import sections from "sections";
-import Group from "Group";
-import Banner from "Banner";
-import Button from "button/Button";
-import Text from "Text";
+import sections from "../sections";
+import Group from "../../Group";
+import Banner from "../../Banner";
+import Button from "../../button/Button";
+import Text from "../../Text";
 
 const stories = storiesOf(`${sections.interaction}/Banner`, module);
 stories.addDecorator(withKnobs);

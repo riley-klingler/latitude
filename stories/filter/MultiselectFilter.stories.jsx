@@ -9,11 +9,11 @@ import * as React from "react";
 import {omit} from "lodash";
 import {action} from "@storybook/addon-actions";
 import {storiesOf} from "@storybook/react";
-import sections from "sections";
+import {boolean, withKnobs} from "@storybook/addon-knobs";
+import sections from "../sections";
 import MultiselectFilter, {
   type ValueObj,
-} from "filter/MultiselectFilter";
-import {boolean, withKnobs} from "@storybook/addon-knobs";
+} from "../../filter/MultiselectFilter";
 
 const stories = storiesOf(
   `${sections.filter}/MultiSelect Filter`,

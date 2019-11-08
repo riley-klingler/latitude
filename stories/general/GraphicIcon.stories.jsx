@@ -7,8 +7,8 @@
 import * as React from "react";
 import {storiesOf} from "@storybook/react";
 import {select, withKnobs} from "@storybook/addon-knobs";
-import sections from "sections";
-import GraphicIcon from "GraphicIcon";
+import sections from "../sections";
+import GraphicIcon from "../../GraphicIcon";
 
 const stories = storiesOf(`${sections.general}/Graphic Icon`, module);
 const options = [

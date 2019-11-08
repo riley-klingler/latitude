@@ -7,7 +7,7 @@ import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
 import {storiesOf} from "@storybook/react";
 import {withKnobs} from "@storybook/addon-knobs";
-import sections from "sections";
+import sections from "../sections";
 import DeprecatedHorizontalGroup from "../../DeprecatedHorizontalGroup";
 import DropdownList, {type Option} from "../../select/DropdownList";
 import colors from "../../colors";

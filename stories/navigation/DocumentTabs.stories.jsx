@@ -7,10 +7,10 @@ import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
 import {storiesOf} from "@storybook/react";
 import {withKnobs, boolean} from "@storybook/addon-knobs";
-import sections from "sections";
-import Group from "Group";
-import DocumentTabs from "document/DocumentTabs/DocumentTabs";
-import DocumentUploader from "document/DocumentUploader";
+import sections from "../sections";
+import Group from "../../Group";
+import DocumentTabs from "../../document/DocumentTabs/DocumentTabs";
+import DocumentUploader from "../../document/DocumentUploader";
 
 const stories = storiesOf(`${sections.navigation}`, module);
 stories.addDecorator(withKnobs);

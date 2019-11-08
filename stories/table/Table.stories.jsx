@@ -7,7 +7,7 @@
 import * as React from "react";
 import {css, StyleSheet} from "aphrodite";
 import {storiesOf} from "@storybook/react";
-import sections from "sections";
+import sections from "../sections";
 import Table from "../../table/Table";
 import Button from "../../button/Button";
 import data from "../../table/__demo__/data";

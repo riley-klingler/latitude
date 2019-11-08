@@ -6,13 +6,13 @@
 import * as React from "react";
 import {storiesOf} from "@storybook/react";
 import {withKnobs, select, boolean} from "@storybook/addon-knobs";
-import sections from "sections";
-import {ThemeProvider} from "context/ThemeNameContext";
-import DeprecatedVerticalGroup from "DeprecatedVerticalGroup";
-import DeprecatedHorizontalGroup from "DeprecatedHorizontalGroup";
-import Text from "Text";
-import Button, {type ButtonKind, type ButtonSize} from "button/Button";
-import IconButton from "button/IconButton";
+import sections from "../sections";
+import {ThemeProvider} from "../../context/ThemeNameContext";
+import DeprecatedVerticalGroup from "../../DeprecatedVerticalGroup";
+import DeprecatedHorizontalGroup from "../../DeprecatedHorizontalGroup";
+import Text from "../../Text";
+import Button, {type ButtonKind, type ButtonSize} from "../../button/Button";
+import IconButton from "../../button/IconButton";
 
 storiesOf(`${sections.buttons}`, module)
   .addDecorator(withKnobs)

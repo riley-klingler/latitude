@@ -8,11 +8,11 @@
 import * as React from "react";
 import {storiesOf} from "@storybook/react";
 import {boolean, withKnobs, select} from "@storybook/addon-knobs";
-import {ThemeProvider} from "context/ThemeNameContext";
-import sections from "sections";
-import DeprecatedVerticalGroup from "DeprecatedVerticalGroup";
-import RadioGroup from "radio/RadioGroup";
-import HelpTooltip from "HelpTooltip";
+import sections from "../sections";
+import {ThemeProvider, type Theme} from "../../context/ThemeNameContext";
+import DeprecatedVerticalGroup from "../../DeprecatedVerticalGroup";
+import RadioGroup from "../../radio/RadioGroup";
+import HelpTooltip from "../../HelpTooltip";
 
 storiesOf(`${sections.dataEntry}/Radio Group`, module)
   .addDecorator(withKnobs)
@@ -29,7 +29,7 @@ type Props = {|
   +isInline: boolean,
   +size: "s" | "m" | "l",
   +disabled: boolean,
-  +theme: string,
+  +theme: Theme,
 |};
 
 type State = {|

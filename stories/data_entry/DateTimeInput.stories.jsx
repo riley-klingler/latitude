@@ -8,10 +8,10 @@
 import * as React from "react";
 import {storiesOf} from "@storybook/react";
 import {withKnobs} from "@storybook/addon-knobs";
-import sections from "sections";
-import DateTimeInput from "date/DateTimeInput";
-import type {WallTime} from "date/wallTime";
-import type {CalendarDate} from "date/CalendarDateType";
+import sections from "../sections";
+import DateTimeInput from "../../date/DateTimeInput";
+import type {WallTime} from "../../date/wallTime";
+import type {CalendarDate} from "../../date/CalendarDateType";
 import {getTextInputKnobs} from "./TextInput.stories";
 
 const stories = storiesOf(`${sections.dataEntry}/Date Time Input`, module);

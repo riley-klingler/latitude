@@ -6,11 +6,11 @@
 
 import * as React from "react";
 import {storiesOf} from "@storybook/react";
-import sections from "sections";
-import SelectInput from "select/SelectInput";
-import SearchableSelectInput from "select/SearchableSelectInput";
-import Label from "Label";
 import {boolean, select, text, withKnobs} from "@storybook/addon-knobs";
+import sections from "../sections";
+import SelectInput from "../../select/SelectInput";
+import SearchableSelectInput from "../../select/SearchableSelectInput";
+import Label from "../../Label";
 
 const stories = storiesOf(`${sections.dataEntry}/Select Input`, module);
 stories.addDecorator(withKnobs);

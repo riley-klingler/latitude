@@ -8,10 +8,10 @@
 import * as React from "react";
 import {storiesOf} from "@storybook/react";
 import {boolean, withKnobs} from "@storybook/addon-knobs";
-import sections from "sections";
-import TabHeader from "tabs/TabHeader";
-import Tabs, {Tab} from "tabs/Tabs";
-import Button from "button/Button";
+import sections from "../sections";
+import TabHeader from "../../tabs/TabHeader";
+import Tabs, {Tab} from "../../tabs/Tabs";
+import Button from "../../button/Button";
 
 type State = {|
   active: string,

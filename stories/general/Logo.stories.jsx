@@ -5,13 +5,13 @@
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
 import {storiesOf} from "@storybook/react";
-import sections from "sections";
-
-
-import Logo from "Logo";
-import Text from "Text";
-import DeprecatedVerticalGroup from "DeprecatedVerticalGroup";
 import {number, withKnobs} from "@storybook/addon-knobs";
+import sections from "../sections";
+
+
+import Logo from "../../Logo";
+import Text from "../../Text";
+import DeprecatedVerticalGroup from "../../DeprecatedVerticalGroup";
 
 const stories = storiesOf(`${sections.general}/Logo`, module);
 stories.addDecorator(withKnobs);

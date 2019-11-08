@@ -7,14 +7,14 @@
 import * as React from "react";
 import {storiesOf} from "@storybook/react";
 import {withKnobs, text, select} from "@storybook/addon-knobs";
-import sections from "sections";
+import sections from "../sections";
 
-import {deprecatedPaddingSizeConstants} from "styles/deprecatedWhitespace";
-import DeprecatedVerticalGroup from "DeprecatedVerticalGroup";
-import DeprecatedHorizontalGroup from "DeprecatedHorizontalGroup";
-import Text from "Text";
-import Icon from "Icon";
-import HelpTooltip from "HelpTooltip";
+import {deprecatedPaddingSizeConstants} from "../../styles/deprecatedWhitespace";
+import DeprecatedVerticalGroup from "../../DeprecatedVerticalGroup";
+import DeprecatedHorizontalGroup from "../../DeprecatedHorizontalGroup";
+import Text from "../../Text";
+import Icon from "../../Icon";
+import HelpTooltip from "../../HelpTooltip";
 
 const stories = storiesOf(`${sections.dataDisplay}/Help Tooltip`, module);
 stories.addDecorator(withKnobs);

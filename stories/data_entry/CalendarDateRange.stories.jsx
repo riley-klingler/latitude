@@ -8,17 +8,17 @@
 import * as React from "react";
 import {storiesOf} from "@storybook/react";
 import {boolean, text, withKnobs} from "@storybook/addon-knobs";
-import sections from "sections";
+import moment from "moment-timezone";
+import sections from "../sections";
 import CalendarDateRange, {
   type CalendarDateRangeValue,
-} from "date/CalendarDateRange";
-import {DEFAULT_DATE_FORMAT} from "date/CalendarDateInput";
+} from "../../date/CalendarDateRange";
+import {DEFAULT_DATE_FORMAT} from "../../date/CalendarDateInput";
 import {
   today,
   type CalendarDate,
   addDaysFromCalendarDate,
-} from "date/CalendarDateType";
-import moment from "moment-timezone";
+} from "../../date/CalendarDateType";
 
 const TZ_GUESS = moment.tz.guess();
 

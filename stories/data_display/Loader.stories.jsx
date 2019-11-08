@@ -5,12 +5,12 @@
 
 import * as React from "react";
 import {storiesOf} from "@storybook/react";
-import sections from "sections";
 import {withKnobs, select} from "@storybook/addon-knobs";
-import {ThemeProvider} from "context/ThemeNameContext";
-import Group from "Group";
-import Loader from "Loader";
-import latitudeColors from "colors";
+import sections from "../sections";
+import {ThemeProvider} from "../../context/ThemeNameContext";
+import Group from "../../Group";
+import Loader from "../../Loader";
+import latitudeColors from "../../colors";
 
 const stories = storiesOf(`${sections.interaction}/Loading`, module);
 stories.addDecorator(withKnobs).add("Loader", () => (

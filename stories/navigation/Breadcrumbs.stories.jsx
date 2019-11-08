@@ -1,12 +1,12 @@
 /**
  * TEAM: frontend_infra
  *
- * @flow strict
+ * @flow
  */
 
 import * as React from "react";
 import {storiesOf} from "@storybook/react";
-import {withKnobs, button} from "@storybook/addon-knobs"; // flowlint-line untyped-import:off
+import {withKnobs, button} from "@storybook/addon-knobs";
 import sections from "../sections";
 import Breadcrumbs from "../../Breadcrumbs";
 

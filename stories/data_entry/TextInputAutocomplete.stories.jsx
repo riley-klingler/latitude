@@ -6,9 +6,9 @@
 import * as React from "react";
 import {storiesOf} from "@storybook/react";
 import {withKnobs} from "@storybook/addon-knobs";
-import sections from "sections";
-import TextInputAutocomplete from "TextInputAutocomplete";
-import DeprecatedVerticalGroup from "DeprecatedVerticalGroup";
+import sections from "../sections";
+import TextInputAutocomplete from "../../TextInputAutocomplete";
+import DeprecatedVerticalGroup from "../../DeprecatedVerticalGroup";
 
 const stories = storiesOf(
   `${sections.dataEntry}/Text Input Suggestions`,

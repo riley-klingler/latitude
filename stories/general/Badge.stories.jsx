@@ -8,12 +8,12 @@ import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
 import {storiesOf} from "@storybook/react";
 import {select, text, number, withKnobs} from "@storybook/addon-knobs";
-import sections from "sections";
-import Group from "Group";
-import Badge from "Badge";
-import Text from "Text";
-import Button from "button/Button";
-import Icon from "Icon";
+import sections from "../sections";
+import Group from "../../Group";
+import Badge from "../../Badge";
+import Text from "../../Text";
+import Button from "../../button/Button";
+import Icon from "../../Icon";
 
 const getBadgeNoCountKnobs = () => ({
   buttonText: text("buttonText", "Messages"),

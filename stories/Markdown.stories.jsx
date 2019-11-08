@@ -7,9 +7,9 @@
 import * as React from "react";
 import {storiesOf} from "@storybook/react";
 import {withKnobs, text, boolean} from "@storybook/addon-knobs";
-import sections from "sections";
+import sections from "./sections";
 
-import Markdown from "Markdown";
+import Markdown from "../Markdown";
 
 const stories = storiesOf(sections.general, module);
 stories.addDecorator(withKnobs);

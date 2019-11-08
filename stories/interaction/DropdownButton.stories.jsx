@@ -8,9 +8,9 @@
 import * as React from "react";
 import {storiesOf} from "@storybook/react";
 import {boolean, withKnobs} from "@storybook/addon-knobs";
-import sections from "sections";
-import DropdownButton from "DropdownButton";
-import ToggleButton from "base_candidate/button/ToggleButton";
+import sections from "../sections";
+import DropdownButton from "../../DropdownButton";
+import ToggleButton from "../../base_candidate/button/ToggleButton";
 
 const stories = storiesOf(`${sections.interaction}/Dropdown Button`, module);
 stories.addDecorator(withKnobs);

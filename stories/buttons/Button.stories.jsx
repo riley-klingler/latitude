@@ -7,15 +7,15 @@
 import * as React from "react";
 import {storiesOf} from "@storybook/react";
 import {withKnobs, select, boolean} from "@storybook/addon-knobs";
-import sections from "sections";
-import {ThemeProvider} from "context/ThemeNameContext";
-import DeprecatedHorizontalGroup from "DeprecatedHorizontalGroup";
-import DeprecatedVerticalGroup from "DeprecatedVerticalGroup";
-import Text from "Text";
-import Button from "button/Button";
-import IconButton from "button/IconButton";
-import AnchorButton from "button/AnchorButton";
-import AnchorIconButton from "button/AnchorIconButton";
+import sections from "../sections";
+import {ThemeProvider} from "../../context/ThemeNameContext";
+import DeprecatedHorizontalGroup from "../../DeprecatedHorizontalGroup";
+import DeprecatedVerticalGroup from "../../DeprecatedVerticalGroup";
+import Text from "../../Text";
+import Button from "../../button/Button";
+import IconButton from "../../button/IconButton";
+import AnchorButton from "../../button/AnchorButton";
+import AnchorIconButton from "../../button/AnchorIconButton";
 
 storiesOf(`${sections.buttons}`, module)
   .addDecorator(withKnobs)

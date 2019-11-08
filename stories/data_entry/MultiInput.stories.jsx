@@ -6,10 +6,10 @@
 import * as React from "react";
 import {storiesOf} from "@storybook/react";
 import {withKnobs} from "@storybook/addon-knobs";
-import sections from "sections";
-import Group from "Group";
-import MultiInput from "MultiInput";
-import Label from "Label";
+import sections from "../sections";
+import Group from "../../Group";
+import MultiInput from "../../MultiInput";
+import Label from "../../Label";
 
 const stories = storiesOf(`${sections.dataEntry}/Multi Input`, module);
 stories.addDecorator(withKnobs);

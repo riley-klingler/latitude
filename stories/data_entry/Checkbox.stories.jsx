@@ -9,11 +9,11 @@
 import * as React from "react";
 import {storiesOf} from "@storybook/react";
 import {withKnobs, boolean, select} from "@storybook/addon-knobs";
-import sections from "sections";
-import {ThemeProvider} from "context/ThemeNameContext";
-import Group from "Group";
-import Checkbox from "Checkbox";
-import CheckboxList from "CheckboxList";
+import sections from "../sections";
+import {ThemeProvider, type Theme} from "../../context/ThemeNameContext";
+import Group from "../../Group";
+import Checkbox from "../../Checkbox";
+import CheckboxList from "../../CheckboxList";
 
 storiesOf(`${sections.dataEntry}/Checkbox`, module)
   .addDecorator(withKnobs)
@@ -27,7 +27,7 @@ const getKnobs = () => ({
 
 type Props = {|
   +disabled: boolean,
-  +theme: string,
+  +theme: Theme,
   +showSelectAllOption: boolean,
 |};
 

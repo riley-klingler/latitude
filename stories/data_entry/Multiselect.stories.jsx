@@ -8,9 +8,9 @@
 import * as React from "react";
 import {storiesOf} from "@storybook/react";
 import {text, boolean, withKnobs} from "@storybook/addon-knobs";
-import sections from "sections";
-import Multiselect from "select/MultiselectInput";
-import Label from "Label";
+import sections from "../sections";
+import Multiselect from "../../select/MultiselectInput";
+import Label from "../../Label";
 
 const stories = storiesOf(`${sections.dataEntry}/MultiSelect Input`, module);
 stories.addDecorator(withKnobs);

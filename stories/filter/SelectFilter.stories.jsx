@@ -7,9 +7,9 @@
 
 import * as React from "react";
 import {storiesOf} from "@storybook/react";
-import SelectFilter from "filter/SelectFilter";
-import sections from "sections";
 import {boolean, withKnobs} from "@storybook/addon-knobs";
+import sections from "../sections";
+import SelectFilter from "../../filter/SelectFilter";
 
 const stories = storiesOf(`${sections.filter}/Select Filter`, module);
 stories.addDecorator(withKnobs);
