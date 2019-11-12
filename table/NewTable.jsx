@@ -204,7 +204,7 @@ function groupRows<T>(
 }
 
 export function withRowAggregation(WrappedTable: NewTable, getRowGroupId) {
-  return function WithColumnCustomization({data, getUniqueRowId, ...props}) {
+  return function WithRowAggregation({data, getUniqueRowId, ...props}) {
     const [rowGroups, setRowGroups] = React.useState(groupRows(data, getRowGroupId));
 
     function AggregationRow({columnDefinitions, rowData}) {
