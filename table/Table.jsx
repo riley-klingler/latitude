@@ -726,19 +726,6 @@ export default function Table<T>({
   return (
     <div className={css(styles.table)}>
       <StickyScrollContext.Provider value={StickyScrollPolyfill.context}>
-        {columnCustomizationEnabled ? (
-          <ColumnCustomization
-            columnDefinitions={customizableColumns}
-            visibleColumnIds={visibleColumnDefinitions.map(cd => cd.id)}
-            onVisibleColumnIdsChange={visibleColumnIds => {
-              onHiddenColumnsChange(
-                customizableColumns
-                  .filter(cd => !visibleColumnIds.includes(cd.id))
-                  .map(cd => ({columnId: cd.id}))
-              );
-            }}
-          />
-        ) : null}
         <AutoSizer>
           {({width, height}: {|+width: number, +height: number|}) => (
             <InfiniteLoader
@@ -768,6 +755,19 @@ export default function Table<T>({
             </InfiniteLoader>
           )}
         </AutoSizer>
+        {columnCustomizationEnabled ? (
+          <ColumnCustomization
+            columnDefinitions={customizableColumns}
+            visibleColumnIds={visibleColumnDefinitions.map(cd => cd.id)}
+            onVisibleColumnIdsChange={visibleColumnIds => {
+              onHiddenColumnsChange(
+                customizableColumns
+                  .filter(cd => !visibleColumnIds.includes(cd.id))
+                  .map(cd => ({columnId: cd.id}))
+              );
+            }}
+          />
+        ) : null}
       </StickyScrollContext.Provider>
     </div>
   );
@@ -1222,7 +1222,6 @@ const styles = StyleSheet.create({
     display: "flex",
     alignItems: "center",
     right: 0,
-    zIndex: 3,
     borderTop: `1px solid ${colors.grey30}`,
     borderBottom: `1px solid ${colors.grey30}`,
     borderLeft: `1px solid ${colors.grey30}`,
