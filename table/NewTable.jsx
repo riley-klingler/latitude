@@ -415,8 +415,8 @@ export function withColumnCustomization(WrappedTable: NewTable) {
     const filteredColumnDefinitions = columnDefinitions.filter(({id}) => visibleColumnIds.includes(id));
     return (
       <div style={{position: 'relative', overflow: 'scroll', maxHeight: '100%'}}>
-        <ColumnCustomization columnDefinitions={columnDefinitions} visibleColumnIds={visibleColumnIds} onVisibleColumnIdsChange={setVisibleColumnIds}/>
         <WrappedTable columnDefinitions={filteredColumnDefinitions} {...props} />
+        <ColumnCustomization columnDefinitions={columnDefinitions} visibleColumnIds={visibleColumnIds} onVisibleColumnIdsChange={setVisibleColumnIds}/>
       </div>
       )
   }
@@ -622,8 +622,8 @@ const styles = StyleSheet.create({
     position: "absolute",
     display: "flex",
     alignItems: "center",
+    top: 0,
     right: 0,
-    zIndex: 3,
     borderTop: `1px solid ${colors.grey30}`,
     borderBottom: `1px solid ${colors.grey30}`,
     borderLeft: `1px solid ${colors.grey30}`,
