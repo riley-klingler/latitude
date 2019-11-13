@@ -73,6 +73,7 @@ export default class HelpTooltip extends React.PureComponent<Props> {
           </div>
         }
         placement={position}
+        triggerClassName={css(styles.tooltipTrigger)}
       >
         <div className={css(styles.iconContainer)}>
           <Icon
@@ -90,7 +91,7 @@ export default class HelpTooltip extends React.PureComponent<Props> {
       return tooltip;
     }
 
-    const offsetBottom = sizes[size].svgSize / 2;
+    const offsetBottom = sizes[size].svgSize / 2 - 1;
 
     return (
       <span
@@ -125,5 +126,8 @@ const styles = StyleSheet.create({
   icon: {
     position: "absolute",
     left: 0,
+  },
+  tooltipTrigger: {
+    display: "inline-flex",
   },
 });
