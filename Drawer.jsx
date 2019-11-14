@@ -6,7 +6,7 @@
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
 
-import { CSSTransition } from "react-transition-group";
+import {CSSTransition} from "react-transition-group";
 import IconButton from "./button/IconButton";
 import Text from "./Text";
 import Group from "./Group";
@@ -14,7 +14,11 @@ import Portal from "./Portal";
 import {zIndices} from "./tools/zIndices";
 import colors from "./colors";
 
-const DRAWER_WIDTH = 400;
+const DRAWER_WIDTHS = {
+  s: 400,
+  m: 500,
+};
+
 const TRANSITION_DELAY = 320;
 const WORKSPACE_DEFAULT_NAV_HEIGHT = 56;
 
@@ -24,6 +28,7 @@ type Props = {|
   +navOffset?: number,
   +isOpen: boolean,
   +onClose: () => void,
+  +width?: $Keys<typeof DRAWER_WIDTHS>,
 |};
 
 /**
@@ -38,11 +43,13 @@ function Drawer({
   navOffset = WORKSPACE_DEFAULT_NAV_HEIGHT,
   isOpen,
   onClose,
+  width = "s",
 }: Props) {
   if (!isOpen) {
     return null;
   }
 
+  const styles = getStyles(width);
   return (
     <Portal>
       <div className={css(styles.drawerWrapper)}>
@@ -91,50 +98,52 @@ function Drawer({
   );
 }
 
-const styles = StyleSheet.create({
-  drawerWrapper: {
-    position: "absolute",
-    top: 0,
-    right: 0,
-    bottom: 0,
-    width: DRAWER_WIDTH,
-  },
-  container: {
-    width: `${DRAWER_WIDTH}px`,
-    position: "fixed",
-    backgroundColor: colors.white,
-    boxShadow: "-8px 0px 16px rgba(0, 0, 0, 0.2)",
-    pointerEvents: "all",
-    zIndex: zIndices.zIndexPageOverlay.value,
-    display: "flex",
-    flexDirection: "column",
-  },
-  header: {
-    padding: "12px",
-    borderBottom: `1px solid ${colors.grey30}`,
-  },
-  body: {
-    flex: 1,
-    overflowY: "scroll",
-  },
-  transitionGroup: {
-    display: "flex",
-    justifyContent: "flex-end",
-  },
-  drawerEnter: {
-    right: `-${DRAWER_WIDTH}px`,
-  },
-  drawerEnterActive: {
-    right: "0px",
-    transition: `right ${TRANSITION_DELAY}ms cubic-bezier(0.645, 0.045, 0.355, 1.000)`,
-  },
-  drawerExit: {
-    right: "0px",
-  },
-  drawerExitActive: {
-    right: `-${DRAWER_WIDTH}px`,
-    transition: `right ${TRANSITION_DELAY}ms cubic-bezier(0.645, 0.045, 0.355, 1.000)`,
-  },
-});
+function getStyles(width: $Keys<typeof DRAWER_WIDTHS>) {
+  return StyleSheet.create({
+    drawerWrapper: {
+      position: "absolute",
+      top: 0,
+      right: 0,
+      bottom: 0,
+      width: DRAWER_WIDTHS[width],
+    },
+    container: {
+      width: `${DRAWER_WIDTHS[width]}px`,
+      position: "fixed",
+      backgroundColor: colors.white,
+      boxShadow: "-8px 0px 16px rgba(0, 0, 0, 0.2)",
+      pointerEvents: "all",
+      zIndex: zIndices.zIndexPageOverlay.value,
+      display: "flex",
+      flexDirection: "column",
+    },
+    header: {
+      padding: "12px",
+      borderBottom: `1px solid ${colors.grey30}`,
+    },
+    body: {
+      flex: 1,
+      overflowY: "scroll",
+    },
+    transitionGroup: {
+      display: "flex",
+      justifyContent: "flex-end",
+    },
+    drawerEnter: {
+      right: `-${DRAWER_WIDTHS[width]}px`,
+    },
+    drawerEnterActive: {
+      right: "0px",
+      transition: `right ${TRANSITION_DELAY}ms cubic-bezier(0.645, 0.045, 0.355, 1.000)`,
+    },
+    drawerExit: {
+      right: "0px",
+    },
+    drawerExitActive: {
+      right: `-${DRAWER_WIDTHS[width]}px`,
+      transition: `right ${TRANSITION_DELAY}ms cubic-bezier(0.645, 0.045, 0.355, 1.000)`,
+    },
+  });
+}
 
 export default Drawer;
