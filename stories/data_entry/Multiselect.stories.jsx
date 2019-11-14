@@ -11,6 +11,8 @@ import {text, boolean, withKnobs} from "@storybook/addon-knobs";
 import sections from "../sections";
 import Multiselect from "../../select/MultiselectInput";
 import Label from "../../Label";
+import ToastActions from "../../toast/ToastActions";
+import ConnectedToaster from "../../toast/ConnectedToaster";
 
 const stories = storiesOf(`${sections.dataEntry}/MultiSelect Input`, module);
 stories.addDecorator(withKnobs);
@@ -22,6 +24,7 @@ export const getMultiselectKnobs = () => ({
   disabled: boolean("disabled", false),
   isInvalid: boolean("isInvalid", false),
   someSelectedUnits: text("someSelectedUnits", undefined),
+  showFocusCallbacks: boolean("showFocusCallbacks", false),
 });
 
 const options = [
@@ -78,15 +81,32 @@ class MultiselectHoist extends React.Component<
   handleRecordChange = (values: $ReadOnlyArray<{not_key: string}>) => {
     this.setState({values});
   };
+  handleOnBlur = () => {
+    if (this.props.showFocusCallbacks) {
+      ToastActions.show({intent: "success", message: "OnBlur triggered"}, 1000);
+    }
+  };
+
+  handleOnFocus = () => {
+    if (this.props.showFocusCallbacks) {
+      ToastActions.show(
+        {intent: "success", message: "OnFocus triggered"},
+        1000
+      );
+    }
+  };
 
   render() {
     return (
       <div style={{width: 200}}>
+        <ConnectedToaster />
         <Label value="Record multiselect">
           <Multiselect
-            values={this.state.values}
+            value={this.state.values}
             options={options}
             onChange={this.handleRecordChange}
+            onBlur={this.handleOnBlur}
+            onFocus={this.handleOnFocus}
             toKeyFn={option => option.not_key}
             {...this.props}
           />

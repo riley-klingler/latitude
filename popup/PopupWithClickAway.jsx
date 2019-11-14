@@ -159,6 +159,8 @@ type Props = {|
   +children: PWCAChild,
   /** Allows the Popup to be closed with the escape key when the popup is focused */
   +escToClose: boolean,
+  +onClose: () => void,
+  +onOpen: () => void,
 |};
 type State = {
   isOpen: boolean,
@@ -167,6 +169,8 @@ type State = {
 export default class PopupWithClickAway extends React.Component<Props, State> {
   static defaultProps = {
     escToClose: false,
+    onClose: () => {},
+    onOpen: () => {},
   };
 
   state = {
@@ -175,6 +179,7 @@ export default class PopupWithClickAway extends React.Component<Props, State> {
 
   openPopup = () => {
     this.setState({isOpen: true});
+    this.props.onOpen();
   };
   closePopup = () => {
     // There might be multiple PopupWithClickAway on the same page. This happens in the case of
@@ -184,11 +189,17 @@ export default class PopupWithClickAway extends React.Component<Props, State> {
     // call prevents unnecessary calls to reset state to false.
     if (this.state.isOpen) {
       this.setState({isOpen: false});
+      this.props.onClose();
     }
   };
 
   togglePopup = () => {
     this.setState({isOpen: !this.state.isOpen});
+    if (this.state.isOpen) {
+      this.props.onClose();
+    } else {
+      this.props.onOpen();
+    }
   };
 
   handleKeyDown = (e: KeyboardEvent) => {

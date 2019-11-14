@@ -39,6 +39,8 @@ export type Props<K> = PopupWithClickAwayProps &
     options: $ReadOnlyArray<Option<K>>,
     value: $ReadOnlyArray<K>,
     onChange: (value: Array<K>) => void,
+    onBlur: () => void,
+    onFocus: () => void,
     /** if the items you are providing are not strings, you need to provide a function that takes an object of type K and generates strings so we can dedupe / tell what's selected. */
     toKeyFn: K => MultiselectKey,
   };
@@ -164,7 +166,10 @@ class MultiselectInputClass<K> extends React.PureComponent<AllProps<K>> {
     );
     const displayText = getDisplayText(this.props, simplifiedValues);
     return (
-      <PopupWithClickAway>
+      <PopupWithClickAway
+        onClose={this.props.onBlur}
+        onOpen={this.props.onFocus}
+      >
         {(Target, Popup, {isOpen, togglePopup}) => (
           <>
             <Target>
