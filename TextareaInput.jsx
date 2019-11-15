@@ -84,8 +84,10 @@ export default function TextareaInput({
     if (typeof rows === "object" && _inputRef.current != null) {
       const {min, max} = rows;
 
-      // set rows to zero to properly measure scrollHeight
-      _inputRef.current.rows = 0;
+      // set rows to one to properly measure scrollHeight
+      // note: we measure scrollHeight with rows set to one since rows must be a positive number greater than zero
+      // https://html.spec.whatwg.org/multipage/form-elements.html#the-textarea-element
+      _inputRef.current.rows = 1;
 
       const textRowsCount = Math.ceil(
         (_inputRef.current.scrollHeight - VERTICAL_PADDING) /
