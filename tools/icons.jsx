@@ -261,6 +261,14 @@ const _iconData = {
       "M57 9H7a1 1 0 0 0-1 1v44.491a.5.5 0 0 0 .861.353L18.977 43H57a1 1 0 0 0 1-1V10a1 1 0 0 0-1-1z",
     ],
   },
+  compare: {
+    name: "Compare",
+    category: "action",
+    description: "Split view",
+    path: [
+      "M7 6H57C57.5523 6 58 6.44772 58 7V57C58 57.5523 57.5523 58 57 58H7C6.44772 58 6 57.5523 6 57V7C6 6.44772 6.44772 6 7 6ZM51 52C51.5523 52 52 51.5523 52 51V13C52 12.4477 51.5523 12 51 12H32V52H51Z",
+    ],
+  },
   compass: {
     name: "Compass",
     category: "industry",
