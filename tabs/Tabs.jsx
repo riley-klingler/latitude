@@ -8,7 +8,7 @@ import {css, StyleSheet} from "aphrodite";
 import invariant from "../tools/invariant";
 import Loader from "../Loader";
 
-import TabHeader, {type AllowedButton} from "./TabHeader";
+import TabHeader from "./TabHeader";
 
 const styles = StyleSheet.create({
   container: {
@@ -35,9 +35,9 @@ type Props = {|
   /** onTabChange is called with the ID when the user navigates to a tab */
   +onTabChange: string => void,
   /** a button displayed on the right side, optional */
-  +actionButton?: AllowedButton,
+  +components?: React.Node,
   /** children are <Tab /> components only. See TabProps for the Props required by <Tab /> */
-  +children: React.ChildrenArray<React.Element<typeof Tab>>,
+  +children: React.ChildrenArray<?React.Element<typeof Tab>>,
 |};
 
 type State = {|
@@ -123,7 +123,7 @@ class Tabs extends React.PureComponent<Props, State> {
 
   render() {
     const {currentTab, prevTab} = this.state;
-    const {actionButton, onTabChange} = this.props;
+    const {components, onTabChange} = this.props;
 
     const tabs = React.Children.map(this.props.children, child => ({
       id: child.props.id,
@@ -154,7 +154,7 @@ class Tabs extends React.PureComponent<Props, State> {
           tabs={tabsForHeader}
           activeTab={this.state.currentTab}
           onTabChange={onTabChange}
-          actionButton={actionButton}
+          components={components}
         />
         <React.Suspense fallback={<Loader isFullWidth={true} loaded={false} />}>
           <React.Suspense fallback={fallbackComponent}>

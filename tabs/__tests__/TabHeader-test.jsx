@@ -40,7 +40,7 @@ describe("TabHeader", () => {
 
   it("renders right button", () => {
     const component = shallowTabHeader({
-      actionButton: <Button intent="none" kind="hollow" label="Cancel" />,
+      components: <Button intent="none" kind="hollow" label="Cancel" />,
     });
     expect(component.find("Button").props().kind).toBe("hollow");
   });

@@ -46,7 +46,7 @@ class HeaderHoist extends React.Component<Props, State> {
             onTabChange={this.handleTabChange}
             activeTab={this.state.active}
             tabs={tabs}
-            actionButton={<Button intent="none" kind="hollow" label="Cancel" />}
+            components={<Button intent="none" kind="hollow" label="Cancel" />}
           />
         </div>
       );

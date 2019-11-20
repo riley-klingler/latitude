@@ -14,7 +14,7 @@ type State = {|
 |};
 
 type Props = {|
-  +actionButton: boolean,
+  +components: boolean,
   +centerTabs: boolean,
   +elementToCodeFn: React.Node => void,
 |};
@@ -29,7 +29,7 @@ class HeaderHoist extends React.Component<Props, State> {
   state = {active: "Indian"};
 
   static defaultProps = {
-    actionButton: false,
+    components: false,
     centerTabs: false,
   };
 
@@ -39,13 +39,13 @@ class HeaderHoist extends React.Component<Props, State> {
 
   render() {
     let element;
-    if (this.props.actionButton) {
+    if (this.props.components) {
       element = (
         <TabHeader
           onTabChange={this.handleTabChange}
           activeTab={this.state.active}
           tabs={tabs}
-          actionButton={<Button intent="none" kind="hollow" label="Cancel" />}
+          components={<Button intent="none" kind="hollow" label="Cancel" />}
           centerTabs={this.props.centerTabs}
         />
       );
@@ -75,7 +75,7 @@ const demos: DemoFile = {
         <HeaderHoist {...demoProps} elementToCodeFn={fn} />
       ),
       knobs: {
-        actionButton: bool(false),
+        components: bool(false),
         centerTabs: bool(false),
       },
     },

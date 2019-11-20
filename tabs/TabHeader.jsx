@@ -16,9 +16,6 @@ import {css, StyleSheet} from "aphrodite";
 import invariant from "../tools/invariant";
 import {border, include, typeScale, fontWeights} from "../styles/index";
 
-import typeof Button from "../button/Button";
-import typeof IconButton from "../button/IconButton";
-import typeof AnchorButton from "../button/AnchorButton";
 import latitudeColors from "../colors";
 import {margin, padding} from "../styles/whitespace";
 
@@ -27,9 +24,6 @@ type Tab = {|
   +id: string,
 |};
 
-type ButtonTypes = Button | IconButton | AnchorButton;
-export type AllowedButton = React.Element<ButtonTypes>;
-
 type Props = {|
   /** array of tabs of type {name: string, id: string} */
   +tabs: $ReadOnlyArray<Tab>,
@@ -37,8 +31,8 @@ type Props = {|
   +activeTab: string,
   /** onTabChange is called with the ID when the user navigates to a tab */
   +onTabChange: string => void,
-  /** a button displayed on the right side, optional */
-  +actionButton?: AllowedButton,
+  /** An open area on the right end of TabHeader usually meant for button(s) */
+  +components?: React.Node,
   /** whether the tabs will be centered or not */
   +centerTabs?: boolean,
 |};
@@ -54,7 +48,7 @@ export default function TabHeader({
   tabs,
   activeTab,
   onTabChange,
-  actionButton,
+  components,
   centerTabs,
 }: Props) {
   invariant(
@@ -75,7 +69,7 @@ export default function TabHeader({
           />
         ))}
       </div>
-      <div>{actionButton}</div>
+      <div>{components}</div>
     </div>
   );
 }
