@@ -328,14 +328,25 @@ export default function Table<T>({
     });
   }
 
+  const flattenRow = (row: T): FlattenedRow<T> => ({
+    id: getUniqueRowId(row),
+    isAggregate: false,
+    row,
+  });
+
+  const flattenRowGroup = (rowGroup: $ReadOnlyArray<T>): FlattenedRow<T> => {
+    invariant(getRowGroupId);
+    return {
+      id: getRowGroupId(rowGroup[0]),
+      isAggregate: true,
+      rows: rowGroup,
+    };
+  };
+
   function flattenRows(
     rows: $ReadOnlyArray<T>
   ): $ReadOnlyArray<FlattenedRow<T>> {
-    return rows.map(row => ({
-      id: getUniqueRowId(row),
-      isAggregate: false,
-      row,
-    }));
+    return rows.map(flattenRow);
   }
 
   function flattenRowGroups(
@@ -345,11 +356,9 @@ export default function Table<T>({
     return rowGroups.reduce(
       (rows, rowGroup) => [
         ...rows,
-        {
-          id: getRowGroupId(rowGroup[0]),
-          isAggregate: true,
-          rows: rowGroup,
-        },
+        rowGroup.length > 1
+          ? flattenRowGroup(rowGroup)
+          : flattenRow(rowGroup[0]),
         ...(expandedRows.has(getRowGroupId(rowGroup[0]))
           ? flattenRows(rowGroup)
           : []),
