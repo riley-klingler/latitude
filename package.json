@@ -112,7 +112,7 @@
     "ci-parallel-vars": "^1.0.0",
     "css-loader": "^1.0.1",
     "eslint-plugin-autofix": "^0.0.9",
-    "flow-bin": "0.111.1",
+    "flow-bin": "0.111.3",
     "flow-node": "^1.2.3",
     "husky": "^1.1.1",
     "jest-environment-jsdom": "^24.0.0",
