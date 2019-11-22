@@ -29,6 +29,7 @@ export type ColumnDefinition<T> = {|
   +header: string,
   +render: T => React.Node,
   +renderAggregate?: ($ReadOnlyArray<T>) => React.Node,
+  +renderExpanded?: T => React.Node,
   +width: number,
   +comparator?: (T, T, "asc" | "desc") => number,
   +aggregateComparator?: ($ReadOnlyArray<T>, $ReadOnlyArray<T>) => number,
@@ -59,6 +60,9 @@ type Column<T> = {
   AggregateCell: React.ComponentType<{|
     +rows: $ReadOnlyArray<T>,
   |}>,
+  ExpandedCell: React.ComponentType<{|
+    +row: T,
+  |}>,
   pinned: "left" | "right" | null,
   width: number,
 };
@@ -66,12 +70,12 @@ type Column<T> = {
 type FlattenedRow<T> =
   | {
       id: string,
-      isAggregate: true,
+      type: "aggregate",
       rows: $ReadOnlyArray<T>,
     }
   | {
       id: string,
-      isAggregate: false,
+      type: "default" | "expanded",
       row: T,
     };
 
@@ -330,7 +334,13 @@ export default function Table<T>({
 
   const flattenRow = (row: T): FlattenedRow<T> => ({
     id: getUniqueRowId(row),
-    isAggregate: false,
+    type: "default",
+    row,
+  });
+
+  const flattenExpandedRow = (row: T): FlattenedRow<T> => ({
+    id: getUniqueRowId(row),
+    type: "expanded",
     row,
   });
 
@@ -338,7 +348,7 @@ export default function Table<T>({
     invariant(getRowGroupId);
     return {
       id: getRowGroupId(rowGroup[0]),
-      isAggregate: true,
+      type: "aggregate",
       rows: rowGroup,
     };
   };
@@ -360,7 +370,7 @@ export default function Table<T>({
           ? flattenRowGroup(rowGroup)
           : flattenRow(rowGroup[0]),
         ...(expandedRows.has(getRowGroupId(rowGroup[0]))
-          ? flattenRows(rowGroup)
+          ? rowGroup.map(flattenExpandedRow)
           : []),
       ],
       []
@@ -370,6 +380,27 @@ export default function Table<T>({
   const flattenedRows = rowAggregationEnabled
     ? flattenRowGroups(sortRowGroups(groupRows(sortedRows)))
     : flattenRows(sortedRows);
+
+  const nonaggregatedSelectionCell = ({row}) => (
+    <div
+      className={css(styles.rowSelectionCell)}
+      onClick={handleCellClick}
+      role="presentation"
+    >
+      <Checkbox
+        checked={selectedRows.has(getUniqueRowId(row))}
+        onChange={isSelected => {
+          const newSelection = new Set(selectedRows);
+          if (isSelected) {
+            newSelection.add(getUniqueRowId(row));
+          } else {
+            newSelection.delete(getUniqueRowId(row));
+          }
+          onSelectedRowsChange(newSelection);
+        }}
+      />
+    </div>
+  );
 
   const rowSelectionColumn = {
     id: "row_selection",
@@ -392,26 +423,8 @@ export default function Table<T>({
         />
       </div>
     ),
-    Cell: ({row}) => (
-      <div
-        className={css(styles.rowSelectionCell)}
-        onClick={handleCellClick}
-        role="presentation"
-      >
-        <Checkbox
-          checked={selectedRows.has(getUniqueRowId(row))}
-          onChange={isSelected => {
-            const newSelection = new Set(selectedRows);
-            if (isSelected) {
-              newSelection.add(getUniqueRowId(row));
-            } else {
-              newSelection.delete(getUniqueRowId(row));
-            }
-            onSelectedRowsChange(newSelection);
-          }}
-        />
-      </div>
-    ),
+    Cell: nonaggregatedSelectionCell,
+    ExpandedCell: nonaggregatedSelectionCell,
     AggregateCell: ({rows}) => (
       <div
         className={css(styles.rowSelectionCell)}
@@ -444,6 +457,7 @@ export default function Table<T>({
         : null,
     Header: () => <div className={css(styles.rowExpansionCell)} />,
     Cell: () => <div className={css(styles.rowExpansionCell)} />,
+    ExpandedCell: () => <div className={css(styles.rowExpansionCell)} />,
     AggregateCell: ({rows}) => {
       invariant(getRowGroupId);
       return (
@@ -487,6 +501,7 @@ export default function Table<T>({
         header,
         render,
         renderAggregate,
+        renderExpanded,
         width,
         headerAlignment,
         comparator,
@@ -494,6 +509,19 @@ export default function Table<T>({
         tooltipText,
       }) => {
         const pin = pinnedColumns.find(({columnId}) => columnId === id);
+
+        const CellDiv = ({children}) => (
+          <div
+            key={id}
+            className={css(styles.cell)}
+            style={{
+              width: width + 2 * COLUMN_PADDING,
+            }}
+          >
+            {children}
+          </div>
+        );
+
         return {
           id,
           Header: () =>
@@ -524,27 +552,16 @@ export default function Table<T>({
                 tooltipText={tooltipText}
               />
             ),
-          Cell: ({row}) => (
-            <div
-              key={id}
-              className={css(styles.cell)}
-              style={{
-                width: width + 2 * COLUMN_PADDING,
-              }}
-            >
-              {render(row)}
-            </div>
-          ),
+          Cell: ({row}) => <CellDiv>{render(row)}</CellDiv>,
           AggregateCell: ({rows}) => (
-            <div
-              key={id}
-              className={css(styles.cell)}
-              style={{
-                width: width + 2 * COLUMN_PADDING,
-              }}
-            >
+            <CellDiv>
               {renderAggregate ? renderAggregate(rows) : render(rows[0])}
-            </div>
+            </CellDiv>
+          ),
+          ExpandedCell: ({row}) => (
+            <CellDiv>
+              {renderExpanded ? renderExpanded(row) : render(row)}
+            </CellDiv>
           ),
           pinned: pin ? pin.align : null,
           width: width + 2 * COLUMN_PADDING,
@@ -597,7 +614,7 @@ export default function Table<T>({
     if (!flattenedRow) {
       return false;
     }
-    if (flattenedRow.isAggregate) {
+    if (flattenedRow.type === "aggregate") {
       return flattenedRow.rows.every(row =>
         selectedRows.has(getUniqueRowId(row))
       );
@@ -609,7 +626,7 @@ export default function Table<T>({
     if (!flattenedRow) {
       return false;
     }
-    if (flattenedRow.isAggregate) {
+    if (flattenedRow.type === "aggregate") {
       return clickedRowGroup === flattenedRow.id;
     }
     return clickedRow === flattenedRow.id;
@@ -672,9 +689,12 @@ export default function Table<T>({
     const isNextClicked = isRowClicked(nextFlattenedRow);
 
     const isHighlighted = index === highlightedRowIndex;
+
+    const NonaggregatedRow =
+      flattenedRow.type === "default" ? Row : ExpandedRow;
     return (
       <RowContext.Provider value={{isHighlighted, isSelected}}>
-        {flattenedRow.isAggregate ? (
+        {flattenedRow.type === "aggregate" ? (
           <AggregateRow
             className={css(
               styles.row,
@@ -699,7 +719,7 @@ export default function Table<T>({
             }
           />
         ) : (
-          <Row
+          <NonaggregatedRow
             className={css(
               styles.row,
               isHighlighted && styles.isHighlighted,
@@ -1007,11 +1027,7 @@ function SortableHeader({
 
 function Row<T>({
   data,
-  columns,
-  className,
-  style,
-  onHighlightedChange,
-  onClick,
+  ...params
 }: {|
   +data: T,
   +columns: $ReadOnlyArray<Column<T>>,
@@ -1020,43 +1036,60 @@ function Row<T>({
   +onHighlightedChange: boolean => void,
   +onClick: (() => void) | null,
 |}) {
-  const leftPinnedColumns = columns.filter(({pinned}) => pinned === "left");
-  const unpinnedColumns = columns.filter(({pinned}) => pinned === null);
-  const rightPinnedColumns = columns.filter(({pinned}) => pinned === "right");
+  const render = ({id, Cell}) => <Cell key={id} row={data} />;
+  return BaseRow({
+    render,
+    ...params,
+  });
+}
 
-  return (
-    <Clickable onClick={onClick}>
-      <div
-        onMouseEnter={() => onHighlightedChange(true)}
-        onMouseLeave={() => onHighlightedChange(false)}
-        className={className}
-        style={style}
-      >
-        <PinnedColumns columns={leftPinnedColumns} type="left">
-          {({id, Cell}) => <Cell key={id} row={data} />}
-        </PinnedColumns>
-        <div className={css(styles.unpinnedDrawer)}>
-          {unpinnedColumns.map(({id, Cell}) => (
-            <Cell key={id} row={data} />
-          ))}
-        </div>
-        <PinnedColumns columns={rightPinnedColumns} type="right">
-          {({id, Cell}) => <Cell key={id} row={data} />}
-        </PinnedColumns>
-      </div>
-    </Clickable>
-  );
+function ExpandedRow<T>({
+  data,
+  ...params
+}: {|
+  +data: T,
+  +columns: $ReadOnlyArray<Column<T>>,
+  +className: string,
+  +style: Style,
+  +onHighlightedChange: boolean => void,
+  +onClick: (() => void) | null,
+|}) {
+  const render = ({id, ExpandedCell}) => <ExpandedCell key={id} row={data} />;
+  return BaseRow({
+    render,
+    ...params,
+  });
 }
 
 function AggregateRow<T>({
   data,
+  ...params
+}: {|
+  +data: $ReadOnlyArray<T>,
+  +columns: $ReadOnlyArray<Column<T>>,
+  +className: string,
+  +style: Style,
+  +onHighlightedChange: boolean => void,
+  +onClick: (() => void) | null,
+|}) {
+  const render = ({id, AggregateCell}) => (
+    <AggregateCell key={id} rows={data} />
+  );
+  return BaseRow({
+    render,
+    ...params,
+  });
+}
+
+function BaseRow<T>({
+  render,
   columns,
   className,
   style,
   onHighlightedChange,
   onClick,
 }: {|
-  +data: $ReadOnlyArray<T>,
+  +render: (Column<T>) => React.Node,
   +columns: $ReadOnlyArray<Column<T>>,
   +className: string,
   +style: Style,
@@ -1076,15 +1109,13 @@ function AggregateRow<T>({
         style={style}
       >
         <PinnedColumns columns={leftPinnedColumns} type="left">
-          {({id, AggregateCell}) => <AggregateCell key={id} rows={data} />}
+          {render}
         </PinnedColumns>
         <div className={css(styles.unpinnedDrawer)}>
-          {unpinnedColumns.map(({id, AggregateCell}) => (
-            <AggregateCell key={id} rows={data} />
-          ))}
+          {unpinnedColumns.map(render)}
         </div>
         <PinnedColumns columns={rightPinnedColumns} type="right">
-          {({id, AggregateCell}) => <AggregateCell key={id} rows={data} />}
+          {render}
         </PinnedColumns>
       </div>
     </Clickable>

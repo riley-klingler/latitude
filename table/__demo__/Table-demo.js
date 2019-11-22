@@ -10,6 +10,7 @@ import TableColumnCustomization from "./TableColumnCustomization.demo";
 import TableRowClicking from "./TableRowClicking.demo";
 import TableRowSelection from "./TableRowSelection.demo";
 import TableAggregation from "./TableAggregation.demo";
+import TableAggregationCustomization from "./TableAggregationCustomization.demo";
 import TableAggregationSelection from "./TableAggregationSelection.demo";
 import TableColumnPinning from "./TableColumnPinning.demo";
 import TableInfinite from "./TableInfinite.demo";
@@ -40,6 +41,11 @@ const demos: DemoFile = {
       type: "live",
       fullWidth: true,
       example: TableAggregation,
+    },
+    {
+      type: "live",
+      fullWidth: true,
+      example: TableAggregationCustomization,
     },
     {
       type: "live",
