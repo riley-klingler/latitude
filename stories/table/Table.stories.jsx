@@ -7,8 +7,9 @@
 import * as React from "react";
 import {css, StyleSheet} from "aphrodite";
 import {storiesOf} from "@storybook/react";
+import uuid from "uuid/v4";
 import sections from "../sections";
-import Table from "../../table/Table";
+import Table, {type ColumnDefinition} from "../../table/Table";
 import Button from "../../button/Button";
 import data from "../../table/__demo__/data";
 import TextCell from "../../table/TextCell";
@@ -110,8 +111,7 @@ const columnDefinitions = [
     header: "",
     render: () => (
       <InteractableCell>
-        <Button size="s" onClick={() => {
-        }}>
+        <Button size="s" onClick={() => {}}>
           CTA
         </Button>
       </InteractableCell>
@@ -249,7 +249,7 @@ const RowAggregationHoist = () => {
     />
   );
   return <div className={css(styles.container)}>{table}</div>;
-}
+};
 
 const RowAggregationSelectionHoist = () => {
   const [expandedRows, setExpandedRows] = React.useState(new Set());
@@ -277,7 +277,7 @@ const RowAggregationSelectionHoist = () => {
     />
   );
   return <div className={css(styles.container)}>{table}</div>;
-}
+};
 
 const PinnedColumnsHoist = () => {
   const [sortBy, setSortBy] = React.useState({
@@ -300,7 +300,7 @@ const PinnedColumnsHoist = () => {
     />
   );
   return <div className={css(styles.container)}>{table}</div>;
-}
+};
 
 const InfiniteLoadHoist = () => {
   const [sortBy, setSortBy] = React.useState({
@@ -340,6 +340,73 @@ const InfiniteLoadHoist = () => {
   return <div className={css(styles.container)}>{table}</div>;
 };
 
+function HelloCell({row}: {|+row: string|}) {
+  React.useEffect(() => {
+    // eslint-disable-next-line no-console
+    console.log("HelloCell mounted");
+  }, []);
+  // eslint-disable-next-line no-console
+  console.log("HelloCell rendered");
+
+  return <div>Hello {row}</div>;
+}
+
+const MemoizedHelloCell = React.memo(HelloCell);
+
+const memoizedColumns: $ReadOnlyArray<ColumnDefinition<string>> = [
+  {
+    id: "helloColumn",
+    header: "Hello",
+    render: row => <MemoizedHelloCell row={row} />,
+    width: 100,
+  },
+];
+
+const nonMemoizedColumns: $ReadOnlyArray<ColumnDefinition<string>> = [
+  {
+    id: "helloColumn",
+    header: "Hello",
+    render: row => <HelloCell row={row} />,
+    width: 100,
+  },
+];
+
+const memoData = ["row 1", "row 2", "row 3"];
+
+function getUniqueRowId(row: string) {
+  return row;
+}
+
+function RerenderTableTest() {
+  const [memoize, setMemoize] = React.useState(false);
+  const [, setUselessState] = React.useState(uuid);
+
+  const columns = memoize ? memoizedColumns : nonMemoizedColumns;
+  const triggerRerender = React.useCallback(() => {
+    setUselessState(uuid());
+  }, [setUselessState]);
+
+  return (
+    <div>
+      <Button onClick={triggerRerender} label="Rerender" />
+      <Button
+        onClick={() => {
+          setMemoize(!memoize);
+        }}
+        label={`Switch to ${memoize ? "non-memoized" : "memoized"}`}
+      />
+
+      <div style={{height: "200px", width: "200px"}}>
+        <Table
+          columnDefinitions={columns}
+          data={memoData}
+          getUniqueRowId={getUniqueRowId}
+        />
+      </div>
+    </div>
+  );
+}
+
 const stories = storiesOf(`${sections.table}/Table`, module);
 
 stories.add("Basic Table", () => <BasicTableHoist />);
@@ -347,9 +414,12 @@ stories.add("Column Customization Table", () => <ColumnCustomizationHoist />);
 stories.add("Row Clicking Table", () => <RowClickingHoist />);
 stories.add("Row Selection Table", () => <RowSelectionHoist />);
 stories.add("Row Aggregation Table", () => <RowAggregationHoist />);
-stories.add("Row Aggregation Selection Table", () => <RowAggregationSelectionHoist />);
+stories.add("Row Aggregation Selection Table", () => (
+  <RowAggregationSelectionHoist />
+));
 stories.add("Pinned Columns Table", () => <PinnedColumnsHoist />);
 stories.add("Infinite Load Table", () => <InfiniteLoadHoist />);
+stories.add("Rerender Table Test", () => <RerenderTableTest />);
 
 const styles = StyleSheet.create({
   container: {width: 900, height: 600},

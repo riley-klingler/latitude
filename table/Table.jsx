@@ -24,6 +24,15 @@ import RowContext from "./RowContext";
 
 export type Style = {[string]: string | number};
 
+const TableContext: React.Context<TableContextType<*>> = React.createContext({
+  columns: [],
+  rowWidth: 0,
+});
+type TableContextType<T> = {|
+  +rowWidth: number,
+  +columns: $ReadOnlyArray<Column<T>>,
+|};
+
 export type ColumnDefinition<T> = {|
   +id: string,
   +header: string,
@@ -581,18 +590,6 @@ export default function Table<T>({
         : 0)
   );
 
-  const innerElementType = React.forwardRef(({children, ...rest}, ref) => (
-    <div ref={ref} {...rest}>
-      <HeaderRow
-        columns={columns}
-        style={{
-          minWidth: rowWidth,
-        }}
-      />
-      {children}
-    </div>
-  ));
-
   const outerElementType = React.forwardRef((props, ref) => (
     <div
       ref={element => {
@@ -654,7 +651,6 @@ export default function Table<T>({
 
   const ItemRenderer = ({index, style}: {|+index: number, +style: Style|}) => {
     const [highlightedRowIndex, setHighlightedRowIndex] = React.useState(null);
-
     if (isLoading) {
       return (
         <div
@@ -753,54 +749,72 @@ export default function Table<T>({
   );
 
   return (
-    <div className={css(styles.table)}>
-      <StickyScrollContext.Provider value={StickyScrollPolyfill.context}>
-        {columnCustomizationEnabled ? (
-          <ColumnCustomization
-            columnDefinitions={customizableColumns}
-            visibleColumnIds={visibleColumnDefinitions.map(cd => cd.id)}
-            onVisibleColumnIdsChange={visibleColumnIds => {
-              onHiddenColumnsChange(
-                customizableColumns
-                  .filter(cd => !visibleColumnIds.includes(cd.id))
-                  .map(cd => ({columnId: cd.id}))
-              );
-            }}
-          />
-        ) : null}
-        <AutoSizer>
-          {({width, height}: {|+width: number, +height: number|}) => (
-            <InfiniteLoader
-              isItemLoaded={isItemLoaded}
-              itemCount={rowCount}
-              loadMoreItems={loadMoreItems}
-            >
-              {({onItemsRendered, ref}) => (
-                <FixedSizeList
-                  height={height}
-                  itemSize={rowHeight}
-                  itemCount={rowCount}
-                  width={width}
-                  innerElementType={innerElementType}
-                  outerElementType={
-                    !StickyScrollPolyfill.isPositionStickySupported &&
-                    outerElementType
-                  }
-                  onItemsRendered={onItemsRendered}
-                  ref={ref}
-                  // Overscan by roughly one page
-                  overscanCount={Math.ceil(height / rowHeight)}
-                >
-                  {ItemRenderer}
-                </FixedSizeList>
-              )}
-            </InfiniteLoader>
-          )}
-        </AutoSizer>
-      </StickyScrollContext.Provider>
-    </div>
+    <TableContext.Provider value={{columns, rowWidth}}>
+      <div className={css(styles.table)}>
+        <StickyScrollContext.Provider value={StickyScrollPolyfill.context}>
+          {columnCustomizationEnabled ? (
+            <ColumnCustomization
+              columnDefinitions={customizableColumns}
+              visibleColumnIds={visibleColumnDefinitions.map(cd => cd.id)}
+              onVisibleColumnIdsChange={visibleColumnIds => {
+                onHiddenColumnsChange(
+                  customizableColumns
+                    .filter(cd => !visibleColumnIds.includes(cd.id))
+                    .map(cd => ({columnId: cd.id}))
+                );
+              }}
+            />
+          ) : null}
+          <AutoSizer>
+            {({width, height}: {|+width: number, +height: number|}) => (
+              <InfiniteLoader
+                isItemLoaded={isItemLoaded}
+                itemCount={rowCount}
+                loadMoreItems={loadMoreItems}
+              >
+                {({onItemsRendered, ref}) => (
+                  <FixedSizeList
+                    height={height}
+                    itemSize={rowHeight}
+                    itemCount={rowCount}
+                    width={width}
+                    innerElementType={innerElementType}
+                    outerElementType={
+                      !StickyScrollPolyfill.isPositionStickySupported &&
+                      outerElementType
+                    }
+                    onItemsRendered={onItemsRendered}
+                    ref={ref}
+                    // Overscan by roughly one page
+                    overscanCount={Math.ceil(height / rowHeight)}
+                  >
+                    {ItemRenderer}
+                  </FixedSizeList>
+                )}
+              </InfiniteLoader>
+            )}
+          </AutoSizer>
+        </StickyScrollContext.Provider>
+      </div>
+    </TableContext.Provider>
   );
 }
+
+const innerElementType = React.forwardRef(({children, ...rest}, ref) => (
+  <TableContext.Consumer>
+    {({columns, rowWidth}) => (
+      <div ref={ref} {...rest}>
+        <HeaderRow
+          columns={columns}
+          style={{
+            minWidth: rowWidth,
+          }}
+        />
+        {children}
+      </div>
+    )}
+  </TableContext.Consumer>
+));
 
 function ColumnCustomization<T>({
   columnDefinitions,
