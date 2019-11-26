@@ -649,98 +649,16 @@ export default function Table<T>({
   const isItemLoaded = (index: number) =>
     !hasNextPage || index < flattenedRows.length;
 
-  const ItemRenderer = ({index, style}: {|+index: number, +style: Style|}) => {
-    const [highlightedRowIndex, setHighlightedRowIndex] = React.useState(null);
-    if (isLoading) {
-      return (
-        <div
-          className={css(styles.loadingIndicator)}
-          style={{
-            ...style,
-            top: style.top + HEADER_HEIGHT,
-          }}
-        >
-          <Loader loaded={false} />
-        </div>
-      );
-    } else if (!isItemLoaded(index)) {
-      return (
-        <div
-          className={css(styles.row, styles.infiniteLoader)}
-          style={{
-            ...style,
-            top: style.top + HEADER_HEIGHT,
-          }}
-        >
-          <Loader loaded={false} />
-        </div>
-      );
-    }
-
-    const flattenedRow = flattenedRows[index];
-    const nextFlattenedRow = flattenedRows[index + 1];
-    const isSelected = isRowSelected(flattenedRow);
-    const isNextSelected = isRowSelected(nextFlattenedRow);
-    const isClicked = isRowClicked(flattenedRow);
-    const isNextClicked = isRowClicked(nextFlattenedRow);
-
-    const isHighlighted = index === highlightedRowIndex;
-
-    const NonaggregatedRow =
-      flattenedRow.type === "default" ? Row : ExpandedRow;
-    return (
-      <RowContext.Provider value={{isHighlighted, isSelected}}>
-        {flattenedRow.type === "aggregate" ? (
-          <AggregateRow
-            className={css(
-              styles.row,
-              isHighlighted && styles.isHighlighted,
-              (isSelected || isClicked) && styles.isSelected,
-              (isNextSelected || isNextClicked) && styles.isNextSelected
-            )}
-            style={{
-              ...style,
-              top: style.top + HEADER_HEIGHT,
-              minWidth: rowWidth,
-            }}
-            columns={columns}
-            data={flattenedRow.rows}
-            onHighlightedChange={isHighlighted =>
-              setHighlightedRowIndex(isHighlighted ? index : null)
-            }
-            onClick={
-              rowGroupClickingEnabled
-                ? () => onRowGroupClick(flattenedRow.id)
-                : null
-            }
-          />
-        ) : (
-          <NonaggregatedRow
-            className={css(
-              styles.row,
-              isHighlighted && styles.isHighlighted,
-              isSelected && styles.isSelected,
-              isNextSelected && styles.isNextSelected,
-              (isSelected || isClicked) && styles.isSelected,
-              (isNextSelected || isNextClicked) && styles.isNextSelected
-            )}
-            style={{
-              ...style,
-              top: style.top + HEADER_HEIGHT,
-              minWidth: rowWidth,
-            }}
-            columns={columns}
-            data={flattenedRow.row}
-            onHighlightedChange={isHighlighted =>
-              setHighlightedRowIndex(isHighlighted ? index : null)
-            }
-            onClick={
-              rowClickingEnabled ? () => onRowClick(flattenedRow.id) : null
-            }
-          />
-        )}
-      </RowContext.Provider>
-    );
+  const itemData = {
+    isLoading,
+    isItemLoaded,
+    flattenedRows,
+    isRowSelected,
+    isRowClicked,
+    rowGroupClickingEnabled,
+    onRowGroupClick,
+    rowClickingEnabled,
+    onRowClick,
   };
 
   const pinnedColumnIds = pinnedColumns.map(({columnId}) => columnId);
@@ -774,6 +692,7 @@ export default function Table<T>({
               >
                 {({onItemsRendered, ref}) => (
                   <FixedSizeList
+                    itemData={itemData}
                     height={height}
                     itemSize={rowHeight}
                     itemCount={rowCount}
@@ -815,6 +734,135 @@ const innerElementType = React.forwardRef(({children, ...rest}, ref) => (
     )}
   </TableContext.Consumer>
 ));
+
+type ItemRendererData<T> = {|
+  isLoading: boolean,
+  isItemLoaded: number => boolean,
+  flattenedRows: $ReadOnlyArray<FlattenedRow<T>>,
+  isRowSelected: FlattenedRow<T> => boolean,
+  isRowClicked: FlattenedRow<T> => boolean,
+  rowGroupClickingEnabled: boolean,
+  onRowGroupClick: string => void,
+  rowClickingEnabled: boolean,
+  onRowClick: string => void,
+|};
+
+const ItemRenderer = ({
+  index,
+  data,
+  style,
+}: {|
+  +index: number,
+  +data: ItemRendererData<*>,
+  +style: Style,
+|}) => {
+  const [highlightedRowIndex, setHighlightedRowIndex] = React.useState(null);
+  const {
+    isLoading,
+    isItemLoaded,
+    flattenedRows,
+    isRowSelected,
+    isRowClicked,
+    rowGroupClickingEnabled,
+    onRowGroupClick,
+    rowClickingEnabled,
+    onRowClick,
+  } = data;
+
+  if (isLoading) {
+    return (
+      <div
+        className={css(styles.loadingIndicator)}
+        style={{
+          ...style,
+          top: style.top + HEADER_HEIGHT,
+        }}
+      >
+        <Loader loaded={false} />
+      </div>
+    );
+  } else if (!isItemLoaded(index)) {
+    return (
+      <div
+        className={css(styles.row, styles.infiniteLoader)}
+        style={{
+          ...style,
+          top: style.top + HEADER_HEIGHT,
+        }}
+      >
+        <Loader loaded={false} />
+      </div>
+    );
+  }
+
+  const flattenedRow = flattenedRows[index];
+  const nextFlattenedRow = flattenedRows[index + 1];
+  const isSelected = isRowSelected(flattenedRow);
+  const isNextSelected = isRowSelected(nextFlattenedRow);
+  const isClicked = isRowClicked(flattenedRow);
+  const isNextClicked = isRowClicked(nextFlattenedRow);
+
+  const isHighlighted = index === highlightedRowIndex;
+
+  const NonaggregatedRow = flattenedRow.type === "default" ? Row : ExpandedRow;
+  return (
+    <TableContext.Consumer>
+      {({columns, rowWidth}) => (
+        <RowContext.Provider value={{isHighlighted, isSelected}}>
+          {flattenedRow.type === "aggregate" ? (
+            <AggregateRow
+              className={css(
+                styles.row,
+                isHighlighted && styles.isHighlighted,
+                (isSelected || isClicked) && styles.isSelected,
+                (isNextSelected || isNextClicked) && styles.isNextSelected
+              )}
+              style={{
+                ...style,
+                top: style.top + HEADER_HEIGHT,
+                minWidth: rowWidth,
+              }}
+              columns={columns}
+              data={flattenedRow.rows}
+              onHighlightedChange={isHighlighted =>
+                setHighlightedRowIndex(isHighlighted ? index : null)
+              }
+              onClick={
+                rowGroupClickingEnabled
+                  ? () => onRowGroupClick(flattenedRow.id)
+                  : null
+              }
+            />
+          ) : (
+            <NonaggregatedRow
+              className={css(
+                styles.row,
+                isHighlighted && styles.isHighlighted,
+                isSelected && styles.isSelected,
+                isNextSelected && styles.isNextSelected,
+                (isSelected || isClicked) && styles.isSelected,
+                (isNextSelected || isNextClicked) && styles.isNextSelected
+              )}
+              style={{
+                ...style,
+                top: style.top + HEADER_HEIGHT,
+                minWidth: rowWidth,
+              }}
+              columns={columns}
+              data={flattenedRow.row}
+              onHighlightedChange={isHighlighted =>
+                setHighlightedRowIndex(isHighlighted ? index : null)
+              }
+              onClick={
+                rowClickingEnabled ? () => onRowClick(flattenedRow.id) : null
+              }
+            />
+          )}
+        </RowContext.Provider>
+      )}
+    </TableContext.Consumer>
+  );
+};
 
 function ColumnCustomization<T>({
   columnDefinitions,
