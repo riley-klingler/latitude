@@ -43,11 +43,12 @@ const demos: DemoFile = {
   demos: [
     {
       type: "full",
-      example: (elementToCodeFn, demoProps: Props) => {
-        const component = <TextInputShim {...demoProps} />;
-        elementToCodeFn(component);
-        return component;
-      },
+      example: (elementToCodeFn, demoProps) => (
+        <TextInputShim
+          elementToCodeFn={elementToCodeFn}
+          demoProps={demoProps}
+        />
+      ),
       knobs,
     },
     {
@@ -57,16 +58,18 @@ const demos: DemoFile = {
   ],
 };
 
-type Props = $Shape<React.ElementConfig<typeof TextInput>>;
-
-function TextInputShim(demoProps: Props) {
+function TextInputShim({elementToCodeFn, demoProps}: any) {
   const [value, setValue] = React.useState("");
 
-  return (
+  const element = (
     <div className={css(demoCommonStyles.smallWrapper)}>
       <TextInput value={value} onChange={setValue} {...demoProps} />
     </div>
   );
+
+  if (elementToCodeFn) elementToCodeFn(element);
+
+  return element;
 }
 
 export default demos;
