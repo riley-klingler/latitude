@@ -29,6 +29,7 @@ stories.add("Pill", () => {
             }
           : undefined
       }
+      href={text("Link", "")}
     >
       {text("Label", "A Pill")}
     </Pill>

@@ -7,6 +7,7 @@ import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
 import Text from "./Text";
 import IconButton from "./button/IconButton";
+import Link from "./Link";
 
 import latitudeColors from "./colors";
 
@@ -27,7 +28,12 @@ const spacing = {
 type Props = {|
   /** The information to display */
   +children: string,
-  /** The function invoked when the icon is clicked. If no onDismiss is
+  /** The url the pill redirects to when the text is clicked. If present,
+   * the text inside the pill is a link. If absent the text is not a link
+   * and has no on click behavior. Links will be opened in a new tab.
+   */
+  +href?: string,
+  /** The function invoked when the Pill is clicked. If no onDismiss is
    * specified, then the Pill will not be closeable and the close button
    * will be hidden */
   +onDismiss?: () => void,
@@ -56,6 +62,7 @@ type Props = {|
  */
 export default function Pill({
   children,
+  href,
   onDismiss,
   size = "m",
   onMouseEnter,
@@ -85,7 +92,13 @@ export default function Pill({
         color="grey40"
         whiteSpace="nowrap"
       >
-        {children}
+        {href === undefined || href.length === 0 ? (
+          children
+        ) : (
+          <Link href={href} openInNewTab={true} key={`${children}_link`}>
+            {children}
+          </Link>
+        )}
       </Text>
       {onDismiss ? (
         <span style={{paddingLeft: "12px"}}>
