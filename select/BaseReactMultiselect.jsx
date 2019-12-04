@@ -576,6 +576,7 @@ const unsetInputStyle = {
   ":focus": {
     ...focusedStyle,
   },
+  fontSize: "initial",
   width: "100%",
   cursor: "text",
   "::placeHolder": {
