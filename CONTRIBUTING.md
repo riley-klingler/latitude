@@ -20,11 +20,9 @@ This setup aims to reduce friction for internal Latitude contributors.
 
 ## Workflow tip: work concurrently
 
-You don't need to wait for a Latitude PR to be merged before beginning your
-product work. It's easy to work on your Latitude and product changes
-concurrently.
+You don't need to wait for a Latitude PR to be merged before beginning using it in the monorepo. It's easy to work on your Latitude and monorepo concurrently. 
 
-To set this up, point your monorepo's latitude dependency to your branch:
+To set this up, point your monorepo's latitude dependency to your branch: **NOTE: This is currently not working, see issue: [yarn upgrade package will upgrade unrelated packages in the lockfile #3137](https://github.com/yarnpkg/yarn/issues/3137). `yarn link` works which you can see below.**
 
 ```bash
 cd ~/monorepo
@@ -44,8 +42,38 @@ yarn upgrade latitude@https://github.com/flexport/latitude.git#master
 ```
 
 
-## Workflow tip: watch mode
+#### `yarn link` Approach
 
+An alternative approach that uses less setup is to use [`yarn link`](https://yarnpkg.com/lang/en/docs/cli/link/). **However this has been known to cause Flow issues where Flow will evaluate Latitude components in monorepo.** Restarting the Flow server generally resolves this.
+
+
+##### To link:
+```bash
+cd location/of/latitude
+yarn link # adds Latitude to the link registry
+cd location/of/flexport
+yarn link latitude # links Latitude module to the Latitude in the link registry
+```
+
+##### To unlink:
+```bash
+cd location/of/flexport
+yarn unlink latitude
+```
+After unlinking you shoulld run `yarn install --force` so that your node_modules folder are back to what they should be.
+
+##### To remove Latitude from the link registry:
+```bash
+cd location/of/latitude
+yarn unlink
+```
+
+#### Workflow Improvements in Development 
+
+We are currently working on improving development workflow. You can keep track of progress in this JIRA issue: [LDS-531](https://flexport.atlassian.net/browse/LDS-531).
+
+
+## Workflow tip: watch mode
 If you are actively developing, the recommended workflow is to have tests and
 storybook running in the background in separate terminals. This should provide
 you with realtime feedback:
