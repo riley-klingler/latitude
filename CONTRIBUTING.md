@@ -22,13 +22,7 @@ This setup aims to reduce friction for internal Latitude contributors.
 
 You don't need to wait for a Latitude PR to be merged before beginning using it in the monorepo. It's easy to work on your Latitude and monorepo concurrently. 
 
-<<<<<<< HEAD
-To set this up, point your monorepo's latitude dependency to your branch: **NOTE: This is currently not working, see issue: [yarn upgrade package will upgrade unrelated packages in the lockfile #3137](https://github.com/yarnpkg/yarn/issues/3137). `yarn link` works which you can see below.**
-||||||| 21ef775... Revert "update contributing doc with better workflow (#92)"
-To set this up, point your monorepo's latitude dependency to your branch:
-=======
 We will use the following tools to help sync the local repos:
->>>>>>> parent of 21ef775... Revert "update contributing doc with better workflow (#92)"
 
 ```bash
 brew install bindfs
