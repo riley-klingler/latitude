@@ -139,6 +139,7 @@ const styles = StyleSheet.create({
     cursor: "pointer",
     boxSizing: "border-box",
     appearance: "none",
+    backgroundColor: latitudeColors.white,
     outline: "none",
     border: `2px solid ${latitudeColors.grey20}`,
     width: "20px",
