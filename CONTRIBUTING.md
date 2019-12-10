@@ -63,7 +63,7 @@ yarn link latitude # links Latitude module to the Latitude in the link registry
 cd location/of/flexport
 yarn unlink latitude
 ```
-After unlinking you shoulld run `yarn install --force` so that your node_modules folder are back to what they should be.
+After unlinking you should run `yarn install --force` so that your node_modules folder are back to what they should be.
 
 ##### To remove Latitude from the link registry:
 ```bash
