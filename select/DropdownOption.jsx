@@ -80,6 +80,7 @@ const styles = StyleSheet.create({
     padding: "0 12px",
     minWidth: "120px",
     whiteSpace: "nowrap",
+    textAlign: "start",
   },
   dropdownItemHighlight: {
     background: latitudeColors.grey20,

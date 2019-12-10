@@ -347,7 +347,7 @@ exports[`SearchableSelectInput matches snapshot 1`] = `
                             onMouseDown={[Function]}
                           >
                             <div
-                              className="dropdownItemText_1gqhljw"
+                              className="dropdownItemText_axuk8q"
                             >
                               a
                             </div>
@@ -365,7 +365,7 @@ exports[`SearchableSelectInput matches snapshot 1`] = `
                             onMouseDown={[Function]}
                           >
                             <div
-                              className="dropdownItemText_1gqhljw"
+                              className="dropdownItemText_axuk8q"
                             >
                               b
                             </div>
@@ -383,7 +383,7 @@ exports[`SearchableSelectInput matches snapshot 1`] = `
                             onMouseDown={[Function]}
                           >
                             <div
-                              className="dropdownItemText_1gqhljw"
+                              className="dropdownItemText_axuk8q"
                             >
                               c
                             </div>

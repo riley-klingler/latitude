@@ -169,7 +169,7 @@ exports[`TextInputAutocomplete matches snapshot 1`] = `
                             onMouseDown={[Function]}
                           >
                             <div
-                              className="dropdownItemText_1gqhljw"
+                              className="dropdownItemText_axuk8q"
                             >
                               aaa
                             </div>
@@ -187,7 +187,7 @@ exports[`TextInputAutocomplete matches snapshot 1`] = `
                             onMouseDown={[Function]}
                           >
                             <div
-                              className="dropdownItemText_1gqhljw"
+                              className="dropdownItemText_axuk8q"
                             >
                               aaabbb
                             </div>
@@ -205,7 +205,7 @@ exports[`TextInputAutocomplete matches snapshot 1`] = `
                             onMouseDown={[Function]}
                           >
                             <div
-                              className="dropdownItemText_1gqhljw"
+                              className="dropdownItemText_axuk8q"
                             >
                               aaabbbccc
                             </div>
