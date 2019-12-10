@@ -30,7 +30,7 @@ type Props = {|
   /** The size of the text. Look in Text for tagMap. Selecting a scale will choose a corresponding semantic html tag. */
   +scale?: TypeScale,
   /** The boldness of the text. */
-  +weight?: "bold" | "regular",
+  +weight?: "bold" | "regular" | "boldExtended",
   /** The font style for a text. */
   +fontStyle?: "normal" | "italic",
   /** Select a custom display property depending on how you intend to use the text. */

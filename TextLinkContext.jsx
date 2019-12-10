@@ -13,7 +13,7 @@ export type TextLinkContextType = {
   // The size of the text. This can get passed to child Links / LinkActions / child Texts
   scale: TypeScale,
   // The boldness of the text. This can get passed to child Links / LinkActions / child Texts
-  weight: "bold" | "regular",
+  weight: "bold" | "regular" | "boldExtended",
   /** The font style for a text. */
   fontStyle: "normal" | "italic",
   /** The overflow condition for the text content */
