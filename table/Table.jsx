@@ -1316,7 +1316,7 @@ const styles = StyleSheet.create({
   },
   header: {
     alignItems: "center",
-    color: colors.grey50,
+    color: colors.grey40,
     backgroundColor: "inherit",
     ":hover": {
       color: colors.grey60,
