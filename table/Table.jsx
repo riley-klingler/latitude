@@ -903,9 +903,9 @@ function ColumnCustomization<T>({
           <>
             <Target>
               <IconButton
-                size="s"
-                kind="bare"
-                iconName="add"
+                size="l"
+                kind="blank"
+                iconName="cog"
                 type="button"
                 onClick={openPopup}
               />
