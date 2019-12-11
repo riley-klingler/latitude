@@ -12,113 +12,9 @@ import sections from "../sections";
 import Table, {type ColumnDefinition} from "../../table/Table";
 import Button from "../../button/Button";
 import data from "../../table/__demo__/data";
-import TextCell from "../../table/TextCell";
-import InteractableCell from "../../table/InteractableCell";
+import columnDefinitions from "../../table/__demo__/columnDefinitions";
 import Text from "../../Text";
 import NotificationModal from "../../modal/NotificationModal";
-
-const columnDefinitions = [
-  {
-    id: "id",
-    header: "ID",
-    render: row => (
-      <TextCell value={row.id} verticalAlign="center" horizontalAlign="start" />
-    ),
-    width: 50,
-    comparator: (a, b) => a.id - b.id,
-    aggregateComparator: (as, bs) => as.length - bs.length,
-  },
-  {
-    id: "name",
-    header: "Name",
-    render: row => (
-      <TextCell
-        value={row.name}
-        verticalAlign="center"
-        horizontalAlign="start"
-      />
-    ),
-    width: 150,
-    comparator: (a, b) => a.name.localeCompare(b.name),
-  },
-  {
-    id: "email",
-    header: "Email",
-    render: row => (
-      <TextCell
-        value={row.email}
-        verticalAlign="center"
-        horizontalAlign="start"
-      />
-    ),
-    width: 200,
-    comparator: (a, b) => a.email.localeCompare(b.email),
-  },
-  {
-    id: "date",
-    header: "Date",
-    render: row => (
-      <TextCell
-        value={row.date}
-        verticalAlign="center"
-        horizontalAlign="start"
-      />
-    ),
-    width: 200,
-    comparator: (a, b) => new Date(a.date) - new Date(b.date),
-  },
-  {
-    id: "city",
-    header: "City",
-    render: row => (
-      <TextCell
-        value={row.city}
-        verticalAlign="center"
-        horizontalAlign="start"
-      />
-    ),
-    width: 150,
-    comparator: (a, b) => a.city.localeCompare(b.city),
-  },
-  {
-    id: "amount",
-    header: "Amount",
-    headerAlignment: "right",
-    render: row => (
-      <TextCell
-        value={row.amount}
-        verticalAlign="center"
-        horizontalAlign="end"
-      />
-    ),
-    width: 70,
-    comparator: (a, b) => a.amount - b.amount,
-  },
-  {
-    id: "company",
-    header: "Company",
-    render: row => (
-      <TextCell
-        value={row.company}
-        verticalAlign="center"
-        horizontalAlign="start"
-      />
-    ),
-    width: 100,
-  },
-  {
-    id: "cta",
-    header: "",
-    render: () => (
-      <InteractableCell>
-        <Button size="s" onClick={() => {}}>
-          CTA
-        </Button>
-      </InteractableCell>
-    ),
-    width: 75,
-  },
-];
 
 const BasicTableHoist = () => {
   const [sortBy, setSortBy] = React.useState({
@@ -129,6 +25,26 @@ const BasicTableHoist = () => {
   return (
     <div className={css(styles.container)}>
       <Table
+        data={data.slice(0, 100)}
+        columnDefinitions={columnDefinitions}
+        getUniqueRowId={data => data.id}
+        sortBy={sortBy}
+        onSortByChange={setSortBy}
+      />
+    </div>
+  );
+};
+
+const LoadingTableHoist = () => {
+  const [sortBy, setSortBy] = React.useState({
+    columnId: "id",
+    direction: "asc",
+  });
+
+  return (
+    <div className={css(styles.container)}>
+      <Table
+        isLoading={true}
         data={data.slice(0, 100)}
         columnDefinitions={columnDefinitions}
         getUniqueRowId={data => data.id}
@@ -308,16 +224,16 @@ const InfiniteLoadHoist = () => {
     direction: "asc",
   });
   const [sliceIndex, setSliceIndex] = React.useState<number>(100);
-  const [isLoading, setLoading] = React.useState(false);
+  const [isNextPageLoading, setNextPageLoading] = React.useState(false);
   const timeoutRef = React.useRef();
   const handleLoadNextPage = React.useCallback(() => {
-    setLoading(true);
+    setNextPageLoading(true);
     timeoutRef.current = setTimeout(() => {
       setSliceIndex(index => index + 100);
-      setLoading(false);
+      setNextPageLoading(false);
       clearTimeout(timeoutRef.current);
     }, 3000);
-  }, [setSliceIndex, setLoading]);
+  }, [setSliceIndex, setNextPageLoading]);
   React.useEffect(
     () => () => {
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -333,7 +249,7 @@ const InfiniteLoadHoist = () => {
       sortBy={sortBy}
       onSortByChange={setSortBy}
       hasNextPage={sliceIndex < data.length}
-      isNextPageLoading={isLoading}
+      isNextPageLoading={isNextPageLoading}
       loadNextPage={handleLoadNextPage}
     />
   );
@@ -410,6 +326,7 @@ function RerenderTableTest() {
 const stories = storiesOf(`${sections.table}/Table`, module);
 
 stories.add("Basic Table", () => <BasicTableHoist />);
+stories.add("Loading Table", () => <LoadingTableHoist />);
 stories.add("Column Customization Table", () => <ColumnCustomizationHoist />);
 stories.add("Row Clicking Table", () => <RowClickingHoist />);
 stories.add("Row Selection Table", () => <RowSelectionHoist />);

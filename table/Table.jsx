@@ -641,7 +641,7 @@ export default function Table<T>({
   // If more results are available to fetch, or we are still loading initial results,
   // add an extra row to hold a loading indicator
   const rowCount =
-    isLoading || hasNextPage ? flattenedRows.length + 1 : flattenedRows.length;
+    hasNextPage ? flattenedRows.length + 1 : flattenedRows.length;
   // If we are already fetching more rows, do not try to re-fetch
   const loadMoreItems = isNextPageLoading ? () => {} : loadNextPage;
 
@@ -650,7 +650,6 @@ export default function Table<T>({
     !hasNextPage || index < flattenedRows.length;
 
   const itemData = {
-    isLoading,
     isItemLoaded,
     flattenedRows,
     isRowSelected,
@@ -691,24 +690,36 @@ export default function Table<T>({
                 loadMoreItems={loadMoreItems}
               >
                 {({onItemsRendered, ref}) => (
-                  <FixedSizeList
-                    itemData={itemData}
-                    height={height}
-                    itemSize={rowHeight}
-                    itemCount={rowCount}
-                    width={width}
-                    innerElementType={innerElementType}
-                    outerElementType={
-                      !StickyScrollPolyfill.isPositionStickySupported &&
-                      outerElementType
-                    }
-                    onItemsRendered={onItemsRendered}
-                    ref={ref}
-                    // Overscan by roughly one page
-                    overscanCount={Math.ceil(height / rowHeight)}
-                  >
-                    {ItemRenderer}
-                  </FixedSizeList>
+                  isLoading ?
+                    <InitialLoading
+                      height={height}
+                      width={width}
+                      rowHeight={rowHeight}
+                      innerElementType={innerElementType}
+                      outerElementType={
+                        !StickyScrollPolyfill.isPositionStickySupported &&
+                        outerElementType
+                      }
+                      ref={ref}
+                    /> :
+                    <FixedSizeList
+                      itemData={itemData}
+                      height={height}
+                      itemSize={rowHeight}
+                      itemCount={rowCount}
+                      width={width}
+                      innerElementType={innerElementType}
+                      outerElementType={
+                        !StickyScrollPolyfill.isPositionStickySupported &&
+                        outerElementType
+                      }
+                      onItemsRendered={onItemsRendered}
+                      ref={ref}
+                      // Overscan by roughly one page
+                      overscanCount={Math.ceil(height / rowHeight)}
+                    >
+                      {ItemRenderer}
+                    </FixedSizeList>
                 )}
               </InfiniteLoader>
             )}
@@ -718,6 +729,32 @@ export default function Table<T>({
     </TableContext.Provider>
   );
 }
+
+const InitialLoading = React.forwardRef(({height, rowHeight, width, outerElementType}, ref) => (
+  <FixedSizeList
+    height={height}
+    itemSize={rowHeight}
+    itemCount={1}
+    width={width}
+    innerElementType={innerElementType}
+    outerElementType={outerElementType}
+    ref={ref}
+  >
+    {LoadingRow}
+  </FixedSizeList>
+));
+
+const LoadingRow = ({style}) => (
+  <div
+    className={css(styles.loadingIndicator)}
+    style={{
+      ...style,
+      top: style.top + HEADER_HEIGHT,
+    }}
+  >
+    <Loader loaded={false} />
+  </div>
+);
 
 const innerElementType = React.forwardRef(({children, ...rest}, ref) => (
   <TableContext.Consumer>
@@ -736,7 +773,6 @@ const innerElementType = React.forwardRef(({children, ...rest}, ref) => (
 ));
 
 type ItemRendererData<T> = {|
-  isLoading: boolean,
   isItemLoaded: number => boolean,
   flattenedRows: $ReadOnlyArray<FlattenedRow<T>>,
   isRowSelected: FlattenedRow<T> => boolean,
@@ -758,7 +794,6 @@ const ItemRenderer = ({
 |}) => {
   const [highlightedRowIndex, setHighlightedRowIndex] = React.useState(null);
   const {
-    isLoading,
     isItemLoaded,
     flattenedRows,
     isRowSelected,
@@ -769,19 +804,7 @@ const ItemRenderer = ({
     onRowClick,
   } = data;
 
-  if (isLoading) {
-    return (
-      <div
-        className={css(styles.loadingIndicator)}
-        style={{
-          ...style,
-          top: style.top + HEADER_HEIGHT,
-        }}
-      >
-        <Loader loaded={false} />
-      </div>
-    );
-  } else if (!isItemLoaded(index)) {
+  if (!isItemLoaded(index)) {
     return (
       <div
         className={css(styles.row, styles.infiniteLoader)}
