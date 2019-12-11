@@ -249,8 +249,7 @@ export default Multiselect;
 const styles = StyleSheet.create({
   selectDisplay: {
     display: "flex",
-    paddingTop: "5px",
-    paddingBottom: "5px",
+    alignItems: "center",
     cursor: "pointer",
   },
   selectDisplayText: {
