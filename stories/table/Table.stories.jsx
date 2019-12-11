@@ -43,6 +43,7 @@ const LoadingTableHoist = () => {
 
   return (
     <div className={css(styles.container)}>
+      <Text weight="bold">NOTE: Table takes the full height of its container so the container needs to have an explicit height set</Text>
       <Table
         isLoading={true}
         data={data.slice(0, 100)}

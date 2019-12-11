@@ -179,6 +179,9 @@ function createStickyScrollPolyfill() {
  * `<Table />` efficiently displays large amounts of data, and supports column pinning,
  * row selection, sorting, and scrolling. Expandable rows, cell selection, drag-and-drop
  * column reordering, and other features are coming soon.
+ *
+ * **Note: Table takes the full height of its container so the container needs to have an
+ * explicit height set**
  */
 export default function Table<T>({
   data,
@@ -1244,6 +1247,7 @@ function PinnedColumns<T>({
 
 const styles = StyleSheet.create({
   table: {
+    minHeight: "100px", // hint to users that they need to set a container height to size table
     height: "100%",
     overflow: "auto",
     position: "relative",
