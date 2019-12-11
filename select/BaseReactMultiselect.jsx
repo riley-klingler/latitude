@@ -570,9 +570,9 @@ const unsetInputStyle = {
     },
   },
   backgroundColor: colors.white,
-  ...borders.a.s,
+  ...borders.a.m,
+  borderColor: colors.grey20,
   color: colors.grey60,
-  borderRadius: "3px",
   ":focus": {
     ...focusedStyle,
   },

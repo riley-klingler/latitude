@@ -33,7 +33,6 @@
 }
 .Select-control {
   background-color: #fff;
-  border-radius: 4px;
   border: 1px solid #e4e4e4;
   color: #333;
   cursor: default;
@@ -82,7 +81,7 @@
   white-space: nowrap;
 }
 .Select-placeholder {
-  color: #aaa;
+  color: #67768D; /* grey40 */
   font-size: 14px;
 }
 .isLarge .Select-placeholder {
@@ -191,7 +190,6 @@
   width: 16px;
   height: 16px;
   box-sizing: border-box;
-  border-radius: 50%;
   border: 2px solid #ccc;
   border-right-color: #333;
   display: inline-block;
@@ -312,7 +310,6 @@
 }
 .Select--multi .Select-value {
   background-color: #eceef4;  /* utility grey */
-  border-radius: 4px;
   display: inline-block;
   font-size: 0.9em;
   line-height: 1.4;
