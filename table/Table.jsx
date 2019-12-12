@@ -95,6 +95,7 @@ export const FIRST_COLUMN_PADDING = 12;
 export const PINNED_COLUMN_BORDER_WIDTH = 2;
 export const ROW_EXPANSION_COLUMN_WIDTH = 48;
 export const ROW_SELECTION_COLUMN_WIDTH = 48;
+const MIN_TABLE_WIDTH = 320;
 
 const noop = () => {};
 
@@ -671,61 +672,59 @@ export default function Table<T>({
   return (
     <TableContext.Provider value={{columns, rowWidth}}>
       <div className={css(styles.tableContainer)} style={{maxWidth: rowWidth}}>
+        {columnCustomizationEnabled ? (
+          <ColumnCustomization
+            columnDefinitions={customizableColumns}
+            visibleColumnIds={visibleColumnDefinitions.map(cd => cd.id)}
+            onVisibleColumnIdsChange={visibleColumnIds => {
+              onHiddenColumnsChange(
+                customizableColumns
+                  .filter(cd => !visibleColumnIds.includes(cd.id))
+                  .map(cd => ({columnId: cd.id}))
+              );
+            }}
+          />) : null}
         <StickyScrollContext.Provider value={StickyScrollPolyfill.context}>
           <AutoSizer>
             {({width, height}: {| +width: number, +height: number |}) => (
-              <div style={{position: "relative", width: Math.min(width, rowWidth)}}>
-                {columnCustomizationEnabled ? (
-                  <ColumnCustomization
-                    columnDefinitions={customizableColumns}
-                    visibleColumnIds={visibleColumnDefinitions.map(cd => cd.id)}
-                    onVisibleColumnIdsChange={visibleColumnIds => {
-                      onHiddenColumnsChange(
-                        customizableColumns
-                          .filter(cd => !visibleColumnIds.includes(cd.id))
-                          .map(cd => ({columnId: cd.id}))
-                      );
-                    }}
-                  />) : null}
-                <InfiniteLoader
-                  isItemLoaded={isItemLoaded}
-                  itemCount={rowCount}
-                  loadMoreItems={loadMoreItems}
-                >
-                  {({onItemsRendered, ref}) => (
-                    isLoading ?
-                      <InitialLoading
-                        height={height}
-                        width={rowWidth}
-                        rowHeight={rowHeight}
-                        innerElementType={innerElementType}
-                        outerElementType={
-                          !StickyScrollPolyfill.isPositionStickySupported &&
-                          outerElementType
-                        }
-                        ref={ref}
-                      /> :
-                      <FixedSizeList
-                        itemData={itemData}
-                        height={height}
-                        itemSize={rowHeight}
-                        itemCount={rowCount}
-                        width={rowWidth}
-                        innerElementType={innerElementType}
-                        outerElementType={
-                          !StickyScrollPolyfill.isPositionStickySupported &&
-                          outerElementType
-                        }
-                        onItemsRendered={onItemsRendered}
-                        ref={ref}
-                        // Overscan by roughly one page
-                        overscanCount={Math.ceil(height / rowHeight)}
-                      >
-                        {ItemRenderer}
-                      </FixedSizeList>
-                  )}
-                </InfiniteLoader>
-              </div>
+              <InfiniteLoader
+                isItemLoaded={isItemLoaded}
+                itemCount={rowCount}
+                loadMoreItems={loadMoreItems}
+              >
+                {({onItemsRendered, ref}) => (
+                  isLoading ?
+                    <InitialLoading
+                      height={height}
+                      width={getWidth(rowWidth, width)}
+                      rowHeight={rowHeight}
+                      innerElementType={innerElementType}
+                      outerElementType={
+                        !StickyScrollPolyfill.isPositionStickySupported &&
+                        outerElementType
+                      }
+                      ref={ref}
+                    /> :
+                    <FixedSizeList
+                      itemData={itemData}
+                      height={height}
+                      itemSize={rowHeight}
+                      itemCount={rowCount}
+                      width={getWidth(rowWidth, width)}
+                      innerElementType={innerElementType}
+                      outerElementType={
+                        !StickyScrollPolyfill.isPositionStickySupported &&
+                        outerElementType
+                      }
+                      onItemsRendered={onItemsRendered}
+                      ref={ref}
+                      // Overscan by roughly one page
+                      overscanCount={Math.ceil(height / rowHeight)}
+                    >
+                      {ItemRenderer}
+                    </FixedSizeList>
+                )}
+              </InfiniteLoader>
             )}
           </AutoSizer>
         </StickyScrollContext.Provider>
@@ -733,6 +732,8 @@ export default function Table<T>({
     </TableContext.Provider>
   );
 }
+
+const getWidth = (rowWidth, width) => Math.max(MIN_TABLE_WIDTH, Math.min(width, rowWidth));
 
 const InitialLoading = React.forwardRef(({height, rowHeight, width, outerElementType}, ref) => (
   <FixedSizeList
@@ -1249,6 +1250,7 @@ function PinnedColumns<T>({
 const styles = StyleSheet.create({
   tableContainer: {
     minHeight: "100px", // hint to users that they need to set a container height to size table
+    minWidth: MIN_TABLE_WIDTH,
     height: "100%",
     width: "100%",
     overflow: "auto",
