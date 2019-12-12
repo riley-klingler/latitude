@@ -670,61 +670,62 @@ export default function Table<T>({
 
   return (
     <TableContext.Provider value={{columns, rowWidth}}>
-      <div className={css(styles.table)}>
+      <div className={css(styles.tableContainer)} style={{maxWidth: rowWidth}}>
         <StickyScrollContext.Provider value={StickyScrollPolyfill.context}>
-          {columnCustomizationEnabled ? (
-            <ColumnCustomization
-              columnDefinitions={customizableColumns}
-              visibleColumnIds={visibleColumnDefinitions.map(cd => cd.id)}
-              onVisibleColumnIdsChange={visibleColumnIds => {
-                onHiddenColumnsChange(
-                  customizableColumns
-                    .filter(cd => !visibleColumnIds.includes(cd.id))
-                    .map(cd => ({columnId: cd.id}))
-                );
-              }}
-            />
-          ) : null}
           <AutoSizer>
-            {({width, height}: {|+width: number, +height: number|}) => (
-              <InfiniteLoader
-                isItemLoaded={isItemLoaded}
-                itemCount={rowCount}
-                loadMoreItems={loadMoreItems}
-              >
-                {({onItemsRendered, ref}) => (
-                  isLoading ?
-                    <InitialLoading
-                      height={height}
-                      width={width}
-                      rowHeight={rowHeight}
-                      innerElementType={innerElementType}
-                      outerElementType={
-                        !StickyScrollPolyfill.isPositionStickySupported &&
-                        outerElementType
-                      }
-                      ref={ref}
-                    /> :
-                    <FixedSizeList
-                      itemData={itemData}
-                      height={height}
-                      itemSize={rowHeight}
-                      itemCount={rowCount}
-                      width={width}
-                      innerElementType={innerElementType}
-                      outerElementType={
-                        !StickyScrollPolyfill.isPositionStickySupported &&
-                        outerElementType
-                      }
-                      onItemsRendered={onItemsRendered}
-                      ref={ref}
-                      // Overscan by roughly one page
-                      overscanCount={Math.ceil(height / rowHeight)}
-                    >
-                      {ItemRenderer}
-                    </FixedSizeList>
-                )}
-              </InfiniteLoader>
+            {({width, height}: {| +width: number, +height: number |}) => (
+              <div style={{position: "relative", width: Math.min(width, rowWidth)}}>
+                {columnCustomizationEnabled ? (
+                  <ColumnCustomization
+                    columnDefinitions={customizableColumns}
+                    visibleColumnIds={visibleColumnDefinitions.map(cd => cd.id)}
+                    onVisibleColumnIdsChange={visibleColumnIds => {
+                      onHiddenColumnsChange(
+                        customizableColumns
+                          .filter(cd => !visibleColumnIds.includes(cd.id))
+                          .map(cd => ({columnId: cd.id}))
+                      );
+                    }}
+                  />) : null}
+                <InfiniteLoader
+                  isItemLoaded={isItemLoaded}
+                  itemCount={rowCount}
+                  loadMoreItems={loadMoreItems}
+                >
+                  {({onItemsRendered, ref}) => (
+                    isLoading ?
+                      <InitialLoading
+                        height={height}
+                        width={rowWidth}
+                        rowHeight={rowHeight}
+                        innerElementType={innerElementType}
+                        outerElementType={
+                          !StickyScrollPolyfill.isPositionStickySupported &&
+                          outerElementType
+                        }
+                        ref={ref}
+                      /> :
+                      <FixedSizeList
+                        itemData={itemData}
+                        height={height}
+                        itemSize={rowHeight}
+                        itemCount={rowCount}
+                        width={rowWidth}
+                        innerElementType={innerElementType}
+                        outerElementType={
+                          !StickyScrollPolyfill.isPositionStickySupported &&
+                          outerElementType
+                        }
+                        onItemsRendered={onItemsRendered}
+                        ref={ref}
+                        // Overscan by roughly one page
+                        overscanCount={Math.ceil(height / rowHeight)}
+                      >
+                        {ItemRenderer}
+                      </FixedSizeList>
+                  )}
+                </InfiniteLoader>
+              </div>
             )}
           </AutoSizer>
         </StickyScrollContext.Provider>
@@ -1246,9 +1247,10 @@ function PinnedColumns<T>({
 }
 
 const styles = StyleSheet.create({
-  table: {
+  tableContainer: {
     minHeight: "100px", // hint to users that they need to set a container height to size table
     height: "100%",
+    width: "100%",
     overflow: "auto",
     position: "relative",
   },
