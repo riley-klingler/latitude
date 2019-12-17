@@ -35,6 +35,26 @@ type Props = {|
   +size?: Size,
 |};
 
+/**
+ * This hook exists so that transition related styles are injected after
+ * aphrodite styles are injected. This avoids a flash of transitioning
+ * styles on component mount
+ */
+function useTransitionStyles() {
+  const [transitionStyles, setTransitionStyles] = React.useState({});
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      setTransitionStyles({
+        transitionProperty: "background, border-color, box-shadow, color, fill",
+        transitionDuration: "150ms",
+      });
+    }, 0);
+  });
+
+  return transitionStyles;
+}
+
 function FilterButton({
   label,
   shyLabel = false,
@@ -45,6 +65,8 @@ function FilterButton({
   disabled = false,
   size = "m",
 }: Props) {
+  const transitionStyles = useTransitionStyles();
+
   const endGlyph = onRemove ? (
     <IconButton
       type="button"
@@ -77,7 +99,10 @@ function FilterButton({
         isActive && styles.active,
         disabled && styles.disabled
       )}
-      style={{height: sizes[size]}}
+      style={{
+        height: sizes[size],
+        ...transitionStyles,
+      }}
       onClick={disabled ? null : onClick}
       onKeyPress={disabled ? null : onKeyPress}
       tabIndex={disabled ? null : "0"}
@@ -154,8 +179,6 @@ const styles = StyleSheet.create({
     border: `2px solid ${latitudeColors.grey20}`,
     padding: "0 10px 0 12px",
     fill: latitudeColors.grey60,
-    transitionProperty: "background, border, box-shadow, color, fill",
-    transitionDuration: "150ms",
     transitionTimingFunction: "ease-in-out",
     cursor: "pointer",
 
