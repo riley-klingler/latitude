@@ -42,11 +42,7 @@ function DeprecatedWrapperUseLoaderInstead({visible, children}: TakeoverProps) {
         exit: 300,
       }}
     >
-      <div
-        key="takeover"
-        // eslint-disable-next-line flexport/no-oocss
-        className="test-takeover sticky overlayFull bgWhite flex flexcol"
-      >
+      <div key="takeover" className={css(styles.takeoverContent)}>
         {children}
       </div>
     </CSSTransition>
@@ -200,6 +196,16 @@ const styles = StyleSheet.create({
     transitionProperty: "opacity, transform",
     transitionDuration: "500ms, 500ms",
     transitionTimingFunction: "cubic-bezier(.42,0,.58,1)",
+  },
+  takeoverContent: {
+    position: "fixed",
+    left: 0,
+    top: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: latitudeColors.white,
+    display: "flex",
+    flexDirection: "column",
   },
   takeoverHeader: {
     display: "flex",
