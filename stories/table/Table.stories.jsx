@@ -7,6 +7,7 @@
 import * as React from "react";
 import {css, StyleSheet} from "aphrodite";
 import {storiesOf} from "@storybook/react";
+import {boolean, withKnobs} from "@storybook/addon-knobs";
 import uuid from "uuid/v4";
 import sections from "../sections";
 import Table, {type ColumnDefinition} from "../../table/Table";
@@ -24,6 +25,7 @@ const BasicTableHoist = () => {
 
   return (
     <div className={css(styles.container)}>
+      <Text weight="bold">NOTE: Table takes the full height of its container so the container needs to have an explicit height set</Text>
       <Table
         data={data.slice(0, 100)}
         columnDefinitions={columnDefinitions}
@@ -35,7 +37,7 @@ const BasicTableHoist = () => {
   );
 };
 
-const LoadingTableHoist = () => {
+const LoadingTableHoist = ({isLoading}) => {
   const [sortBy, setSortBy] = React.useState({
     columnId: "id",
     direction: "asc",
@@ -43,9 +45,8 @@ const LoadingTableHoist = () => {
 
   return (
     <div className={css(styles.container)}>
-      <Text weight="bold">NOTE: Table takes the full height of its container so the container needs to have an explicit height set</Text>
       <Table
-        isLoading={true}
+        isLoading={isLoading}
         data={data.slice(0, 100)}
         columnDefinitions={columnDefinitions}
         getUniqueRowId={data => data.id}
@@ -324,10 +325,15 @@ function RerenderTableTest() {
   );
 }
 
+const getLoadingKnobs = () => ({
+  isLoading: boolean("isLoading", true),
+});
+
 const stories = storiesOf(`${sections.table}/Table`, module);
+stories.addDecorator(withKnobs);
 
 stories.add("Basic Table", () => <BasicTableHoist />);
-stories.add("Loading Table", () => <LoadingTableHoist />);
+stories.add("Loading Table", () => <LoadingTableHoist {...getLoadingKnobs()} />);
 stories.add("Column Customization Table", () => <ColumnCustomizationHoist />);
 stories.add("Row Clicking Table", () => <RowClickingHoist />);
 stories.add("Row Selection Table", () => <RowSelectionHoist />);

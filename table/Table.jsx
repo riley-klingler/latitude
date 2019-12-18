@@ -426,6 +426,7 @@ export default function Table<T>({
       <div className={css(styles.rowSelectionCell)}>
         <Checkbox
           checked={selectedRows.size === data.length}
+          indeterminate={selectedRows.size > 0}
           onChange={isSelected => {
             if (isSelected) {
               onSelectedRowsChange(new Set(data.map(getUniqueRowId)));
@@ -744,6 +745,7 @@ const InitialLoading = React.forwardRef(({height, rowHeight, width, outerElement
     innerElementType={innerElementType}
     outerElementType={outerElementType}
     ref={ref}
+    style={{overflow: "hidden"}}
   >
     {LoadingRow}
   </FixedSizeList>
