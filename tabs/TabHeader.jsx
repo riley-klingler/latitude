@@ -14,18 +14,22 @@
 import * as React from "react";
 import {css, StyleSheet} from "aphrodite";
 import invariant from "../tools/invariant";
-import {border, include, typeScale, fontWeights} from "../styles/index";
+import {border,  typeScale, fontWeights} from "../styles/index";
 
 import latitudeColors from "../colors";
-import {margin, padding} from "../styles/whitespace";
+import { whitespaceSizeConstants } from "../styles/whitespace";
+import Icon from "../Icon";
 
 type Tab = {|
   +name: string,
   +id: string,
+  +status?: Status,
 |};
 
+type Status = "complete"; // will support other types when status component is built
+
 type Props = {|
-  /** array of tabs of type {name: string, id: string} */
+  /** array of tabs of type {name: string, id: string, status: Status} */
   +tabs: $ReadOnlyArray<Tab>,
   /** activeTab is the id of the currently active tab */
   +activeTab: string,
@@ -64,6 +68,7 @@ export default function TabHeader({
             id={t.id}
             key={t.id}
             name={t.name}
+            status={t.status}
             onClick={onTabChange}
             active={activeTab === t.id}
           />
@@ -77,10 +82,11 @@ export default function TabHeader({
 const TabComponent = (props: {
   +id: string,
   +name: string,
+  +status?: Status,
   +onClick: string => void,
   +active: boolean,
 }) => {
-  const {id, name, onClick, active} = props;
+  const {id, name, status, onClick, active} = props;
   const handleClick = () => {
     onClick(id);
   };
@@ -92,6 +98,14 @@ const TabComponent = (props: {
       onClick={handleClick}
       role="button"
     >
+      {/* TODO(ddzoan) Replace this with the pill/status component (LDS-463) when it's ready */}
+      {status === "complete" ? <Icon
+        iconName="check"
+        size="s"
+        color="green40"
+        className={css(styles.status)}
+        deprecatedAllowColorInheritance={false}
+      /> : null}
       {name}
     </a>
   );
@@ -103,7 +117,8 @@ const styles = StyleSheet.create({
   tab: {
     color: latitudeColors.grey60,
     // $FlowUpgradeFixMe(0.110.1 -> 0.111.1)
-    ...include(padding.v.m),
+    paddingTop: whitespaceSizeConstants.m,
+    paddingBottom: whitespaceSizeConstants.m,
     ...border.b.m,
     ...typeScale.base,
     borderColor: "transparent",
@@ -111,7 +126,7 @@ const styles = StyleSheet.create({
       cursor: "pointer",
       borderColor: latitudeColors.grey40,
     },
-    ...include(margin.r.xl),
+    marginRight: whitespaceSizeConstants.xl,
   },
   container: {
     display: "flex",
@@ -135,5 +150,8 @@ const styles = StyleSheet.create({
     ":hover": {
       borderColor: latitudeColors.grey60,
     },
+  },
+  status: {
+    marginRight: whitespaceSizeConstants.s,
   },
 });

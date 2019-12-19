@@ -23,7 +23,7 @@ type Props = {|
 
 const tabs = [
   {name: "Indian", id: "Indian"},
-  {name: "Mexican", id: "Mexican"},
+  {name: "Mexican", id: "Mexican", status: "complete"},
   {name: "Japanese", id: "Japanese"},
 ];
 
