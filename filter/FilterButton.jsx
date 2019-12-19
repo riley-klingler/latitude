@@ -42,15 +42,22 @@ type Props = {|
  */
 function useTransitionStyles() {
   const [transitionStyles, setTransitionStyles] = React.useState({});
+  let timerId;
 
+  // On mount
   React.useEffect(() => {
-    setTimeout(() => {
+    timerId = setTimeout(() => {
       setTransitionStyles({
         transitionProperty: "background, border-color, box-shadow, color, fill",
         transitionDuration: "150ms",
       });
     }, 0);
-  });
+
+    // On unmount: clear timer so state won't be set when component is unmounted
+    return () => {
+      if (timerId) clearTimeout(timerId);
+    };
+  }, []);
 
   return transitionStyles;
 }
