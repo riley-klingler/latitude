@@ -7,8 +7,7 @@
 import * as React from "react";
 import {uniqueId} from "lodash";
 import {StyleSheet, css} from "aphrodite";
-import {padding} from "./../styles/whitespace";
-import {include} from "./../styles";
+import {whitespaceSizeConstants} from "./../styles/whitespace";
 import colors from "./../colors";
 
 type Props = {|
@@ -28,61 +27,72 @@ type Props = {|
   +onChange: (value: string) => void,
   /** id of parent SegmentedControl */
   +parentId: string,
+  /** disables the highlighting effect when selected */
+  +disableSelectionHighlightEffect?: boolean,
 |};
 
 /**
  * SegmentedControlButton is a button that can be selected or unselected. Used as part of SegmentedControl.
  */
-export default function SegmentedControlButton({
-  selected,
-  value,
-  label,
-  size = "xs",
-  disabled = false,
-  onChange,
-  type,
-  parentId,
-}: Props) {
-  const id = React.useRef(uniqueId("segmentedcontrolbutton_")).current; // links label to radio input
+export default React.memo<Props, HTMLDivElement>(
+  React.forwardRef(function SegmentedControlButton(
+    {
+      selected,
+      value,
+      label,
+      size = "xs",
+      disabled = false,
+      onChange,
+      type,
+      parentId,
+      disableSelectionHighlightEffect = false,
+    }: Props,
+    ref?: {current: null | HTMLDivElement} | ((null | HTMLDivElement) => mixed)
+  ) {
+    const id = React.useRef(uniqueId("segmentedcontrolbutton_")).current; // links label to radio input
 
-  return (
-    <div className={css(styles.button)}>
-      <input
-        type="radio"
-        id={id}
-        disabled={disabled}
-        className={css(
-          !disabled && styles.input,
-          disabled && styles.disabledInput
-        )}
-        value={value}
-        name={parentId} // required for grouping a set of radio buttons
-        checked={selected}
-        readOnly={true}
-        onChange={() => {
-          onChange(value);
-        }}
-      />
-      {/* eslint-disable-next-line jsx-a11y/label-has-for */}
-      <label
-        htmlFor={id}
-        className={css(
-          styles.label,
-          disabled && styles.disabledLabel,
-          size === "xs" && styles.xsmall,
-          size === "s" && styles.small,
-          size === "m" && styles.medium,
-          size === "l" && styles.large,
-          type === "first" && styles.first,
-          type === "middle" && styles.middle,
-          type === "last" && styles.last
-        )}
-      >
-        {label}
-      </label>
-    </div>
-  );
-}
+    return (
+      <div className={css(styles.button)} ref={ref}>
+        <input
+          type="radio"
+          id={id}
+          disabled={disabled}
+          className={css(
+            !disabled && styles.input,
+            disableSelectionHighlightEffect &&
+              (!disabled
+                ? styles.inputSelectionEffect
+                : styles.disabledInputSelectionEffect)
+          )}
+          value={value}
+          name={parentId} // required for grouping a set of radio buttons
+          checked={selected}
+          readOnly={true}
+          onChange={() => {
+            onChange(value);
+          }}
+        />
+        {/* eslint-disable-next-line jsx-a11y/label-has-for */}
+        <label
+          htmlFor={id}
+          className={css(
+            styles.label,
+            disabled && styles.disabledLabel,
+            size === "xs" && styles.xsmall,
+            size === "s" && styles.small,
+            size === "m" && styles.medium,
+            size === "l" && styles.large,
+            type === "first" && styles.first,
+            type === "middle" && styles.middle,
+            type === "last" && styles.last
+          )}
+        >
+          {label}
+        </label>
+      </div>
+    );
+  })
+);
 
 const styles = StyleSheet.create({
   button: {
@@ -91,22 +101,26 @@ const styles = StyleSheet.create({
     display: "flex",
     alignItems: "stretch",
     justifyContent: "stretch",
+    position: "relative",
   },
   input: {
     display: "none",
+    background: "transparent",
+  },
+  inputSelectionEffect: {
     ":checked ~ label": {
       backgroundColor: colors.grey20,
     },
   },
-  disabledInput: {
-    display: "none",
+  disabledInputSelectionEffect: {
     ":checked ~ label": {
       backgroundColor: colors.grey20,
       color: colors.grey40,
     },
   },
   label: {
-    ...include(padding.h.l),
+    paddingLeft: whitespaceSizeConstants.l,
+    paddingRight: whitespaceSizeConstants.l,
     flex: "1 0 auto",
     marginBottom: "0px",
     textAlign: "center",
@@ -123,16 +137,20 @@ const styles = StyleSheet.create({
     color: colors.grey40,
   },
   xsmall: {
-    ...include(padding.v.xs),
+    paddingTop: whitespaceSizeConstants.xs,
+    paddingBottom: whitespaceSizeConstants.xs,
   },
   small: {
-    ...include(padding.v.s),
+    paddingTop: whitespaceSizeConstants.s,
+    paddingBottom: whitespaceSizeConstants.s,
   },
   medium: {
-    ...include(padding.v.m),
+    paddingTop: whitespaceSizeConstants.m,
+    paddingBottom: whitespaceSizeConstants.m,
   },
   large: {
-    ...include(padding.v.l),
+    paddingTop: whitespaceSizeConstants.l,
+    paddingBottom: whitespaceSizeConstants.l,
   },
   first: {
     borderRightWidth: "1px",
