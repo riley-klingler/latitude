@@ -8,7 +8,7 @@ import {css, StyleSheet} from "aphrodite";
 import invariant from "../tools/invariant";
 import Loader from "../Loader";
 
-import TabHeader from "./TabHeader";
+import TabHeader, {type Status} from "./TabHeader";
 
 const styles = StyleSheet.create({
   container: {
@@ -24,6 +24,8 @@ type TabProps = {|
   +id: string,
   /** as contains the import(...) that loads the tab component */
   +children: React.Node,
+  /** status of tab */
+  +status?: ?Status,
 |};
 
 export const Tab = (_: TabProps) => null;
@@ -129,9 +131,14 @@ class Tabs extends React.PureComponent<Props, State> {
       id: child.props.id,
       name: child.props.name,
       component: child.props.children,
+      status: child.props.status,
     }));
 
-    const tabsForHeader = tabs.map(t => ({id: t.id, name: t.name}));
+    const tabsForHeader = tabs.map(t => ({
+      id: t.id,
+      name: t.name,
+      status: t.status,
+    }));
 
     const prevTabDetails = tabs.find(tab => tab.id === this.state.prevTab);
     const currentTabDetails = tabs.find(

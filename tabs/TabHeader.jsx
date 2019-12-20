@@ -14,19 +14,19 @@
 import * as React from "react";
 import {css, StyleSheet} from "aphrodite";
 import invariant from "../tools/invariant";
-import {border,  typeScale, fontWeights} from "../styles/index";
+import {border, typeScale, fontWeights} from "../styles/index";
 
 import latitudeColors from "../colors";
-import { whitespaceSizeConstants } from "../styles/whitespace";
+import {whitespaceSizeConstants} from "../styles/whitespace";
 import Icon from "../Icon";
 
 type Tab = {|
   +name: string,
   +id: string,
-  +status?: Status,
+  +status?: ?Status,
 |};
 
-type Status = "complete"; // will support other types when status component is built
+export type Status = "complete"; // will support other types when status component is built
 
 type Props = {|
   /** array of tabs of type {name: string, id: string, status: Status} */
@@ -82,7 +82,7 @@ export default function TabHeader({
 const TabComponent = (props: {
   +id: string,
   +name: string,
-  +status?: Status,
+  +status?: ?Status,
   +onClick: string => void,
   +active: boolean,
 }) => {
@@ -99,13 +99,15 @@ const TabComponent = (props: {
       role="button"
     >
       {/* TODO(ddzoan) Replace this with the pill/status component (LDS-463) when it's ready */}
-      {status === "complete" ? <Icon
-        iconName="check"
-        size="s"
-        color="green40"
-        className={css(styles.status)}
-        deprecatedAllowColorInheritance={false}
-      /> : null}
+      {status === "complete" ? (
+        <Icon
+          iconName="check"
+          size="s"
+          color="green40"
+          className={css(styles.status)}
+          deprecatedAllowColorInheritance={false}
+        />
+      ) : null}
       {name}
     </a>
   );
