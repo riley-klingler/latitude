@@ -204,6 +204,7 @@ const styles = StyleSheet.create({
   radioLabel: {
     marginLeft: "8px",
     verticalAlign: "middle",
+    flex: 1,
   },
   invalidRadio: {
     color: colors.red40,
