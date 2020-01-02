@@ -72,7 +72,7 @@ type Props = {|
  */
 export default function Text({
   children,
-  color = "black",
+  color = "grey60",
   scale = "base",
   weight = "regular",
   display = "inline-block",
