@@ -26,8 +26,6 @@ type Props = {|
   +label?: string | React.Node,
   /** The function invoked when the input is clicked. */
   +onChange: (checked: boolean) => void,
-  /** The size of the checkbox. */
-  +size: "s" | "l",
   /** The function called when a user blurs off the input */
   +onBlur?: Event => void,
   /** Whether to allow the label text to wrap */
@@ -52,7 +50,6 @@ export default class Checkbox extends React.PureComponent<Props> {
     indeterminate: false,
     disabled: false,
     isInvalid: false,
-    size: "s",
     wrapLabel: true,
   };
 
@@ -66,12 +63,9 @@ export default class Checkbox extends React.PureComponent<Props> {
       indeterminate,
       disabled,
       isInvalid,
-      size,
       onBlur,
       wrapLabel,
     } = this.props;
-
-    const isSmall = size === "s";
 
     return (
       // eslint-disable-next-line jsx-a11y/label-has-for
@@ -80,7 +74,6 @@ export default class Checkbox extends React.PureComponent<Props> {
           styles.label,
           isInvalid ? styles.invalid : null,
           disabled ? styles.disabled : null,
-          isSmall ? styles.small : styles.large
         )}
         onBlur={event => onBlur && onBlur(event)}
       >
@@ -94,7 +87,6 @@ export default class Checkbox extends React.PureComponent<Props> {
             indeterminate ? styles.indeterminate : null,
             isInvalid ? styles.invalidInput : null,
             disabled ? styles.disabledInput : null,
-            isSmall ? styles.smallInput : styles.largeInput
           )}
         />
         <span
@@ -103,12 +95,16 @@ export default class Checkbox extends React.PureComponent<Props> {
             wrapLabel === true ? null : styles.radioLabelNoWrap
           )}
         >
-          <Text>{this.props.label}</Text>
+          <Text color={disabled ? "grey40" : "grey60"}>{this.props.label}</Text>
         </span>
       </label>
     );
   }
 }
+
+const checkedFill = latitudeColors.grey60;
+const disabledEmptyFill = latitudeColors.grey10;
+const disabledMarkedFill = latitudeColors.grey20;
 
 const styles = StyleSheet.create({
   label: {
@@ -141,7 +137,7 @@ const styles = StyleSheet.create({
     appearance: "none",
     backgroundColor: latitudeColors.white,
     outline: "none",
-    border: `2px solid ${latitudeColors.grey20}`,
+    border: `2px solid ${latitudeColors.grey30}`,
     width: "20px",
     height: "20px",
     minWidth: "20px",
@@ -157,7 +153,7 @@ const styles = StyleSheet.create({
     },
     ":checked": {
       background: `${
-        latitudeColors.grey60
+        checkedFill
       } url("data:image/svg+xml,%3Csvg width='16px' height='16px' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cpath d='M61.964,16.52 L23.778,54.706 C23.3853277,55.0977362 22.7496723,55.0977362 22.357,54.706 L16.557,48.906 L2.294,34.641 C1.90226377,34.2483277 1.90226377,33.6126723 2.294,33.22 L7.979,27.536 C8.37167233,27.1442638 9.00732767,27.1442638 9.4,27.536 L22.948,41.084 L54.738,9.294 C55.1306723,8.90226377 55.7663277,8.90226377 56.159,9.294 L61.964,15.1 C62.3550716,15.4925567 62.3550716,16.1274433 61.964,16.52 Z' fill='%23fff' %3E%3C/path%3E%3C/svg%3E") no-repeat center`,
       backgroundSize: "80%",
       borderColor: "transparent",
@@ -171,19 +167,24 @@ const styles = StyleSheet.create({
   },
   indeterminate: {
     background: `${
-      latitudeColors.grey60
+      checkedFill
     } url("data:image/svg+xml,%3Csvg width='14px' height='14px' padding='1px' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cpath d='M62 31c0 2.765-.24 5-3.006 5H5.006C2.246 36 2 33.764 2 31c0-2.766.244-5 3.006-5h53.991c2.76 0 3 2.234 3 5H62z' fill='%23fff' %3E%3C/path%3E%3C/svg%3E") no-repeat center`,
     backgroundSize: "80%",
     borderColor: "transparent",
+    ":disabled": {
+      backgroundColor: disabledMarkedFill,
+    },
   },
   disabled: {
     pointerEvents: "none",
     color: latitudeColors.grey40,
   },
   disabledInput: {
-    borderColor: latitudeColors.grey30,
+    borderColor: latitudeColors.grey20,
+    backgroundColor: disabledEmptyFill,
     ":checked": {
-      backgroundColor: latitudeColors.grey30,
+      borderColor: latitudeColors.grey20,
+      backgroundColor: disabledMarkedFill,
     },
   },
   invalid: {
@@ -210,10 +211,6 @@ const styles = StyleSheet.create({
       borderColor: latitudeColors.red40,
     },
   },
-  small: {},
-  smallInput: {},
-  large: {},
-  largeInput: {},
   radioLabelNoWrap: {
     whiteSpace: "nowrap",
   },

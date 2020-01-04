@@ -89,6 +89,13 @@ function CheckboxLauncher({disabled, theme, showSelectAllOption}: Props) {
           onChange={() => handleCheck(2)}
         />
         <Checkbox
+          label="Indeterminate and disabled"
+          checked={checked[2]}
+          indeterminate={true}
+          disabled={true}
+          onChange={() => handleCheck(2)}
+        />
+        <Checkbox
           label="Not checked, disabled"
           checked={false}
           disabled={true}

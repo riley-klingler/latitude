@@ -29,7 +29,6 @@ function CheckboxOption({label, checked, onChange}: Props) {
           label={label}
           checked={checked}
           onChange={onChange}
-          size="l"
         />
       </div>
     </div>

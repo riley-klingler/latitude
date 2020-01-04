@@ -37,20 +37,12 @@ describe("Checkbox", () => {
         const comp = mountCheckbox();
         expect(comp.props().disabled).toBe(false);
       });
-      it("defaults to small checkboxes", () => {
-        const comp = mountCheckbox();
-        expect(comp.props().size).toBe("s");
-      });
     });
     describe("custom props", () => {
       it("renders checkbox label", () => {
         const label = "Yes";
         const comp = mountCheckbox({label});
         expect(comp.find("span").html()).toContain(label);
-      });
-      it("can render large checkboxes", () => {
-        const comp = mountCheckbox({size: "l"});
-        expect(comp.props().size).toBe("l");
       });
       it("can be checked", () => {
         const comp = mountCheckbox({checked: true});
