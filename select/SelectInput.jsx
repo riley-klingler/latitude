@@ -220,8 +220,6 @@ const styles = StyleSheet.create({
     top: "2px",
     right: "3px",
     bottom: "2px",
-    background:
-      "linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 25%, rgba(255,255,255,1))",
     pointerEvents: "none",
   },
   disabledArrow: {
