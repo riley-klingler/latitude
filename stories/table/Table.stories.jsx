@@ -161,6 +161,7 @@ const RowAggregationHoist = () => {
       rowAggregationPinned={false}
       getRowGroupId={row => row.network}
       expandedRows={expandedRows}
+      expandSingleAggregateRow={true}
       onExpandedRowsChange={setExpandedRows}
       sortBy={sortBy}
       onSortByChange={setSortBy}

@@ -202,6 +202,7 @@ export default function Table<T>({
   rowAggregationEnabled = false,
   rowAggregationPinned = true,
   getRowGroupId,
+  expandSingleAggregateRow = false,
   expandedRows = new Set(),
   onExpandedRowsChange = noop,
   hasNextPage = false,
@@ -251,6 +252,8 @@ export default function Table<T>({
   +rowAggregationPinned?: boolean,
   /** A function to determine which row group the row belongs to, this ID is what is returned in the row expansions set  */
   +getRowGroupId?: T => string,
+  /** Automatically expand single aggregate row with no children */
+  +expandSingleAggregateRow?: boolean,
   /** Which row groups are expanded, based on IDs returned from getRowGroupId */
   +expandedRows?: $ReadOnlySet<string>,
   /** Callback for when the user expands a row group */
@@ -379,9 +382,9 @@ export default function Table<T>({
     return rowGroups.reduce(
       (rows, rowGroup) => [
         ...rows,
-        rowGroup.length > 1
-          ? flattenRowGroup(rowGroup)
-          : flattenRow(rowGroup[0]),
+        expandSingleAggregateRow && rowGroup.length === 1
+          ? flattenRow(rowGroup[0])
+          : flattenRowGroup(rowGroup),
         ...(expandedRows.has(getRowGroupId(rowGroup[0]))
           ? rowGroup.map(flattenExpandedRow)
           : []),
