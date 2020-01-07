@@ -224,7 +224,7 @@ function SearchableMultiselectFilter<T>({
       placement={dropdownPlacement}
       noPortal={noPortal}
     >
-      <div className={styles.filterContainer}>
+      <div className={css(styles.filterContainer)}>
         <div className={css(styles.multiInputContainer)}>
           <MultiInput
             value={selectedOptions.map(option => option.label)}

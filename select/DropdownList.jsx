@@ -10,6 +10,7 @@ import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
 import {entries} from "lodash";
 
+import {InFilterContext} from "../filter/BaseFilter";
 import DropdownOption from "./DropdownOption";
 import latitudeColors from "../colors";
 import invariant from "../tools/invariant";
@@ -60,6 +61,8 @@ export default function DropdownList({
   footer,
   maxHeight = 400,
 }: Props) {
+  const isInFilterContext = React.useContext(InFilterContext)
+
   const dropdownOptions = options.map(option => ({
     ...option,
   }));
@@ -119,7 +122,8 @@ export default function DropdownList({
     <div
       className={css(
         styles.dropdown,
-        !isOpen || isListEmpty ? styles.hidden : null
+        !isInFilterContext && styles.dropdownDropshadow,
+        !isOpen || isListEmpty ? styles.hidden : null,
       )}
     >
       {header}
@@ -133,9 +137,11 @@ export default function DropdownList({
 
 const styles = StyleSheet.create({
   dropdown: {
-    boxShadow: "0px 0px 20px rgba(57, 65, 77, 0.15)",
     background: latitudeColors.white,
     padding: "0",
+  },
+  dropdownDropshadow: {
+    boxShadow: "0px 0px 20px rgba(57, 65, 77, 0.15)",
   },
   firstSectionHeader: {
     borderTop: "none",
