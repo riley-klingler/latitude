@@ -22,7 +22,7 @@ import {
   HORIZONTAL_INPUT_PADDING_LARGE_PX,
   HORIZONTAL_INPUT_PADDING_SMALL_PX,
 } from "./styles/input";
-import {sizes} from "./tools/ui/sizes";
+import iconSizes from "./iconSizes";
 import {getWidthOfText} from "./styles/fontWidths";
 import {typeScale} from "./styles/typography";
 
@@ -376,13 +376,13 @@ const getSvgSizeFromTextInputSize = (size: Size): number => {
   // eslint-disable-next-line default-case
   switch (size) {
     case "s":
-      return sizes.xxs.svgSize;
+      return iconSizes.xxs;
     case "m":
-      return sizes.xs.svgSize;
+      return iconSizes.xs;
     case "l":
-      return sizes.s.svgSize;
+      return iconSizes.s;
   }
-  return sizes.xs.svgSize;
+  return iconSizes.xs;
 };
 
 const styles = StyleSheet.create({

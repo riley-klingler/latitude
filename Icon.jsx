@@ -15,7 +15,7 @@ import deprecatedColors, {
   type DeprecatedColor,
 } from "./styles/deprecatedColorConstants";
 import transmissionDeprecatedColors from "./dispatch/styles/colors";
-import {sizes} from "./tools/ui/sizes";
+import iconSizes from "./iconSizes";
 import ThemeNameContext, {
   type Theme,
   TRANSMISSION,
@@ -108,7 +108,7 @@ class Icon extends React.PureComponent<Props> {
     // Pass undefined if no size is defined to omit the attributes.
     // Browsers such as chrome throw errors if width/height have
     // empty values
-    const proportion = size ? sizes[size].svgSize : undefined;
+    const proportion = size ? iconSizes[size] : undefined;
     return (
       <span
         className={classes}
@@ -173,8 +173,8 @@ const getIconSize = (size: ?StandardIconSizes, customSize: ?number) => {
       height: "1em",
     };
   }
-  const width = sizes[size].svgSize;
-  const height = sizes[size].svgSize;
+  const width = iconSizes[size];
+  const height = iconSizes[size];
   return {
     width,
     height,

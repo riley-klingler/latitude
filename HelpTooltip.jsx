@@ -8,7 +8,7 @@ import * as React from "react";
 import {css, StyleSheet} from "aphrodite";
 import Tooltip from "./Tooltip";
 import Icon from "./Icon";
-import {sizes} from "./tools/ui/sizes";
+import iconSizes from "./iconSizes";
 import type {StandardIconSizes} from "./Icon";
 import type {IconNames} from "./tools/icons";
 import type {Color} from "./colors";
@@ -91,14 +91,14 @@ export default class HelpTooltip extends React.PureComponent<Props> {
       return tooltip;
     }
 
-    const offsetBottom = sizes[size].svgSize / 2 - 1;
+    const offsetBottom = iconSizes[size] / 2 - 1;
 
     return (
       <span
         className={css(styles.wrapper)}
         style={{
-          width: `${sizes[size].svgSize}px`,
-          height: `${sizes[size].svgSize}px`,
+          width: `${iconSizes[size]}px`,
+          height: `${iconSizes[size]}px`,
         }}
       >
         <div

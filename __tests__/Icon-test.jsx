@@ -3,6 +3,9 @@
  * WATCHERS: notandrewkaye
  * @flow
  */
+
+/* eslint-disable no-unused-expressions */
+
 import {mount, shallow} from "enzyme";
 import * as React from "react";
 
@@ -76,14 +79,10 @@ describe("Icon", () => {
     });
 
     describe("sets a specific size that is not available", () => {
-      it("should throw an error if an invalid size is used", () => {
-        expect(() => {
-          const {Icon} = _test;
-          mount(
-            // $ExpectError;
-            <Icon size="xxxl" iconName="satellite" theme={BASE} />
-          );
-        }).toThrow();
+      it("should throw a flow error if an invalid size is used", () => {
+        const {Icon} = _test;
+        // $ExpectError
+        <Icon size="xxxl" iconName="satellite" theme={BASE} />;
       });
     });
 
