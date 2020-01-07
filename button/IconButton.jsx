@@ -16,6 +16,8 @@ import stringOrFalse from "../tools/stringOrFalse";
 import {sharedStyles, getButtonStyle} from "../button/styles";
 import ThemeNameContext from "../context/ThemeNameContext";
 import type {ButtonSize} from "./Button";
+import sizes from "../sizes";
+import iconSizes from "../iconSizes";
 
 type IconButtonKind = "hollow" | "bare" | "blank";
 export type IconButtonIntent = "basic" | "none" | "danger";
@@ -189,12 +191,14 @@ export default class IconButton extends React.PureComponent<Props, State> {
         ? [IconComponent, LabelComponent]
         : [LabelComponent, IconComponent];
 
+    const styles = getStyles(size, height);
+
     return (
       <button
         className={css(
           ...buttonStyles.button,
+          styles.button,
           intent === "none" ? styles.none : null,
-          styles[size]
         )}
         onClick={onClick}
         onMouseDown={onMouseDown}
@@ -203,9 +207,6 @@ export default class IconButton extends React.PureComponent<Props, State> {
         onBlur={this.handleBlur}
         type={type}
         disabled={disabled || isLoading || wasLoading}
-        style={{
-          height: height.type === "customDontUse" ? height.height : undefined,
-        }}
       >
         {isLoading && (
           <div className={css(sharedStyles.loaderContainer)}>
@@ -228,7 +229,7 @@ export default class IconButton extends React.PureComponent<Props, State> {
   }
 }
 
-const getIconSize = (size: "s" | "m" | "l") => {
+const getIconSize = (size: ButtonSize) => {
   switch (size) {
     case "s":
       return "xxs";
@@ -248,25 +249,31 @@ const getLoaderSize = (buttonSize: ButtonSize): number => {
   return 24;
 };
 
-const styles = StyleSheet.create({
+/** Padding makes icon-only IconButtons perfect squares */
+const getButtonPadding = (
+  size: ButtonSize,
+  height: {type: "fixed"} | {type: "customDontUse", height: number},
+) => {
+  const buttonHeight = height.type === "fixed" ? sizes[size] : height.height;
+  const iconHeight = iconSizes[getIconSize(size)];
+  const borderWidth = 2;
+  const horizontalPadding = (buttonHeight - iconHeight) / 2 + borderWidth;
+
+  return `0 ${horizontalPadding}px`;
+}
+
+const getStyles = (
+  size: ButtonSize,
+  height: {type: "fixed"} | {type: "customDontUse", height: number},
+) => StyleSheet.create({
+  button: {
+    padding: getButtonPadding(size, height),
+    height: height.type === "customDontUse" ? height.height : undefined,
+  },
   none: {
     fill: colors.grey50,
     ":hover span svg": {
       fill: colors.black,
     },
-  },
-  /*
-    Padding differences for IconButton to make icon-only IconButtons perfect
-    squares. deprecatedWhitespace.js and whitespace.js do not support this
-    specific use case.
-  */
-  s: {
-    padding: "0 6.5px",
-  },
-  m: {
-    padding: "0 9px",
-  },
-  l: {
-    padding: "0 12px",
   },
 });

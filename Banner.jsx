@@ -86,7 +86,6 @@ export default function Banner({
     closeNode = (
       <div
         className={css(
-          styles.closeWrapper,
           intent === "danger" && styles.closeWrapperDanger
         )}
       >
@@ -97,6 +96,7 @@ export default function Banner({
           intent="none"
           type="button"
           size="l"
+          height={{type: "customDontUse", height: 20}}
         />
       </div>
     );
@@ -151,10 +151,6 @@ const styles = StyleSheet.create({
   },
   iconWrapper: {
     marginRight: "20px",
-  },
-  closeWrapper: {
-    width: "20px",
-    height: "20px",
   },
   closeWrapperDanger: {
     ":nth-child(1n) > button > span > svg": {
