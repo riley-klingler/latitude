@@ -3,9 +3,6 @@
   "version": "0.0.0-versionless",
   "description": "Flexport's design system",
   "private": false,
-  "engines": {
-    "node": "8.11.1"
-  },
   "dependencies": {
     "@storybook/addon-actions": "^5.2.4",
     "@storybook/addon-links": "^5.2.4",
