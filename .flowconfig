@@ -38,6 +38,10 @@ untyped-type-import
 
 [untyped]
 .*/node_modules/react-select/
+.*/node_modules/react-simple-code-editor/*
+
+[include]
+../../node_modules/.*
 
 [ignore]
 .*/node_modules/editions/*
@@ -57,18 +61,6 @@ untyped-type-import
 .*/node_modules/jsverify/*
 .*/node_modules/react-popper/*
 .*/node_modules/babel-plugin-emotion/*
-<PROJECT_ROOT>/app/.*
-<PROJECT_ROOT>/lib/.*
-<PROJECT_ROOT>/db/.*
-<PROJECT_ROOT>/spec/.*
-<PROJECT_ROOT>/tmp/.*
-<PROJECT_ROOT>/log/.*
-<PROJECT_ROOT>/vendor/.*
-<PROJECT_ROOT>/airports.json
-<PROJECT_ROOT>/docker/prod/scalyr.json
-<PROJECT_ROOT>/docker/services/base/build/conf/scalyr.json
-<PROJECT_ROOT>/capital/infra/docker/base/build/conf/scalyr.json
-<PROJECT_ROOT>/env-improvement/nis-generator/example-nis/infra/docker/base/build/conf/sumo.json
-<PROJECT_ROOT>/env-improvement/nis-generator/example-nis/infra/docker/base/build/conf/scalyr.json
+.*/flexport-eslint/*
+.*/graphql_gateway/*
 <PROJECT_ROOT>/.git/.*
-<PROJECT_ROOT>/docker/nis_dockerfiles_to_check.json
