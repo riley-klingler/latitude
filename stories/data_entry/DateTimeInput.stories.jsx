@@ -1,7 +1,5 @@
 /**
  * TEAM: frontend_infra
- * WATCHERS: uforic
- *
  * @flow
  */
 
