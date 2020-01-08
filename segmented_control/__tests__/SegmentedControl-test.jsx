@@ -9,7 +9,6 @@ import {mount} from "enzyme";
 import SegmentedControl, {
   type SegmentedControlProps,
 } from "../SegmentedControl";
-import SegmentedControlButton from "../SegmentedControlButton";
 
 const defaultOptions = [
   {label: "Sourdough", value: "sourdough"},
@@ -53,7 +52,6 @@ function mountSegmentedControl(propOverrides: {} = {}) {
 
 function mountStatefulSegmentedControl(propOverrides: {} = {}) {
   return mount(
-    // $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0)
     <StatefulSegmentedControl options={defaultOptions} {...propOverrides} />
   );
 }
@@ -61,12 +59,12 @@ function mountStatefulSegmentedControl(propOverrides: {} = {}) {
 describe("SegmentedControl", () => {
   it("string options supported and rendered", () => {
     expect(
-      mountSegmentedControl({options: ["a", "b"]}).find(SegmentedControlButton)
+      mountSegmentedControl({options: ["a", "b"]}).find("input[type='radio']")
         .length
     ).toBe(2);
   });
   it("mixed (object and string) type options rendered", () => {
-    expect(mountSegmentedControl().find(SegmentedControlButton).length).toBe(
+    expect(mountSegmentedControl().find("input[type='radio']").length).toBe(
       defaultOptions.length
     );
   });
@@ -75,23 +73,23 @@ describe("SegmentedControl", () => {
 
     expect(
       wrapper
-        .find(SegmentedControlButton)
+        .find("input[type='radio']")
         .first()
-        .props().selected
+        .props().checked
     ).toEqual(true);
 
     expect(
       wrapper
-        .find(SegmentedControlButton)
+        .find("input[type='radio']")
         .at(1)
-        .props().selected
+        .props().checked
     ).toEqual(false);
   });
   it("onchange is called correctly", () => {
     const onChange = jest.fn();
     const wrapper = mountSegmentedControl({onChange});
     wrapper
-      .find(SegmentedControlButton)
+      .find("input[type='radio']")
       .first()
       .find("input")
       .simulate("change");
@@ -103,7 +101,7 @@ describe("SegmentedControl", () => {
 
     defaultOptions.forEach((_, index) => {
       wrapper
-        .find(SegmentedControlButton)
+        .find("input[type='radio']")
         .at(index)
         .find("input")
         .simulate("change");
@@ -111,9 +109,9 @@ describe("SegmentedControl", () => {
       for (let idx = 0; idx < defaultOptions.length; idx += 1) {
         expect(
           wrapper
-            .find(SegmentedControlButton)
+            .find("input[type='radio']")
             .at(idx)
-            .props().selected
+            .props().checked
         ).toEqual(idx === index);
       }
     });
@@ -122,29 +120,29 @@ describe("SegmentedControl", () => {
     const wrapper = mountStatefulSegmentedControl();
 
     wrapper
-      .find(SegmentedControlButton)
+      .find("input[type='radio']")
       .first()
       .find("input")
       .simulate("change");
 
     expect(
       wrapper
-        .find(SegmentedControlButton)
+        .find("input[type='radio']")
         .first()
-        .props().selected
+        .props().checked
     ).toEqual(true);
 
     wrapper
-      .find(SegmentedControlButton)
+      .find("input[type='radio']")
       .first()
       .find("input")
       .simulate("change");
 
     expect(
       wrapper
-        .find(SegmentedControlButton)
+        .find("input[type='radio']")
         .first()
-        .props().selected
+        .props().checked
     ).toEqual(true);
   });
 });
