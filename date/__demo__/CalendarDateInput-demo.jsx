@@ -73,6 +73,7 @@ export class CalendarDateShim extends React.PureComponent<
       <CalendarDateInput
         value={this.state.value}
         onChange={this.handleChange}
+        // $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0)
         {...this.props.demoProps}
       />
     );

@@ -92,13 +92,12 @@ export class CustomDropdownButtonClass extends React.PureComponent<DropdownProps
 
 export const styles = StyleSheet.create({
   dropdownContainer: {
+    ...include(margin.t.xs),
     backgroundColor: colors.white,
     maxHeight: 250,
     width: 400,
     overflowY: "auto",
     ...border.a.s,
-    // $FlowUpgradeFixMe(0.110.1 -> 0.111.1)
-    ...include(margin.t.xs),
     borderRadius: 3,
     boxShadow: "2px 2px 2px rgba(0,0,0,0.06)",
   },

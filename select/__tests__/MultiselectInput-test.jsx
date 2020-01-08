@@ -26,7 +26,7 @@ function mountMultiselect(propOverrides: {} = {}) {
     // $FlowUpgradeFixMe(0.110.1 -> 0.111.1)
     ...propOverrides,
   };
-  // $FlowFixMe(uforic)
+
   return mount(<MultiselectInputClass {...mergedProps} />);
 }
 

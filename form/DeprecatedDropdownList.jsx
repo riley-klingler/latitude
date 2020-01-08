@@ -53,6 +53,7 @@ function DeprecatedDropdownList({
           >
             {option.iconName ? (
               <span className={css(margin.r.m)}>
+                {/* $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0) */}
                 <Icon iconName={option.iconName} />
               </span>
             ) : null}

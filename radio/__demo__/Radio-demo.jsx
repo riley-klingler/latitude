@@ -51,6 +51,7 @@ export class RadioShim extends React.PureComponent<
         checked={this.state.checked}
         onChange={this.handleChange}
         label="Test label"
+        // $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0)
         {...demoProps}
       />
     );

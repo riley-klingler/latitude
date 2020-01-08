@@ -3,11 +3,9 @@
  * @flow
  */
 
-import React, { useState, type Node } from "react";
-import { type DemoFile, list } from "../../design_system/types/demoTypes";
-import DocumentUploader, {
-  type ServerState,
-} from "../DocumentUploader";
+import React, {useState, type Node} from "react";
+import {type DemoFile, list} from "../../design_system/types/demoTypes";
+import DocumentUploader, {type ServerState} from "../DocumentUploader";
 
 const demos: DemoFile = {
   demos: [
@@ -48,6 +46,7 @@ export function DocumentUploaderShim({elementToCodeFn, demoProps}: Props) {
     <DocumentUploader
       document={document}
       onChange={setDocument}
+      // $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0)
       {...demoProps}
     />
   );

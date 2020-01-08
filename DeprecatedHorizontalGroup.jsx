@@ -9,6 +9,7 @@ import * as React from "react";
 import classnames from "classnames";
 import {compact, flatten} from "lodash";
 
+// $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0)
 import {SPACING_SIZES} from "./constants/styles";
 
 const CROSS_ALIGN_CLASS_MAP = {

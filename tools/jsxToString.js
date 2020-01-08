@@ -24,7 +24,6 @@ function jsxToString(jsxElement: React.Node): string {
     sortProps: false,
   };
 
-  // $FlowFixMe(dirak) React.Node === React.Element<any>
   return reactElementToJSXString(jsxElement, options);
 }
 

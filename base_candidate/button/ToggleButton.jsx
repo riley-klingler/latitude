@@ -80,6 +80,7 @@ export default function ToggleButton({
 
   const IconComponent = iconName && (
     <Icon
+      // $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0)
       iconName={iconName}
       color={isInvalid ? "red40" : "grey50"}
       size={getIconSize(size)}

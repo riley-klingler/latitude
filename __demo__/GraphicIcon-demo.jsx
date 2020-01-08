@@ -58,6 +58,7 @@ export class GraphicIconShim extends React.PureComponent<
 > {
   render() {
     const {elementToCodeFn, demoProps} = this.props;
+    // $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0)
     const element = <GraphicIcon {...demoProps} />;
     // eslint-disable-next-line no-unused-expressions
     elementToCodeFn && elementToCodeFn(element);

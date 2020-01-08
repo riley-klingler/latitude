@@ -15,6 +15,7 @@ describe("InlineEdit", () => {
   it("matches snapshot", () => {
     const comp = mount(
       <InlineEdit value="value" onChange={() => {}}>
+        {/* $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0) */}
         {props => <TextInput {...props} />}
       </InlineEdit>
     );
@@ -26,6 +27,7 @@ describe("InlineEdit", () => {
     it("initially mounts display text", () => {
       const comp = mount(
         <InlineEdit value="value" onChange={() => {}}>
+          {/* $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0) */}
           {props => <TextInput {...props} />}
         </InlineEdit>
       );
@@ -37,6 +39,7 @@ describe("InlineEdit", () => {
     it("mounts input when the edit button is pressed", () => {
       const comp = mount(
         <InlineEdit value="value" onChange={() => {}}>
+          {/* $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0) */}
           {props => <TextInput {...props} />}
         </InlineEdit>
       );
@@ -60,6 +63,7 @@ describe("InlineEdit", () => {
 
       comp = mount(
         <InlineEdit value="value" onChange={handleChange}>
+          {/* $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0) */}
           {props => <TextInput {...props} />}
         </InlineEdit>
       );

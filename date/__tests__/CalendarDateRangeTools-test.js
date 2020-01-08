@@ -90,6 +90,7 @@ describe("isCalendarDateInCalendarDateRange", () => {
   // by using the function under test to test things. Which means failures here
   // are slightly annoying to read, sorry
   it("correctly reports if CalendarDate is within CalendarDateRange", () => {
+    // $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0)
     jsc.assertForall(
       singleDate,
       singleDate,
@@ -120,6 +121,7 @@ describe("explodeCalendarDateRange", () => {
   const singleDate = calDateGenerator(baseFromDate, baseToDate);
 
   it("converts single day range into single-element array of that CalendarDate", () => {
+    // $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0)
     jsc.assertForall(singleDate, calDate => {
       const dateArray = explodeCalendarDateRange({
         startDate: calDate,
@@ -138,6 +140,7 @@ describe("explodeCalendarDateRange", () => {
   it("converts a multi-day range into a multi-element array covering all dates", () => {
     // jsc.nat(100) as numDays constrains us to checking for CalendarDateRanges
     // no larger than 100 days as a performance optimization
+    // $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0)
     jsc.assertForall(singleDate, jsc.nat(100), (startDate, numDays) => {
       const endDate = addDaysFromCalendarDate(startDate, numDays);
       const dateArray = explodeCalendarDateRange({startDate, endDate});
@@ -161,6 +164,7 @@ describe("mergeCalendarDates", () => {
   const singleDate = calDateGenerator(baseFromDate, baseToDate);
 
   it("converts a single-element array of CalendarDate into a single day range", () => {
+    // $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0)
     jsc.assertForall(singleDate, calDate => {
       const dateRangeArray = mergeCalendarDates([calDate]);
 
@@ -171,6 +175,7 @@ describe("mergeCalendarDates", () => {
   });
 
   it("converts an array of successive CalendarDates into a single range", () => {
+    // $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0)
     jsc.assertForall(singleDate, jsc.nat(100), (startDate, numDays) => {
       // Usual case, dateArray has at least one Date
       const dateArray = [];
@@ -203,6 +208,7 @@ describe("mergeCalendarDates", () => {
 
   const calDateArray = jsc.array(singleDate);
   xit("merges all mergable CalendarDates into CalendarDateRanges", () => {
+    // $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0)
     jsc.assertForall(calDateArray, dateArray => {
       // Do the merge itself
       const dateRangeArray = mergeCalendarDates(dateArray);

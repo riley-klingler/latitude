@@ -53,6 +53,7 @@ function mountSegmentedControl(propOverrides: {} = {}) {
 
 function mountStatefulSegmentedControl(propOverrides: {} = {}) {
   return mount(
+    // $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0)
     <StatefulSegmentedControl options={defaultOptions} {...propOverrides} />
   );
 }

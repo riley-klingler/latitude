@@ -190,6 +190,7 @@ class CustomModal extends React.PureComponent<CombinedProps> {
         closeTimeoutMS={450}
         isOpen={this.isVisible()}
         className={this.props.className}
+        // $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0)
         {...closeOptions}
       >
         {this.props.children}

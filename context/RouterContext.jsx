@@ -39,6 +39,7 @@ export const SpaLinkElement = (props: SpaLinkProps) => {
   const {href, Component, children, ...otherProps} = props;
   const LinkComponent = Component || "a";
   return (
+    // $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0)
     <LinkComponent href={href} {...otherProps}>
       {children}
     </LinkComponent>

@@ -83,6 +83,7 @@ const Category = ({
             // eslint-disable-next-line react/no-array-index-key
             <div className={css(styles.cell)} key={i}>
               <div>
+                {/* $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0) */}
                 <Icon iconName={icon.key} size="xxl" color="grey60" />
               </div>
               <pre className={css(styles.iconName)}>

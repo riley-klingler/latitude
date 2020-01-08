@@ -23,6 +23,7 @@ function FormLevelErrorsDemo() {
             editStyle="pencil"
             textWrap={true}
           >
+            {/* $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0) */}
             {props => <TextInput {...props} />}
           </InlineEdit>
         </Label>
@@ -33,6 +34,7 @@ function FormLevelErrorsDemo() {
             textWrap={true}
             editStyle="pencil"
           >
+            {/* $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0) */}
             {props => <TextareaInput {...props} rows={4} />}
           </InlineEdit>
         </Label>

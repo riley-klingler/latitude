@@ -20,6 +20,7 @@ function mountMultiselectOptions(propOverrides: {} = {}) {
     displaySelectAllButton: false,
   };
 
+  // $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0)
   return mount(<MultiselectOptions {...defaultProps} {...propOverrides} />);
 }
 

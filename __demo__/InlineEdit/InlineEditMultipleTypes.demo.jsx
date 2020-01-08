@@ -26,6 +26,7 @@ export default function InlineEditPencil() {
       <div style={{width: 240}}>
         <Label value="Number Input" indicateRequired={true}>
           <InlineEdit value={number} onChange={setNumber}>
+            {/* $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0) */}
             {props => <FloatInput {...props} />}
           </InlineEdit>
         </Label>
@@ -39,6 +40,7 @@ export default function InlineEditPencil() {
             value={text}
             onChange={setText}
           >
+            {/* $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0) */}
             {props => <TextareaInput {...props} rows={{min: 2, max: 10}} />}
           </InlineEdit>
         </Label>

@@ -14,6 +14,7 @@ function mountHighlighter(children: React.Node, propOverrides: {} = {}) {
     <Highlighter
       color="grey20"
       selectionRef={{current: null}}
+      // $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0)
       {...propOverrides}
     >
       {children}

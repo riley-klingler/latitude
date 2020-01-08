@@ -70,6 +70,7 @@ class Link extends React.PureComponent<Props> {
           // in specialist apps, this is sufficient. in older apps, data-ignore-spa-route is used
           const LinkElement = disableSpaHijack ? "a" : SpaLinkElement;
           return (
+            // $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0)
             <LinkElement href={href} {...tagAnchorParams} {...otherProps}>
               {children}
             </LinkElement>

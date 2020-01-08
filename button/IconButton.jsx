@@ -177,6 +177,7 @@ export default class IconButton extends React.PureComponent<Props, State> {
 
     const IconComponent = (
       <Icon
+        // $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0)
         iconName={iconName}
         size={getIconSize(size)}
         alignment="center"
@@ -260,12 +261,15 @@ const styles = StyleSheet.create({
     squares. deprecatedWhitespace.js and whitespace.js do not support this
     specific use case.
   */
+  // eslint-disable-next-line flexport/no-unused-aphrodite-styles
   s: {
     padding: "0 6.5px",
   },
+  // eslint-disable-next-line flexport/no-unused-aphrodite-styles
   m: {
     padding: "0 9px",
   },
+  // eslint-disable-next-line flexport/no-unused-aphrodite-styles
   l: {
     padding: "0 12px",
   },
