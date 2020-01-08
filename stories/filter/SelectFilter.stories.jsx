@@ -61,6 +61,7 @@ export class FilterHoist extends React.Component<
   render() {
     return (
       <div>
+        {/* $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0) */}
         <SelectFilter
           {...this.props}
           label="Favorite Star Wars character"

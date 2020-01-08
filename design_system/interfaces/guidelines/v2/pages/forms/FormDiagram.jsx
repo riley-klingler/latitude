@@ -70,8 +70,11 @@ function FormDiagram() {
       <WithLegend id={4}>
         <Highlight>
           <Label value="Label" indicateRequired={true}>
-            {/** $FlowFixMe(Shawn) Just a demo */}
-            <TextInput placeholder="Placeholder" onChange={() => undefined} value=""/>
+            <TextInput
+              placeholder="Placeholder"
+              onChange={() => undefined}
+              value=""
+            />
           </Label>
         </Highlight>
       </WithLegend>
@@ -79,16 +82,22 @@ function FormDiagram() {
         <Item>
           <Highlight>
             <Label value="Label" indicateRequired={true}>
-              {/** $FlowFixMe(Shawn) Just a demo */}
-              <TextInput placeholder="Placeholder" onChange={() => undefined} value=""/>
+              <TextInput
+                placeholder="Placeholder"
+                onChange={() => undefined}
+                value=""
+              />
             </Label>
           </Highlight>
         </Item>
         <Item>
           <Highlight>
             <Label value="Label" indicateRequired={true}>
-              {/** $FlowFixMe(Shawn) Just a demo */}
-              <TextInput placeholder="Placeholder" onChange={() => undefined} value=""/>
+              <TextInput
+                placeholder="Placeholder"
+                onChange={() => undefined}
+                value=""
+              />
             </Label>
           </Highlight>
         </Item>
@@ -101,24 +110,33 @@ function FormDiagram() {
       </Half>
       <Highlight>
         <Label value="Label" indicateRequired={true}>
-          {/** $FlowFixMe(Shawn) Just a demo */}
-          <TextInput placeholder="Placeholder" onChange={() => undefined} value=""/>
+          <TextInput
+            placeholder="Placeholder"
+            onChange={() => undefined}
+            value=""
+          />
         </Label>
       </Highlight>
       <Collection>
         <Item>
           <Highlight>
             <Label value="Label" indicateRequired={true}>
-              {/** $FlowFixMe(Shawn) Just a demo */}
-              <TextInput placeholder="Placeholder" onChange={() => undefined} value=""/>
+              <TextInput
+                placeholder="Placeholder"
+                onChange={() => undefined}
+                value=""
+              />
             </Label>
           </Highlight>
         </Item>
         <Item>
           <Highlight>
             <Label value="Label" indicateRequired={true}>
-              {/** $FlowFixMe(Shawn) Just a demo */}
-              <TextInput placeholder="Placeholder" onChange={() => undefined} value=""/>
+              <TextInput
+                placeholder="Placeholder"
+                onChange={() => undefined}
+                value=""
+              />
             </Label>
           </Highlight>
         </Item>

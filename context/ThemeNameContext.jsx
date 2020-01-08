@@ -59,6 +59,7 @@ export function connectTheme<K: AcceptsTheme, C: React.ComponentType<K>>(
     "Component";
   const ThemeHOC = (props: $Diff<React.ElementConfig<C>, AcceptsTheme>) => (
     <ThemeNameContext.Consumer>
+      {/* $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0) */}
       {theme => <WrappedComponent theme={theme} {...props} />}
     </ThemeNameContext.Consumer>
   );

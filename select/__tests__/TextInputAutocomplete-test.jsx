@@ -15,6 +15,7 @@ function mountTextInputAutocomplete(props?: {}) {
       value=""
       onChange={() => {}}
       suggestions={["aaa", "aaabbb", "aaabbbccc"]}
+      // $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0)
       {...props}
     />
   );

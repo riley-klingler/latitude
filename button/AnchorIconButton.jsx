@@ -160,6 +160,7 @@ export default class AnchorIconButton extends React.PureComponent<Props> {
 
     const IconComponent = (
       <Icon
+        // $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0)
         iconName={iconName}
         size={getIconSize(size)}
         alignment="center"

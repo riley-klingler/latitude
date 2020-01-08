@@ -20,6 +20,7 @@ export default function InlineEditBasicUsage() {
     <div style={{width: 240}}>
       <Label value="Ship Name" indicateRequired={true}>
         <InlineEdit value={val} onChange={setVal}>
+          {/* $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0) */}
           {props => <TextInput {...props} />}
         </InlineEdit>
       </Label>

@@ -34,6 +34,7 @@ function InlineEditHoist() {
       <div className={css(styles.container)}>
         <Label value="Text Input" indicateRequired={true}>
           <InlineEdit value={short} onChange={setShort}>
+            {/* $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0) */}
             {props => <TextInput {...props} />}
           </InlineEdit>
         </Label>
@@ -42,6 +43,7 @@ function InlineEditHoist() {
       <div className={css(styles.container)}>
         <Label value="Float Input" indicateRequired={true}>
           <InlineEdit value={number} onChange={setNumber}>
+            {/* $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0) */}
             {props => <FloatInput {...props} />}
           </InlineEdit>
         </Label>
@@ -73,6 +75,7 @@ function InlineEditHoist() {
             value={short}
             onChange={setShort}
           >
+            {/* $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0) */}
             {props => <TextInput {...props} />}
           </InlineEdit>
         </Label>
@@ -86,6 +89,7 @@ function InlineEditHoist() {
             value={number}
             onChange={setNumber}
           >
+            {/* $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0) */}
             {props => <FloatInput {...props} />}
           </InlineEdit>
         </Label>
@@ -116,6 +120,7 @@ function InlineEditHoist() {
 
       <div className={css(styles.container)}>
         <InlineEdit textWrap={true} value={text} onChange={setText}>
+          {/* $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0) */}
           {props => <TextareaInput {...props} rows={{min: 3, max: 10}} />}
         </InlineEdit>
       </div>
@@ -127,6 +132,7 @@ function InlineEditHoist() {
           value={text}
           onChange={setText}
         >
+          {/* $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0) */}
           {props => <TextareaInput {...props} rows={{min: 3, max: 10}} />}
         </InlineEdit>
       </div>

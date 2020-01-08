@@ -23,10 +23,12 @@ const defaultProps = {
 };
 
 function mountCheckboxList(customProps: ComponentProps) {
+  // $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0)
   return mount(<CheckboxList {...defaultProps} {...customProps} />);
 }
 
 function shallowCheckboxList(customProps: ComponentProps) {
+  // $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0)
   return shallow(<CheckboxList {...defaultProps} {...customProps} />);
 }
 

@@ -25,6 +25,7 @@ export default function InlineEditPencil() {
           value={val}
           onChange={setVal}
         >
+          {/* $FlowFixMe(ctan) Flow issue from upgrade (1.111.3 => 1.115.0) */}
           {props => <TextInput {...props} />}
         </InlineEdit>
       </Label>
