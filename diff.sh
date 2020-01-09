@@ -1,3 +1,5 @@
+# TEAM: frontend_infra
+
 #!/usr/bin/env bash
 
 # Script for diffing with the monorepo. Helps verify no regressions happened.
