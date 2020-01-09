@@ -31,7 +31,7 @@ type Props = {|
 function GeneralPopover({title, subtitle, children, buttons}: Props) {
   return (
     <CustomPopover>
-      <div className={css(styles.container, !true && classicStyles.container)}>
+      <div className={css(styles.container)}>
         <Text scale="title" weight="bold">
           {title}
         </Text>
@@ -54,12 +54,6 @@ const styles = StyleSheet.create({
   },
   bodyContainer: {
     padding: "20px 0",
-  },
-});
-
-const classicStyles = StyleSheet.create({
-  container: {
-    width: "360px",
   },
 });
 

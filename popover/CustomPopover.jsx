@@ -20,7 +20,7 @@ type Props = {|
  */
 function CustomPopover({children}: Props) {
   return (
-    <div className={css(styles.container, !true && classicStyles.container)}>
+    <div className={css(styles.container)}>
       {children}
     </div>
   );
@@ -34,15 +34,6 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     boxShadow: "0px 0px 20px rgba(57, 65, 77, 0.15)",
     margin: "4px 0",
-  },
-});
-
-const classicStyles = StyleSheet.create({
-  container: {
-    minWidth: "360px",
-    backgroundColor: colors.white,
-    borderRadius: "4px",
-    boxShadow: "0px 2px 10px rgba(24, 25, 26, 0.12)",
   },
 });
 
