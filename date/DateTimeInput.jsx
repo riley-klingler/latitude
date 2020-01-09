@@ -1,6 +1,5 @@
 /**
  * TEAM: frontend_infra
- * WATCHERS: uforic
  * @flow
  */
 
@@ -33,27 +32,32 @@ export type DateTimeValue = {
   wallTime: WallTime | null,
 };
 
-/* Exported for F1 */
-export type DateTimeInputProps = {
-  /** from TextInput */
-  +disabled: boolean,
-  +size: Size,
-  +isInvalid: boolean,
-  +isPrefilled: boolean,
-  /** how the date will be displayed on the CalendarDateInput */
-  +dateFormatString: string,
-  +minDate: CalendarDate | null,
-  +maxDate: CalendarDate | null,
-  /** used to filter calendar dates, like 'no mondays' */
-  +filterDate: (CalendarDate => boolean) | null,
-  /** the list of preset options to display on the time input */
-  +timeInputOptions: $ReadOnlyArray<WallTime>,
-  /** displayed next to the date and time inputs. */
-  +timeZone: string,
+type DateTimeInputProps = {
   /** a date time value, defined in this component, is a CalendarDate and a WallTime, either one is optional. */
   +value: DateTimeValue,
+  /** called when the value of the DateTimeInput changes */
   +onChange: DateTimeValue => void,
-  +extraIgnoreReactOnclickoutsideClass: string,
+  /** from TextInput */
+  +disabled?: boolean,
+  /** the size of the input */
+  +size?: Size,
+  /** whether the input is invalid or not */
+  +isInvalid?: boolean,
+  /** whether the input is prefilled or not */
+  +isPrefilled?: boolean,
+  /** how the date will be displayed on the CalendarDateInput */
+  +dateFormatString?: string,
+  /** the minimum date that can be selected */
+  +minDate?: CalendarDate | null,
+  /** the maximum date that can be selected */
+  +maxDate?: CalendarDate | null,
+  /** used to filter calendar dates, like 'no mondays' */
+  +filterDate?: (CalendarDate => boolean) | null,
+  /** the list of preset options to display on the time input */
+  +timeInputOptions?: $ReadOnlyArray<WallTime>,
+  /** displayed next to the date and time inputs. */
+  +timeZone: string,
+  +extraIgnoreReactOnclickoutsideClass?: string,
 };
 
 export const EMPTY_DATE_TIME_VALUE = {
@@ -73,88 +77,83 @@ export const EMPTY_DATE_TIME_VALUE = {
  * time value can have either value be null.
  *
  * You can convert the DateTimeValue with the exported method `momentFromCalDateWallTime` from wallTime.js.
- * @extends React.Component */
-export default class DateTimeInput extends React.PureComponent<DateTimeInputProps> {
-  static defaultProps = {
-    size: "m",
-    disabled: false,
-    isInvalid: false,
-    isPrefilled: false,
-    minDate: null,
-    maxDate: null,
-    filterDate: null,
-    dateFormatString: "MMM D, YYYY",
-    timeInputOptions: getTimeIntervals(ZERO_OCLOCK, EOD_OCLOCK, 30),
-    extraIgnoreReactOnclickoutsideClass: "",
-  };
-
-  handleDateChange = (newCalDate: CalendarDate | null) => {
-    this.props.onChange({
-      wallTime: this.props.value.wallTime,
+ */
+function DateTimeInput({
+  value,
+  onChange,
+  timeZone,
+  size = "m",
+  disabled = false,
+  isInvalid = false,
+  isPrefilled = false,
+  minDate = null,
+  maxDate = null,
+  filterDate = null,
+  dateFormatString = "MMM D, YYYY",
+  timeInputOptions = getTimeIntervals(ZERO_OCLOCK, EOD_OCLOCK, 30),
+  extraIgnoreReactOnclickoutsideClass = "",
+}: DateTimeInputProps) {
+  const handleDateChange = (newCalDate: CalendarDate | null) => {
+    onChange({
+      wallTime: value.wallTime,
       calendarDate: newCalDate,
     });
   };
 
-  handleTimeChange = (newWallTime: WallTime | null) => {
-    this.props.onChange({
+  const handleTimeChange = (newWallTime: WallTime | null) => {
+    onChange({
       wallTime: newWallTime,
-      calendarDate: this.props.value.calendarDate,
+      calendarDate: value.calendarDate,
     });
   };
 
-  render() {
-    const {size} = this.props;
-    // eslint-disable-next-line no-unused-expressions,no-nested-ternary
-    size === "l" ? "title" : size === "m" ? "base" : "subtext";
-    // eslint-disable-next-line prefer-destructuring
-    const calendarDate = this.props.value.calendarDate;
-    // eslint-disable-next-line prefer-destructuring
-    const wallTime = this.props.value.wallTime;
-    const timeZone = moment.tz(this.props.timeZone).format("z");
-    return (
-      <InputGroup customWidthSettings={[{minWidth: 100}, {}, {}]}>
-        <CalendarDateInput
-          disabled={this.props.disabled}
-          isInvalid={this.props.isInvalid}
-          isPrefilled={this.props.isPrefilled}
-          dateFormatString={this.props.dateFormatString}
-          minDate={this.props.minDate}
-          maxDate={this.props.maxDate}
-          filterDate={this.props.filterDate}
-          value={calendarDate}
-          onChange={this.handleDateChange}
-          size={this.props.size}
-          extraIgnoreReactOnclickoutsideClass={
-            this.props.extraIgnoreReactOnclickoutsideClass
-          }
-          showIcon={true}
-        />
-        <TimeInput
-          value={wallTime}
-          disabled={this.props.disabled}
-          isInvalid={this.props.isInvalid}
-          isPrefilled={this.props.isPrefilled}
-          onChange={this.handleTimeChange}
-          options={this.props.timeInputOptions}
-          size={this.props.size}
-          extraIgnoreReactOnclickoutsideClass={
-            this.props.extraIgnoreReactOnclickoutsideClass
-          }
-          showIcon={true}
-        />
-        <SelectInput
-          readOnly={true}
-          disabled={this.props.disabled}
-          size={size}
-          value={timeZone}
-          isInvalid={this.props.isInvalid}
-          options={[{value: timeZone, label: timeZone}]}
-          onChange={() => {}}
-        />
-      </InputGroup>
-    );
-  }
+  const formattedTimeZone = moment.tz(timeZone).format("z");
+
+  return (
+    <InputGroup customWidthSettings={[{minWidth: 100}, {}, {}]}>
+      <CalendarDateInput
+        disabled={disabled}
+        isInvalid={isInvalid}
+        isPrefilled={isPrefilled}
+        dateFormatString={dateFormatString}
+        minDate={minDate}
+        maxDate={maxDate}
+        filterDate={filterDate}
+        value={value.calendarDate}
+        onChange={handleDateChange}
+        size={size}
+        extraIgnoreReactOnclickoutsideClass={
+          extraIgnoreReactOnclickoutsideClass
+        }
+        showIcon={true}
+      />
+      <TimeInput
+        value={value.wallTime}
+        disabled={disabled}
+        isInvalid={isInvalid}
+        isPrefilled={isPrefilled}
+        onChange={handleTimeChange}
+        options={timeInputOptions}
+        size={size}
+        extraIgnoreReactOnclickoutsideClass={
+          extraIgnoreReactOnclickoutsideClass
+        }
+        showIcon={true}
+      />
+      <SelectInput
+        readOnly={true}
+        disabled={disabled}
+        size={size}
+        value={formattedTimeZone}
+        isInvalid={isInvalid}
+        options={[{value: formattedTimeZone, label: formattedTimeZone}]}
+        onChange={() => {}}
+      />
+    </InputGroup>
+  );
 }
+
+export default React.memo<DateTimeInputProps>(DateTimeInput);
 
 export function momentWithTzToDateTimeValue(
   value: momentT,
