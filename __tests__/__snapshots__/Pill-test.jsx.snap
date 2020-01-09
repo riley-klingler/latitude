@@ -127,7 +127,8 @@ exports[`Pill works as expected, shows close button if onDismiss is provided 1`]
         disabled={false}
         height={
           Object {
-            "type": "fixed",
+            "height": 12,
+            "type": "customDontUse",
           }
         }
         iconAlignment="left"
@@ -141,7 +142,7 @@ exports[`Pill works as expected, shows close button if onDismiss is provided 1`]
         width="responsive"
       >
         <button
-          className="base_i7qsly-o_O-m_12juzcr-o_O-blank_1tdfl6w-o_O-responsive_zk4wup-o_O-button_yfi27k-o_O-none_v41adi"
+          className="base_i7qsly-o_O-blank_1tdfl6w-o_O-responsive_zk4wup-o_O-button_1cblu7c-o_O-none_v41adi"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}

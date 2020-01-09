@@ -107,6 +107,7 @@ export default function Pill({
             kind="blank"
             iconName="cancel"
             onClick={onDismiss}
+            height={{type: "customDontUse", height: 12}}
           />
         </span>
       ) : null}
