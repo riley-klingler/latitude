@@ -112,6 +112,7 @@ const styles = StyleSheet.create({
     margin: "4px 0px 4px 0",
     display: "flex",
     flexDirection: "row",
+    alignItems: "center",
     ":hover input": {
       borderColor: latitudeColors.grey50,
       boxShadow: "0 2px 2px rgba(0, 0, 0, 0.05)",
@@ -143,7 +144,6 @@ const styles = StyleSheet.create({
     minWidth: "20px",
     minHeight: "20px",
     margin: "0",
-    verticalAlign: "center",
     transitionProperty: "background-color, border, box-shadow, color, fill",
     transitionDuration: "150ms",
     transform: "ease-in-out",
