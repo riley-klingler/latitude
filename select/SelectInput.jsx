@@ -11,6 +11,7 @@ import Icon from "../Icon";
 import {padding, include} from "../styles/index";
 import {LabelContext} from "../Label";
 import colors from "../colors";
+import sizes from "../sizes";
 import InputGroupContext, {
   CENTER_INPUT,
   LEFT_INPUT,
@@ -132,7 +133,7 @@ function SelectInput<T>({
   };
 
   return (
-    <span className={css(styles.wrapper)}>
+    <span className={css(styles.wrapper)} style={{height: sizes[size]}}>
       <select
         className={css(
           sizeStyle,

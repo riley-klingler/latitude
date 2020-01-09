@@ -11,6 +11,7 @@ import sections from "../sections";
 import SelectInput from "../../select/SelectInput";
 import SearchableSelectInput from "../../select/SearchableSelectInput";
 import Label from "../../Label";
+import Group from "../../Group";
 
 const stories = storiesOf(`${sections.dataEntry}/Select Input`, module);
 stories.addDecorator(withKnobs);
@@ -42,41 +43,41 @@ export const getSelectKnobs = () => ({
   isNullable: boolean("isNullable", false),
 });
 
-class SelectInputHoist extends React.PureComponent<
-  *,
-  {selectValue: {randomField: string} | null}
-> {
-  constructor(props: any) {
-    super(props);
-    this.state = {
-      selectValue: null,
-    };
-  }
-  handleInputRecordChange = (value: {randomField: string} | null) => {
-    this.setState({selectValue: value});
-  };
-  render() {
-    return (
-      <div>
-        <Label value="This is another select input.">
+function SelectInputHoist(props: *) {
+  const [selectedValue, setSelectedValue] = React.useState(null);
+
+  return (
+    <Group flexDirection="column">
+      <Label value="This is another select input.">
+        <SelectInput
+          {...props}
+          value={selectedValue}
+          options={OPTIONS}
+          onChange={setSelectedValue}
+          toKeyFn={value => value.randomField}
+        />
+      </Label>
+
+      <Label value="Select Input height should not be affected by css grid">
+        <div style={{display: 'grid', gridTemplateColumns: "auto", height: 100}}>
           <SelectInput
-            {...this.props}
-            value={this.state.selectValue}
+            {...props}
+            value={selectedValue}
             options={OPTIONS}
-            onChange={this.handleInputRecordChange}
+            onChange={setSelectedValue}
             toKeyFn={value => value.randomField}
           />
-        </Label>
-        <Label value="This is a searchable select input">
-          <SearchableSelectInput
-            {...this.props}
-            value={this.state.selectValue}
-            options={OPTIONS}
-            onChange={this.handleInputRecordChange}
-            toKeyFn={value => value.randomField}
-          />
-        </Label>
-      </div>
-    );
-  }
+        </div>
+      </Label>
+
+      <Label value="This is a searchable select input">
+        <SearchableSelectInput
+          {...props}
+          value={selectedValue}
+          options={OPTIONS}
+          onChange={setSelectedValue}
+        />
+      </Label>
+    </Group>
+  );
 }
