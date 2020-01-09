@@ -250,26 +250,31 @@ const getLoaderSize = (buttonSize: ButtonSize): number => {
 };
 
 /** Padding makes icon-only IconButtons perfect squares */
-const getButtonPadding = (
+const getButtonStyles = (
   size: ButtonSize,
   height: {type: "fixed"} | {type: "customDontUse", height: number},
 ) => {
+  const buttonStyles = {};
+
   const buttonHeight = height.type === "fixed" ? sizes[size] : height.height;
   const iconHeight = iconSizes[getIconSize(size)];
   const borderWidth = 2;
   const horizontalPadding = (buttonHeight - iconHeight) / 2 + borderWidth;
 
-  return `0 ${horizontalPadding}px`;
+  buttonStyles.padding = `0 ${horizontalPadding}px`;
+
+  if (height.type === "customDontUse") {
+    buttonStyles.height = height.height;
+  }
+
+  return buttonStyles;
 }
 
 const getStyles = (
   size: ButtonSize,
   height: {type: "fixed"} | {type: "customDontUse", height: number},
 ) => StyleSheet.create({
-  button: {
-    padding: getButtonPadding(size, height),
-    height: height.type === "customDontUse" ? height.height : undefined,
-  },
+  button: getButtonStyles(size, height),
   none: {
     fill: colors.grey50,
     ":hover span svg": {
