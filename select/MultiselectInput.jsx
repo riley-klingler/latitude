@@ -10,7 +10,7 @@ import popupWithClickAway from "../tools/popupWithClickAway";
 import type {PopupWithClickAwayProps} from "../tools/popupWithClickAway";
 import Icon, {type IconNames} from "../Icon";
 import generateOverviewText from "./generateOverviewText";
-import {focusedStyle, inputStyles} from "../styles/input";
+import {focusedStyle, getInputStyles} from "../styles/input";
 import Text from "../Text";
 import ThemeNameContext, {type Theme} from "../context/ThemeNameContext";
 import invariant from "../tools/invariant";
@@ -217,10 +217,8 @@ const SelectButton = (props: SelectButtonProps) => {
     // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions
     <div
       className={css(
-        inputStyles.base,
+        ...getInputStyles({size: "m", isInvalid, disabled}),
         styles.selectDisplay,
-        isInvalid && inputStyles.isInvalid,
-        disabled && inputStyles.disabled,
         isPopupVisible && styles.selectDisplayFocused
       )}
       onClick={handlePopupToggle}

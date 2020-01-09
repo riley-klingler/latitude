@@ -5,7 +5,7 @@
 
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
-import {inputStyles} from "../styles/input";
+import {getInputStyles} from "../styles/input";
 import invariant from "../tools/invariant";
 import Icon from "../Icon";
 import {padding, include} from "../styles/index";
@@ -85,8 +85,6 @@ function SelectInput<T>({
   const label = React.useContext(LabelContext);
   const inputGroup = React.useContext(InputGroupContext);
 
-  const sizeStyle = getInputSizeStyle(inputStyles, size);
-
   const optionsWithNullable = [
     {
       value: NULL_OPTION,
@@ -136,11 +134,8 @@ function SelectInput<T>({
     <span className={css(styles.wrapper)} style={{height: sizes[size]}}>
       <select
         className={css(
-          sizeStyle,
+          ...getInputStyles({size, readOnly, disabled, isInvalid}),
           value === null && styles.placeholder,
-          readOnly && inputStyles.readOnly,
-          isInvalid && inputStyles.isInvalid,
-          disabled && inputStyles.disabled,
           styles.base,
           readOnly && styles.readOnly,
           inputGroup === CENTER_INPUT && styles.noBorders,
@@ -174,23 +169,6 @@ function SelectInput<T>({
     </span>
   );
 }
-
-const getInputSizeStyle = (styleSheet, size) => {
-  switch (size) {
-    case "s": {
-      return styleSheet.small;
-    }
-    case "m": {
-      return styleSheet.base;
-    }
-    case "l": {
-      return styleSheet.large;
-    }
-    default: {
-      throw new Error("SelectInput received unexpected `size` prop");
-    }
-  }
-};
 
 const styles = StyleSheet.create({
   base: {

@@ -6,7 +6,7 @@
 import {clamp} from "lodash";
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
-import {inputStyles} from "./styles/input";
+import {getInputStyles} from "./styles/input";
 import {type Size} from "./sizes";
 import {LabelContext} from "./Label";
 
@@ -162,11 +162,8 @@ export default function TextareaInput({
         }
       }}
       className={css(
-        getTextInputSizeStyle(size),
-        readOnly && inputStyles.readOnly,
-        disabled && inputStyles.disabled,
-        isInvalid && inputStyles.isInvalid,
-        styles.heightPaddingOverrides
+        ...getInputStyles({size, readOnly, disabled, isInvalid}),
+        styles.heightPaddingOverrides,
       )}
       style={{textAlign}}
     />
@@ -183,20 +180,6 @@ const getTextSizeFromSize = (size: Size) => {
       return 20;
     default:
       return 18;
-  }
-};
-
-const getTextInputSizeStyle = (textInputSize: Size) => {
-  switch (textInputSize) {
-    case "s":
-      return inputStyles.small;
-    case "m":
-      return inputStyles.base;
-    case "l":
-      return inputStyles.large;
-    default:
-      // shouldn't get here
-      return inputStyles.base;
   }
 };
 

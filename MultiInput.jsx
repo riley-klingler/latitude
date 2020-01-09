@@ -9,7 +9,7 @@ import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
 import Pill from "./Pill";
 import IconButton from "./button/IconButton";
-import {inputStyles} from "./styles/input";
+import {getInputStyles} from "./styles/input";
 import {LabelContext} from "./Label";
 import {type Size} from "./sizes";
 
@@ -189,7 +189,7 @@ function MultiInput({
 
   return (
     <div
-      className={css(getInputSizeStyle(size), styles.container)}
+      className={css(...getInputStyles({size}), styles.container)}
       onClick={onClick}
       role="presentation"
     >
@@ -247,20 +247,6 @@ const getPillSize = (size: Size) => {
       return "s";
     default:
       return "xs";
-  }
-};
-
-const getInputSizeStyle = (multiInputSize: Size) => {
-  const coreInputStyles = inputStyles;
-  switch (multiInputSize) {
-    case "s":
-      return coreInputStyles.small;
-    case "m":
-      return coreInputStyles.base;
-    case "l":
-      return coreInputStyles.large;
-    default:
-      return coreInputStyles.base;
   }
 };
 

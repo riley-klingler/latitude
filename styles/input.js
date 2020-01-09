@@ -1,15 +1,13 @@
 /**
  * TEAM: frontend_infra
- * WATCHERS: uforic
- *
  * @flow strict
  */
 
-import {StyleSheet} from "aphrodite";
+import {StyleSheet, type SheetEntry} from "aphrodite";
 import {typeScale} from "./index";
 import borders from "./borders";
 import latitudeColors from "../colors";
-import sizes from "../sizes";
+import sizes, {type Size} from "../sizes";
 
 export const focusedStyle = {
   transitionProperty: "border-color, box-shadow, background",
@@ -130,3 +128,46 @@ export const inputStyles = StyleSheet.create({
   },
   largeNoPadding: inputNoSidePaddingStyles.large,
 });
+
+type InputStyleOptions = {
+  size: Size,
+  readOnly?: boolean,
+  disabled?: boolean,
+  isInvalid?: boolean,
+  isPrefilled?: boolean,
+  noPadding?: boolean,
+  applyEllipsis?: boolean,
+};
+
+export const getInputStyles = ({
+  size,
+  readOnly = false,
+  disabled = false,
+  isInvalid = false,
+  isPrefilled = false,
+  noPadding = false,
+  applyEllipsis = false,
+}: InputStyleOptions): $ReadOnlyArray<?SheetEntry> => {
+  const sizeToStyleMapping = {
+    s: inputStyles.small,
+    m: inputStyles.base,
+    l: inputStyles.large,
+  }
+
+  const noPaddingSizeToStyleMapping = {
+    s: inputStyles.smallNoPadding,
+    m: inputStyles.baseNoPadding,
+    l: inputStyles.largeNoPadding,
+  }
+
+  const sizeStyle = noPadding ? noPaddingSizeToStyleMapping[size] : sizeToStyleMapping[size];
+
+  return [
+    sizeStyle,
+    readOnly ? inputStyles.readOnly : null,
+    disabled ? inputStyles.disabled : null,
+    isInvalid ? inputStyles.isInvalid : null,
+    isPrefilled ? inputStyles.isPrefilled : null,
+    applyEllipsis ? inputStyles.applyEllipsis : null,
+  ];
+};

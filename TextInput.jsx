@@ -17,7 +17,7 @@ import IconButton from "./button/IconButton";
 import Icon, {type IconNames, type StandardIconSizes} from "./Icon";
 import {type Size} from "./sizes";
 import {
-  inputStyles,
+  getInputStyles,
   HORIZONTAL_INPUT_PADDING_BASE_PX,
   HORIZONTAL_INPUT_PADDING_LARGE_PX,
   HORIZONTAL_INPUT_PADDING_SMALL_PX,
@@ -251,12 +251,15 @@ function TextInput(props: TextInputProps) {
   };
 
   const inputStyle = css(
-    getTextInputSizeStyleNoPadding(size),
-    readOnly && inputStyles.readOnly,
-    disabled && inputStyles.disabled,
-    isInvalid && inputStyles.isInvalid,
-    isPrefilled && inputStyles.isPrefilled,
-    textOverflow === "ellipsis" && inputStyles.applyEllipsis,
+    ...getInputStyles({
+      size,
+      readOnly,
+      disabled,
+      isInvalid,
+      isPrefilled,
+      applyEllipsis: textOverflow === "ellipsis",
+      noPadding: true,
+    }),
     inputGroupContext === CENTER_INPUT && styles.noBorders,
     inputGroupContext === LEFT_INPUT && styles.noRightBorders,
     inputGroupContext === RIGHT_INPUT && styles.noLeftBorders
@@ -359,19 +362,6 @@ const getPaddingFromTextInputSize = (size: Size): number => {
   return HORIZONTAL_INPUT_PADDING_BASE_PX;
 };
 
-export const getTextInputSizeStyleNoPadding = (textInputSize: Size) => {
-  switch (textInputSize) {
-    case "s":
-      return inputStyles.smallNoPadding;
-    case "m":
-      return inputStyles.baseNoPadding;
-    case "l":
-      return inputStyles.largeNoPadding;
-    default:
-      // shouldn't get here
-      return inputStyles.baseNoPadding;
-  }
-};
 const getSvgSizeFromTextInputSize = (size: Size): number => {
   // eslint-disable-next-line default-case
   switch (size) {
