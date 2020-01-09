@@ -58,8 +58,8 @@ untyped-type-import
 .*/node_modules/mapbox-gl/*
 .*/node_modules/@mapbox/jsonlint-lines-primitives/*
 .*/node_modules/radium/*
-.*/node_modules/jsverify/*
 .*/node_modules/react-popper/*
+.*/node_modules/jsverify/*
 .*/node_modules/babel-plugin-emotion/*
 .*/flexport-eslint/*
 .*/graphql_gateway/*
