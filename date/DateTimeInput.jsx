@@ -57,7 +57,6 @@ type DateTimeInputProps = {
   +timeInputOptions?: $ReadOnlyArray<WallTime>,
   /** displayed next to the date and time inputs. */
   +timeZone: string,
-  +extraIgnoreReactOnclickoutsideClass?: string,
 };
 
 export const EMPTY_DATE_TIME_VALUE = {
@@ -91,7 +90,6 @@ function DateTimeInput({
   filterDate = null,
   dateFormatString = "MMM D, YYYY",
   timeInputOptions = getTimeIntervals(ZERO_OCLOCK, EOD_OCLOCK, 30),
-  extraIgnoreReactOnclickoutsideClass = "",
 }: DateTimeInputProps) {
   const handleDateChange = (newCalDate: CalendarDate | null) => {
     onChange({
@@ -122,9 +120,6 @@ function DateTimeInput({
         value={value.calendarDate}
         onChange={handleDateChange}
         size={size}
-        extraIgnoreReactOnclickoutsideClass={
-          extraIgnoreReactOnclickoutsideClass
-        }
         showIcon={true}
       />
       <TimeInput
@@ -135,9 +130,6 @@ function DateTimeInput({
         onChange={handleTimeChange}
         options={timeInputOptions}
         size={size}
-        extraIgnoreReactOnclickoutsideClass={
-          extraIgnoreReactOnclickoutsideClass
-        }
       />
       <SelectInput
         readOnly={true}
