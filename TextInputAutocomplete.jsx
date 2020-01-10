@@ -20,8 +20,11 @@ type Props = {|
   /** all TextInput props will be passed into the TextInput */
   ...TextInputProps,
   +suggestions: $ReadOnlyArray<Option>,
-  /** positively filters an option according to the callback */
-  +optionsFilter: (query: string, option: Option) => boolean,
+  /**
+   * positively filters an option according to the callback. Specify `null` to
+   * not filter out options
+   */
+  +optionsFilter: (query: string, option: Option) => boolean | null,
   /** the maximum number of suggestions that will be presented */
   +maximumOptions: number,
 |};
@@ -47,13 +50,14 @@ const defaultProps = {
  * of 10 suggestions are displayed by the dropdown.
  */
 export default function TextInputAutocomplete({
+  value,
   suggestions,
   optionsFilter,
   maximumOptions,
   ...textInputProps
 }: Props) {
   const filteredSuggestions = suggestions
-    .filter((option: string) => optionsFilter(textInputProps.value, option))
+    .filter((option: string) => optionsFilter ? optionsFilter(value, option) : true)
     .slice(0, maximumOptions);
 
   const handleChange = (newValue: string) => {
@@ -70,7 +74,13 @@ export default function TextInputAutocomplete({
       handleListItemClick,
       handleInputKeyDown,
     },
-  } = useDropdown(filteredSuggestions, handleChange, null);
+  } = useDropdown(
+    filteredSuggestions,
+    handleChange,
+    optionsFilter === null ? value : null,
+    {
+      rememberHighlightPosition: optionsFilter === null,
+    });
 
   const handleMouseDown = (e: Event) => {
     handleInputMouseDown();
@@ -110,6 +120,7 @@ export default function TextInputAutocomplete({
         <DeprecatedPopperTarget>
           <TextInput
             {...textInputProps}
+            value={value}
             onChange={handleChange}
             onMouseDown={handleMouseDown}
             onFocus={handleFocus}
@@ -146,7 +157,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     left: "0",
     top: "100%",
-    padding: "3px 0",
+    padding: "6px 0",
     minWidth: "100%",
     zIndex: "10",
     transform: "none",

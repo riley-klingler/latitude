@@ -94,4 +94,17 @@ describe("TextInputAutocomplete", () => {
     expect(handleChange).toBeCalled();
     expect(handleChange.mock.calls[0][0]).toBe("aaa");
   });
+
+  it("wont filter options when optionsFilter is null", () => {
+    const comp = mountTextInputAutocomplete({
+      value: "---",
+      suggestions: ["aaa", "aaabbb", "aaabbbccc"],
+      optionsFilter: null,
+    });
+
+    comp.find("input").simulate("focus");
+    const options = comp.find("DropdownOption");
+
+    expect(options.length).toBe(3);
+  });
 });
