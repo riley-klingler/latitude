@@ -7,10 +7,13 @@ import * as React from "react";
 import {storiesOf} from "@storybook/react";
 import {withKnobs} from "@storybook/addon-knobs";
 import sections from "../sections";
+import Group from "../../Group";
+import Text from "../../Text";
+import Button from "../../button/Button";
+import GeneralPopover from "../../popover/GeneralPopover"
 import DateTimeInput from "../../date/DateTimeInput";
-import type {WallTime} from "../../date/wallTime";
-import type {CalendarDate} from "../../date/CalendarDateType";
 import {getTextInputKnobs} from "./TextInput.stories";
+import PopupWithClickAway from "../../popup/PopupWithClickAway";
 
 const stories = storiesOf(`${sections.dataEntry}/Date Time Input`, module);
 stories.addDecorator(withKnobs);
@@ -18,41 +21,44 @@ stories.add("DateTimeInput", () => (
   <DateTimeInputHoist {...getTextInputKnobs()} />
 ));
 
-type DateTimeWrapperState = {
-  value: {calendarDate: CalendarDate | null, wallTime: WallTime | null},
-};
+function DateTimeInputHoist(props: *) {
+  const [dateTime, setDateTime] = React.useState({calendarDate: null, wallTime: null});
 
-const defaultState = {
-  value: {calendarDate: null, wallTime: null},
-};
+  return (
+    <Group flexDirection="column">
+      <DateTimeInput
+        value={dateTime}
+        onChange={setDateTime}
+        timeZone="UTC"
+        {...props}
+      />
 
-// eslint-disable-next-line import/prefer-default-export
-export class DateTimeInputHoist extends React.Component<
-  *,
-  DateTimeWrapperState
-> {
-  constructor() {
-    super();
-    this.state = {
-      ...defaultState,
-    };
-  }
-
-  handleChange = (value: {
-    calendarDate: CalendarDate | null,
-    wallTime: WallTime | null,
-  }) => {
-    this.setState({value});
-  };
-  render() {
-    return (
-      <div>
-        <DateTimeInput
-          value={this.state.value}
-          onChange={this.handleChange}
-          {...this.props}
-        />
-      </div>
-    );
-  }
+      <Text>Date Time Input should close on click away in the context of a Popover</Text>
+      <PopupWithClickAway>
+        {(Target, Popup, { togglePopup}) => (
+          <>
+            <Target>
+              <Button onClick={() => togglePopup()}>
+                Open Popup
+              </Button>
+            </Target>
+            <Popup placement="bottom-start">
+              <GeneralPopover
+                title="Date Time Input"
+                subtitle="Clicking away into the body should close dropdowns"
+                buttons={[]}
+              >
+                <DateTimeInput
+                  value={dateTime}
+                  onChange={setDateTime}
+                  timeZone="UTC"
+                  {...props}
+                />
+              </GeneralPopover>
+            </Popup>
+          </>
+        )}
+      </PopupWithClickAway>
+    </Group>
+  );
 }
