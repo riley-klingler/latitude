@@ -22,7 +22,7 @@ type ModalRecord = {
   id?: number | string,
 };
 
-export class ModalStore extends EventEmitter {
+class _ModalStore extends EventEmitter {
   _stack: Array<ModalRecord>;
   constructor() {
     super();
@@ -81,4 +81,4 @@ export class ModalStore extends EventEmitter {
   };
 }
 
-export default new ModalStore();
+export default new _ModalStore();

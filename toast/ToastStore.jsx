@@ -33,7 +33,7 @@ type Payload = {
   action: Action,
 };
 
-export class ToastStore extends EventEmitter {
+export class _ToastStore extends EventEmitter {
   _Actions = ToastActions;
 
   _records: Array<ToastRecord>;
@@ -86,4 +86,4 @@ export class ToastStore extends EventEmitter {
   getAll = () => this._records;
 }
 
-export default new ToastStore();
+export default new _ToastStore();

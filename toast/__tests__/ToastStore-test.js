@@ -3,19 +3,19 @@
  *
  * @flow
  */
-import {ToastStore} from "../ToastStore";
+import {_ToastStore} from "../ToastStore";
 
 describe("ToastStore", () => {
   describe("getAll", () => {
     it("works when first inited", () => {
-      const store = new ToastStore();
+      const store = new _ToastStore();
       expect(store.getAll()).toEqual([]);
     });
   });
 
   describe("_show", () => {
     it("adds the toast", () => {
-      const store = new ToastStore();
+      const store = new _ToastStore();
       const toast = {message: "foo", intent: "success", removeAfter: null};
       store._show(toast);
       expect(store.getAll()).toEqual([{...toast, id: 0}]);
@@ -24,7 +24,7 @@ describe("ToastStore", () => {
 
   describe("_remove", () => {
     it("removes the toast", () => {
-      const store = new ToastStore();
+      const store = new _ToastStore();
       const toast = {message: "foo", intent: "success", removeAfter: null};
       store._show(toast);
       expect(store.getAll().length).toEqual(1);
@@ -33,7 +33,7 @@ describe("ToastStore", () => {
     });
 
     it("works with multiple toasts", () => {
-      const store = new ToastStore();
+      const store = new _ToastStore();
       const toast1 = {message: "foo", intent: "success", removeAfter: null};
       const toast2 = {message: "foo", intent: "success", removeAfter: null};
       store._show(toast1);
