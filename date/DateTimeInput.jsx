@@ -138,7 +138,6 @@ function DateTimeInput({
         extraIgnoreReactOnclickoutsideClass={
           extraIgnoreReactOnclickoutsideClass
         }
-        showIcon={true}
       />
       <SelectInput
         readOnly={true}
