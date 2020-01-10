@@ -11,12 +11,12 @@ RouteConstants.js
 *.fixture.js
 
 # webpack configuration generated files
-config.builder.js
-config.common.js
-config.dev.js
-config.devserver.hot.js
-config.devserver.js
-config.unused.js
-entryPoints.js
+webpack/config.builder.js
+webpack/config.common.js
+webpack/config.dev.js
+webpack/config.devserver.hot.js
+webpack/config.devserver.js
+webpack/config.unused.js
+webpack/entryPoints.js
 
 /storybook-static

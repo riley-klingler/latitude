@@ -28,7 +28,7 @@ globals:
 settings:
   import/resolver:
     webpack:
-      config: "config.common.js"
+      config: "webpack/config.common.js"
   flowtype:
     onlyFilesWithFlowAnnotation: false
   react:
