@@ -34,7 +34,9 @@ type Props<Data> = {|
   +onRowHover?: (index: number, hover: boolean) => void,
 |};
 
-export default class StaticTable<Data> extends React.PureComponent<Props<Data>> {
+export default class StaticTable<Data> extends React.PureComponent<
+  Props<Data>
+> {
   static defaultProps = {
     loading: false,
     rowPadding: "medium",

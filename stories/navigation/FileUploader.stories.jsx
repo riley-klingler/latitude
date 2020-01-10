@@ -13,10 +13,7 @@ import Text from "../../Text";
 import Flex from "../../Flex";
 import FileUploader from "../../document/FileUploader";
 
-const stories = storiesOf(
-  `${sections.dataEntry}/File Uploader`,
-  module
-);
+const stories = storiesOf(`${sections.dataEntry}/File Uploader`, module);
 
 stories.addDecorator(withKnobs);
 stories.add("File Uploader Button", () => (

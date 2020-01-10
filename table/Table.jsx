@@ -648,8 +648,9 @@ export default function Table<T>({
   /* Scrolling Pagination */
   // If more results are available to fetch, or we are still loading initial results,
   // add an extra row to hold a loading indicator
-  const rowCount =
-    hasNextPage ? flattenedRows.length + 1 : flattenedRows.length;
+  const rowCount = hasNextPage
+    ? flattenedRows.length + 1
+    : flattenedRows.length;
   // If we are already fetching more rows, do not try to re-fetch
   const loadMoreItems = isNextPageLoading ? () => {} : loadNextPage;
 
@@ -687,17 +688,18 @@ export default function Table<T>({
                   .map(cd => ({columnId: cd.id}))
               );
             }}
-          />) : null}
+          />
+        ) : null}
         <StickyScrollContext.Provider value={StickyScrollPolyfill.context}>
           <AutoSizer>
-            {({width, height}: {| +width: number, +height: number |}) => (
+            {({width, height}: {|+width: number, +height: number|}) => (
               <InfiniteLoader
                 isItemLoaded={isItemLoaded}
                 itemCount={rowCount}
                 loadMoreItems={loadMoreItems}
               >
-                {({onItemsRendered, ref}) => (
-                  isLoading ?
+                {({onItemsRendered, ref}) =>
+                  isLoading ? (
                     <InitialLoading
                       height={height}
                       width={getWidth(rowWidth, width)}
@@ -708,7 +710,8 @@ export default function Table<T>({
                         outerElementType
                       }
                       ref={ref}
-                    /> :
+                    />
+                  ) : (
                     <FixedSizeList
                       itemData={itemData}
                       height={height}
@@ -727,7 +730,8 @@ export default function Table<T>({
                     >
                       {ItemRenderer}
                     </FixedSizeList>
-                )}
+                  )
+                }
               </InfiniteLoader>
             )}
           </AutoSizer>
@@ -737,22 +741,25 @@ export default function Table<T>({
   );
 }
 
-const getWidth = (rowWidth, width) => Math.max(MIN_TABLE_WIDTH, Math.min(width, rowWidth));
+const getWidth = (rowWidth, width) =>
+  Math.max(MIN_TABLE_WIDTH, Math.min(width, rowWidth));
 
-const InitialLoading = React.forwardRef(({height, rowHeight, width, outerElementType}, ref) => (
-  <FixedSizeList
-    height={height}
-    itemSize={rowHeight}
-    itemCount={1}
-    width={width}
-    innerElementType={innerElementType}
-    outerElementType={outerElementType}
-    ref={ref}
-    style={{overflow: "hidden"}}
-  >
-    {LoadingRow}
-  </FixedSizeList>
-));
+const InitialLoading = React.forwardRef(
+  ({height, rowHeight, width, outerElementType}, ref) => (
+    <FixedSizeList
+      height={height}
+      itemSize={rowHeight}
+      itemCount={1}
+      width={width}
+      innerElementType={innerElementType}
+      outerElementType={outerElementType}
+      ref={ref}
+      style={{overflow: "hidden"}}
+    >
+      {LoadingRow}
+    </FixedSizeList>
+  )
+);
 
 const LoadingRow = ({style}) => (
   <div
@@ -785,8 +792,8 @@ const innerElementType = React.forwardRef(({children, ...rest}, ref) => (
 type ItemRendererData<T> = {|
   isItemLoaded: number => boolean,
   flattenedRows: $ReadOnlyArray<FlattenedRow<T>>,
-  isRowSelected: FlattenedRow<T> => boolean,
-  isRowClicked: FlattenedRow<T> => boolean,
+  isRowSelected: (FlattenedRow<T>) => boolean,
+  isRowClicked: (FlattenedRow<T>) => boolean,
   rowGroupClickingEnabled: boolean,
   onRowGroupClick: string => void,
   rowClickingEnabled: boolean,

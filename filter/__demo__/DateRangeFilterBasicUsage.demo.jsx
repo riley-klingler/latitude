@@ -5,8 +5,11 @@
 
 import * as React from "react";
 import moment from "moment-timezone";
-import {addDaysFromCalendarDate, today as getToday} from "../../date/CalendarDateType";
-import DateRangeFilter from "../DateRangeFilter"
+import {
+  addDaysFromCalendarDate,
+  today as getToday,
+} from "../../date/CalendarDateType";
+import DateRangeFilter from "../DateRangeFilter";
 
 const TZ = moment.tz.guess();
 const today = getToday(TZ);
@@ -39,7 +42,6 @@ export default function DateRangeFilterBasicUsage() {
     ...presets[0],
   });
 
-
   return (
     <DateRangeFilter
       label="Delivery date range"
@@ -48,4 +50,4 @@ export default function DateRangeFilterBasicUsage() {
       presets={presets}
     />
   );
-};
+}

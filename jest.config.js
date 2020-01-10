@@ -10,16 +10,13 @@ const chunkd = require("chunkd");
 
 const config = {
   timers: "fake",
-  setupFilesAfterEnv: [
-    "<rootDir>/_harness/jestTestSetup.js",
-  ],
+  setupFilesAfterEnv: ["<rootDir>/_harness/jestTestSetup.js"],
   snapshotSerializers: ["enzyme-to-json/serializer"],
   unmockedModulePathPatterns: ["<rootDir>/node_modules"],
   testPathIgnorePatterns: ["node_modules/", "mobile/drive/"],
   transform: {
     "^.+\\.jsx?$": "babel-jest",
-    "^.+\\.(css|less)$":
-      "<rootDir>/_harness/mockStyle.js",
+    "^.+\\.(css|less)$": "<rootDir>/_harness/mockStyle.js",
   },
   transformIgnorePatterns: ["node_modules/(?!(flexport-shared)/)"],
   testRegex: "/__tests__/.*-test\\.jsx?$",
@@ -28,8 +25,7 @@ const config = {
   modulePaths: ["<rootDir>"],
   moduleDirectories: [".", "node_modules"],
   moduleNameMapper: {
-    "(\\.(css|less)$|^reset-css$)":
-      "<rootDir>/_harness/mockStyle.js",
+    "(\\.(css|less)$|^reset-css$)": "<rootDir>/_harness/mockStyle.js",
   },
   coverageDirectory: "./coverage/",
   coveragePathIgnorePatterns: [

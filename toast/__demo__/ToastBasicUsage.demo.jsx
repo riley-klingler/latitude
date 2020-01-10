@@ -4,7 +4,7 @@
  */
 
 import * as React from "react";
-import Button from '../../button/Button';
+import Button from "../../button/Button";
 import ToastActions from "../ToastActions";
 
 /**
@@ -22,11 +22,7 @@ export default function ToastBasicUsage() {
       },
       isLoading: false,
     };
-
     ToastActions.show(toastProps, 2000);
   };
-
-  return (
-    <Button onClick={launchToast}>Lanch Toast</Button>
-  );
-};
+  return <Button onClick={launchToast}>Lanch Toast</Button>;
+}

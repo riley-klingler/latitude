@@ -24,7 +24,6 @@ shipment less than container load freight charges."
       >
         <FormRow columnSpans={[1]}>
           <Label value="Label">
-            
             <TextInput onChange={() => undefined} value="" />
           </Label>
         </FormRow>
@@ -39,7 +38,6 @@ shipment less than container load freight charges."
       >
         <FormRow columnSpans={[1]}>
           <Label value="Label">
-            
             <TextInput onChange={() => undefined} value="" />
           </Label>
         </FormRow>

@@ -11,14 +11,9 @@ import {action} from "@storybook/addon-actions";
 import {storiesOf} from "@storybook/react";
 import {boolean, withKnobs} from "@storybook/addon-knobs";
 import sections from "../sections";
-import MultiselectFilter, {
-  type ValueObj,
-} from "../../filter/MultiselectFilter";
+import MultiselectFilter, {type ValueObj} from "../../filter/MultiselectFilter";
 
-const stories = storiesOf(
-  `${sections.filter}/MultiSelect Filter`,
-  module
-);
+const stories = storiesOf(`${sections.filter}/MultiSelect Filter`, module);
 stories.addDecorator(withKnobs);
 stories.add("basic usage", () => <FilterHoist {...getKnobs()} />);
 

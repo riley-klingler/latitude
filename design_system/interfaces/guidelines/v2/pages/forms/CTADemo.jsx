@@ -19,7 +19,6 @@ function CTADemo() {
       <FormSection columns={1} columnGap={20} minColumnWidth={160}>
         <FormRow columnSpans={[1]}>
           <Label value="Label" indicateRequired={true}>
-            
             <TextInput onChange={() => undefined} value="" />
           </Label>
         </FormRow>

@@ -76,7 +76,7 @@ describe("connectToStores", () => {
 
   type Props = PropsFromParent & PropsFromStores;
 
-    // eslint-disable-next-line flexport/puritan-extends-component,react
+  // eslint-disable-next-line flexport/puritan-extends-component,react
   class View extends React.PureComponent<Props> {
     render() {
       return <div />;
@@ -278,7 +278,7 @@ describe("connectToStores flow types", () => {
   });
 
   describe("es6 class component", () => {
-        // eslint-disable-next-line flexport/puritan-extends-component,react
+    // eslint-disable-next-line flexport/puritan-extends-component,react
     class MyComponent extends React.PureComponent<Props> {}
 
     it("works for the happy case", () => {
@@ -347,7 +347,7 @@ describe("connectToStores flow types", () => {
     });
 
     it("does not allow missing required prop that is not in defaultProps", () => {
-            // eslint-disable-next-line flexport/puritan-extends-component,react
+      // eslint-disable-next-line flexport/puritan-extends-component,react
       class ComponentWithDefaultProps extends React.PureComponent<Props> {
         static defaultProps = {numberProp: 1};
       }
@@ -359,7 +359,7 @@ describe("connectToStores flow types", () => {
     });
 
     it("does not allow wrong type for prop in defaultProps", () => {
-            // eslint-disable-next-line flexport/puritan-extends-component,react
+      // eslint-disable-next-line flexport/puritan-extends-component,react
       class ComponentWithDefaultProps extends React.PureComponent<Props> {
         static defaultProps = {numberProp: 1};
       }
@@ -371,7 +371,7 @@ describe("connectToStores flow types", () => {
     });
 
     it("does not allow wrong type for prop that is not in defaultProps", () => {
-            // eslint-disable-next-line flexport/puritan-extends-component,react
+      // eslint-disable-next-line flexport/puritan-extends-component,react
       class ComponentWithDefaultProps extends React.PureComponent<Props> {
         static defaultProps = {numberProp: 1};
       }
@@ -383,7 +383,7 @@ describe("connectToStores flow types", () => {
     });
 
     it("do allow missing required prop that is in defaultProps", () => {
-            // eslint-disable-next-line flexport/puritan-extends-component,react
+      // eslint-disable-next-line flexport/puritan-extends-component,react
       class ComponentWithDefaultProps extends React.PureComponent<Props> {
         static defaultProps = {numberProp: 1};
       }

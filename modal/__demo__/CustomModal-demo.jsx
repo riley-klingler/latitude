@@ -3,11 +3,8 @@
  * @flow
  */
 
-
-import {
-  type DemoFile,
-} from "../../design_system/types/demoTypes";
-import CustomModalBasic from './CustomModalBasic.demo';
+import {type DemoFile} from "../../design_system/types/demoTypes";
+import CustomModalBasic from "./CustomModalBasic.demo";
 
 const demos: DemoFile = {
   demos: [

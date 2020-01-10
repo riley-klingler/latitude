@@ -22,10 +22,7 @@ import {
 
 const TZ_GUESS = moment.tz.guess();
 
-const stories = storiesOf(
-  `${sections.dataEntry}/Calendar Date Range`,
-  module
-);
+const stories = storiesOf(`${sections.dataEntry}/Calendar Date Range`, module);
 stories.addDecorator(withKnobs);
 stories.add("basic usage", () => (
   <CalendarDateRangeHoist {...getDateInputKnobs()} />

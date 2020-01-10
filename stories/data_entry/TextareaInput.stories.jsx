@@ -12,10 +12,7 @@ import Label from "../../Label";
 import TextareaInput from "../../TextareaInput";
 import {getTextInputKnobs} from "./TextInput.stories";
 
-const stories = storiesOf(
-  `${sections.dataEntry}/Textarea Input`,
-  module
-);
+const stories = storiesOf(`${sections.dataEntry}/Textarea Input`, module);
 stories.addDecorator(withKnobs);
 stories.add("basic usage", () => (
   <TextareaInputHoist

@@ -502,11 +502,9 @@ stories
         >
           <FormRow columnSpans={[2, 2]}>
             <Label value="Carrier" indicateRequired={true}>
-
               <TextInput onChange={() => undefined} value="" />
             </Label>
             <Label value="Contract" indicateRequired={true}>
-
               <TextInput onChange={() => undefined} value="" />
             </Label>
           </FormRow>
@@ -532,14 +530,12 @@ stories
 
           <FormRow columnSpans={[2]}>
             <Label value="Client" indicateRequired={true}>
-
               <TextInput onChange={() => undefined} value="" />
             </Label>
           </FormRow>
 
           <FormRow columnSpans={[2]}>
             <Label value="Booking number" indicateRequired={true}>
-
               <FloatInput value={null} onChange={() => {}} />
             </Label>
           </FormRow>
@@ -563,17 +559,14 @@ stories
         >
           <FormRow columnSpans={[2, 2]}>
             <Label value="From" indicateRequired={true}>
-
               <TextInput onChange={() => undefined} value="" />
             </Label>
             <Label value="To" indicateRequired={true}>
-
               <TextInput onChange={() => undefined} value="" />
             </Label>
           </FormRow>
           <FormRow columnSpans={[1]}>
             <Label value="Departure (+3days)" indicateRequired={true}>
-
               <TextInput onChange={() => undefined} value="" />
             </Label>
           </FormRow>
@@ -618,19 +611,15 @@ stories
           >
             <FormRow columnSpans={[1, 1, 1, 1]}>
               <Label value="Container" indicateRequired={true}>
-
                 <TextInput onChange={() => undefined} value="" />
               </Label>
               <Label value="Quantity" indicateRequired={true}>
-
                 <TextInput onChange={() => undefined} value="" />
               </Label>
               <Label value="Status" indicateRequired={true}>
-
                 <TextInput onChange={() => undefined} value="" />
               </Label>
               <Label value="SO Number" indicateRequired={true}>
-
                 <TextInput onChange={() => undefined} value="" />
               </Label>
             </FormRow>
@@ -699,13 +688,11 @@ stories
         >
           <FormRow columnSpans={[2]}>
             <Label value="Booking office">
-
               <TextInput onChange={() => undefined} value="" />
             </Label>
           </FormRow>
           <FormRow columnSpans={[3]}>
             <Label value="Description of goods">
-
               <TextareaInput rows={4} value="" onChange={() => undefined} />
             </Label>
           </FormRow>
@@ -722,7 +709,6 @@ stories
           </FormRow>
           <FormRow columnSpans={[3]}>
             <Label value="Additional notes and remarks">
-
               <TextareaInput rows={4} value="" onChange={() => undefined} />
             </Label>
           </FormRow>

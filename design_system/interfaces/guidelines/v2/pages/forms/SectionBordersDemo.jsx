@@ -30,17 +30,14 @@ function SectionBordersDemo() {
         >
           <FormRow columnSpans={[2]}>
             <Label value="Label">
-              
               <TextInput onChange={() => undefined} value="" />
             </Label>
           </FormRow>
           <FormRow columnSpans={[1, 1]}>
             <Label value="Label" indicateRequired={true}>
-              
               <TextInput onChange={() => undefined} value="" />
             </Label>
             <Label value="Label" indicateRequired={true}>
-              
               <TextInput onChange={() => undefined} value="" />
             </Label>
           </FormRow>
@@ -72,7 +69,6 @@ function SectionBordersDemo() {
         >
           <FormRow columnSpans={[1]}>
             <Label value="Label" indicateOptional={true}>
-              
               <TextInput onChange={() => undefined} value="" />
             </Label>
           </FormRow>

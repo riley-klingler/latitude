@@ -13,7 +13,6 @@ import sections from "../sections";
 
 import ProgressTracker from "../../progress/ProgressTracker";
 
-
 const stories = storiesOf(sections.dataDisplay, module);
 stories.addDecorator(withKnobs);
 

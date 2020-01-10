@@ -6,10 +6,7 @@
 
 import invariant from "../tools/invariant";
 import {type CalendarDate, isCalendarDateValid} from "../date/CalendarDateType";
-import {
-  type ValueObj,
-  ALL_SELECTED_VALUE_STATE,
-} from "./MultiselectFilter";
+import {type ValueObj, ALL_SELECTED_VALUE_STATE} from "./MultiselectFilter";
 
 type FilterValue = string;
 

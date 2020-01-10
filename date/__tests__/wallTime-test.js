@@ -5,7 +5,7 @@
  */
 
 import moment from "moment-timezone";
-import { isEqual } from "lodash";
+import {isEqual} from "lodash";
 import {
   _test,
   displayTime,

@@ -12,10 +12,7 @@ import DeprecatedHorizontalGroup from "../../DeprecatedHorizontalGroup";
 import DropdownList, {type Option} from "../../select/DropdownList";
 import colors from "../../colors";
 
-const stories = storiesOf(
-  `${sections.dataEntry}/Dropdown List`,
-  module
-);
+const stories = storiesOf(`${sections.dataEntry}/Dropdown List`, module);
 
 stories.addDecorator(withKnobs);
 stories.add("basic usage", () => (

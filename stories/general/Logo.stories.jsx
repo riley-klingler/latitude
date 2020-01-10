@@ -8,7 +8,6 @@ import {storiesOf} from "@storybook/react";
 import {number, withKnobs} from "@storybook/addon-knobs";
 import sections from "../sections";
 
-
 import Logo from "../../Logo";
 import Text from "../../Text";
 import DeprecatedVerticalGroup from "../../DeprecatedVerticalGroup";

@@ -17,19 +17,26 @@ export default function NotificationModalBasic() {
   return (
     <>
       <Button onClick={() => setIsOpen(true)}>Trigger Notification</Button>
-      {isOpen &&
+      {isOpen && (
         <NotificationModal
           onRequestClose={() => setIsOpen(false)}
           title="Create New User"
           buttons={[
-            <Button key="open" onClick={() => {setIsOpen(false)}}>
+            <Button
+              key="open"
+              onClick={() => {
+                setIsOpen(false);
+              }}
+            >
               Close Modal
             </Button>,
           ]}
         >
-          <Text>You cant <Text fontStyle="italic">handle</Text> the truth!</Text>
+          <Text>
+            You cant <Text fontStyle="italic">handle</Text> the truth!
+          </Text>
         </NotificationModal>
-      }
+      )}
     </>
   );
-};
+}

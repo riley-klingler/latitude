@@ -21,7 +21,7 @@ jest.unmock("moment");
 jest.unmock("moment-timezone");
 
 // eslint-disable-next-line import/first
-import { ARROW_DOWN_KEY, ARROW_UP_KEY, ESCAPE_KEY } from "../inputUtils";
+import {ARROW_DOWN_KEY, ARROW_UP_KEY, ESCAPE_KEY} from "../inputUtils";
 
 const {CalendarDateInputClass} = _test;
 

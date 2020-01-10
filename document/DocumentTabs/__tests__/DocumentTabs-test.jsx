@@ -31,12 +31,7 @@ describe("DocumentTabs", () => {
     const minWidth = 100;
     const maxWidth = 100;
     expect(
-      test.calculateWidths(
-        containerWidth,
-        minWidth,
-        maxWidth,
-        elementCount
-      )
+      test.calculateWidths(containerWidth, minWidth, maxWidth, elementCount)
     ).toEqual({
       tabWidth: 0,
       slices: 0,

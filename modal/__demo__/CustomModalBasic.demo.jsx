@@ -5,7 +5,7 @@
 
 import * as React from "react";
 import {StyleSheet, css} from "aphrodite";
-import Button from '../../button/Button';
+import Button from "../../button/Button";
 import TextInput from "../../TextInput";
 import Label from "../../Label";
 import CustomModal, {defaultModalStyles} from "../CustomModal";
@@ -21,11 +21,19 @@ export default function CustomModalBasic() {
 
   return (
     <div>
-      <Button onClick={() => {setIsOpen(true)}}>Open Modal</Button>
+      <Button
+        onClick={() => {
+          setIsOpen(true);
+        }}
+      >
+        Open Modal
+      </Button>
       <CustomModal
         isOpen={isOpen}
         closeOptions={{
-          onRequestClose: () => {setIsOpen(false)},
+          onRequestClose: () => {
+            setIsOpen(false);
+          },
           shouldCloseOnEsc: true,
           shouldCloseOnOverlayClick: true,
         }}
@@ -47,7 +55,7 @@ export default function CustomModalBasic() {
       </CustomModal>
     </div>
   );
-};
+}
 
 const styles = StyleSheet.create({
   modal: {

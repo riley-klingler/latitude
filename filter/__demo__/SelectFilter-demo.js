@@ -3,8 +3,6 @@
  * @flow
  */
 
-
-
 import type {DemoFile} from "../../design_system/types/demoTypes";
 import SelectFilterBasic from "./SelectFilterBasicUsage.demo";
 import SelectFilterNullable from "./SelectFilterNullable.demo";

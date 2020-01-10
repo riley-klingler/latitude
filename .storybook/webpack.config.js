@@ -1,8 +1,8 @@
-const path = require('path');
+const path = require("path");
 
 module.exports = async ({config}) => {
   config.resolve.modules.unshift("stories");
-  config.resolve.modules.unshift(path.resolve(__dirname, '..'));
+  config.resolve.modules.unshift(path.resolve(__dirname, ".."));
 
   // Strip out the babel-plugin-react-docgen
   // This crashes Storybook when using certain Flow features 🙃
@@ -18,5 +18,4 @@ module.exports = async ({config}) => {
   );
 
   return config;
-};
-// console.dir(config, {depth: null}) || config;
+}; // console.dir(config, {depth: null}) || config;

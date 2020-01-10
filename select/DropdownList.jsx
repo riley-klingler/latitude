@@ -61,7 +61,7 @@ export default function DropdownList({
   footer,
   maxHeight = 400,
 }: Props) {
-  const isInFilterContext = React.useContext(InFilterContext)
+  const isInFilterContext = React.useContext(InFilterContext);
 
   const dropdownOptions = options.map(option => ({
     ...option,
@@ -123,7 +123,7 @@ export default function DropdownList({
       className={css(
         styles.dropdown,
         !isInFilterContext && styles.dropdownDropshadow,
-        !isOpen || isListEmpty ? styles.hidden : null,
+        !isOpen || isListEmpty ? styles.hidden : null
       )}
     >
       {header}

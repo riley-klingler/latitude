@@ -5,7 +5,7 @@
 
 import * as React from "react";
 import Group from "../../Group";
-import Toast from '../Toast';
+import Toast from "../Toast";
 
 /**
  * @title Toast with an Action
@@ -39,4 +39,4 @@ export default function ToastActions() {
       />
     </Group>
   );
-};
+}

@@ -2,10 +2,7 @@
  * TEAM: frontend_infra
  * @flow strict
  */
-import {
-  calendarDateToMoment,
-  type CalendarDate,
-} from "./CalendarDateType";
+import {calendarDateToMoment, type CalendarDate} from "./CalendarDateType";
 
 /**
  * This prints an ISO formatted string in a certain time zone given the calendar date.

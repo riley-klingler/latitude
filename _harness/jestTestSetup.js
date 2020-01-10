@@ -9,7 +9,7 @@
 
 import Enzyme from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import * as Aphrodite from 'aphrodite';
+import * as Aphrodite from "aphrodite";
 
 import mockFetch from "./mockFetch";
 import MockXHR from "./MockXHR";

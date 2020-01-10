@@ -47,7 +47,7 @@ function calculateWidths(
   const maxSlicesCount = Math.floor(containerWidth / minWidth);
   const slices = Math.min(maxSlicesCount, elementCount);
   // slices will be 0 sometimes.
-  const tabWidth = (slices !== 0) ? containerWidth / slices : 0;
+  const tabWidth = slices !== 0 ? containerWidth / slices : 0;
 
   return {
     tabWidth,

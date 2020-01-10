@@ -25,11 +25,7 @@ function CheckboxOption({label, checked, onChange}: Props) {
         }}
         role="presentation"
       >
-        <Checkbox
-          label={label}
-          checked={checked}
-          onChange={onChange}
-        />
+        <Checkbox label={label} checked={checked} onChange={onChange} />
       </div>
     </div>
   );

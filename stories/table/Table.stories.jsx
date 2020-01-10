@@ -25,7 +25,10 @@ const BasicTableHoist = () => {
 
   return (
     <div className={css(styles.container)}>
-      <Text weight="bold">NOTE: Table takes the full height of its container so the container needs to have an explicit height set</Text>
+      <Text weight="bold">
+        NOTE: Table takes the full height of its container so the container
+        needs to have an explicit height set
+      </Text>
       <Table
         data={data.slice(0, 100)}
         columnDefinitions={columnDefinitions}
@@ -334,7 +337,9 @@ const stories = storiesOf(`${sections.table}/Table`, module);
 stories.addDecorator(withKnobs);
 
 stories.add("Basic Table", () => <BasicTableHoist />);
-stories.add("Loading Table", () => <LoadingTableHoist {...getLoadingKnobs()} />);
+stories.add("Loading Table", () => (
+  <LoadingTableHoist {...getLoadingKnobs()} />
+));
 stories.add("Column Customization Table", () => <ColumnCustomizationHoist />);
 stories.add("Row Clicking Table", () => <RowClickingHoist />);
 stories.add("Row Selection Table", () => <RowSelectionHoist />);

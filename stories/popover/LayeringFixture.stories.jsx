@@ -18,7 +18,6 @@ import Text from "../../Text";
 const stories = storiesOf(sections.popover, module);
 
 stories.add("Layering Fixture", () => {
-
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const [modalPopoverZIndex, setModalPopoverZIndex] = React.useState(1500);
 
@@ -26,7 +25,9 @@ stories.add("Layering Fixture", () => {
     <Group flexDirection="column">
       <ConnectedToaster />
       <Group flexDirection="column">
-        <Text>The nested popup should appear above it&apos;s parent popover</Text>
+        <Text>
+          The nested popup should appear above it&apos;s parent popover
+        </Text>
         <Group flexDirection="row">
           <PopupWithClickAway>
             {(Target, Popup, {togglePopup}) => (
@@ -35,22 +36,36 @@ stories.add("Layering Fixture", () => {
                   <Button onClick={togglePopup}>Popup Button</Button>
                 </Target>
                 <Popup placement="bottom">
-                  <div style={{padding: 20, border: "1px solid black", background: "white"}}>
+                  <div
+                    style={{
+                      padding: 20,
+                      border: "1px solid black",
+                      background: "white",
+                    }}
+                  >
                     <PopupWithClickAway>
                       {(Target, Popup, {togglePopup}) => (
                         <>
                           <Target>
-                            <Button onClick={togglePopup}>Nested Popup Button</Button>
+                            <Button onClick={togglePopup}>
+                              Nested Popup Button
+                            </Button>
                           </Target>
                           <Popup placement="bottom">
-                            <div style={{padding: 20, border: "1px solid black", background: "white"}}>
+                            <div
+                              style={{
+                                padding: 20,
+                                border: "1px solid black",
+                                background: "white",
+                              }}
+                            >
                               Popup contents
                             </div>
                           </Popup>
                         </>
                       )}
                     </PopupWithClickAway>
-                    </div>
+                  </div>
                 </Popup>
               </>
             )}
@@ -59,17 +74,26 @@ stories.add("Layering Fixture", () => {
       </Group>
       <Group flexDirection="column">
         <Text>Toasts should appear over Popovers</Text>
-        <Button onClick={() => { setIsModalOpen(!isModalOpen); }}>Display Modal</Button>
-        <CustomModal
-          isOpen={isModalOpen}
-          className=""
+        <Button
+          onClick={() => {
+            setIsModalOpen(!isModalOpen);
+          }}
         >
+          Display Modal
+        </Button>
+        <CustomModal isOpen={isModalOpen} className="">
           <Group flexDirection="column">
-            <Button onClick={() => { setIsModalOpen(false); }}>Close Modal</Button>
+            <Button
+              onClick={() => {
+                setIsModalOpen(false);
+              }}
+            >
+              Close Modal
+            </Button>
             <Text>Toasts should appear over Popovers</Text>
             <Button
               onClick={() => {
-                ToastActions.show({ message: "toast", intent: "success" });
+                ToastActions.show({message: "toast", intent: "success"});
               }}
             >
               spawn toast
@@ -83,7 +107,6 @@ stories.add("Layering Fixture", () => {
                 placeholder="modal popover z-index"
               />
               <Text>Update the Modal Popover z-index</Text>
-
             </Group>
 
             <PopupWithClickAway>
@@ -93,7 +116,13 @@ stories.add("Layering Fixture", () => {
                     <Button onClick={togglePopup}>Popup Button</Button>
                   </Target>
                   <Popup placement="bottom-start" zIndex={modalPopoverZIndex}>
-                    <div style={{padding: 20, border: "1px solid black", background: "white"}}>
+                    <div
+                      style={{
+                        padding: 20,
+                        border: "1px solid black",
+                        background: "white",
+                      }}
+                    >
                       Popup contents
                     </div>
                   </Popup>

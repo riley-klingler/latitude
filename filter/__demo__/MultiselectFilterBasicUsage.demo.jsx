@@ -26,12 +26,10 @@ export default function MultiselectFilterBasicUsage() {
       label="Favorite Starwars Character"
       value={getFilterValueFromArray(value, options)}
       onChange={newValue => {
-        setValue(
-          getValueArrayFromFilterValue(newValue)
-        );
+        setValue(getValueArrayFromFilterValue(newValue));
       }}
       options={options}
       shyLabel={true}
     />
   );
-};
+}

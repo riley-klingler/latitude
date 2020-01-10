@@ -32,7 +32,6 @@ function SectionsWithSubsectionsDemo() {
         >
           <FormRow columnSpans={[1]}>
             <Label value="Label">
-              
               <TextInput onChange={() => undefined} value="" />
             </Label>
           </FormRow>
@@ -45,7 +44,6 @@ function SectionsWithSubsectionsDemo() {
         >
           <FormRow columnSpans={[1]}>
             <Label value="Label">
-              
               <TextInput onChange={() => undefined} value="" />
             </Label>
           </FormRow>

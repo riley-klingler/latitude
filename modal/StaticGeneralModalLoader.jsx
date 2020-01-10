@@ -9,10 +9,7 @@ import * as React from "react";
 import {css, StyleSheet} from "aphrodite";
 import Text from "../Text";
 import IconButton from "../button/IconButton";
-import CustomModal, {
-  defaultModalStyles,
-  getWidthStyle,
-} from "./CustomModal";
+import CustomModal, {defaultModalStyles, getWidthStyle} from "./CustomModal";
 
 import {margin, padding} from "../styles/whitespace";
 import {border, include} from "../styles";

@@ -5,10 +5,18 @@
  */
 
 import * as React from "react";
-import { css } from "aphrodite";
+import {css} from "aphrodite";
 import TextInput from "../TextInput";
 import Label from "../Label";
-import { type DemoFile, text, bool, demoCommonStyles, list, type ListKnob, type DemoProps } from "../design_system/types/demoTypes";
+import {
+  type DemoFile,
+  text,
+  bool,
+  demoCommonStyles,
+  list,
+  type ListKnob,
+  type DemoProps,
+} from "../design_system/types/demoTypes";
 
 export const labelWeightKnob: ListKnob<"bold" | "regular"> = list(
   [{value: "bold", label: "bold"}, {value: "regular", label: "regular"}],

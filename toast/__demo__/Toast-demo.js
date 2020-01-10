@@ -3,7 +3,7 @@
  * @flow
  */
 
-import { type DemoFile } from "../../design_system/types/demoTypes";
+import {type DemoFile} from "../../design_system/types/demoTypes";
 
 import ToastBasicUsage from "./ToastBasicUsage.demo";
 import ToastAnatomy from "./ToastAnatomy.demo";

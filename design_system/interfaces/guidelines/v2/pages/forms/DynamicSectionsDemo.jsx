@@ -27,13 +27,11 @@ function DynamicSectionsDemo() {
         >
           <FormRow columnSpans={[1]}>
             <Label value="Label" indicateRequired={true}>
-              
               <TextInput onChange={() => undefined} value="" />
             </Label>
           </FormRow>
           <FormRow columnSpans={[1]}>
             <Label value="Label" indicateRequired={true}>
-              
               <TextInput onChange={() => undefined} value="" />
             </Label>
           </FormRow>
@@ -48,13 +46,11 @@ function DynamicSectionsDemo() {
         >
           <FormRow columnSpans={[1]}>
             <Label value="Label" indicateRequired={true}>
-              
               <TextInput onChange={() => undefined} value="" />
             </Label>
           </FormRow>
           <FormRow columnSpans={[1]}>
             <Label value="Label" indicateRequired={true}>
-              
               <TextInput onChange={() => undefined} value="" />
             </Label>
           </FormRow>

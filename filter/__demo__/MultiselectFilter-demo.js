@@ -4,8 +4,8 @@
  */
 
 import {type DemoFile} from "../../design_system/types/demoTypes";
-import MultiselectFilterBasic from './MultiselectFilterBasicUsage.demo';
-import MultiselectFilterWithSearch from './MultiselectFilterWithSearch.demo';
+import MultiselectFilterBasic from "./MultiselectFilterBasicUsage.demo";
+import MultiselectFilterWithSearch from "./MultiselectFilterWithSearch.demo";
 
 const demos: DemoFile = {
   demos: [

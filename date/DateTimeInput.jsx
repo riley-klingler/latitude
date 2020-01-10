@@ -14,8 +14,8 @@ import {
 } from "./wallTime";
 import CalendarDateInput from "./CalendarDateInput";
 import TimeInput, {getTimeIntervals} from "./TimeInput";
-import { type CalendarDate, momentToCalendarDate } from "./CalendarDateType";
-import { type Size } from "../sizes";
+import {type CalendarDate, momentToCalendarDate} from "./CalendarDateType";
+import {type Size} from "../sizes";
 import SelectInput from "../select/SelectInput";
 import InputGroup from "../InputGroup";
 

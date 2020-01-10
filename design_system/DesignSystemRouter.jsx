@@ -4,7 +4,7 @@
  */
 
 import {createBrowserRouter, createRender} from "found";
-import { hot } from "react-hot-loader";
+import {hot} from "react-hot-loader";
 import routeConfig from "./routeConfig";
 
 const BrowserRouter = createBrowserRouter({

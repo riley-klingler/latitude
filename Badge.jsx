@@ -138,5 +138,5 @@ const getStyle = createThemedStylesheet(({themeName}: ThemeData) => {
       height: 8,
       width: 8,
     },
-  }
+  };
 });

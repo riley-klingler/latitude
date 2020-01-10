@@ -11,7 +11,6 @@ import colors from "./colors";
 import {margin} from "./styles/whitespace";
 import {include} from "./styles";
 
-
 type Props = {|
   +errorText: string | React.Node,
   +showError?: boolean,

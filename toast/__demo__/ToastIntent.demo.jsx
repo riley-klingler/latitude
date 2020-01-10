@@ -5,7 +5,7 @@
 
 import * as React from "react";
 import Group from "../../Group";
-import Toast from '../Toast';
+import Toast from "../Toast";
 
 /**
  * @title Intent
@@ -15,14 +15,8 @@ export default function ToastIntent() {
   return (
     <Group flexDirection="column">
       <Toast message="Cargo ready date has been updated" />
-      <Toast
-        message="Email has been sent"
-        intent="success"
-      />
-      <Toast
-        message="Flex-456634 has been deleted"
-        intent="danger"
-      />
+      <Toast message="Email has been sent" intent="success" />
+      <Toast message="Flex-456634 has been deleted" intent="danger" />
     </Group>
   );
-};
+}

@@ -5,7 +5,7 @@
  */
 
 import * as React from "react";
-import { StyleSheet, css } from "aphrodite";
+import {StyleSheet, css} from "aphrodite";
 import {storiesOf} from "@storybook/react";
 import {withKnobs, select, text, number} from "@storybook/addon-knobs";
 import sections from "../sections";
@@ -26,7 +26,8 @@ stories.add("with full knobs", () => (
     maxWidth={number("Max width", null)}
   >
     <div className={css(styles.trigger)}>
-      Hello, I am the tooltip trigger area for this demo. Hover or click me (depending on the trigger setting) to see your tooltip!
+      Hello, I am the tooltip trigger area for this demo. Hover or click me
+      (depending on the trigger setting) to see your tooltip!
     </div>
   </Tooltip>
 ));
@@ -38,7 +39,8 @@ stories.add("Screen edge", () => (
       overlay={text("Tooltip Text", "I am a tooltip")}
     >
       <div className={css(styles.trigger)}>
-        Hello, I am the tooltip trigger area for this demo. Hover me to see your tooltip!
+        Hello, I am the tooltip trigger area for this demo. Hover me to see your
+        tooltip!
       </div>
     </Tooltip>
   </div>
@@ -50,5 +52,5 @@ const styles = StyleSheet.create({
     textAlign: "center",
     height: "110px",
     border: "1px solid red",
-  }
+  },
 });

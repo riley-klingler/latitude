@@ -6,7 +6,6 @@
 import * as React from "react";
 import {css, StyleSheet} from "aphrodite";
 
-
 import Loader from "../Loader";
 import ToastActions from "../toast/ToastActions";
 import StaticGeneralModalLoader from "./StaticGeneralModalLoader";

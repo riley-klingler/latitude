@@ -8,7 +8,7 @@ import momentT from "moment";
 import moment from "moment-timezone";
 import stringOrFalse from "../tools/stringOrFalse";
 import invariant from "../tools/invariant";
-import { type CalendarDate, calendarDateToMoment } from "./CalendarDateType";
+import {type CalendarDate, calendarDateToMoment} from "./CalendarDateType";
 
 /**
  * A WallTime is a military time encoded time, to the millisecond.

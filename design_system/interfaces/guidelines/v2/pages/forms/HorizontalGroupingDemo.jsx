@@ -90,8 +90,11 @@ const FormWithColumns = ({
     .map((_item, index) => (
       // eslint-disable-next-line react/no-array-index-key
       <Label value="label" indicateRequired={true} key={index}>
-
-        <TextInput placeholder="Placeholder" onChange={() => undefined} value=""/>
+        <TextInput
+          placeholder="Placeholder"
+          onChange={() => undefined}
+          value=""
+        />
       </Label>
     ));
   const colSpans = Array(numColumns).fill(1);
