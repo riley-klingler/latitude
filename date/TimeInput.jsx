@@ -1,6 +1,6 @@
 /**
  * TEAM: frontend_infra
- * @flow strict-local
+ * @flow strict
  */
 
 import * as React from "react";
