@@ -56,27 +56,28 @@ function useDropdown(
     ...optionalParams,
   };
 
+  function openDropdown() {
+    if (opts.rememberHighlightPosition) {
+      const indexOfSelected = options.indexOf(selectedLabel);
+      setHighlightedIndex(indexOfSelected !== -1 ? indexOfSelected : null);
+    } else {
+      setHighlightedIndex(null);
+    }
+
+    setIsOpen(true);
+  }
+
   const handleInputMouseDown = () => {
     if (isOpen) {
       setIsOpen(false);
       return;
     }
 
-    setIsOpen(true);
-
-    if (opts.rememberHighlightPosition) {
-      const indexOfSelected = options.indexOf(selectedLabel);
-      setHighlightedIndex(indexOfSelected !== -1 ? indexOfSelected : null);
-    }
+    openDropdown();
   };
 
   const handleInputFocus = () => {
-    setIsOpen(true);
-
-    if (opts.rememberHighlightPosition) {
-      const indexOfSelected = options.indexOf(selectedLabel);
-      setHighlightedIndex(indexOfSelected !== -1 ? indexOfSelected : null);
-    }
+    openDropdown();
   };
 
   const handleInputBlur = () => {
@@ -100,7 +101,9 @@ function useDropdown(
       case UP: {
         e.preventDefault();
 
-        if (highlightedIndex === null || highlightedIndex === 0) {
+        if (!isOpen && highlightedIndex === null) {
+          openDropdown();
+        } else if (highlightedIndex === null || highlightedIndex === 0) {
           setHighlightedIndex(options.length - 1);
         } else {
           setHighlightedIndex(highlightedIndex - 1);
@@ -112,14 +115,11 @@ function useDropdown(
       case DOWN: {
         e.preventDefault();
 
-        if (
-          highlightedIndex === null ||
-          highlightedIndex === options.length - 1
-        ) {
-          setIsOpen(true);
+        if (!isOpen && highlightedIndex === null) {
+          openDropdown();
+        } else if (highlightedIndex === null || highlightedIndex === options.length - 1) {
           setHighlightedIndex(0);
         } else {
-          setIsOpen(true);
           setHighlightedIndex(highlightedIndex + 1);
         }
 

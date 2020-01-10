@@ -7,6 +7,8 @@ import * as React from "react";
 import {mount} from "enzyme";
 import SearchableSelectInput from "../SearchableSelectInput";
 
+import { UP, DOWN } from "../../constants/interactions/KeyCodes";
+
 function mountSearchableSelectInput(props?: {}) {
   const options = [
     {label: "a", value: 1},
@@ -93,5 +95,28 @@ describe("SearchableSelectInput", () => {
     comp.setProps({value: 3});
     comp.update();
     expect(comp.find("input").props().placeholder).toBe("c");
+  });
+
+  describe("option highlighting", () => {
+    it("remembers the last highlighted item on focus", () => {
+      const comp = mountSearchableSelectInput({value: 2});
+      comp.find("input").simulate("focus");
+      const optionB = comp.find("DropdownOption").at(1);
+      expect(optionB.props().isHighlighted).toBe(true);
+    });
+
+    it("remembers the last highlighted item on down press", () => {
+      const comp = mountSearchableSelectInput({value: 2});
+      comp.find("input").simulate("keyDown", {keyCode: UP});
+      const optionB = comp.find("DropdownOption").at(1);
+      expect(optionB.props().isHighlighted).toBe(true);
+    });
+
+    it("remembers the last highlighted item on up press", () => {
+      const comp = mountSearchableSelectInput({value: 2});
+      comp.find("input").simulate("keyDown", {keyCode: DOWN});
+      const optionB = comp.find("DropdownOption").at(1);
+      expect(optionB.props().isHighlighted).toBe(true);
+    });
   });
 });
