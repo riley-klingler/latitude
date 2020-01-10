@@ -24,7 +24,7 @@ type Props = {|
    * positively filters an option according to the callback. Specify `null` to
    * not filter out options
    */
-  +optionsFilter: (query: string, option: Option) => boolean | null,
+  +optionsFilter: ((query: string, option: Option) => boolean) | null,
   /** the maximum number of suggestions that will be presented */
   +maximumOptions: number,
 |};
