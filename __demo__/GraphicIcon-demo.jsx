@@ -45,7 +45,6 @@ const demos: DemoFile = {
         />
       ),
       knobs: graphicIconKnobs,
-      defaultProps: {icon: "truck"},
     },
   ],
 };

@@ -36,7 +36,6 @@ const demos: DemoFile = {
         isLarge: isLargeKnob,
         placeholder: text("Select a character"),
       },
-      defaultProps: BaseReactSelect.defaultProps,
     },
     {
       type: "live",

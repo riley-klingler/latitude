@@ -49,42 +49,41 @@ type FullDemo = {|
   type: "full",
   example: (renderCodeFn: (React.Node) => void, demoProps: any) => React.Node,
   knobs: {[string]: Knob},
-  defaultProps?: {[string]: mixed},
   showCode?: boolean,
 |};
 
-export type DemoFile = {
+export type DemoFile = {|
   demos: $ReadOnlyArray<DemoType>,
-};
+|};
 
 type BooleanKnob = {|
   type: "bool",
   defaultValue: boolean,
 |};
 
-type StringKnob = {
+type StringKnob = {|
   type: "text",
   defaultValue?: string,
-};
+|};
 
-type NumberKnob = {
+type NumberKnob = {|
   type: "text",
   defaultValue?: number,
-};
+|};
 
-type CalendarDateKnob = {
+type CalendarDateKnob = {|
   type: "calendarDate",
   defaultValue?: string,
-};
+|};
 
-export type ListKnob<K> = {
+export type ListKnob<K> = {|
   type: "list",
   defaultValue?: K,
   options: $ReadOnlyArray<Option<K>>,
   toKeyFn?: K => string,
   isNullable?: boolean,
   isSearchable: boolean,
-};
+|};
 
 export function bool(defaultValue: boolean): BooleanKnob {
   return {

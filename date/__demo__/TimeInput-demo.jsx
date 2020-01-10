@@ -34,7 +34,6 @@ const demos: DemoFile = {
         isInvalid: isInvalidKnob,
         size: textInputSizeKnob,
       },
-      defaultProps: TimeInput.defaultProps,
     },
   ],
 };

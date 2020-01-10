@@ -70,7 +70,6 @@ const demos: DemoFile = {
         />
       ),
       knobs: iconButtonKnobs,
-      defaultProps: {iconName: "rocket", type: "button"},
     },
     {
       type: "live",
