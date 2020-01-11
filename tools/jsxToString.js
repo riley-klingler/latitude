@@ -24,7 +24,6 @@ function jsxToString(jsxElement: React.Node): string {
     sortProps: false,
   };
 
-  // $FlowFixMe(ctan): Incorrect use of React.Node, appeared during Latitude reintegration into monorepo
   return reactElementToJSXString(jsxElement, options);
 }
 
