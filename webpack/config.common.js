@@ -1,11 +1,13 @@
-"use strict";
-
 /**
  * TEAM: frontend_infra
+ *
  * WATCHERS: Stephane-Y
- *
- *
  */
+
+/* eslint-disable  */
+
+"use strict";
+
 var webpack = require("webpack");
 
 var path = require("path");

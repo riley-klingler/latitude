@@ -102,11 +102,12 @@ export default function TextareaInput({
 
       setComputedRows(newComputedRows);
     }
-  }, [
+  } /* eslint-disable react-hooks/exhaustive-deps */, [
     value,
     typeof rows === "object" && rows.min,
     typeof rows === "object" && rows.max,
   ]);
+  /* eslint-enable react-hooks/exhaustive-deps */
 
   const handleChange = React.useCallback(
     (event: SyntheticInputEvent<HTMLTextAreaElement>) => {
@@ -125,6 +126,7 @@ export default function TextareaInput({
         onFocus(event);
       }
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [onFocus]
   );
 
@@ -138,6 +140,7 @@ export default function TextareaInput({
         onBlur(event);
       }
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [onBlur]
   );
 

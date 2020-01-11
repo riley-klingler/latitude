@@ -4,7 +4,6 @@
  * @flow
  */
 const webpack = require("webpack");
-const fs = require("fs");
 const path = require("path");
 const ManifestPlugin = require("webpack-manifest-plugin");
 const HashOutput = require("webpack-plugin-hash-output");
@@ -486,6 +485,7 @@ const devServer = {
 
 function appWrapper(
   configBuilder: WebpackConfigurationBuilder,
+  // eslint-disable-next-line autofix/no-unused-vars
   devMode: boolean
 ) {
   return (env?: {apps?: string}) => {

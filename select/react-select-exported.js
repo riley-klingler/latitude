@@ -11,7 +11,7 @@ import Select, {Option, type ExternalProps as FooProps} from "react-select";
  */
 if (typeof document !== "undefined") {
   // $FlowFixMe(uforic)
-  require("vendor_stylesheets/react-select.css");
+  require("../vendor_stylesheets/react-select.css");
 }
 
 export type ExternalProps = FooProps;

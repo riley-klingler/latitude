@@ -85,6 +85,7 @@ export default function FloatInput({
     if (value !== parseNumber(textValue, decimalPrecision)) {
       setTextValue(numberToString(value, decimalPrecision));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value, decimalPrecision]);
 
   const handleChange = (newText: string) => {

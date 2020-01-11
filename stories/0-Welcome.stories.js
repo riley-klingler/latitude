@@ -1,3 +1,7 @@
+/**
+ * TEAM: frontend_infra
+ */
+
 /* eslint-disable flowtype/require-valid-file-annotation,react/jsx-filename-extension */
 
 import React from "react";

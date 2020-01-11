@@ -85,6 +85,7 @@ function InlineEdit<T>({
       lastInputRef.current = null;
       setTransitioningIn(false);
     }, TRANSITION_DURATION);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value]);
 
   const handleCancelClick = React.useCallback(() => {
@@ -95,6 +96,7 @@ function InlineEdit<T>({
       setEditMode(false);
       setTransitioningOut(false);
     }, TRANSITION_DURATION);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value]);
 
   const handleCheckClick = React.useCallback(() => {
@@ -114,6 +116,7 @@ function InlineEdit<T>({
     }
 
     onChange(editText);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [editText]);
 
   let content = null;

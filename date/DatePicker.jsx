@@ -8,11 +8,13 @@ import * as React from "react";
 import typeof DatePickerOverrideType from "./DatePickerOverride";
 
 const LazyDatePicker = React.lazy(() => {
+  /* eslint-disable flexport/dynamic-import-webchunkname */
   const imports = [
-    import(/* webpackChunkName: "react-datepicker" */ "./DatePickerOverride"),
+    import(/* webpackChunkName: "DatePickerOverride" */ "./DatePickerOverride"),
     import(/* webpackChunkName: "react-datepicker" */ "../vendor_stylesheets/react-datepicker.css"),
-    import(/* webpackChunkName: "react-datepicker" */ "./DatePickerStylesOverride.css"),
+    import(/* webpackChunkName: "DatePickerStylesOverride" */ "./DatePickerStylesOverride.css"),
   ];
+  /* eslint-enable flexport/dynamic-import-webchunkname */
 
   return Promise.all(imports).then(([componentModule]) => componentModule);
 });

@@ -113,7 +113,7 @@ function createStickyScrollPolyfill() {
     testStyle.cssText =
       "position:sticky;position:-webkit-sticky;position:-ms-sticky;";
 
-    return testStyle.position.indexOf("sticky") !== -1;
+    return testStyle.position.includes("sticky");
   })();
   const context = {
     addRef,
@@ -161,7 +161,7 @@ function createStickyScrollPolyfill() {
     return (element: ?HTMLElement) => {
       if (!element) return;
 
-      if (context.pinElements[type].indexOf(element) === -1)
+      if (!context.pinElements[type].includes(element))
         context.pinElements[type].push(element);
     };
   }

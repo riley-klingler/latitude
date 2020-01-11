@@ -97,6 +97,7 @@ function SearchableSelectInput<T>({
 
   React.useEffect(() => {
     setTabbingTextPlaceholder(valueLabelMap.get(value));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value]);
 
   const dropdownOptions = options

@@ -16,6 +16,7 @@ import stylesManifest from "./interfaces/styles/stylesManifest";
 import Home from "./interfaces/Home";
 
 const Components = () =>
+  /* eslint-disable flexport/dynamic-import-webchunkname */
   import(/* webpackChunkName: "design_system_interfaces_components_Components" */ "./interfaces/components/Components")
     .then(module => module.default)
     .catch(() => "An error occurred while loading the component");
@@ -39,6 +40,7 @@ const getPlayground = () =>
   import(/* webpackChunkName: "design_system_interfaces_Playground" */ "./interfaces/Playground")
     .then(module => module.default)
     .catch(() => "An error occurred while loading the component");
+/* eslint-enable flexport/dynamic-import-webchunkname */
 
 const getComponentsData = ({params}) => {
   const {componentName} = params;

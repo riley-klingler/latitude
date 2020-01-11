@@ -81,6 +81,7 @@ stories.add("Layering Fixture", () => {
         >
           Display Modal
         </Button>
+        {/* eslint-disable-next-line flexport/no-oocss */}
         <CustomModal isOpen={isModalOpen} className="">
           <Group flexDirection="column">
             <Button

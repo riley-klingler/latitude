@@ -55,10 +55,12 @@ export class GeneralModalLoaderShim extends React.PureComponent<
         <ConnectedToaster />
         <GeneralModalLoader
           component={
+            /* eslint-disable flexport/dynamic-import-webchunkname */
             (() =>
-              import(/* webpackChunkName: "core_components_users_AddUserModal" */ "./GeneralModalLoaderSampleComponent-demo.jsx"): () => Promise<{
+              import(/* webpackChunkName: "GeneralModalLoaderSampleComponent-demo" */ "./GeneralModalLoaderSampleComponent-demo.jsx"): () => Promise<{
               default: SampleModalType,
             }>)
+            /* eslint-enable flexport/dynamic-import-webchunkname */
           }
           onClose={this.handleClose}
           title="Create New User"

@@ -1,5 +1,5 @@
 /**
- * TEAM: shipment_activity
+ * TEAM: frontend_infra
  *
  * @flow
  */

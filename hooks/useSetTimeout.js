@@ -15,6 +15,7 @@ function useSetTimeout() {
     () =>
       // Do nothing onMount, clear timeouts on unMount
       () => timeoutIds.forEach(timeoutId => clearTimeout(timeoutId)),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     []
   );
 

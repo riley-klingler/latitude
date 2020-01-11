@@ -80,6 +80,7 @@ const Highlighter = React.memo<HighlighterProps>(function Highlighter({
 
       clearTimeout(oocssTimeoutId);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   React.useLayoutEffect(() => {
@@ -111,6 +112,7 @@ const Highlighter = React.memo<HighlighterProps>(function Highlighter({
       )
         showHighlight();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [oocssWaitComplete, children]);
 
   return (

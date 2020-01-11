@@ -1,10 +1,11 @@
-"use strict";
-
 /**
  * TEAM: frontend_infra
- *
- *
  */
+
+/* eslint-disable  */
+
+"use strict";
+
 var _require = require("./config.builder"),
   WebpackConfigurationBuilder = _require.WebpackConfigurationBuilder,
   appWrapper = _require.appWrapper;

@@ -1,9 +1,11 @@
-"use strict";
-
 /**
  * TEAM: frontend_infra
- *
  */
+
+/* eslint-disable  */
+
+"use strict";
+
 module.exports = {
   // Documented components. Found with `rg '@status'`.
   Portal: "Portal.jsx",

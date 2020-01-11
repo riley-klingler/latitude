@@ -1,5 +1,5 @@
 /**
- * TEAM: bookings
+ * TEAM: client_app
  *
  * @flow strict
  */

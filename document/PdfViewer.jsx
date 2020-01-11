@@ -23,6 +23,7 @@ export default function PdfViewer({pdf}: Props) {
   );
   useEffect(() => {
     if (pdf instanceof File) URL.revokeObjectURL(url);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pdf]);
   return (
     <iframe
