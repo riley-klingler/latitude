@@ -7,10 +7,11 @@ import * as React from "react";
 
 import {today} from "./CalendarDateType";
 import {
-  wallTime,
+
   type WallTime,
   isWallTime,
   displayTime,
+  parseInputText,
   momentFromCalDateWallTime,
   momentToWallTime,
 } from "./wallTime";
@@ -31,8 +32,6 @@ type TimeInputProps = {|
   +militaryTime?: boolean,
   /* preset time options to choose from. create them using `getTimeIntervals` exported in TimeInput. */
   +options: $ReadOnlyArray<WallTime>,
-  /* use for third party components that need the datepicker to be a child */
-  +noPortal?: boolean,
 |};
 
 /**
@@ -46,7 +45,6 @@ export default function TimeInput({
   value,
   onChange,
   militaryTime = false,
-  noPortal = false,
   placeholder = "-- : -- --",
   options,
   onBlur,
@@ -54,16 +52,14 @@ export default function TimeInput({
 }: TimeInputProps) {
   const [displayText, setDisplayText] = React.useState(formatWallTime(value, militaryTime));
 
-  console.log(noPortal);
-
   const handleOnChange = (newDisplayText: string) => {
     if (newDisplayText === "") {
       onChange(null);
     }
 
-    if (isWallTime(newDisplayText)) {
-      // guaranteed newDisplayText is a WallTime
-      const newWallTime = wallTime(newDisplayText);
+    const newWallTime = parseInputText(newDisplayText);
+
+    if (newWallTime !== null) {
       onChange(newWallTime);
     }
 
@@ -88,7 +84,7 @@ export default function TimeInput({
       onChange={handleOnChange}
       onBlur={handleBlur}
       prefix={{iconName: "clock"}}
-      suggestions={options.map(option => String(option))}
+      suggestions={options.map(option => formatWallTime(option, militaryTime))}
       optionsFilter={null}
       maximumOptions={Infinity}
     />
