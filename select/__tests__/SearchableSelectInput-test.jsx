@@ -7,7 +7,7 @@ import * as React from "react";
 import {mount} from "enzyme";
 import SearchableSelectInput from "../SearchableSelectInput";
 
-import { UP, DOWN } from "../../constants/interactions/KeyCodes";
+import {UP, DOWN} from "../../constants/interactions/KeyCodes";
 
 function mountSearchableSelectInput(props?: {}) {
   const options = [

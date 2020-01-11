@@ -59,7 +59,9 @@ function SelectInputHoist(props: *) {
       </Label>
 
       <Label value="Select Input height should not be affected by css grid">
-        <div style={{display: 'grid', gridTemplateColumns: "auto", height: 100}}>
+        <div
+          style={{display: "grid", gridTemplateColumns: "auto", height: 100}}
+        >
           <SelectInput
             {...props}
             value={selectedValue}

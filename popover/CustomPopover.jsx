@@ -19,11 +19,7 @@ type Props = {|
  * @status Beta
  */
 function CustomPopover({children}: Props) {
-  return (
-    <div className={css(styles.container)}>
-      {children}
-    </div>
-  );
+  return <div className={css(styles.container)}>{children}</div>;
 }
 
 const styles = StyleSheet.create({

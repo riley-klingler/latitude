@@ -163,7 +163,7 @@ export default function TextareaInput({
       }}
       className={css(
         ...getInputStyles({size, readOnly, disabled, isInvalid}),
-        styles.heightPaddingOverrides,
+        styles.heightPaddingOverrides
       )}
       style={{textAlign}}
     />

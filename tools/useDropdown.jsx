@@ -117,7 +117,10 @@ function useDropdown(
 
         if (!isOpen && highlightedIndex === null) {
           openDropdown();
-        } else if (highlightedIndex === null || highlightedIndex === options.length - 1) {
+        } else if (
+          highlightedIndex === null ||
+          highlightedIndex === options.length - 1
+        ) {
           setHighlightedIndex(0);
         } else {
           setHighlightedIndex(highlightedIndex + 1);

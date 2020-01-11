@@ -152,15 +152,17 @@ export const getInputStyles = ({
     s: inputStyles.small,
     m: inputStyles.base,
     l: inputStyles.large,
-  }
+  };
 
   const noPaddingSizeToStyleMapping = {
     s: inputStyles.smallNoPadding,
     m: inputStyles.baseNoPadding,
     l: inputStyles.largeNoPadding,
-  }
+  };
 
-  const sizeStyle = noPadding ? noPaddingSizeToStyleMapping[size] : sizeToStyleMapping[size];
+  const sizeStyle = noPadding
+    ? noPaddingSizeToStyleMapping[size]
+    : sizeToStyleMapping[size];
 
   return [
     sizeStyle,
