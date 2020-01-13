@@ -124,7 +124,7 @@
     "webpack": "node --max_old_space_size=8192 $(yarn bin)/webpack --config webpack/config.dev.js",
     "webpack:watch": "yarn webpack --colors --progress --watch",
     "webpack:unused": "node --max_old_space_size=8192 $(yarn bin)/webpack --config webpack/config.unused.js",
-    "webpack:config": "BABEL_ENV=node yarn babel scripts/ --out-dir . && yarn prettier --write webpack/config.*.js",
+    "webpack:config": "BABEL_ENV=node yarn babel ./webpack/scripts --out-dir ./webpack && yarn prettier --write webpack/config.*.js",
     "test": "yarn run jest",
     "testWithCoverage": "jest --coverage",
     "test:debug": "node --inspect node_modules/.bin/jest --runInBand",

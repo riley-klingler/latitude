@@ -1,11 +1,9 @@
-/**
- * TEAM: frontend_infra
- */
-
-/* eslint-disable  */
-
 "use strict";
 
+/**
+ * TEAM: frontend_infra
+ * 
+ */
 module.exports = {
   // Documented components. Found with `rg '@status'`.
   Portal: "Portal.jsx",
@@ -99,5 +97,5 @@ module.exports = {
   InfiniteTable: "table/InfiniteTable.jsx",
   LinkCell: "table/LinkCell.jsx",
   StaticTable: "table/StaticTable.jsx",
-  TableRow: "table/TableRow.jsx",
+  TableRow: "table/TableRow.jsx"
 };

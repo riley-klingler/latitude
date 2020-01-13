@@ -1,9 +1,3 @@
-/**
- * TEAM: frontend_infra
- */
-
-/* eslint-disable  */
-
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -62,8 +56,6 @@ function _objectSpread(target) {
  */
 var webpack = require("webpack");
 
-var fs = require("fs");
-
 var path = require("path");
 
 var ManifestPlugin = require("webpack-manifest-plugin");
@@ -74,8 +66,9 @@ var TerserJsPlugin = require("terser-webpack-plugin");
 
 var ENTRY_POINTS = require("./entryPoints");
 
+var root = path.join(__dirname, "..");
 var BABEL_LOADER = "babel-loader?cacheDirectory=".concat(
-  path.join(__dirname, ".cache")
+  path.join(root, ".cache")
 );
 
 var WebpackConfigurationBuilder = function WebpackConfigurationBuilder() {
@@ -179,7 +172,7 @@ var WebpackConfigurationBuilder = function WebpackConfigurationBuilder() {
     });
     var output = {
       // Keep path in sync with lib/webpack_builder.rb
-      path: path.join(__dirname, "../public/packs"),
+      path: path.join(root, "./public/packs"),
       filename: "[name].js",
       chunkFilename: "[name].js",
       publicPath: "/packs/",
@@ -262,7 +255,7 @@ var WebpackConfigurationBuilder = function WebpackConfigurationBuilder() {
       // which environments:
       // https://github.com/webpack/webpack/blob/master/lib/WebpackOptionsDefaulter.js
       mode: "none",
-      context: __dirname,
+      context: root,
       entry: entry,
       // Necessary because a dependency of jsonlint-lines uses fs (the former is
       // in turn a dependency of MapboxDraw).
@@ -272,7 +265,7 @@ var WebpackConfigurationBuilder = function WebpackConfigurationBuilder() {
       output: output,
       resolve: {
         // If you update modules, please update moduleRoots in package.json
-        modules: [__dirname, "node_modules"],
+        modules: [root, "node_modules"],
         extensions: [".js", ".jsx", ".json"],
       },
       // These globals are provided by application.js. Eventually we should move
@@ -576,7 +569,10 @@ var devServer = {
   },
 };
 
-function appWrapper(configBuilder, devMode) {
+function appWrapper(
+  configBuilder, // eslint-disable-next-line autofix/no-unused-vars
+  devMode
+) {
   return function(env) {
     // Configure the entrypoints to compile. You can specify the list
     // of apps as a comma seperated string in the --env.apps param.

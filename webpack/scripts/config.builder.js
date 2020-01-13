@@ -10,10 +10,13 @@ const HashOutput = require("webpack-plugin-hash-output");
 const TerserJsPlugin = require("terser-webpack-plugin");
 const ENTRY_POINTS = require("./entryPoints");
 
+const root = path.join(__dirname, "..");
+
 const BABEL_LOADER = `babel-loader?cacheDirectory=${path.join(
-  __dirname,
+  root,
   ".cache"
 )}`;
+
 
 class WebpackConfigurationBuilder {
   // increment in order thrash all caches
@@ -117,7 +120,7 @@ class WebpackConfigurationBuilder {
 
     let output = {
       // Keep path in sync with lib/webpack_builder.rb
-      path: path.join(__dirname, "../public/packs"),
+      path: path.join(root, "./public/packs"),
       filename: "[name].js",
       chunkFilename: "[name].js",
       publicPath: "/packs/",
@@ -188,14 +191,14 @@ class WebpackConfigurationBuilder {
       // which environments:
       // https://github.com/webpack/webpack/blob/master/lib/WebpackOptionsDefaulter.js
       mode: "none",
-      context: __dirname,
+      context: root,
       entry, // Necessary because a dependency of jsonlint-lines uses fs (the former is
       // in turn a dependency of MapboxDraw).
       node: {fs: "empty"},
       output,
       resolve: {
         // If you update modules, please update moduleRoots in package.json
-        modules: [__dirname, "node_modules"],
+        modules: [root, "node_modules"],
         extensions: [".js", ".jsx", ".json"],
       }, // These globals are provided by application.js. Eventually we should move
       // them to the vendor chunk to remove a network request, but at the moment

@@ -1,9 +1,3 @@
-/**
- * TEAM: frontend_infra
- */
-
-/* eslint-disable  */
-
 "use strict";
 
 /**
