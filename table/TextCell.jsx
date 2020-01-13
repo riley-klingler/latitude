@@ -6,6 +6,8 @@
 import React from "react";
 import {StyleSheet, css} from "aphrodite";
 import Text from "../Text";
+import Tooltip from "../Tooltip";
+import colors from "../colors";
 
 type Props = {|
   +value: ?(string | number),
@@ -22,18 +24,48 @@ export default function TextCell({
   verticalAlign = "center",
   horizontalAlign = "start",
 }: Props) {
+  return tooltipText ? (
+    <div
+      className={css(styles.tooltipWrapper)}
+      style={{
+        alignItems: position[verticalAlign],
+        justifyContent: position[horizontalAlign],
+      }}
+    >
+      <Tooltip placement="bottom" overlay={<span>{tooltipText}</span>}>
+        <TextContent
+          {...{
+            value,
+            secondaryValue,
+            tooltipText,
+            verticalAlign,
+            horizontalAlign,
+          }}
+        />
+      </Tooltip>
+    </div>
+  ) : (
+    <TextContent
+      {...{value, secondaryValue, tooltipText, verticalAlign, horizontalAlign}}
+    />
+  );
+}
+
+function TextContent({
+  value,
+  secondaryValue,
+  tooltipText,
+  verticalAlign = "center",
+  horizontalAlign = "start",
+}: Props) {
   return (
     <div
-      className={css(
-        styles.container,
-        verticalAlign === "start" && styles.verticalAlignStart,
-        verticalAlign === "center" && styles.verticalAlignCenter,
-        verticalAlign === "end" && styles.verticalAlignEnd,
-        horizontalAlign === "start" && styles.horizontalAlignStart,
-        horizontalAlign === "center" && styles.horizontalAlignCenter,
-        horizontalAlign === "end" && styles.horizontalAlignEnd
-      )}
-      title={tooltipText}
+      className={css(styles.container, !!tooltipText && styles.tooltipBorder)}
+      style={{
+        justifyContent: position[verticalAlign],
+        textAlign: textAlign[horizontalAlign],
+        flex: !tooltipText && 1,
+      }}
     >
       {value ? (
         <Text overflow="hidden" textOverflow="ellipsis" whiteSpace="nowrap">
@@ -54,29 +86,29 @@ export default function TextCell({
   );
 }
 
+const position = {
+  start: "flex-start",
+  center: "center",
+  end: "flex-end",
+};
+
+const textAlign = {
+  start: "left",
+  center: "center",
+  end: "right",
+};
+
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     display: "flex",
     flexDirection: "column",
     minWidth: 0,
   },
-  horizontalAlignStart: {
-    textAlign: "left",
+  tooltipWrapper: {
+    display: "flex",
+    width: "100%",
   },
-  horizontalAlignCenter: {
-    textAlign: "center",
-  },
-  horizontalAlignEnd: {
-    textAlign: "right",
-  },
-  verticalAlignStart: {
-    justifyContent: "flex-start",
-  },
-  verticalAlignCenter: {
-    justifyContent: "center",
-  },
-  verticalAlignEnd: {
-    justifyContent: "flex-end",
+  tooltipBorder: {
+    borderBottom: `1px dashed ${colors.grey40}`,
   },
 });
