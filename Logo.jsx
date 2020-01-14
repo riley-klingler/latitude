@@ -72,7 +72,7 @@ function Logo({colorScheme, width}: Props) {
       viewBox={viewBox}
       width={w}
       height={h}
-      style={{width: width ? `${width}px` : "100%", height: "auto"}}
+      style={{width: width ? `${width}px` : "100%", height: `${width * h / w}px`}}
       role="img"
       aria-hidden="true"
       aria-labelledby="title desc"
